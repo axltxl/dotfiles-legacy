@@ -2,13 +2,16 @@
 export ZSH=$HOME/.oh-my-zsh
 
 # Path to zsh scripts
-ZSH_HOME=$HOME/.zsh
+export ZSH_HOME=$HOME/.zsh
+
+#
+export DOT_HOME=$HOME/.dotfiles
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="candy"
+ZSH_THEME="blinks"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -48,27 +51,12 @@ ZSH_CUSTOM=$ZSH_HOME/custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git dotools path reload history)
 
 # User configuration
 
 # Load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
-# all of our zsh files
-config_files=($ZSH_HOME/**/*.zsh)
-
-# load the config files
-for file in $config_files
-do
-  source $file
-done
-
-# initialize autocomplete here, otherwise functions won't be loaded
-autoload -Uz compinit
-compinit
-
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
-
-unset config_files

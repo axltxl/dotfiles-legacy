@@ -67,3 +67,7 @@ git clone https://github.com/robbyrussell/oh-my-zsh.git $OMZSH_HOME
 # Set new shell
 printf_setup "chsh -s zsh"
 chsh -s $(which zsh)
+
+# Run zsh afterwards
+printf_run "zsh"
+zsh
