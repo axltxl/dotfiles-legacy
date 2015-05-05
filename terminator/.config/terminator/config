@@ -12,13 +12,6 @@
     font = Droid Sans Mono 10
 [layouts]
   [[default]]
-    [[[child1]]]
-      type = Terminal
-      parent = window0
-    [[[window0]]]
-      type = Window
-      parent = ""
-  [[alejandro]]
     [[[child0]]]
       position = 0:30
       type = Window
