@@ -1,0 +1,14 @@
+#!/usr/bin/env zsh
+
+
+GIT_VERSION=2.4.0
+GIT_BASENAME=git-$GIT_VERSION
+GIT_TARBALL=$GIT_BASENAME.tar.xz
+GIT_URL=https://www.kernel.org/pub/software/scm/git/$GIT_TARBALL
+
+wget $GIT_URL
+tar xf $GIT_TARBALL && rm -f $GIT_TARBALL
+cd $GIT_BASENAME
+./configure --prefix=$DOT_PATH
+make install
+rm -rf $GIT_BASENAME
