@@ -1,0 +1,7 @@
+[user]
+	name  = Alejandro Ricoveri
+	email = alejandroricoveri@gmail.com
+[core]
+	editor = nano
+[push]
+	default = simple
