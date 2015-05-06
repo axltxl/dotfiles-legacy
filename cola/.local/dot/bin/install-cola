@@ -10,13 +10,15 @@ COLA_URL=https://github.com/git-cola/git-cola/archive/v$COLA_VERSION.tar.gz
 COLA_BASENAME=git-cola-$COLA_VERSION
 COLA_TARBALL=$COLA_BASENAME.tar.gz
 
-PYQT4_URL=http://sourceforge.net/projects/pyqt/files/PyQt4/PyQt-4.11.3/PyQt-x11-gpl-4.11.3.tar.gz
-PYQT4_BASENAME=PyQt-x11-gpl-4.11.3
+PYQT4_VERSION=4.11.3
+PYQT4_BASENAME=PyQt-x11-gpl-$PYQT4_VERSION
 PYQT4_TARBALL=$PYQT4_BASENAME.tar.gz
+PYQT4_URL=http://sourceforge.net/projects/pyqt/files/PyQt4/PyQt-$PYQT4_VERSION/$PYQT4_TARBALL
 
-SIP_URL=http://sourceforge.net/projects/pyqt/files/sip/sip-4.16.7/sip-4.16.7.tar.gz
-SIP_BASENAME=sip-4.16.7
+SIP_VERSION=4.16.7
+SIP_BASENAME=sip-$SIP_VERSION
 SIP_TARBALL=$SIP_BASENAME.tar.gz
+SIP_URL=http://sourceforge.net/projects/pyqt/files/sip/sip-$SIP_VERSION/$SIP_TARBALL
 
 cd /tmp
 
