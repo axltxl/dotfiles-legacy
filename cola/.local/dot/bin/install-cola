@@ -10,14 +10,35 @@ COLA_URL=https://github.com/git-cola/git-cola/archive/v$COLA_VERSION.tar.gz
 COLA_BASENAME=git-cola-$COLA_VERSION
 COLA_TARBALL=$COLA_BASENAME.tar.gz
 
+PYQT4_URL=http://sourceforge.net/projects/pyqt/files/PyQt4/PyQt-4.11.3/PyQt-x11-gpl-4.11.3.tar.gz
+PYQT4_BASENAME=PyQt-x11-gpl-4.11.3
+PYQT4_TARBALL=$PYQT4_BASENAME.tar.gz
+
+SIP_URL=http://sourceforge.net/projects/pyqt/files/sip/sip-4.16.7/sip-4.16.7.tar.gz
+SIP_BASENAME=sip-4.16.7
+SIP_TARBALL=$SIP_BASENAME.tar.gz
+
 cd /tmp
 
-printf_run "Getting git-cola"
-wget $COLA_URL -O $COLA_TARBALL && tar xf $COLA_TARBALL
+printf_install "Python-SIP"
+wget $SIP_URL -O $SIP_TARBALL && tar xf $SIP_TARBALL
+cd $SIP_BASENAME && python3 configure.py && make install
+
+printf_install "qt4-devel"
+sudo apt-get install -y libqt4-dev qt4-qmake
+
+cd /tmp
+
+printf_install "PyQt4"
+wget $PYQT4_URL -O $PYQT4_TARBALL && tar xf $PYQT4_TARBALL
+cd $PYQT4_BASENAME && python3 configure-ng.py && make install
+
+cd /tmp
 
 printf_install git-cola
-sudo apt-get install -y python-qt4
+wget $COLA_URL -O $COLA_TARBALL && tar xf $COLA_TARBALL
 cd $COLA_BASENAME && pip3 install .
 
 # Remove everything
-cd /tmp && rm -rf $COLA_BASENAME $COLA_TARBALL
+cd /tmp && rm -rf $COLA_BASENAME $COLA_TARBALL $PYQT4_TARBALL \
+  $PYQT4_BASENAME $SIP_TARBALL $SIP_BASENAME
