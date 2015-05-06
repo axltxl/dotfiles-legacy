@@ -1,0 +1,23 @@
+#!/usr/bin/env zsh
+##################################
+# Install git-cola locally on $DOT_PATH
+##################################
+
+. $ZSH_HOME/lib/printf
+
+COLA_VERSION=2.1.2
+COLA_URL=https://github.com/git-cola/git-cola/archive/v$COLA_VERSION.tar.gz
+COLA_BASENAME=git-cola-$COLA_VERSION
+COLA_TARBALL=$COLA_BASENAME.tar.gz
+
+cd /tmp
+
+printf_run "Getting git-cola"
+wget $COLA_URL -O $COLA_TARBALL && tar xf $COLA_TARBALL
+
+printf_install git-cola
+sudo apt-get install -y python-qt4
+cd $COLA_BASENAME && pip3 install .
+
+# Remove everything
+cd /tmp && rm -rf $COLA_BASENAME $COLA_TARBALL

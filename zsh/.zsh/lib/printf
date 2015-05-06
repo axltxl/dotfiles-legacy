@@ -1,0 +1,48 @@
+#
+# Printing and format options
+# Compatible with both bash and zsh
+#
+
+function dot_printf {
+  OUTPUT_COLOR=$2
+  if [ -z $OUTPUT_COLOR ]; then
+    OUTPUT_COLOR="\e[96m"
+  fi
+  printf "* ${OUTPUT_COLOR}$1\e[0m\n"
+}
+
+function printf_install {
+  dot_printf "[+] Installing $1 ..." "\e[1m\e[95m"
+}
+
+function printf_uninstall {
+  dot_printf "[-] Uninstalling $1 ..." "\e[1m\e[31m"
+}
+
+function printf_setup {
+  dot_printf "[.] Setting up $1 ..."
+}
+
+function printf_update {
+  dot_printf "[*] Updating $1 ..."
+}
+
+function printf_clean {
+  dot_printf "[-] Cleansing $1 ..."
+}
+
+function printf_run {
+  dot_printf "[\$] Running $1 ..."
+}
+
+function printf_help {
+  echo "[?] $1: $2."
+}
+
+function printf_err {
+  dot_printf "[!] Whoops!: $1" "\e[1m\e[31m"
+}
+
+function printf_warn {
+  dot_printf "[!] WARNING: $1" "\e[1m\e[33m"
+}

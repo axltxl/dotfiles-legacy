@@ -1,0 +1,18 @@
+#!/usr/bin/env zsh
+##################################
+# Install Python from source locally on $DOT_PATH
+##################################
+
+. $ZSH_HOME/lib/printf
+
+PY_VER=3.4.3
+PY_BASENAME=Python-$PY_VER
+PY_TARBALL=$PY_BASENAME.tgz
+PY_URL=https://www.python.org/ftp/python/$PY_VER/$PY_TARBALL
+
+cd /tmp
+
+printf_install Python3
+wget $PY_URL -O $PY_TARBALL && tar xf $PY_TARBALL
+cd $PY_BASENAME && ./configure --prefix=$DOT_PATH && make install
+cd /tmp && rm -rf $PY_TARBALL $PY_BASENAME

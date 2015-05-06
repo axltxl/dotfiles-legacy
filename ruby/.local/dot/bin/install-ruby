@@ -1,0 +1,21 @@
+#!/usr/bin/env zsh
+##################################
+# Install ruby via rvm locally on $DOT_PATH
+##################################
+
+. $ZSH_HOME/lib/printf
+
+RVM_HOME=~/.rvm
+
+printf_install rvm
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+curl -sSL https://get.rvm.io | bash -s stable
+source $RVM_HOME/scripts/rvm
+
+printf_install rubies
+rvm install 1.9.3
+rvm install 2.2.1 --default
+
+printf_install "basic gems"
+gem install bundler
+
