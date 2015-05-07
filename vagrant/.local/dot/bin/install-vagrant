@@ -19,6 +19,4 @@ wget $VAGRANT_URL -O $VAGRANT_DEB && sudo dpkg -i $VAGRANT_DEB
 rm $VAGRANT_DEB
 
 printf_install VirtualBox
-wget  $VBOX_URL && sudo dpkg -i $VBOX_DEB
-
-sudo apt-get -fy install
+wget  $VBOX_URL && sudo dpkg -i $VBOX_DEB && sudo apt-get -fy install
