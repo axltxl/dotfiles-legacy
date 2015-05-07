@@ -23,9 +23,16 @@ wget $GIT_URL -O $GIT_TARBALL && tar xf $GIT_TARBALL
 rm -f $GIT_TARBALL
 
 #
+# Get dependencies
+#
+printf_install Git dependencies
+sudo apt-get install -y libcurl4-gnutls-dev libexpat1-dev gettext \
+  libz-dev libssl-dev
+
+#
 # Compile it
 #
-printf_install git
+printf_install Compile & install git-scm
 cd $GIT_BASENAME && ./configure --prefix=$DOT_PATH && make install
 
 # Remove everything
