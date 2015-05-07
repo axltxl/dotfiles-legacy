@@ -1,3 +1,3 @@
-alias dotstow='stow -Sd $DOT_HOME'
-alias dotunstow='stow -Dd $DOT_HOME'
+alias dotstow='stow   --verbose=1 -R -d $DOT_HOME -t $HOME'
+alias dotunstow='stow --verbose=1 -D -d $DOT_HOME -t $HOME'
 alias dotcd='cd $DOT_HOME'
