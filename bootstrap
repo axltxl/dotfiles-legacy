@@ -15,6 +15,9 @@ BOOTSTRAP_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 # Delete conflicting files (needs better implementation)
 rm -rf ~/.profile $DOT_HOME $DOT_PATH $ZSH $ZSH_HOME
 
+# DOT_PATH is created before used
+mkdir -p $DOT_PATH/{lib,bin,libexec,include,share}
+
 # Set up formal $DOT_HOME to be used
 # by scripts
 ln -sv $BOOTSTRAP_DIR $DOT_HOME
