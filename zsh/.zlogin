@@ -1,0 +1,1 @@
+source $ZSH_HOME/lib/splash
