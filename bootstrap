@@ -8,15 +8,9 @@ BOOTSTRAP_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 # Essential environment variables
 . $BOOTSTRAP_DIR/zsh/.zshenv
-#OMZSH_HOME=~/.oh-my-zsh
-#ZSH_HOME=~/.zsh
-#DOT_HOME=~/.dotfiles
 
 # Printing and format options
 . $BOOTSTRAP_DIR/zsh/.zsh/lib/printf
-
-
-echo $DOT_HOME $DOT_PATH $ZSH $ZSH_HOME
 
 # Delete conflicting files (needs better implementation)
 rm -rf ~/.profile $DOT_HOME $DOT_PATH $ZSH $ZSH_HOME
