@@ -3,17 +3,23 @@
 # Install initial environment
 ##################################
 
-# Essential variables
-OMZSH_HOME=~/.oh-my-zsh
-ZSH_HOME=~/.zsh
+# Absolute path to this script
 BOOTSTRAP_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-DOT_HOME=~/.dotfiles
+
+# Essential environment variables
+. $BOOTSTRAP_DIR/zsh/.zshenv
+#OMZSH_HOME=~/.oh-my-zsh
+#ZSH_HOME=~/.zsh
+#DOT_HOME=~/.dotfiles
 
 # Printing and format options
 . $BOOTSTRAP_DIR/zsh/.zsh/lib/printf
 
-# Delete conflicting files
-rm -rf ~/.profile ~/.zsh* ~/.local/dot
+
+echo $DOT_HOME $DOT_PATH $ZSH $ZSH_HOME
+
+# Delete conflicting files (needs better implementation)
+rm -rf ~/.profile $DOT_HOME $DOT_PATH $ZSH $ZSH_HOME
 
 # Set up formal $DOT_HOME to be used
 # by scripts
@@ -25,8 +31,7 @@ sudo apt-get install -y stow zsh git build-essential
 
 # Install oh-my-zsh
 printf_install "on-my-zsh"
-rm -rf $OMZSH_HOME
-git clone https://github.com/robbyrussell/oh-my-zsh.git $OMZSH_HOME
+git clone https://github.com/robbyrussell/oh-my-zsh.git $ZSH
 
 # Set new shell
 printf_setup "chsh -s zsh"
