@@ -13,7 +13,7 @@ DOT_HOME=~/.dotfiles
 . $BOOTSTRAP_DIR/zsh/.zsh/lib/printf
 
 # Delete conflicting files
-rm ~/.profile
+rm -rf ~/.profile ~/.zsh* ~/.local/dot
 
 # Set up formal $DOT_HOME to be used
 # by scripts
