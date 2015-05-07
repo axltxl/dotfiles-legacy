@@ -1,11 +1,23 @@
 #!/bin/bash
+##################################
+# Install initial environment
+##################################
 
-#
+# Essential variables
 OMZSH_HOME=~/.oh-my-zsh
 ZSH_HOME=~/.zsh
+BOOTSTRAP_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+DOT_HOME=~/.dotfiles
 
 # Printing and format options
-. $ZSH_HOME/lib/printf
+. $BOOTSTRAP_DIR/zsh/.zsh/lib/printf
+
+# Delete conflicting files
+rm ~/.profile
+
+# Set up formal $DOT_HOME to be used
+# by scripts
+ln -sv $BOOTSTRAP_DIR $DOT_HOME
 
 # Install stow
 printf_install "essential packages"
@@ -18,5 +30,7 @@ git clone https://github.com/robbyrussell/oh-my-zsh.git $OMZSH_HOME
 
 # Set new shell
 printf_setup "chsh -s zsh"
-stow zsh && chsh -s $(which zsh)
+stow -S -t $HOME -d $BOOTSTRAP_DIR zsh && chsh -s $(which zsh)
+
+# Finished
 printf_warn "Your dotfiles environment has been properly set up. You will need to re-login for the changes to be applied."
