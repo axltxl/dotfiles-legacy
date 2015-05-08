@@ -3,7 +3,8 @@
 # Install git-cola locally on $DOT_PATH
 ##################################
 
-. $ZSH_HOME/lib/printf
+autoload dot_printf_install
+autoload dot_printf_clean
 
 COLA_VERSION=2.1.2
 COLA_URL=https://github.com/git-cola/git-cola/archive/v$COLA_VERSION.tar.gz
@@ -22,25 +23,26 @@ SIP_URL=http://sourceforge.net/projects/pyqt/files/sip/sip-$SIP_VERSION/$SIP_TAR
 
 cd /tmp
 
-printf_install "Python-SIP"
+dot_printf_install "Python-SIP"
 wget $SIP_URL -O $SIP_TARBALL && tar xf $SIP_TARBALL
 cd $SIP_BASENAME && python3 configure.py && make install
 
-printf_install "qt4-devel"
+dot_printf_install "qt4-devel"
 sudo apt-get install -y libqt4-dev qt4-qmake
 
 cd /tmp
 
-printf_install "PyQt4"
+dot_printf_install "PyQt4"
 wget $PYQT4_URL -O $PYQT4_TARBALL && tar xf $PYQT4_TARBALL
 cd $PYQT4_BASENAME && python3 configure-ng.py && make install
 
 cd /tmp
 
-printf_install git-cola
+dot_printf_install git-cola
 wget $COLA_URL -O $COLA_TARBALL && tar xf $COLA_TARBALL
 cd $COLA_BASENAME && pip3 install .
 
 # Remove everything
+dot_printf_clean wiping everything
 cd /tmp && rm -rf $COLA_BASENAME $COLA_TARBALL $PYQT4_TARBALL \
   $PYQT4_BASENAME $SIP_TARBALL $SIP_BASENAME

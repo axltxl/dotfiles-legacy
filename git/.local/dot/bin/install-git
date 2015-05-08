@@ -3,7 +3,9 @@
 # Install git locally on $DOT_PATH
 ##################################
 
-. $ZSH_HOME/lib/printf
+autoload dot_printf_install
+autoload dot_printf_run
+autoload dot_printf_clean
 
 #
 # Essential variables
@@ -18,25 +20,25 @@ cd /tmp
 #
 # Get the actual git source tarball
 #
-printf_run "Getting git tarball"
+dot_printf_run "Getting git tarball"
 wget $GIT_URL -O $GIT_TARBALL && tar xf $GIT_TARBALL
 rm -f $GIT_TARBALL
 
 #
 # Get dependencies
 #
-printf_install "Git dependencies"
+dot_printf_install "Git dependencies"
 sudo apt-get update && sudo apt-get install -y libcurl4-gnutls-dev \
   libexpat1-dev gettext libz-dev libssl-dev
 
 #
 # Compile it
 #
-printf_install "Compile & install git-scm"
+dot_printf_install "Compile & install git-scm"
 cd $GIT_BASENAME && ./configure --prefix=$DOT_PATH && make install
 
 #
 # Remove everything
 #
-printf_clean everything
+dot_printf_clean everything
 cd /tmp && rm -rf $GIT_BASENAME
