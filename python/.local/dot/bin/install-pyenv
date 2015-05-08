@@ -1,0 +1,20 @@
+#!/usr/bin/env zsh
+##################################
+# Install pyenv via pyenv-installer locally on $DOT_PATH
+##################################
+
+autoload dot_printf_install
+
+PYENV_URL=https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer
+
+dot_printf_install pyenv
+curl -L $PYENV_URL | bash
+
+#
+#
+#
+dot_printf_install pythons
+pyenv install 3.1.5
+pyenv install 3.2.6
+pyenv install 3.3.6
+pyenv install 3.4.3
