@@ -1,1 +1,1 @@
-source $ZSH_HOME/lib/splash
+autoload dot_splash; dot_splash

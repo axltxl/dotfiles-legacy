@@ -49,5 +49,8 @@ plugins=(git dotools path reload history printf)
 # Load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
+#
+fpath=($ZSH_HOME/lib $fpath) && export FPATH
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8

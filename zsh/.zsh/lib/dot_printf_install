@@ -1,0 +1,2 @@
+autoload dot_printf
+dot_printf "[+] Installing $1 ..." "\e[1m\e[95m"
