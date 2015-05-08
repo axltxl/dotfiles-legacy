@@ -9,9 +9,6 @@ BOOTSTRAP_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 # Essential environment variables
 . $BOOTSTRAP_DIR/zsh/.zshenv
 
-# Printing and format options
-. $BOOTSTRAP_DIR/zsh/.zsh/lib/printf
-
 # Delete conflicting files (needs better implementation)
 rm -rf ~/.profile $DOT_HOME $DOT_PATH $ZSH $ZSH_HOME
 
@@ -23,16 +20,16 @@ mkdir -p $DOT_PATH/{lib,bin,libexec,include,share}
 ln -sv $BOOTSTRAP_DIR $DOT_HOME
 
 # Install stow
-printf_install "essential packages"
+echo "* Installing essential packages"
 sudo apt-get install -y stow zsh git build-essential
 
 # Install oh-my-zsh
-printf_install "on-my-zsh"
+echo "* Installing on-my-zsh"
 git clone https://github.com/robbyrussell/oh-my-zsh.git $ZSH
 
 # Set new shell
-printf_setup "chsh -s zsh"
+echo "* chsh -s zsh"
 stow -S -t $HOME -d $BOOTSTRAP_DIR zsh && chsh -s $(which zsh)
 
 # Finished
-printf_warn "Your dotfiles environment has been properly set up. You will need to re-login for the changes to be applied."
+echo "Your dotfiles environment has been properly set up. You will need to re-login for the changes to be applied."
