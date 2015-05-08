@@ -4,4 +4,4 @@ OUTPUT_COLOR=$2
 if [ -z $OUTPUT_COLOR ]; then
   OUTPUT_COLOR="\e[96m"
 fi
-printf "* ${OUTPUT_COLOR}$1\e[0m"
+printf "* ${OUTPUT_COLOR}$1\e[0m\n"
