@@ -1,0 +1,2 @@
+autoload dot_printf
+dot_printf "[\$] Running $1 ..."

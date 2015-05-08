@@ -1,0 +1,2 @@
+autoload dot_printf
+dot_printf "[!] Whoops!: $1" "\e[1m\e[31m"

@@ -1,0 +1,2 @@
+autoload dot_printf
+dot_printf "[.] Setting up $1 ..."
