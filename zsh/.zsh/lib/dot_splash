@@ -16,6 +16,20 @@ dot_splash_printf() {
 
 dot_splash_logo_axltxl() {
   dot_splash_printf "\n"
+  dot_splash_printf "                        /\                         \n" "\033[1m\033[38;5;207m"
+  dot_splash_printf "                       /  \                        \n" "\033[1m\033[38;5;207m"
+  dot_splash_printf "                      /    \                       \n" "\033[1m\033[38;5;207m"
+  dot_splash_printf "                     /      \                      \n" "\033[1m\033[38;5;207m"
+  dot_splash_printf "                    /        \                     \n" "\033[1m\033[38;5;207m"
+  dot_splash_printf "                   /__________\                    \n" "\033[1m\033[38;5;207m"
+  dot_splash_printf "                  /\__________/\                   \n" "\033[1m\033[38;5;207m"
+  dot_splash_printf "                 /  \        /  \                  \n" "\033[1m\033[38;5;207m"
+  dot_splash_printf "                /    \      /    \                 \n" "\033[1m\033[38;5;207m"
+  dot_splash_printf "               /      \    /      \                \n" "\033[1m\033[38;5;207m"
+  dot_splash_printf "              /        \  /        \               \n" "\033[1m\033[38;5;207m"
+  dot_splash_printf "             /__________\/__________\              \n" "\033[1m\033[38;5;207m"
+  dot_splash_printf "             \__________/\__________/              \n" "\033[1m\033[38;5;207m"
+  dot_splash_printf "\n\n"
   dot_splash_printf "   (                (     *   )                (   \n" "\033[1m\033[38;5;207m"
   dot_splash_printf "   )\        )   (  )\  \` )  /(   (     )   (  )\  \n" "\033[1m\033[38;5;171m"
   dot_splash_printf "((((_)(   ( /(  ))\((_)  ( )(_)) ))\ ( /(  ))\((_) \n" "\033[1m\033[38;5;135m"
@@ -26,7 +40,7 @@ dot_splash_logo_axltxl() {
 }
 
 dot_splash_display_env() {
-  dot_printf "$1 is at $2\n" "\033[1;37m"
+  dot_printf "$1 is at $2" "\033[1;37m"
 }
 
 dot_splash_env() {
