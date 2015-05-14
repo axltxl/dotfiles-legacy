@@ -17,5 +17,5 @@ rvm install 1.9.3
 rvm install 2.2.1 --default
 
 dot_printf_install "basic gems"
-gem install bundler
+gem install bundler rake
 
