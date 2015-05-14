@@ -1,0 +1,37 @@
+#!/usr/bin/env zsh
+##################################
+# Install git locally on $DOT_PATH
+##################################
+
+autoload dot_printf_install
+autoload dot_printf_run
+autoload dot_printf_clean
+
+#
+# Essential variables
+#
+PACKER_VERSION=0.7.5
+PACKER_BASENAME=packer_${PACKER_VERSION}_linux_amd64
+PACKER_TARBALL=$PACKER_BASENAME.zip
+PACKER_URL=https://dl.bintray.com/mitchellh/packer/$PACKER_TARBALL
+
+cd /tmp
+
+#
+# Get the actual git source tarball
+#
+dot_printf_run "Getting packer tarball"
+wget $PACKER_URL -O $PACKER_TARBALL && unzip $PACKER_TARBALL -d $PACKER_BASENAME
+rm -f $PACKER_TARBALL
+
+#
+# Install packer
+#
+dot_printf_install "Packer ${PACKER_VERSION}"
+cd $PACKER_BASENAME && mv * $DOT_PATH/bin
+
+#
+# Remove everything
+#
+dot_printf_clean everything
+cd /tmp && rm -rf $PACKER_BASENAME
