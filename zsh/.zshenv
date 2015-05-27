@@ -13,6 +13,9 @@ export DOT_PATH=$HOME/.local/dot
 # LD_LIBRARY_PATH is used in preference to any run time or default system linker path.
 export LD_LIBRARY_PATH=$DOT_PATH/lib
 
+# Standard PATH at the user level
+export PATH=$DOT_PATH/bin:$PATH
+
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
@@ -20,6 +23,3 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
-
-# Standard PATH at the user level
-export PATH=$DOT_PATH/bin:$PATH
