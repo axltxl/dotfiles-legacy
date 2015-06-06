@@ -4,6 +4,7 @@
 	],
 	"installed_packages":
 	[
+		"Anaconda",
 		"EditorConfig",
 		"Git",
 		"GitGutter",
