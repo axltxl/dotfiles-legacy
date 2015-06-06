@@ -1,3 +1,12 @@
 {
-  "supported_ruby_versions": ["2.2.1", "2.1.0", "2.0.0", "1.9.3"]
+  "supported_ruby_versions": ["2.2.1", "2.1.0", "2.0.0", "1.9.3"],
+
+  // Should show debug logs
+  "debug_logs": true,
+
+  // Whether should use 'bundle exec' command when debugging file
+  // onlu for non rails debugging
+  "should_use_bundle": false,
+
+  "ruby_binaries": ""
 }
