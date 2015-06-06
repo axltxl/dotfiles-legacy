@@ -1,67 +1,22 @@
 {
-    "color_scheme": "Packages/Monokai Extended/Monokai Extended.tmTheme",
-    "font_size": 9,
-    "ignored_packages":
-    [
-    "Vintage"
-    ],
-    //
-    // User Interface Settings
-    //
-
-    // The theme controls the look of Sublime Text's UI (buttons, tabs, scroll bars, etc)
-    "theme": "SoDaReloaded.sublime-theme",
-
-    // Set to true to turn spell checking on by default
-    "spell_check": false,
-
-    // The number of spaces a tab is considered equal to
-    "tab_size": 2,
-
-    // Set to true to insert spaces when tab is pressed
-    "translate_tabs_to_spaces": true,
-
-    // If translate_tabs_to_spaces is true, use_tab_stops will make tab and
-    // backspace insert/delete up to the next tabstop
-    "use_tab_stops": true,
-
-    // Set to false to disable detection of tabs vs. spaces on load
-    "detect_indentation": true,
-
-    // Calculates indentation automatically when pressing enter
-    "auto_indent": true,
-
-    // Disables horizontal scrolling if enabled.
-    // May be set to true, false, or "auto", where it will be disabled for
-    // source code, and otherwise enabled.
-    "word_wrap": false,
-
-    // Valid values are "smooth", "phase", "blink" and "solid".
-    "caret_style": "phase",
-
-    // Set to "none" to turn off drawing white space, "selection" to draw only the
-    // white space within the selection, and "all" to draw all white space
-    "draw_white_space": "all",
-
-    // Set to true to removing trailing white space on save
-    "trim_trailing_white_space_on_save": true,
-
-    // Encoding used when saving new files, and files opened with an undefined
-    // encoding (e.g., plain ascii files). If a file is opened with a specific
-    // encoding (either detected or given explicitly), this setting will be
-    // ignored, and the file will be saved with the encoding it was opened
-    // with.
-    "default_encoding": "UTF-8",
-
-    // Display file encoding in the status bar
-    "show_encoding": true,
-
-    // Display line endings in the status bar
-    "show_line_endings": true,
-
-    // Set to false to prevent line numbers being drawn in the gutter
-    "line_numbers": true,
-
-    // Set to false to hide the gutter altogether
-    "gutter": true,
+	"auto_indent": true,
+	"caret_style": "phase",
+	"color_scheme": "Packages/Monokai Extended/Monokai Extended.tmTheme",
+	"default_encoding": "UTF-8",
+	"detect_indentation": true,
+	"draw_white_space": "all",
+	"font_size": 9,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"show_encoding": true,
+	"show_line_endings": true,
+	"spell_check": false,
+	"tab_size": 2,
+	"theme": "SoDaReloaded.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
+	"use_tab_stops": true,
+	"word_wrap": false
 }
