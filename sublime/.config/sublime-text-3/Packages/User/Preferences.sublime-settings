@@ -1,9 +1,8 @@
 {
+	//
+	// Text editor settings
+	//
 	"auto_indent": true,
-	"bold_folder_labels": true,
-	"caret_extra_width": 5,
-	"caret_style": "phase",
-	"color_scheme": "Packages/User/SublimeLinter/Flatland Monokai (SL).tmTheme",
 	"default_encoding": "UTF-8",
 	"detect_indentation": true,
 	"draw_white_space": "all",
@@ -17,9 +16,22 @@
 	"show_line_endings": true,
 	"spell_check": false,
 	"tab_size": 2,
-	"theme": "Flatland Dark.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"use_tab_stops": true,
-	"word_wrap": false
+	"word_wrap": false,
+
+	//
+	// Interface settings
+	//
+	"theme": "preap.sublime-theme",
+	"caret_style": "phase",
+	"bold_folder_labels": true,
+	"caret_extra_width": 5,
+	"color_scheme": "Packages/Monokai Extended/Monokai Extended.tmTheme",
+
+	//
+	// Preap-specific settings
+	//
+	"tabs_small": true, // Set tabs size to small
 }
