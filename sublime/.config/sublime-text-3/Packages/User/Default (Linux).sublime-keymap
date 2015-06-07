@@ -1,3 +1,5 @@
 [
-  { "keys": ["º"], "command": "show_panel", "args": {"panel": "console", "toggle": true} },
+  { "keys": ["f1"], "command": "show_panel", "args": {"panel": "console", "toggle": true} },
+  { "keys": ["ctrl+shift+o"], "command": "prompt_open_folder"},
+  { "keys": ["º"], "command": "toggle_side_bar" }
 ]
