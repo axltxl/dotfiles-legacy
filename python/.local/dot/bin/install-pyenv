@@ -18,3 +18,5 @@ pyenv install 2.7.9
 pyenv install 3.2.6
 pyenv install 3.3.6
 pyenv install 3.4.3
+
+pyenv global 3.4.3
