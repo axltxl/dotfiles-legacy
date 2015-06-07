@@ -3,7 +3,7 @@
 	"bold_folder_labels": true,
 	"caret_extra_width": 5,
 	"caret_style": "phase",
-	"color_scheme": "Packages/Theme - Flatland/Flatland Monokai.tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/Flatland Monokai (SL).tmTheme",
 	"default_encoding": "UTF-8",
 	"detect_indentation": true,
 	"draw_white_space": "all",
