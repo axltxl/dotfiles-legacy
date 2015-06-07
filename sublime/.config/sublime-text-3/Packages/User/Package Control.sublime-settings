@@ -17,6 +17,7 @@
 		"SublimeLinter",
 		"SublimeLinter-pep8",
 		"SublimeLinter-pyflakes",
+		"SublimeLinter-pyyaml",
 		"Terminal",
 		"Theme - Flatland",
 		"Theme - Soda",
