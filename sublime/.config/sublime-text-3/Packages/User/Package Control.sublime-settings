@@ -4,7 +4,9 @@
 	],
 	"installed_packages":
 	[
+		"1337 Color Scheme",
 		"Anaconda",
+		"Aurora Color Scheme",
 		"EditorConfig",
 		"Git",
 		"GitGutter",
@@ -15,6 +17,7 @@
 		"Preap",
 		"Rake",
 		"requirementstxt",
+		"Sandor's Glowfish Colour Scheme",
 		"SublimeLinter",
 		"SublimeLinter-pep8",
 		"SublimeLinter-pyflakes",
