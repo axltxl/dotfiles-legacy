@@ -19,6 +19,7 @@
 		"requirementstxt",
 		"Sandor's Glowfish Colour Scheme",
 		"SublimeLinter",
+		"SublimeLinter-contrib-ruby-lint",
 		"SublimeLinter-pep8",
 		"SublimeLinter-pyflakes",
 		"SublimeLinter-pyyaml",
