@@ -3,5 +3,6 @@ packages: [
   "term2",
   "merge-conflicts",
   "git-log",
-  "git-history"
+  "git-history",
+  "browser-plus"
 ]
