@@ -3,6 +3,19 @@
     userId: "58cfe192-f12a-5a1a-1585-b5f0d30be2c7"
   welcome:
     showOnStartup: false
-  core: {}
+  core:
+    autoHideMenuBar: true
+    themes: [
+      "one-dark-ui"
+      "atom-dark-syntax"
+    ]
   editor:
-    fontSize: 12
+    fontSize: 13
+    invisibles: {}
+    showInvisibles: true
+    showIndentGuide: true
+  autosave:
+    enabled: true
+  term2: {}
+  "one-dark-ui": {}
+  "git-log": {}
