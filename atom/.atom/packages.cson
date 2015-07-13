@@ -4,5 +4,6 @@ packages: [
   "merge-conflicts",
   "git-log",
   "git-history",
-  "browser-plus"
+  "browser-plus",
+  "atom-jinja2"
 ]
