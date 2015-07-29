@@ -5,5 +5,7 @@ packages: [
   "git-log",
   "git-history",
   "browser-plus",
-  "atom-jinja2"
+  "atom-jinja2",
+  "rst-preview",
+  "python-nosetests"
 ]
