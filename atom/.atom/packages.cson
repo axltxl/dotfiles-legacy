@@ -1,11 +1,14 @@
 packages: [
   "package-sync",
   "term2",
+  "linter",
   "merge-conflicts",
   "git-log",
   "git-history",
   "browser-plus",
   "atom-jinja2",
   "rst-preview",
-  "python-nosetests"
+  "python-nosetests",
+  "autocomplete-python",
+  "linter-pylint"
 ]
