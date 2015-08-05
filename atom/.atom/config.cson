@@ -10,7 +10,7 @@
       "atom-dark-syntax"
     ]
   editor:
-    fontSize: 13
+    fontSize: 12
     invisibles: {}
     showInvisibles: true
     showIndentGuide: true
