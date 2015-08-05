@@ -9,6 +9,9 @@
       "one-dark-ui"
       "atom-dark-syntax"
     ]
+    disabledPackages: [
+      "linter-pylint"
+    ]
   editor:
     fontSize: 12
     invisibles: {}
@@ -19,3 +22,8 @@
   term2: {}
   "one-dark-ui": {}
   "git-log": {}
+  "python-jedi": {}
+  "linter-pylint": {}
+  "linter-pep8": {}
+  linter:
+    showErrorPanel: false
