@@ -25,5 +25,6 @@
   "python-jedi": {}
   "linter-pylint": {}
   "linter-pep8": {}
-  linter:
-    showErrorPanel: false
+  linter: {}
+  "autocomplete-plus":
+    backspaceTriggersAutocomplete: true
