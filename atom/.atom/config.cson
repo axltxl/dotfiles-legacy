@@ -6,8 +6,11 @@
   core:
     autoHideMenuBar: true
     themes: [
-      "one-dark-ui"
-      "atom-dark-syntax"
+      "nucleus-dark-ui"
+      "seti-syntax"
+    ]
+    disabledPackages: [
+      "file-icons"
     ]
   editor:
     fontSize: 12
