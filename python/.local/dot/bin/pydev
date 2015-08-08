@@ -1,9 +1,0 @@
-#!/usr/bin/env zsh
-##################################
-# Install python tools for devs
-##################################
-
-autoload dot_printf_install
-
-dot_printf_install "Python tools for devs"
-pip3 install --upgrade jedi pylint pep8 ipdb pudb
