@@ -1,20 +1,43 @@
 packages: [
+  #
+  # Essentials
+  #
   "package-sync",
-  "file-icons",
+  "autocomplete-plus",
+  "linter",
+  "script",
+
+  #
+  # Kool stuff
+  #
+  "term2",
+  "rst-preview",
+  "browser-plus",
+
+  #
+  # Look and feel
+  #
   "nucleus-dark-ui",
   "seti-syntax",
-  "autocomplete-plus",
-  "term2",
-  "linter",
+  "file-icons",
+
+  #
+  # Misc
+  #
+  "atom-jinja2",
+
+  #
+  # Git
+  #
   "merge-conflicts",
   "git-log",
   "git-history",
   "git-control",
-  "browser-plus",
-  "atom-jinja2",
-  "rst-preview",
+
+  #
+  # Python
+  #
   "python-nosetests",
   "autocomplete-python",
   "linter-pylint",
-  "script"
 ]
