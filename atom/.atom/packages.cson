@@ -1,14 +1,17 @@
 packages: [
   "package-sync",
+  "autocomplete-plus",
   "term2",
   "linter",
   "merge-conflicts",
   "git-log",
   "git-history",
+  "git-control",
   "browser-plus",
   "atom-jinja2",
   "rst-preview",
   "python-nosetests",
   "autocomplete-python",
-  "linter-pylint"
+  "linter-pylint",
+  "script"
 ]

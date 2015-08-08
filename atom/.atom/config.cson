@@ -22,7 +22,13 @@
   "python-jedi": {}
   "linter-pylint": {}
   "linter-pep8": {}
+#<<<<<<< HEAD
   linter:
     showErrorPanel: false
   "autocomplete-python":
     useSnippets: "all"
+#=======
+#  linter: {}
+  "autocomplete-plus":
+    backspaceTriggersAutocomplete: true
+#>>>>>>> 9cf11113553bcd1756ae47339d4c4fd73e1f5886
