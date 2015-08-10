@@ -1,17 +1,28 @@
 packages: [
+  #
+  # Basics
+  #
   "package-sync",
   "autocomplete-plus",
   "term2",
   "linter",
-  "merge-conflicts",
+  "file-icons"
+  "script",
+  "rst-preview",
+
+  #
+  # Git
+  #
   "git-log",
   "git-history",
   "git-control",
-  "browser-plus",
+  "merge-conflicts",
   "atom-jinja2",
-  "rst-preview",
+
+  #
+  # Python
+  #
   "python-nosetests",
   "autocomplete-python",
   "linter-pylint",
-  "script"
 ]
