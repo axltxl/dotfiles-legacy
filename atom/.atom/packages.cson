@@ -4,11 +4,30 @@ packages: [
   #
   "package-sync",
   "autocomplete-plus",
-  "term2",
   "linter",
   "file-icons"
   "script",
   "rst-preview",
+
+
+  #
+  # Kool stuff
+  #
+  "term2",
+  "rst-preview",
+  "browser-plus",
+
+  #
+  # Look and feel
+  #
+  "nucleus-dark-ui",
+  "seti-syntax",
+  "file-icons",
+
+  #
+  # Misc
+  #
+  "atom-jinja2",
 
   #
   # Git
@@ -17,7 +36,7 @@ packages: [
   "git-history",
   "git-control",
   "merge-conflicts",
-  "atom-jinja2",
+
 
   #
   # Python

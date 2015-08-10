@@ -6,11 +6,8 @@
   core:
     autoHideMenuBar: true
     themes: [
-      "one-dark-ui"
-      "atom-dark-syntax"
-    ]
-    disabledPackages: [
-      "linter-pylint"
+      "nucleus-dark-ui"
+      "seti-syntax"
     ]
   editor:
     fontSize: 12
@@ -25,6 +22,9 @@
   "python-jedi": {}
   "linter-pylint": {}
   "linter-pep8": {}
-  linter: {}
+  linter:
+    showErrorPanel: false
+  "autocomplete-python":
+    useSnippets: "all"
   "autocomplete-plus":
     backspaceTriggersAutocomplete: true
