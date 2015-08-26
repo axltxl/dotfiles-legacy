@@ -47,6 +47,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-surround'
+Plugin 'airblade/vim-gitgutter'
 
 " Look and feel
 Plugin 'tomasr/molokai'
