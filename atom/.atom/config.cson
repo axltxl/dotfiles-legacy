@@ -10,10 +10,10 @@
       "seti-syntax"
     ]
   editor:
-    fontSize: 12
     invisibles: {}
     showInvisibles: true
     showIndentGuide: true
+    fontSize: 12
   autosave:
     enabled: true
   term2: {}
