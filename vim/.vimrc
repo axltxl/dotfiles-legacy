@@ -1,15 +1,39 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+" Enable 256 colors
+set t_Co=256
+
+" Show partial commands in the last line of the screen
+set showcmd
+  
+"  Highlight searches (use <C-L> to temporarily turn off highlighting; see 
+"  the mapping of <C-L> below)
+set hlsearch
+
+" Display line numbers on the left
+set number
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+
+"
+" Habit breaking
+"
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
+ino <Up> <NOP>
+ino <Down> <NOP>
+ino <Left> <NOP>
+ino <Right> <NOP>
+
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
 
 "
 " Plugins
@@ -17,12 +41,16 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Must haves
 Plugin 'scrooloose/nerdtree'
+Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-fugitive'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/syntastic'
 
+" Look and feel
+Plugin 'tomasr/molokai'
 
 " Python
 Plugin 'davidhalter/jedi-vim'
-
-
 
 
 " All of your Plugins must be added before the following line
@@ -39,13 +67,43 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-"
+
 
 " Plugins configuration
 
 " NERDtree
-autocmd vimenter * NERDTree
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+"autocmd vimenter * NERDTree
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+map <C-n> :NERDTreeToggle<CR>
+
+
+""""""""""""""""""""""""""
+" airline
+""""""""""""""""""""""""""
+set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme = 'badwolf'
+
+
+"""""""""""""""""""""""""""
+" Look and feel
+"""""""""""""""""""""""""""
+syntax enable
+set background=dark
+colorscheme molokai
+
+"""""""""""""""""""""""""""
+" Syntastic settings
+"""""""""""""""""""""""""""
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 
