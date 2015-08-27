@@ -1,26 +1,38 @@
+scriptencoding utf-8
+set encoding=utf-8
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" Enable 256 colors
-set t_Co=256
 
-" Show partial commands in the last line of the screen
-set showcmd
-  
-"  Highlight searches (use <C-L> to temporarily turn off highlighting; see 
-"  the mapping of <C-L> below)
-set hlsearch
+"""""""""""""""""""""""""""
+" Essentials
+"""""""""""""""""""""""""""
 
-" Display line numbers on the left
-set number
+set ttyfast        " Use a fast terminal connection
+set t_Co=256       " Enable 256 colors
+set showcmd        " Show partial commands in the last line of the screen
+set hlsearch       " Highlight searches (use <C-L> to temporarily turn off highlighting; see the mapping of <C-L> below)
+set number         " Display line numbers on the left
+set nowrap         " No wordwrap, please!
+set colorcolumn=80 " Set up a line length marker
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-"
+
+"""""""""""""""""""""""""""
+" Tabs and spaces
+"""""""""""""""""""""""""""
+filetype plugin indent on
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+
+"""""""""""""""""""""""""""
 " Habit breaking
-"
+"""""""""""""""""""""""""""
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
@@ -35,9 +47,10 @@ ino <Right> <NOP>
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-"
+
+"""""""""""""""""""""""""""
 " Plugins
-"
+"""""""""""""""""""""""""""
 
 " Must haves
 Plugin 'scrooloose/nerdtree'
@@ -48,6 +61,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-surround'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'majutsushi/tagbar'
+Plugin 'Raimondi/delimitMate'
 
 " Look and feel
 Plugin 'tomasr/molokai'
@@ -79,7 +94,7 @@ filetype plugin indent on    " required
 "autocmd StdinReadPre * let s:std_in=1
 "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-map <C-q> :NERDTreeToggle<CR>
+map <F3> :NERDTreeToggle<CR>
 
 
 """"""""""""""""""""""""""
@@ -106,7 +121,21 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 1 
 let g:syntastic_check_on_wq = 0
 
 
+"""""""""""""""""""""""""""
+" Settings for Tagbar
+"""""""""""""""""""""""""""
+nmap <F8> :TagbarToggle<CR>
+
+"""""""""""""""""""""""""""
+" Whitespace and tabs
+"""""""""""""""""""""""""""
+"set list lcs=trail:·,tab:»·l
+
+"""""""""""""""""""""""""""
+" Autocompletion stuff
+"""""""""""""""""""""""""""
+let delimitMate_expand_cr = 1
