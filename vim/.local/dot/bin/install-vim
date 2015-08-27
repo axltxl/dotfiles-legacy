@@ -7,11 +7,31 @@ autoload dot_printf_install
 autoload dot_printf_run
 autoload dot_printf_clean
 
+VIM_GIT=https://github.com/vim/vim.git
+VIM_SRC=~/Projects/vim
+VIM_OPTS=--prefix=$DOT_PATH
+
+VUNDLE_GIT=https://github.com/VundleVim/Vundle.vim.git
+VUNDLE_SRC=~/.vim/bundle/Vundle.vim
+
 dot_printf_install vim
-sudo apt-get install -y vim
+
+if [ ! -d $VIM_SRC ]; then
+    git clone $VIM_GIT $VIM_SRC
+else
+    git pull $VIM_SRC
+fi
+
+cd $VIM_SRC && ./configure $VIM_OPTS && make distclean && make install
 
 dot_printf_install Vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+if [ ! -d $VUNDLE_SRC ]; then
+    git clone $VUNDLE_GIT $VUNDLE_SRC
+else
+    git pull $VUNDLE_SRC
+fi
 
 dot_printf_install "Vundle plugins"
 vim +PluginInstall +qall
