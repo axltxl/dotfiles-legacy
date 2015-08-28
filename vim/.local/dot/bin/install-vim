@@ -19,18 +19,17 @@ dot_printf_install vim
 if [ ! -d $VIM_SRC ]; then
     git clone $VIM_GIT $VIM_SRC
 else
-    git pull $VIM_SRC
+    git -C $VIM_SRC pull
 fi
 
 cd $VIM_SRC && ./configure $VIM_OPTS && make distclean && make install
 
 dot_printf_install Vundle
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 if [ ! -d $VUNDLE_SRC ]; then
     git clone $VUNDLE_GIT $VUNDLE_SRC
 else
-    git pull $VUNDLE_SRC
+    git -C $VUNDLE_SRC pull 
 fi
 
 dot_printf_install "Vundle plugins"
