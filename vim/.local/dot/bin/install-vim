@@ -7,30 +7,38 @@ autoload dot_printf_install
 autoload dot_printf_run
 autoload dot_printf_clean
 
-VIM_GIT=https://github.com/vim/vim.git
-VIM_SRC=~/Projects/vim
-VIM_OPTS=(--prefix=$DOT_PATH --enable-pythoninterp=yes --enable-python3interp=yes --enable-rubyinterp=yes)
+py3_config=$(pyenv prefix 3.4.3)/lib/python3.4/config-3.4m
 
-VUNDLE_GIT=https://github.com/VundleVim/Vundle.vim.git
-VUNDLE_SRC=~/.vim/bundle/Vundle.vim
+vim_git=https://github.com/vim/vim.git
+vim_src=~/Projects/vim
+vim_opts=(\
+          --prefix=$DOT_PATH \
+          --enable-python3interp=yes \
+          --with-python3-config-dir=$py3_config \
+          --enable-rubyinterp=yes \
+          --enable-cscope \
+          )
+
+vundle_git=https://github.com/VundleVim/Vundle.vim.git
+vundle_src=~/.vim/bundle/Vundle.vim
 
 dot_printf_install vim
 
-if [ ! -d $VIM_SRC ]; then
-    git clone $VIM_GIT $VIM_SRC
+if [ ! -d $vim_src ]; then
+    git clone $vim_git $vim_src
 else
-    git -C $VIM_SRC pull
+    git -C $vim_src pull
 fi
 
-cd $VIM_SRC && make distclean && ./configure "${VIM_OPTS[@]}" && make install
+cd $vim_src && make distclean && ./configure "${vim_opts[@]}" && make install
 
 dot_printf_install Vundle
 
-if [ ! -d $VUNDLE_SRC ]; then
-    git clone $VUNDLE_GIT $VUNDLE_SRC
+if [ ! -d $vundle_src ]; then
+    git clone $vundle_git $vundle_src
 else
-    git -C $VUNDLE_SRC pull 
+    git -C $vundle_src pull 
 fi
 
-dot_printf_install "Vundle plugins"
+dot_printf_install Vundle plugins"
 vim +PluginInstall +qall
