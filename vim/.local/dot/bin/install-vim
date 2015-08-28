@@ -7,8 +7,11 @@ autoload dot_printf_install
 autoload dot_printf_run
 autoload dot_printf_clean
 
+# Basic stuff needed to have ruby and python support
 py3_config=$(pyenv prefix 3.4.3)/lib/python3.4/config-3.4m
+ruby_home=~/.rvm/rubies/ruby-1.9.3-p551/bin/ruby
 
+# The actual variables for vim compilation
 vim_git=https://github.com/vim/vim.git
 vim_src=~/Projects/vim
 vim_opts=(\
@@ -16,24 +19,33 @@ vim_opts=(\
           --enable-python3interp=yes \
           --with-python3-config-dir=$py3_config \
           --enable-rubyinterp=yes \
+          --with-ruby-command=$ruby_home \
+          --with-features=huge \
           --enable-cscope \
           )
 
+# Vundle-related variables
 vundle_git=https://github.com/VundleVim/Vundle.vim.git
 vundle_src=~/.vim/bundle/Vundle.vim
 
 dot_printf_install vim
 
+# First of all, we need some exuberant ctags
+sudo apt-get install -y exuberant-ctags
+
+# Now, we do the thing
 if [ ! -d $vim_src ]; then
     git clone $vim_git $vim_src
 else
     git -C $vim_src pull
 fi
 
+# Compile and install vim
 cd $vim_src && make distclean && ./configure "${vim_opts[@]}" && make install
 
 dot_printf_install Vundle
 
+# Set up Vundle and install plugins
 if [ ! -d $vundle_src ]; then
     git clone $vundle_git $vundle_src
 else
