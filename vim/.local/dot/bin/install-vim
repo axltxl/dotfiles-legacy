@@ -40,5 +40,5 @@ else
     git -C $vundle_src pull 
 fi
 
-dot_printf_install Vundle plugins"
+dot_printf_install "Vundle plugins"
 vim +PluginInstall +qall
