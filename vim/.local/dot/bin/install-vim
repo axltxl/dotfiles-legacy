@@ -9,7 +9,7 @@ autoload dot_printf_clean
 
 VIM_GIT=https://github.com/vim/vim.git
 VIM_SRC=~/Projects/vim
-VIM_OPTS=--prefix=$DOT_PATH
+VIM_OPTS=(--prefix=$DOT_PATH --enable-pythoninterp=yes --enable-python3interp=yes --enable-rubyinterp=yes)
 
 VUNDLE_GIT=https://github.com/VundleVim/Vundle.vim.git
 VUNDLE_SRC=~/.vim/bundle/Vundle.vim
@@ -22,7 +22,7 @@ else
     git -C $VIM_SRC pull
 fi
 
-cd $VIM_SRC && ./configure $VIM_OPTS && make distclean && make install
+cd $VIM_SRC && make distclean && ./configure "${VIM_OPTS[@]}" && make install
 
 dot_printf_install Vundle
 

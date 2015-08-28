@@ -138,4 +138,4 @@ nmap <F8> :TagbarToggle<CR>
 """""""""""""""""""""""""""
 " Autocompletion stuff
 """""""""""""""""""""""""""
-let delimitMate_expand_cr = 1
+"let delimitMate_expand_cr = 1
