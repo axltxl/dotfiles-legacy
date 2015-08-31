@@ -24,11 +24,6 @@ let g:syntastic_check_on_wq = 0
 """"""""""""""""""""
 nmap <F8> :TagbarToggle<CR>
 
-""""""""""""""""""
-" Whitespace and tabs
-""""""""""""""""""""
-"set list lcs=trail:·,tab:»·l
-
 """""""""""""""""""
 " Autocompletion stuff
 """""""""""""""""""
