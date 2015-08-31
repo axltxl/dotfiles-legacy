@@ -30,7 +30,7 @@ nnoremap <C-k>  <C-w>k
 nnoremap <C-l>  <C-w>l
 
 " Map leader key
-let mapleader = "<"  "Let us try this for nowt
+let mapleader = "<"  "Let us try this for now
 
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
