@@ -4,8 +4,8 @@
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = 'badwolf'
-         
-         
+
+
 """"""""""""""""""
 " Syntastic settings
 """"""""""""""""""""
@@ -41,4 +41,7 @@ nmap <F8> :TagbarToggle<CR>
 
 "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primar
 map <F3> :NERDTreeToggle<CR>
- 
+
+
+" CtrlP
+let g:ctrlp_show_hidden = 1 " Show hidden files

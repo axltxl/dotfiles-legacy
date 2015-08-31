@@ -11,10 +11,13 @@ ino <Left> <NOP>
 ino <Right> <NOP>
 
 " Quicksave
-nnoremap <C-z> :w<CR>
+nnoremap <leader>s :w<CR>
 
 " Duplicate line
-nnoremap <C-D> yyp
+nnoremap <leader>d yyp
+
+" Reload .vimrc at will
+nnoremap <leader>t :source ~/.vimrc<CR>
 
 " Reselect visual block after indent/outdent
 vnoremap < <gv
@@ -25,4 +28,14 @@ nnoremap <C-h>  <C-w>h
 nnoremap <C-j>  <C-w>j
 nnoremap <C-k>  <C-w>k
 nnoremap <C-l>  <C-w>l
+
+" Map leader key
+let mapleader = "<"  "Let us try this for now
+
+" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
+
+" Swap line up/down
+nnoremap <leader>j ddjP
+nnoremap <leader>k ddkP
 

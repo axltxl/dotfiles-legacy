@@ -37,3 +37,6 @@ set noswapfile
 " Automatically removing all trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 
+" Use the same symbols as TextMate for tabstops and EOLs
+set list " whitespace is shown by default
+set listchars=tab:▸\ ,eol:¬,trail:·,space:·
