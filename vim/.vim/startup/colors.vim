@@ -2,7 +2,7 @@
 " Look and feel
 """""""""""""""""""
 
-syntax enable
+syntax on
 set background=dark
 colorscheme molokai
 

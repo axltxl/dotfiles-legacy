@@ -20,7 +20,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-surround'
 Plugin 'airblade/vim-gitgutter'
@@ -31,8 +31,8 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'tomasr/molokai'
 
 " Python
-Plugin 'davidhalter/jedi-vim'
-
+"Plugin 'davidhalter/jedi-vim'
+Plugin 'klen/python-mode'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
