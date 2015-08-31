@@ -26,6 +26,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'majutsushi/tagbar'
 Plugin 'Raimondi/delimitMate'
+Plugin 'easymotion/vim-easymotion'
 
 " Look and feel
 Plugin 'tomasr/molokai'
