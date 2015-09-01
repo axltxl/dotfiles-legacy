@@ -25,8 +25,8 @@ let mapleader = ","
 map <leader>p :set list!<CR>
 
 " Swap line up/down
-nnoremap <leader>j ddjP
-nnoremap <leader>k ddkP
+nnoremap <leader>J ddjP
+nnoremap <leader>K ddkP
 
 " Quicksave
 nnoremap <leader>s :w<CR>
@@ -42,3 +42,7 @@ map <leader>h :wincmd h<CR>
 map <leader>j :wincmd j<CR>
 map <leader>k :wincmd k<CR>
 map <leader>l :wincmd l<CR>
+
+" Reload file
+nnoremap <F5> :e!<CR>
+
