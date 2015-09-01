@@ -5,10 +5,10 @@ nnoremap <Up> <NOP>
 nnoremap <Down> <NOP>
 nnoremap <Left> <NOP>
 nnoremap <Right> <NOP>
-ino <Up> <NOP>
-ino <Down> <NOP>
-ino <Left> <NOP>
-ino <Right> <NOP>
+inoremap <Up> <NOP>
+inoremap <Down> <NOP>
+inoremap <Left> <NOP>
+inoremap <Right> <NOP>
 
 " Reselect visual block after indent/outdent
 vnoremap < <gv
@@ -22,7 +22,7 @@ let mapleader = "<"
 " ============================================================================
 
 " Shortcut to rapidly toggle `set list`
-map <leader>l :set list!<CR>
+map <leader>p :set list!<CR>
 
 " Swap line up/down
 nnoremap <leader>j ddjP
