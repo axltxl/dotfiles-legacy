@@ -10,6 +10,7 @@ let g:airline_theme = 'dark'
 " Settings for Tagbar
 """"""""""""""""""""
 nmap <F8> :TagbarToggle<CR>
+let g:tagbar_vertical = 20
 
 """""""""""""""""""
 " Autocompletion stuff
