@@ -10,29 +10,19 @@ ino <Down> <NOP>
 ino <Left> <NOP>
 ino <Right> <NOP>
 
-
-
-
 " Reselect visual block after indent/outdent
 vnoremap < <gv
 vnoremap > >gv
 
-" Easy splitted window navigation
-nnoremap <C-h>  <C-w>h
-nnoremap <C-j>  <C-w>j
-nnoremap <C-k>  <C-w>k
-nnoremap <C-l>  <C-w>l
-
 " Map leader key
 let mapleader = "<"
-
 
 " ============================================================================
 " ============ From this point, you can use you leader keys ==================
 " ============================================================================
 
 " Shortcut to rapidly toggle `set list`
-nmap <leader>l :set list!<CR>
+map <leader>l :set list!<CR>
 
 " Swap line up/down
 nnoremap <leader>j ddjP
@@ -46,4 +36,9 @@ nnoremap <leader>d yyp
 
 " Reload .vimrc at will
 nnoremap <leader>t :source ~/.vimrc<CR>
-
+"
+" Easy splitted window navigation
+map <leader>h :wincmd h<CR>
+map <leader>j :wincmd j<CR>
+map <leader>k :wincmd k<CR>
+map <leader>l :wincmd l<CR>
