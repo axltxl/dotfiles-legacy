@@ -14,6 +14,8 @@ ruby_home=~/.rvm/rubies/ruby-1.9.3-p551/bin/ruby
 # The actual variables for vim compilation
 vim_git=https://github.com/vim/vim.git
 vim_src=~/Projects/vim
+vim_deps=(vim-gtk)
+vim_pkgs=(exuberant-ctags)
 vim_opts=(\
           --prefix=$DOT_PATH \
           --enable-python3interp=yes \
@@ -21,6 +23,7 @@ vim_opts=(\
           --enable-rubyinterp=yes \
           --with-ruby-command=$ruby_home \
           --with-features=huge \
+          --enable-gui=gtk2 \
           --enable-cscope \
           )
 
@@ -28,12 +31,16 @@ vim_opts=(\
 vundle_git=https://github.com/VundleVim/Vundle.vim.git
 vundle_src=~/.vim/bundle/Vundle.vim
 
-dot_printf_install vim
+dot_printf_install "vim dependencies"
 
-# First of all, we need some exuberant ctags
-sudo apt-get install -y exuberant-ctags
+# First of all, we need some dependencies
+sudo apt-get install -y "${vim_pkgs[@]}"
+sudo apt-get build-dep -y "${vim_deps[@]}"
 
 # Now, we do the thing
+dot_printf_install "vim"
+
+# Clone/pull the repo
 if [ ! -d $vim_src ]; then
     git clone $vim_git $vim_src
 else
@@ -49,7 +56,7 @@ dot_printf_install Vundle
 if [ ! -d $vundle_src ]; then
     git clone $vundle_git $vundle_src
 else
-    git -C $vundle_src pull 
+    git -C $vundle_src pull
 fi
 
 dot_printf_install "Vundle plugins"
