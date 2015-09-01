@@ -57,3 +57,5 @@ source ~/.vim/startup/colors.vim
 " Plugins configuration
 source ~/.vim/startup/plugins.vim
 
+" auto-commands
+source ~/.vim/startup/autocmds.vim

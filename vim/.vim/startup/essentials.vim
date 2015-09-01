@@ -16,6 +16,7 @@ set hlsearch       " Highlight searches (use <C-L> to temporarily turn off highl
 set number         " Display line numbers on the left
 set nowrap         " No wordwrap, please!
 set colorcolumn=80 " Set up a line length marker
+set autoread       " Automatically read files modified outside of vim
 
 """""""""""""""""""""""
 " Tabs and spaces
@@ -33,9 +34,6 @@ set shiftround
 set nobackup
 set nowritebackup
 set noswapfile
-
-" Automatically removing all trailing whitespace
-autocmd BufWritePre * :%s/\s\+$//e
 
 " Use the same symbols as TextMate for tabstops and EOLs
 set list " whitespace is shown by default
