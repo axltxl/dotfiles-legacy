@@ -50,11 +50,10 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-
-" Plugins configuration
-source ~/.vim/startup/plugins.vim
-
 " Load custom settings
 source ~/.vim/startup/mappings.vim
 source ~/.vim/startup/colors.vim
+
+" Plugins configuration
+source ~/.vim/startup/plugins.vim
 
