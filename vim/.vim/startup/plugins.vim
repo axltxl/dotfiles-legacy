@@ -47,6 +47,7 @@ let g:ctrlp_show_hidden = 1 " Show hidden files
 """"""""""""""""""
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
+map <leader>w <Plug>(easymotion-w)
 " Bi-directional find motion
 " " Jump to anywhere you want with minimal keystrokes, with just one key
 " binding.
@@ -63,3 +64,14 @@ let g:EasyMotion_do_mapping = 0 " Disable default mappings
 " " JK motions: Line motions
 " map <Leader>j <Plug>(easymotion-j)
 " map <Leader>k <Plug>(easymotion-k)"
+" Gif config
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+
+" These `n` & `N` mappings are options. You do not have to map `n` & `N` to
+" EasyMotion.
+" Without these mappings, `n` & `N` works fine. (These mappings just provide
+" different highlight method and have some other features )
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
+
