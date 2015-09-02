@@ -27,6 +27,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'majutsushi/tagbar'
 Plugin 'Raimondi/delimitMate'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'scrooloose/nerdcommenter'
 
 " Snippets
 Plugin 'MarcWeber/vim-addon-mw-utils'
