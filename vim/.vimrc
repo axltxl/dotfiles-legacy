@@ -40,6 +40,7 @@ Plugin 'tomasr/molokai'
 
 " Python
 Plugin 'davidhalter/jedi-vim'
+Plugin 'lambdalisue/vim-pyenv'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
