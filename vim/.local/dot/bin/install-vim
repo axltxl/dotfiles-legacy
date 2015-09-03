@@ -26,6 +26,7 @@ vim_opts=(\
           --enable-gui=gtk2 \
           --enable-cscope \
           )
+cc_cores=$(( $(nproc) - 1 )) # Number of cores used for compilation
 
 # Vundle-related variables
 vundle_git=https://github.com/VundleVim/Vundle.vim.git
@@ -48,7 +49,7 @@ else
 fi
 
 # Compile and install vim
-cd $vim_src && make distclean && ./configure "${vim_opts[@]}" && make install
+cd $vim_src && make distclean && ./configure "${vim_opts[@]}" && make -j $cc_cores install
 
 dot_printf_install Vundle
 
