@@ -22,6 +22,7 @@ vim_opts=(\
           --enable-gui=gtk2 \
           --enable-cscope \
           )
+vim_sudo_bin=/usr/local/bin/vim
 cc_cores=$(( $(nproc) - 1 )) # Number of cores used for compilation
 
 # Vundle-related variables
@@ -48,9 +49,12 @@ fi
 cd $vim_src && make clean && make distclean && \
     ./configure "${vim_opts[@]}" && make -j $cc_cores install
 
-dot_printf_install Vundle
+# Symlink vim so it can be available systemwide
+dot_printf_install "Symlink to ${vim_sudo_bin}"
+sudo ln -svf $(which vim) $vim_sudo_bin
 
 # Set up Vundle and install plugins
+dot_printf_install Vundle
 if [ ! -d $vundle_src ]; then
     git clone $vundle_git $vundle_src
 else
