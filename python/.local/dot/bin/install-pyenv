@@ -5,21 +5,29 @@
 
 autoload dot_printf_install
 
-PYENV_URL=https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer
-PYENV_DEPS=(libssl-dev)
+pyenv_url=https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer
+pyenv_deps=(libssl-dev)
 
+pyenv_install() {
+    pyenv install -fv $1
+}
+
+#
+# Install pyenv
+#
 dot_printf_install pyenv
-sudo apt-get install -y $PYENV_DEPS
-curl -L $PYENV_URL | bash
+sudo apt-get install -y $pyenv_deps
+curl -L $pyenv_url | bash
 
 #
 # Install many python versions
 #
 dot_printf_install pythons
-pyenv install -f 2.7.9
-pyenv install -f 3.2.6
-pyenv install -f 3.3.6
-pyenv install -f 3.4.3
+pyenv_install 2.7.9
+pyenv_install 3.2.6
+pyenv_install 3.3.6
+pyenv_install 3.4.3
 
-pyenv global 3.4.3 2.7.9
+# Set systemwide python as default
+pyenv global system
 
