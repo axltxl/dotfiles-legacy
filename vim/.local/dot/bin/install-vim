@@ -4,11 +4,8 @@
 ##################################
 
 autoload dot_printf_install
-autoload dot_printf_run
-autoload dot_printf_clean
 
-# Basic stuff needed to have ruby and python support
-py3_config=$(pyenv prefix 3.4.3)/lib/python3.4/config-3.4m
+# Basic stuff needed to have ruby support
 ruby_home=~/.rvm/rubies/ruby-1.9.3-p551/bin/ruby
 
 # The actual variables for vim compilation
@@ -18,8 +15,7 @@ vim_deps=(vim-gtk)
 vim_pkgs=(exuberant-ctags)
 vim_opts=(\
           --prefix=$DOT_PATH \
-          --enable-python3interp=yes \
-          --with-python3-config-dir=$py3_config \
+          --enable-pythoninterp=yes \
           --enable-rubyinterp=yes \
           --with-ruby-command=$ruby_home \
           --with-features=huge \
@@ -49,7 +45,8 @@ else
 fi
 
 # Compile and install vim
-cd $vim_src && make distclean && ./configure "${vim_opts[@]}" && make -j $cc_cores install
+cd $vim_src && make clean && make distclean && \
+    ./configure "${vim_opts[@]}" && make -j $cc_cores install
 
 dot_printf_install Vundle
 
