@@ -10,12 +10,7 @@ autoload dot_printf_clean
 #
 # Essential variables
 #
-if [ ! -z $1 ]; then
-    git_version=$1
-else
-    # Set default git version to use
-    git_version=2.4.0
-fi
+git_version=${1:-2.4.0}
 git_basename=git-$git_version
 git_tarball=$git_basename.tar.xz
 git_url=https://www.kernel.org/pub/software/scm/git/$git_tarball
