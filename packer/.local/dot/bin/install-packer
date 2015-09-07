@@ -10,28 +10,29 @@ autoload dot_printf_clean
 #
 # Essential variables
 #
-PACKER_VERSION=0.7.5
-PACKER_BASENAME=packer_${PACKER_VERSION}_linux_amd64
-PACKER_TARBALL=$PACKER_BASENAME.zip
-PACKER_URL=https://dl.bintray.com/mitchellh/packer/$PACKER_TARBALL
+packer_version=${1:-0.8.6}
+packer_basename=packer_${packer_version}_linux_amd64
+packer_tarball=${packer_basename}.zip
+packer_url=https://dl.bintray.com/mitchellh/packer/${packer_tarball}
 
-cd /tmp
 
 #
 # Get the actual git source tarball
 #
 dot_printf_run "Getting packer tarball"
-wget $PACKER_URL -O $PACKER_TARBALL && unzip $PACKER_TARBALL -d $PACKER_BASENAME
-rm -f $PACKER_TARBALL
+cd /tmp
+wget $packer_url -O $packer_tarball && \
+    unzip $packer_tarball -d $packer_basename && \
+    rm -f $packer_tarball || exit 1
 
 #
 # Install packer
 #
-dot_printf_install "Packer ${PACKER_VERSION}"
-cd $PACKER_BASENAME && mv * $DOT_PATH/bin
+dot_printf_install "Packer ${packer_version}"
+cd $packer_basename && mv * $DOT_PATH/bin || exit 1
 
 #
 # Remove everything
 #
 dot_printf_clean everything
-cd /tmp && rm -rf $PACKER_BASENAME
+cd /tmp && rm -rf $packer_basename
