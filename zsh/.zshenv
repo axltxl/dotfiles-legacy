@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 export ZSH_HOME=$HOME/.zsh
 
 # PATH is set through a set of scripts
-for i in $ZSH_HOME/env.d/*; do
+for i in $ZSH_HOME/profile.d/*; do
     . $i
 done
 unset i
