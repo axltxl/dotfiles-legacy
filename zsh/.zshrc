@@ -49,11 +49,12 @@ plugins=( \
     zsh_reload \
     pyenv \
     python \
-    hist\
+    hist \
     pydev \
     tmux \
     themes \
     vundle \
+    rvm \
     )
 
 # User configuration
