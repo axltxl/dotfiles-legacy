@@ -52,6 +52,8 @@ plugins=( \
     hist\
     pydev \
     tmux \
+    themes \
+    vundle \
     )
 
 # User configuration
