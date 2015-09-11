@@ -46,7 +46,7 @@ plugins=( \
     vi-mode \
     git \
     dotools \
-    reload \
+    zsh_reload \
     pyenv \
     python \
     hist\
