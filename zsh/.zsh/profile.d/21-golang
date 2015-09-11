@@ -1,0 +1,3 @@
+# Settings for golang
+export GOPATH=~/Projects/golang
+export PATH=$GOPATH/bin:$PATH

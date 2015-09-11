@@ -42,7 +42,17 @@ ZSH_CUSTOM=$ZSH_HOME/custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(vi-mode git dotools path reload history printf pyenv python pydev tmux)
+plugins=( \
+    vi-mode \
+    git \
+    dotools \
+    reload \
+    pyenv \
+    python \
+    hist\
+    pydev \
+    tmux \
+    )
 
 # User configuration
 
