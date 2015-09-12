@@ -47,7 +47,6 @@ plugins=( \
     git \
     dotools \
     zsh_reload \
-    pyenv \
     python \
     hist \
     pydev \
