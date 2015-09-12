@@ -21,8 +21,14 @@ ln -sv $BOOTSTRAP_DIR $DOT_HOME
 
 # Install stow
 echo "* Installing essential packages"
-sudo apt-get install -y stow zsh git build-essential curl wget tmux \
-    xfonts-terminus console-terminus
+sudo apt-get install -y \
+    stow \
+    zsh \
+    git \
+    build-essential \
+    curl wget \
+    xfonts-terminus \
+    console-terminus
 
 # Install oh-my-zsh
 echo "* Installing on-my-zsh"
