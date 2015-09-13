@@ -1,16 +1,53 @@
 !! source: https://gist.github.com/yevgenko/1167205#file-xdefaults-L16
+!-------------------------------------------------------------------------------
+!! Xft settings
+!!-------------------------------------------------------------------------------
 
+Xft.dpi:                    96
+Xft.antialias:              false
+Xft.rgba:                   rgb
+Xft.hinting:                true
+Xft.hintstyle:              hintslight
+
+!-------------------------------------------------------------------------------
+!Essentials
+!-------------------------------------------------------------------------------
+URxvt*loginShell: true
+
+!-------------------------------------------------------------------------------
 ! Fonts
-urxvt*font:       xft:Terminus:8
+!-------------------------------------------------------------------------------
+URxvt.font:       xft:Terminus:12
+URxvt.letterSpace: 0
 
+!-------------------------------------------------------------------------------
 ! Scrollbar
+!-------------------------------------------------------------------------------
 URxvt.scrollStyle:          rxvt
 URxvt.scrollBar:            false
 
+!-------------------------------------------------------------------------------
 ! Cursor
+!-------------------------------------------------------------------------------
 URxvt.cursorBlink:          true
-URxvt.cursorColor:          #657b83
+URxvt.cursorColor:          #fafb28
 URxvt.cursorUnderline:      false
+
+!-------------------------------------------------------------------------------
+! Perl extensions
+!-------------------------------------------------------------------------------
+URxvt.perl-ext-common:      default,matcher,clipboard
+URxvt.matcher.button:       1
+URxvt.urlLauncher:          google-chrome
+
+!-------------------------------------------------------------------------------
+!enable copy/paste using Ctrl+Shift+c/Ctrl+Shift+v
+!-------------------------------------------------------------------------------
+URxvt.iso14755: False
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.clipboard.copycmd:  xsel -ib
+URxvt.clipboard.pastecmd: xsel -ob
 
 !-------------------------------------------------------------------------------
 ! Molokai theme
