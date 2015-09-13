@@ -30,6 +30,7 @@ sudo apt-get install -y \
     wget \
     colortest \
     rxvt-unicode-256color \
+    xsel \
     xfonts-terminus \
     console-terminus
 
