@@ -36,7 +36,7 @@ URxvt.cursorUnderline:      false
 !-------------------------------------------------------------------------------
 ! Perl extensions
 !-------------------------------------------------------------------------------
-URxvt.perl-ext-common:      default,matcher,clipboard
+URxvt.perl-ext-common:      default,matcher,clipboard,fullscreen
 URxvt.matcher.button:       1
 URxvt.urlLauncher:          google-chrome
 
@@ -48,6 +48,11 @@ URxvt.keysym.Shift-Control-C: perl:clipboard:copy
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.clipboard.copycmd:  xsel -ib
 URxvt.clipboard.pastecmd: xsel -ob
+
+!-------------------------------------------------------------------------------
+! Fullscreen suppport
+!-------------------------------------------------------------------------------
+URxvt.keysym.F11: perl:fullscreen:switch
 
 !-------------------------------------------------------------------------------
 ! Molokai theme
