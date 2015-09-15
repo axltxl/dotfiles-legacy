@@ -12,13 +12,14 @@ filetype off                  " required
 """"""""""""""""""""
 
 set ttyfast        " Use a fast terminal connection
+set lazyredraw     " Lazyredraw attempts to solve Vim lag by reducing the amount of processing required.
 set t_Co=256       " Enable 256 colors
 set showcmd        " Show partial commands in the last line of the screen
 
 set hlsearch       " Highlight searches (use <C-L>
 set number         " Display line numbers on the left
-set relativenumber " Show line numbers relative to current line
-set cursorline     " Highlight current line
+"set relativenumber " Show line numbers relative to current line
+"set cursorline     " Highlight current line
 set nowrap         " No wordwrap, please!
 set colorcolumn=80 " Set up a line length marker
 set autoread       " Automatically read files modified outside of vim
