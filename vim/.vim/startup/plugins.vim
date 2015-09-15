@@ -81,3 +81,8 @@ if jedi#init_python()
         autocmd User vim-pyenv-deactivate-post call s:jedi_auto_force_py_version()
     augroup END
 endif
+
+""""""""""""""""""
+" gitgutter
+""""""""""""""""""
+let g:gitgutter_eager = 0
