@@ -4,8 +4,5 @@ export DOT_HOME=$HOME/.dotfiles
 # Custom installs PATH
 export DOT_PATH=$HOME/.local/dot
 
-# LD_LIBRARY_PATH is used in preference to any run time or default system linker path.
-export LD_LIBRARY_PATH=$DOT_PATH/lib
-
 # Standard PATH at the user level
 PATH=$DOT_PATH/bin:$PATH
