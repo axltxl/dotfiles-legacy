@@ -15,7 +15,7 @@ vnoremap < <gv
 vnoremap > >gv
 
 " Map leader key
-let mapleader = ","
+let mapleader = "\\"
 
 " ============================================================================
 " ============ From this point, you can use you leader keys ==================
