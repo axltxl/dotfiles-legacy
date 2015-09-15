@@ -9,7 +9,7 @@ let g:airline_theme = 'dark'
 """"""""""""""""""
 " Settings for Tagbar
 """"""""""""""""""""
-nmap <F8> :TagbarToggle<CR>
+nmap <Leader>q :TagbarToggle<CR>
 let g:tagbar_vertical = 20
 
 """""""""""""""""""
@@ -26,7 +26,7 @@ let g:tagbar_vertical = 20
 "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primar
-map <F3> :NERDTreeToggle<CR>
+map <Leader>w :NERDTreeToggle<CR>
 
 
 """"""""""""""""""
