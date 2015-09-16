@@ -66,3 +66,12 @@ fpath=($ZSH_HOME/lib $fpath) && export FPATH
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
+
+
+# Initial settings for X sessions
+
+#
+# Set keyboard repeat rate and delay before it
+#
+xset r rate 200 50
+
