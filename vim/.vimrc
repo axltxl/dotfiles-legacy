@@ -28,6 +28,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'Raimondi/delimitMate'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'suxpert/vimcaps' "Disable capslock when switching to NORMAL mode
 
 " Snippets
 Plugin 'MarcWeber/vim-addon-mw-utils'
