@@ -3,11 +3,11 @@
 !! Xft settings
 !!-------------------------------------------------------------------------------
 
-Xft.dpi:                    96
-Xft.antialias:              false
-Xft.rgba:                   rgb
-Xft.hinting:                true
-Xft.hintstyle:              hintslight
+!Xft.dpi:                    96
+!Xft.antialias:              false
+!Xft.rgba:                   rgb
+!Xft.hinting:                true
+!Xft.hintstyle:              hintslight
 
 !-------------------------------------------------------------------------------
 !Essentials
@@ -18,8 +18,9 @@ URxvt*saveLines:  0
 !-------------------------------------------------------------------------------
 ! Fonts
 !-------------------------------------------------------------------------------
-URxvt.font:       xft:Terminus:12
-URxvt.letterSpace: 0
+!URxvt.font:       xft:Terminus:12
+URxvt.font:       xft:Terminess Powerline
+!URxvt.letterSpace: 0
 
 !-------------------------------------------------------------------------------
 ! Scrollbar
