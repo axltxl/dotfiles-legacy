@@ -29,5 +29,5 @@ pyenv_install 3.3.6
 pyenv_install 3.4.3
 
 # Set systemwide python as default
-pyenv global system
+pyenv global 2.7.9
 
