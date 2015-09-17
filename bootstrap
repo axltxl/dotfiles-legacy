@@ -9,6 +9,18 @@ BOOTSTRAP_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 # Essential environment variables
 . $BOOTSTRAP_DIR/zsh/.zshenv
 
+# Absolute essentials
+
+absolute_essentials=(
+    stow \
+    python-pip \
+    zsh \
+    git \
+    build-essential \
+    rxvt-unicode-256color \
+    xsel \
+)
+
 # Delete conflicting files (needs better implementation)
 rm -rf ~/.profile $DOT_HOME $DOT_PATH $ZSH $ZSH_HOME
 
@@ -21,17 +33,7 @@ ln -sv $BOOTSTRAP_DIR $DOT_HOME
 
 # Install stow
 echo "* Installing essential packages"
-sudo apt-get install -y \
-    stow \
-    python-pip \
-    zsh \
-    git \
-    build-essential \
-    curl \
-    wget \
-    colortest \
-    rxvt-unicode-256color \
-    xsel \
+sudo apt-get install -y ${absolute_essentials[@]}
 
 # Install oh-my-zsh
 echo "* Installing on-my-zsh"

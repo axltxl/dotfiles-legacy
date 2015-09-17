@@ -13,6 +13,9 @@ essentials=(
     tcpdump \
     sysstat \
     nethogs \
+    colortest \
+    curl \
+    wget \
 )
 
 dot_printf_install 'Essential stuff'
