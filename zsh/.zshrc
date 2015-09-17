@@ -68,10 +68,38 @@ fpath=($ZSH_HOME/lib $fpath) && export FPATH
 # export LANG=en_US.UTF-8
 
 
+######################################
 # Initial settings for X sessions
+######################################
 
 #
 # Set keyboard repeat rate and delay before it
 #
 xset r rate 200 50
 
+######################################
+# Start tmux on every shell login
+# source: https://wiki.archlinux.org/index.php/Tmux#Start_tmux_in_urxvt
+######################################
+
+#
+# If not running interactively, do not do anything
+#
+[[ $- != *i* ]] && return
+
+#
+# checks tmux is installed before trying to launch it.
+#
+if which tmux >/dev/null 2>&1; then
+    #
+    # Attach to existing deattached session or start a new session
+    #
+    if [[ -z "$TMUX" ]] ;then
+        ID="`tmux ls | grep -vm1 attached | cut -d: -f1`" # get the id of a deattached session
+        if [[ -z "$ID" ]] ;then # if not available create a new one
+            tmux new-session
+        else
+            tmux attach-session -t "$ID" # if available attach to it
+        fi
+    fi
+fi
