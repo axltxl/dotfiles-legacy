@@ -1,0 +1,25 @@
+#!/usr/bin/env zsh
+##################################
+# Install powerline + setup
+##################################
+
+autoload dot_printf_install
+
+git_powerline_fonts=https://github.com/powerline/fonts.git
+
+# Install powerline itself
+dot_printf_install powerline
+pip install powerline-status || exit 1
+
+# Install powerline fonts
+dot_printf_install powerline-fonts
+cd /tmp
+git clone $git_powerline_fonts && fonts/install.sh && rm -rf fonts || exit 1
+
+dot_printf_install powerline-fonts further setup
+# This is raw hack in order for bitmap fonts to be considered
+# by fc-cache
+cd /etc/fonts/conf.d && \
+    sudo rm 70-no-bitmaps.conf && \
+    sudo ln -sv ../conf.avail/70-yes-bitmaps.conf || true
+fc-cache -vf ~/.fonts/ # Update font cache
