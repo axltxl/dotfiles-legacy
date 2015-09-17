@@ -1,0 +1,18 @@
+#
+# The very basics
+#
+
+
+EDITOR=vim
+VISUAL=vim
+PAGER=less
+VISUAL=vim
+
+if [ -n "$DISPLAY" ]; then
+    BROWSER=google-chrome
+else
+    BROWSER=links
+fi
+
+# Export the whole thing
+export EDITOR PAGER VISUAL BROWSER
