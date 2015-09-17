@@ -23,6 +23,7 @@ ln -sv $BOOTSTRAP_DIR $DOT_HOME
 echo "* Installing essential packages"
 sudo apt-get install -y \
     stow \
+    python-pip \
     zsh \
     git \
     build-essential \
@@ -31,8 +32,6 @@ sudo apt-get install -y \
     colortest \
     rxvt-unicode-256color \
     xsel \
-    xfonts-terminus \
-    console-terminus
 
 # Install oh-my-zsh
 echo "* Installing on-my-zsh"
