@@ -4,10 +4,10 @@
 ##################################
 
 # Absolute path to this script
-BOOTSTRAP_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+dotfiles_dir=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 # Essential environment variables
-. $BOOTSTRAP_DIR/zsh/.zshenv
+. $dotfiles_dir/zsh/.zshenv
 
 # Absolute essentials
 
@@ -29,7 +29,7 @@ mkdir -p $DOT_PATH/{lib,bin,libexec,include,share}
 
 # Set up formal $DOT_HOME to be used
 # by scripts
-ln -sv $BOOTSTRAP_DIR $DOT_HOME
+ln -sv $dotfiles_dir $DOT_HOME
 
 # Install stow
 echo "* Installing essential packages"
@@ -41,7 +41,7 @@ git clone https://github.com/robbyrussell/oh-my-zsh.git $ZSH
 
 # Set new shell
 echo "* chsh -s zsh"
-stow -S -t $HOME -d $BOOTSTRAP_DIR zsh && chsh -s $(which zsh)
+stow -S -t $HOME -d $dotfiles_dir zsh && chsh -s $(which zsh)
 
 # Finished
 echo "Your dotfiles environment has been properly set up. You will need to re-login for the changes to be applied."
