@@ -11,7 +11,7 @@ fonts_dir=~/Projects/powerline-fonts
 
 # Install powerline itself
 dot_printf_install powerline
-pip install powerline-status || exit 1
+sudo pip install powerline-status || exit 1
 
 # Install powerline fonts
 dot_printf_install powerline-fonts
