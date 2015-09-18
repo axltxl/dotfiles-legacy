@@ -9,5 +9,5 @@ Vagrant.configure("2") do |config|
     vb.gui    = true
     vb.memory = 512
   end
-  config.vm.synced_folder ".", "/home/vagrant/Projects/dotfiles"
+  config.vm.synced_folder ".", "/home/vagrant/dotfiles"
 end
