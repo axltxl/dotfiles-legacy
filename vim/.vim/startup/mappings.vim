@@ -1,6 +1,8 @@
-" ============ My super cool mappings ================= "
+" ============ Disable ESC key in visual and insert mode ============
+vnoremap <esc> <NOP>
+inoremap <esc> <NOP>
 
-" Habit breaking
+" ============ Disable arrow keys in both visual and insert mode ============
 nnoremap <Up> <NOP>
 nnoremap <Down> <NOP>
 nnoremap <Left> <NOP>
