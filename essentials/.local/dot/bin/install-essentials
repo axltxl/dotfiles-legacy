@@ -7,6 +7,7 @@ autoload dot_printf_install
 
 # Essential stuff indeed
 essentials=(
+    curl \
     htop \
     irssi \
     links \

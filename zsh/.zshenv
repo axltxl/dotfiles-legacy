@@ -4,8 +4,16 @@ export ZSH=$HOME/.oh-my-zsh
 # Path to zsh scripts
 export ZSH_HOME=$HOME/.zsh
 
+# Path to dotfiles folder
+export DOT_HOME=$HOME/.dotfiles
+
+# Custom installs PATH
+export DOT_PATH=$HOME/.local/dot
+
 # PATH is set through a set of scripts
-for i in $ZSH_HOME/profile.d/*; do
-    . $i
-done
-unset i
+if [ -d $ZSH_HOME ]; then
+    for i in $ZSH_HOME/profile.d/*; do
+        . $i
+    done
+    unset i
+fi

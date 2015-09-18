@@ -23,6 +23,16 @@ curl -L $pyenv_url | bash
 # Install many python versions
 #
 dot_printf_install pythons
+
+# By default, until pyenv is not present,
+# its environment variables won't be loaded
+# at ~/.zshenv level, therefore, they need to be forced at this point
+# to install pythons properly
+export PYENV_ROOT="$HOME/.pyenv"
+PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# Now, we can install the thing
 pyenv_install 2.7.9
 pyenv_install 3.2.6
 pyenv_install 3.3.6

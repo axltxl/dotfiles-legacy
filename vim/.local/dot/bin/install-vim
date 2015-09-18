@@ -23,7 +23,13 @@ vim_opts=(\
           --enable-cscope \
           )
 vim_sudo_bin=/usr/local/bin/vim
-cc_cores=$(( $(nproc) - 1 )) # Number of cores used for compilation
+
+# Number of cores used for compilation
+if (( $(nproc) > 1 )); then
+    cc_cores=$(( $(nproc) - 1 ))
+else
+    cc_cores=1
+fi
 
 # Vundle-related variables
 vundle_git=https://github.com/VundleVim/Vundle.vim.git
