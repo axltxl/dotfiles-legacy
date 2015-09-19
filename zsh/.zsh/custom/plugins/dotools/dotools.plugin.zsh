@@ -1,5 +1,7 @@
 alias dotcd='cd $DOT_HOME'
 alias dotu='git -C $DOT_HOME pull' # Update dotfiles
+alias ds='dotstow'
+alias dus='dotunstow'
 
 # This will automatically stow directories inside $DOT_HOME
 dotstow() {
