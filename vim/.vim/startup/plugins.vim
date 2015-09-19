@@ -87,3 +87,9 @@ endif
 " gitgutter
 """"""""""""""""""
 let g:gitgutter_eager = 0
+
+""""""""""""""""""
+"vim hard mode
+""""""""""""""""""
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
