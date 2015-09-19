@@ -48,12 +48,14 @@ plugins=( \
     dotools \
     zsh_reload \
     python \
+    pip \
     hist \
     pydev \
     tmux \
     themes \
     vundle \
     rvm \
+    vagrant \
     )
 
 # User configuration
@@ -75,7 +77,9 @@ fpath=($ZSH_HOME/lib $fpath) && export FPATH
 #
 # Set keyboard repeat rate and delay before it
 #
-xset r rate 200 50
+if [ -n $DISPLAY ]; then
+    xset r rate 200 50
+fi
 
 ######################################
 # Start tmux on every shell login
