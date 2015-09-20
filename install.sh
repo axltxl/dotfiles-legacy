@@ -41,6 +41,7 @@ function ins_splash() {
     echo "                                                   ";
     echo "***************************************************"
 }
+
 # It is essential to warn the user about the consequences
 # of running the installation script, since it really alters
 # things inside the home directory
@@ -52,12 +53,15 @@ done
 [ $answer == 'n' ] && exit 0
 
 # Delete conflicting files (needs better implementation)
+ins_echo "* Deleting conflicting files"
 rm -rf ~/.profile $DOT_HOME $DOT_PATH $ZSH $ZSH_HOME
 
 # DOT_PATH is created before used
+ins_echo "* Creating initial DOT_PATH at $DOT_PATH"
 mkdir -p $DOT_PATH/{lib,bin,libexec,include,share}
 
 # Basic home layout
+ins_echo "* Creating basic home directory layout"
 mkdir $HOME/{Projects,Documents,Music,Videos} &> /dev/null || true
 
 # Set up formal $DOT_HOME to be used
@@ -66,7 +70,7 @@ ln -s $dotfiles_dir $DOT_HOME
 
 # Install stow
 ins_echo "* Installing essential packages"
-sudo apt-get update && sudo apt-get install -y ${absolute_essentials[@]} > /dev/null || exit 1
+sudo apt-get update && sudo apt-get install -y "${absolute_essentials[@]}" > /dev/null || exit 1
 
 # Install oh-my-zsh
 ins_echo "* Installing on-my-zsh"
