@@ -38,6 +38,7 @@ Plugin 'honza/vim-snippets'
 
 " Look and feel
 Plugin 'tomasr/molokai'
+Plugin 'flazz/vim-colorschemes'
 
 " Python
 Plugin 'davidhalter/jedi-vim'
