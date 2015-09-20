@@ -84,5 +84,9 @@ stow -S -t $HOME -d $dotfiles_dir essentials > /dev/null || exit 1
 ins_echo "Setting up zsh as the new shell"
 stow -S -t $HOME -d $dotfiles_dir zsh > /dev/null && chsh -s $(which zsh) || exit 1
 
+ins_echo "Setting up sudo privileges for user: $USER"
+sudo usermod -aG sudo $USER
+
 # Finished
 ins_echo "Your dotfiles environment has been properly set up. You will need to re-login for the changes to be applied."
+
