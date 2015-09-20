@@ -70,7 +70,7 @@ ln -s $dotfiles_dir $DOT_HOME
 
 # Install stow
 ins_echo "Installing essential packages"
-sudo apt-get update && sudo apt-get install -y "${absolute_essentials[@]}" > /dev/null || exit 1
+sudo apt-get update > /dev/null && sudo apt-get install -y "${absolute_essentials[@]}" > /dev/null || exit 1
 
 # Install oh-my-zsh
 ins_echo "Installing on-my-zsh"
