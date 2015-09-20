@@ -81,8 +81,8 @@ ins_echo "Setting up essentials"
 stow -S -t $HOME -d $dotfiles_dir essentials > /dev/null || exit 1
 
 # Set new shell
-ins_echo "chsh -s zsh"
-stow -S -t $HOME -d $dotfiles_dir zsh && chsh -s $(which zsh) > /dev/null || exit 1
+ins_echo "Setting up zsh as the new shell"
+stow -S -t $HOME -d $dotfiles_dir zsh > /dev/null && chsh -s $(which zsh) || exit 1
 
 # Finished
 ins_echo "Your dotfiles environment has been properly set up. You will need to re-login for the changes to be applied."
