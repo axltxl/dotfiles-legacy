@@ -18,6 +18,9 @@ absolute_essentials=(
     git \
     build-essential \
     rxvt-unicode-256color \
+    autoconf \
+    automake \
+    pkg-config \
     xsel \
 )
 
@@ -70,6 +73,11 @@ mkdir $HOME/{Projects,Documents,Music,Videos} &> /dev/null || true
 # by scripts
 ins_echo "Set up dotfiles root directory at $DOT_HOME"
 ln -sv $dotfiles_dir $DOT_HOME &>> $install_log
+
+# Enable package sources
+ins_echo 'APT initial setup'
+sed -e s/#deb-src/deb-src/g /etc/apt/sources.list | \
+sudo tee /etc/apt/sources.list > /dev/null
 
 # Install stow
 ins_echo "Installing essential packages"
