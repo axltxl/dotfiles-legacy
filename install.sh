@@ -27,6 +27,19 @@ absolute_essentials=(
 # Installation log
 install_log=${dotfiles_dir}/install.log
 
+# Conflicting files and directories meant to be
+# purged prior to installation
+conflict_files=(
+    $HOME/.Xresources
+    $HOME/.profile \
+    $HOME/.zshenv \
+    $HOME/.zshrc \
+    $DOT_HOME \
+    $DOT_PATH \
+    $ZSH \
+    $ZSH_HOME \
+)
+
 #
 # Utility functions used by this installation script
 #
@@ -59,7 +72,7 @@ done
 
 # Delete conflicting files (needs better implementation)
 ins_echo "Deleting conflicting files"
-rm -rf ~/.profile $DOT_HOME $DOT_PATH $ZSH $ZSH_HOME
+rm -rf $conflict_files
 
 # DOT_PATH is created before used
 ins_echo "Creating initial DOT_PATH at $DOT_PATH"
