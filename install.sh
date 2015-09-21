@@ -21,6 +21,8 @@ absolute_essentials=(
     xsel \
 )
 
+# Installation log
+install_log=${dotfiles_dir}/install.log
 
 #
 # Utility functions used by this installation script
@@ -66,29 +68,36 @@ mkdir $HOME/{Projects,Documents,Music,Videos} &> /dev/null || true
 
 # Set up formal $DOT_HOME to be used
 # by scripts
-ln -s $dotfiles_dir $DOT_HOME
+ins_echo "Set up dotfiles root directory at $DOT_HOME"
+ln -sv $dotfiles_dir $DOT_HOME &>> $install_log
 
 # Install stow
 ins_echo "Installing essential packages"
-sudo apt-get update > /dev/null && sudo apt-get install -y "${absolute_essentials[@]}" > /dev/null || exit 1
+sudo apt-get update &>> $install_log && \
+sudo apt-get install -y "${absolute_essentials[@]}" &>> $install_log || \
+exit 1
 
 # Install oh-my-zsh
 ins_echo "Installing on-my-zsh"
-git clone https://github.com/robbyrussell/oh-my-zsh.git $ZSH > /dev/null || exit 1
+git clone https://github.com/robbyrussell/oh-my-zsh.git $ZSH &>> $install_log ||\
+exit 1
 
 # Set up essentials
 ins_echo "Setting up essentials"
-stow -S -t $HOME -d $dotfiles_dir essentials > /dev/null || exit 1
+stow -S -t $HOME -d $dotfiles_dir essentials &>> $install_log || exit 1
 
 # Set new shell
 ins_echo "Setting up zsh as the new shell"
-stow -S -t $HOME -d $dotfiles_dir zsh > /dev/null && chsh -s $(which zsh) || exit 1
+stow -S -t $HOME -d $dotfiles_dir zsh &>> $install_log && \
+chsh -s $(which zsh) || exit 1
 
 ins_echo "Setting up sudo privileges for user: $USER"
-cat << EOF | sudo tee /etc/sudoers.d/90-$USER > /dev/null
+cat << EOF | sudo tee /etc/sudoers.d/90-$USER &>> $install_log
 $USER ALL=(ALL) NOPASSWD:ALL
 EOF
 
 # Finished
-ins_echo "Your dotfiles environment has been properly set up. You will need to re-login for the changes to be applied."
+ins_echo "---------------------------------------------------"
+ins_echo "Your dotfiles environment has been properly set up."
+ins_echo "You will need to re-login for the changes to be applied."
 
