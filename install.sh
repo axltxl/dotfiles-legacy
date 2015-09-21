@@ -9,8 +9,9 @@ dotfiles_dir=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 # Essential environment variables
 . $dotfiles_dir/zsh/.zshenv
 
+############################
 # Absolute essentials
-
+############################
 absolute_essentials=(
     stow \
     python-pip \
@@ -30,7 +31,7 @@ install_log=${dotfiles_dir}/install.log
 # Conflicting files and directories meant to be
 # purged prior to installation
 conflict_files=(
-    $HOME/.Xresources
+    $HOME/.Xresources \
     $HOME/.profile \
     $HOME/.zshenv \
     $HOME/.zshrc \
@@ -40,9 +41,9 @@ conflict_files=(
     $ZSH_HOME \
 )
 
-#
+############################
 # Utility functions used by this installation script
-#
+############################
 
 function ins_echo() {
     echo "* $(tput bold)$@$(tput sgr0)"
@@ -60,9 +61,11 @@ function ins_splash() {
     echo "***************************************************"
 }
 
+############################
 # It is essential to warn the user about the consequences
 # of running the installation script, since it really alters
 # things inside the home directory
+############################
 ins_splash
 ins_echo "This is really going to assf*ck your home directory ..."
 while [[ $answer != 'y' && $answer != 'n' ]]; do
