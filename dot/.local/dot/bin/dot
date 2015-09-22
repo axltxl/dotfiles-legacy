@@ -1,3 +1,35 @@
 #!/usr/bin/env zsh
 
+dot_update() {
+    git -C $DOT_HOME pull
+}
+# This will automatically stow directories inside $DOT_HOME
+dot_stow() {
+    for i in "$@"; do
+        stow --verbose=1 -R -d $DOT_HOME -t $HOME $i
+    done
+}
 
+# This will automatically unstow directories inside $DOT_HOME
+dot_unstow() {
+    for i in "$@"; do
+        stow --verbose=1 -D -d $DOT_HOME -t $HOME $i
+    done
+}
+
+case $1 in
+    install)
+        ;;
+    uninstall)
+        ;;
+    stow)
+        ;;
+    unstow)
+        ;;
+    update)
+        ;;
+    *)
+        ;;
+esac
+
+exit 0
