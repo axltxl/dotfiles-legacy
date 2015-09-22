@@ -9,8 +9,9 @@ dotfiles_dir=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 # Essential environment variables
 . $dotfiles_dir/zsh/.zshenv
 
+############################
 # Absolute essentials
-
+############################
 absolute_essentials=(
     stow \
     python-pip \
@@ -18,15 +19,31 @@ absolute_essentials=(
     git \
     build-essential \
     rxvt-unicode-256color \
+    autoconf \
+    automake \
+    pkg-config \
     xsel \
 )
 
 # Installation log
 install_log=${dotfiles_dir}/install.log
 
-#
+# Conflicting files and directories meant to be
+# purged prior to installation
+conflict_files=(
+    $HOME/.Xresources \
+    $HOME/.profile \
+    $HOME/.zshenv \
+    $HOME/.zshrc \
+    $DOT_HOME \
+    $DOT_PATH \
+    $ZSH \
+    $ZSH_HOME \
+)
+
+############################
 # Utility functions used by this installation script
-#
+############################
 
 function ins_echo() {
     echo "* $(tput bold)$@$(tput sgr0)"
@@ -44,9 +61,11 @@ function ins_splash() {
     echo "***************************************************"
 }
 
+############################
 # It is essential to warn the user about the consequences
 # of running the installation script, since it really alters
 # things inside the home directory
+############################
 ins_splash
 ins_echo "This is really going to assf*ck your home directory ..."
 while [[ $answer != 'y' && $answer != 'n' ]]; do
@@ -54,9 +73,12 @@ while [[ $answer != 'y' && $answer != 'n' ]]; do
 done
 [ $answer == 'n' ] && exit 0
 
+# Delete any previous log
+rm -f $install_log
+
 # Delete conflicting files (needs better implementation)
 ins_echo "Deleting conflicting files"
-rm -rf ~/.profile $DOT_HOME $DOT_PATH $ZSH $ZSH_HOME
+rm -rf "${conflict_files[@]}"
 
 # DOT_PATH is created before used
 ins_echo "Creating initial DOT_PATH at $DOT_PATH"
@@ -70,6 +92,11 @@ mkdir $HOME/{Projects,Documents,Music,Videos} &> /dev/null || true
 # by scripts
 ins_echo "Set up dotfiles root directory at $DOT_HOME"
 ln -sv $dotfiles_dir $DOT_HOME &>> $install_log
+
+# Enable package sources
+ins_echo 'APT initial setup'
+sed -e s/#deb-src/deb-src/g /etc/apt/sources.list | \
+sudo tee /etc/apt/sources.list > /dev/null
 
 # Install stow
 ins_echo "Installing essential packages"
