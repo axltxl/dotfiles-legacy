@@ -73,6 +73,9 @@ while [[ $answer != 'y' && $answer != 'n' ]]; do
 done
 [ $answer == 'n' ] && exit 0
 
+# Delete any previous log
+rm -f $install_log
+
 # Delete conflicting files (needs better implementation)
 ins_echo "Deleting conflicting files"
 rm -rf $conflict_files
