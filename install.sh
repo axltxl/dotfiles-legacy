@@ -78,7 +78,7 @@ rm -f $install_log
 
 # Delete conflicting files (needs better implementation)
 ins_echo "Deleting conflicting files"
-rm -rf $conflict_files
+rm -rf "${conflict_files[@]}"
 
 # DOT_PATH is created before used
 ins_echo "Creating initial DOT_PATH at $DOT_PATH"
