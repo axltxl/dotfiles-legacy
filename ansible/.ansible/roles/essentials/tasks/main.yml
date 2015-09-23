@@ -1,0 +1,11 @@
+---
+# ---------------------------
+# Essential packages
+# ---------------------------
+# This role makes sure the minimum
+# necessary packages are installed
+
+- name: Set up essential packages (APT)
+  apt: pkg={{ item }} state=installed
+  with_flattened:
+    - packages

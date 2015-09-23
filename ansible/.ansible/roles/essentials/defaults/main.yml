@@ -1,0 +1,12 @@
+---
+packages:
+    - curl
+    - htop
+    - irssi
+    - links
+    - tcpdump
+    - sysstat
+    - nethogs
+    - colortest
+    - curl
+    - wget

@@ -98,11 +98,15 @@ ins_echo 'APT initial setup'
 sed -e s/#deb-src/deb-src/g /etc/apt/sources.list | \
 sudo tee /etc/apt/sources.list > /dev/null
 
-# Install stow
+# Install essential packages
 ins_echo "Installing essential packages"
 sudo apt-get update &>> $install_log && \
 sudo apt-get install -y "${absolute_essentials[@]}" &>> $install_log || \
 exit 1
+
+# Install essential packages
+ins_echo "Installing ansible"
+pip install -y ansible==1.9.0.1 || exit 1
 
 # Install oh-my-zsh
 ins_echo "Installing on-my-zsh"
