@@ -106,7 +106,8 @@ exit 1
 
 # Install essential packages
 ins_echo "Installing ansible"
-pip install -y ansible==1.9.0.1 || exit 1
+sudo pip install ansible==1.9.0.1 &>> $install_log || exit 1
+stow -S -t $HOME -d $dotfiles_dir ansible &>> $install_log || exit 1
 
 # Install oh-my-zsh
 ins_echo "Installing on-my-zsh"
@@ -116,6 +117,7 @@ exit 1
 # Set up essentials
 ins_echo "Setting up essentials"
 stow -S -t $HOME -d $dotfiles_dir essentials &>> $install_log || exit 1
+stow -S -t $HOME -d $dotfiles_dir dot &>> $install_log || exit 1
 
 # Set new shell
 ins_echo "Setting up zsh as the new shell"
