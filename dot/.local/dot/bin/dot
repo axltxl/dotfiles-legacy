@@ -1,11 +1,30 @@
 #!/usr/bin/env zsh
 
+autoload dot_printf
+autoload dot_printf_err
+autoload dot_printf_setup
+autoload dot_printf_uninstall
+autoload dot_printf_warn
+autoload dot_printf_clean
+
 dot_installers_dir=${DOT_PATH}/lib/dot/installers
 dot_ansible_playbook_dir=${HOME}/.ansible
 
+dot_zsh_update() {
+    # Update environment after everything has been done
+    dot_printf "Updating zsh environment ..."
+    . ${HOME}/.zshenv
+    . ${HOME}/.zshrc
+}
+
 # Update repository at DOT_HOME
 dot_update() {
-    git -C $DOT_HOME pull
+    dot_printf "Updating dotfiles git repository ..."
+    git -C $DOT_HOME pull || true
+
+    # stow all directories inside DOT_HOME
+    # deploy all changes in the ansible playbook
+    dot_zsh_update # Update zsh environment
 }
 
 # This will automatically stow directories inside $DOT_HOME
@@ -22,6 +41,10 @@ dot_unstow() {
     done
 }
 
+dot_refresh() {
+    dot_zsh_update # Update zsh environment
+}
+
 # Execute ansible playbook to deploy system-wide changes
 dot_deploy() {
     cd $dot_ansible_playbook_dir && \
@@ -36,8 +59,7 @@ dot_install() {
     if [ -x ${dot_installers_dir}/$1 ]; then
         . ${dot_installers_dir}/$1 # install the actual thing
     fi
-    # Update environment after everything has been done
-    . ${HOME}/.zshenv
+    dot_zsh_update # Update zsh environment
 }
 
 case $1 in
@@ -52,6 +74,9 @@ case $1 in
         ;;
     unstow)
         dot_unstow ${@:2}
+        ;;
+    refresh|reload)
+        dot_refresh
         ;;
     update)
         dot_update ${@:2}
