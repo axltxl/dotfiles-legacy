@@ -31,6 +31,9 @@ dot_update() {
     done
     unset d
     # deploy all changes in the ansible playbook
+    dot_printf "Deploying all changes in the ansible playbook"
+    dot_deploy
+
     dot_zsh_update # Update zsh environment
 }
 
