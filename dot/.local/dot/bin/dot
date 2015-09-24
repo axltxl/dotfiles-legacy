@@ -34,9 +34,7 @@ dot_update() {
     # stow all directories inside DOT_HOME
     dot_printf "Stowing all packages inside $DOT_HOME"
     for d in $DOT_HOME/*; do
-        if [ -d $d ]; then
-            dot_stow $( basename $d )
-        fi
+        dot_stow $( basename $d )
     done
     unset d
 
@@ -53,7 +51,7 @@ dot_update() {
 dot_stow() {
     for i in "$@"; do
         dot_printf "Stowing $1"
-        stow --verbose=1 -R -d $DOT_HOME -t $HOME $i
+        [ -d ${DOT_HOME}/$i ] && stow --verbose=1 -R -d $DOT_HOME -t $HOME $i
     done
 }
 
@@ -62,7 +60,8 @@ dot_stow() {
 #
 dot_unstow() {
     for i in "$@"; do
-        stow --verbose=1 -D -d $DOT_HOME -t $HOME $i
+        dot_printf "Unstowing $1"
+        [ -d ${DOT_HOME}/$i ] && stow --verbose=1 -D -d $DOT_HOME -t $HOME $i
     done
 }
 
