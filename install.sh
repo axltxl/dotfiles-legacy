@@ -15,6 +15,7 @@ dotfiles_dir=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 absolute_essentials=(
     stow \
     python-pip \
+    python-dev \
     zsh \
     git \
     build-essential \
