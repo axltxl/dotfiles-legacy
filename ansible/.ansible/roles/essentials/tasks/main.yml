@@ -8,6 +8,7 @@
 - name: Set up essential packages (APT)
   apt: pkg={{ item }} state=latest
   with_items:
+    - i3
     - curl
     - htop
     - irssi
