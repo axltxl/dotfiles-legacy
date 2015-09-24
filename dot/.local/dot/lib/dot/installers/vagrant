@@ -1,0 +1,25 @@
+#!/usr/bin/env zsh
+##################################
+# Install vagrant and virtualbox
+##################################
+
+. $ZSH_HOME/lib/printf
+
+vagrant_ver=${1:-1.7.4}
+vagrant_deb=vagrant_${vagrant_ver}_x86_64.deb
+vagrant_url=https://dl.bintray.com/mitchellh/vagrant/$vagrant_deb
+
+vbox_deb=virtualbox-4.3_4.3.26-98988~Ubuntu~raring_amd64.deb
+vbox_url=http://download.virtualbox.org/virtualbox/4.3.26/virtualbox-4.3_4.3.26-98988~Ubuntu~raring_amd64.deb
+
+cd /tmp
+
+printf_install vagrant
+wget $vagrant_url -O $vagrant_deb && sudo dpkg -i $vagrant_deb ||\
+    sudo apt-get -f install
+rm $vagrant_deb
+
+printf_install VirtualBox
+wget  $vbox_url && sudo dpkg -i $vbox_deb && sudo apt-get -fy install ||\
+    sudo apt-get -f install
+

@@ -72,6 +72,7 @@ while [[ $answer != 'y' && $answer != 'n' ]]; do
     read -p "  Are you sure about this? (y/n)> " answer
 done
 [ $answer == 'n' ] && exit 0
+unset answer
 
 # Delete any previous log
 rm -f $install_log
@@ -98,11 +99,16 @@ ins_echo 'APT initial setup'
 sed -e s/#deb-src/deb-src/g /etc/apt/sources.list | \
 sudo tee /etc/apt/sources.list > /dev/null
 
-# Install stow
+# Install essential packages
 ins_echo "Installing essential packages"
 sudo apt-get update &>> $install_log && \
 sudo apt-get install -y "${absolute_essentials[@]}" &>> $install_log || \
 exit 1
+
+# Install essential packages
+ins_echo "Installing ansible"
+sudo pip install ansible==1.9.0.1 &>> $install_log || exit 1
+stow -S -t $HOME -d $dotfiles_dir ansible &>> $install_log || exit 1
 
 # Install oh-my-zsh
 ins_echo "Installing on-my-zsh"
@@ -112,6 +118,7 @@ exit 1
 # Set up essentials
 ins_echo "Setting up essentials"
 stow -S -t $HOME -d $dotfiles_dir essentials &>> $install_log || exit 1
+stow -S -t $HOME -d $dotfiles_dir dot &>> $install_log || exit 1
 
 # Set new shell
 ins_echo "Setting up zsh as the new shell"
@@ -127,4 +134,6 @@ EOF
 ins_echo "---------------------------------------------------"
 ins_echo "Your dotfiles environment has been properly set up."
 ins_echo "You will need to re-login for the changes to be applied."
+ins_echo "Once done, you can proceed to change your environment using"
+ins_echo "the *dot* command, execute dot without arguments for details."
 

@@ -1,0 +1,21 @@
+---
+# ---------------------------
+# Essential packages
+# ---------------------------
+# This role makes sure the minimum
+# necessary packages are installed
+
+- name: Set up essential packages (APT)
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - curl
+    - htop
+    - irssi
+    - links
+    - tcpdump
+    - sysstat
+    - nethogs
+    - colortest
+    - curl
+    - wget
+    - mc
