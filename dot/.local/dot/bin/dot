@@ -111,8 +111,12 @@ dot_purge() {
     #
     # warn the user first of all
     #
+    dot_printf_warn "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
     dot_printf_warn "This is really going to assf*ck your home directory ..."
-    dot_printf_warn "Are you sure about this? (y/n)> "
+    dot_printf_warn "e.g. It will unstow everything and remove any remaining"
+    dot_printf_warn "dotfiles inside your home directory"
+    dot_printf_warn "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+    dot_printf_warn "ARE YOU REALLY SURE ABOUT THIS? (Y/N)> "
     read -sq ans
     [ $ans != 'y' ] && exit 0
     unset answer
