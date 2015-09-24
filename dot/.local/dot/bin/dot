@@ -1,4 +1,7 @@
 #!/usr/bin/env zsh
+#########################################
+# dot: an utility for dotfiles management
+#########################################
 
 autoload dot_printf
 autoload dot_printf_err
@@ -7,6 +10,10 @@ autoload dot_printf_uninstall
 autoload dot_printf_warn
 autoload dot_printf_clean
 
+
+#
+# Essential variables
+#
 dot_installers_dir=${DOT_PATH}/lib/dot/installers
 dot_ansible_playbook_dir=${HOME}/.ansible
 
@@ -17,7 +24,9 @@ dot_zsh_update() {
     . ${HOME}/.zshrc
 }
 
+#
 # Update repository at DOT_HOME
+#
 dot_update() {
     dot_printf "Updating dotfiles git repository ..."
     git -C $DOT_HOME pull || true
@@ -30,6 +39,7 @@ dot_update() {
         fi
     done
     unset d
+
     # deploy all changes in the ansible playbook
     dot_printf "Deploying all changes in the ansible playbook"
     dot_deploy
@@ -37,31 +47,43 @@ dot_update() {
     dot_zsh_update # Update zsh environment
 }
 
+#
 # This will automatically stow directories inside $DOT_HOME
+#
 dot_stow() {
     for i in "$@"; do
+        dot_printf "Stowing $1"
         stow --verbose=1 -R -d $DOT_HOME -t $HOME $i
     done
 }
 
+#
 # This will automatically unstow directories inside $DOT_HOME
+#
 dot_unstow() {
     for i in "$@"; do
         stow --verbose=1 -D -d $DOT_HOME -t $HOME $i
     done
 }
 
+#
+# Update zsh environment and everything within it
+#
 dot_refresh() {
     dot_zsh_update # Update zsh environment
 }
 
+#
 # Execute ansible playbook to deploy system-wide changes
+#
 dot_deploy() {
     cd $dot_ansible_playbook_dir && \
         ansible-playbook site.yml -i inventory || exit 1
 }
 
+#
 # Stow/install packages inside DOT_HOME
+#
 dot_install() {
     if [ -d ${DOT_HOME}/$1 ]; then
         dot_stow $1 || exit 1
@@ -84,6 +106,8 @@ dot_print_help() {
     echo "  dot reload|refresh - Reload zsh environment"
     echo "  dot update - Update git repo + reload everything"
 }
+
+# The main thing
 case $1 in
     install)
         dot_install ${@:2}
@@ -108,4 +132,5 @@ case $1 in
         ;;
 esac
 
+dot_printf "Done!"
 exit 0
