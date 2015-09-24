@@ -23,6 +23,13 @@ dot_update() {
     git -C $DOT_HOME pull || true
 
     # stow all directories inside DOT_HOME
+    dot_printf "Stowing all packages inside $DOT_HOME"
+    for d in $DOT_HOME/*; do
+        if [ -d $d ]; then
+            dot_stow $( basename $d )
+        fi
+    done
+    unset d
     # deploy all changes in the ansible playbook
     dot_zsh_update # Update zsh environment
 }
