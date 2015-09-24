@@ -6,6 +6,16 @@
 # necessary packages are installed
 
 - name: Set up essential packages (APT)
-  apt: pkg={{ item }} state=installed
-  with_flattened:
-    - packages
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - curl
+    - htop
+    - irssi
+    - links
+    - tcpdump
+    - sysstat
+    - nethogs
+    - colortest
+    - curl
+    - wget
+    - mc
