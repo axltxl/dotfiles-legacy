@@ -104,8 +104,30 @@ dot_print_help() {
     echo "  dot unstow <package> - Unstow package(s)"
     echo "  dot reload|refresh - Reload zsh environment"
     echo "  dot update - Update git repo + reload everything"
+    echo "  dot purge - Purge every dotfile there is inside your home directory"
 }
 
+dot_purge() {
+    #
+    # warn the user first of all
+    #
+    dot_printf_warn "This is really going to assf*ck your home directory ..."
+    dot_printf_warn "Are you sure about this? (y/n)> "
+    read -sq ans
+    [ $ans != 'y' ] && exit 0
+    unset answer
+
+    # unstow all directories inside DOT_HOME
+    dot_printf "Unstowing all packages inside $DOT_HOME"
+    for d in $DOT_HOME/*; do
+        dot_unstow $( basename $d )
+    done
+    unset d
+
+    # Purge every dotfile thereis in your home directory
+    sudo rm $DOT_HOME
+    sudo rm -rf ${HOME}/.[a-zA-Z]*
+}
 # The main thing
 case $1 in
     install)
@@ -125,6 +147,9 @@ case $1 in
         ;;
     update)
         dot_update ${@:2}
+        ;;
+    purge)
+        dot_purge ${@:2}
         ;;
     *)
         dot_print_help; exit 1
