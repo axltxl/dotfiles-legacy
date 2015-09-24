@@ -57,7 +57,8 @@ dot_install() {
         dot_stow $1 || exit 1
     fi
     if [ -x ${dot_installers_dir}/$1 ]; then
-        . ${dot_installers_dir}/$1 # install the actual thing
+        # install the actual thing
+        ${dot_installers_dir}/$1 ${@:3}
     fi
     dot_zsh_update # Update zsh environment
 }
