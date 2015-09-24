@@ -84,12 +84,12 @@ dot_deploy() {
 # Stow/install packages inside DOT_HOME
 #
 dot_install() {
-    if [ -d ${DOT_HOME}/$1 ]; then
-        dot_stow $1 || exit 1
-    fi
     if [ -x ${dot_installers_dir}/$1 ]; then
         # install the actual thing
         ${dot_installers_dir}/$1 ${@:3}
+    fi
+    if [ -d ${DOT_HOME}/$1 ]; then
+        dot_stow $1 || exit 1
     fi
     dot_zsh_update # Update zsh environment
 }
