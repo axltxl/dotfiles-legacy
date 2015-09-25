@@ -25,7 +25,7 @@ sudo apt-get install -y "${rofi_deps[@]}" || exit 1
 dot_printf_run "Getting rofi tarball"
 cd /tmp
 wget $rofi_url -O $rofi_tarball && \
-    tar xvf $rofi_tarball && \ || exit 1
+    tar xvf $rofi_tarball && || exit 1
 
 #
 # Compile it
