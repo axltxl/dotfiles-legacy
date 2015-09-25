@@ -74,11 +74,14 @@ fpath=($ZSH_HOME/lib $fpath) && export FPATH
 # Initial settings for X sessions
 ######################################
 
-#
-# Set keyboard repeat rate and delay before it
-#
-if [ -n $DISPLAY ]; then
+if [ "$DISPLAY" ]; then
+    # Set keyboard repeat rate and delay before it
     xset r rate 200 50
+
+    # Use rofi as a dmenu replacement if present
+    if which rofi >/dev/null 2>&1; then
+        alias dmenu='rofi -dmenu'
+    fi
 fi
 
 ######################################
