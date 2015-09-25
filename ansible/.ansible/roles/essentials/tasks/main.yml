@@ -16,6 +16,7 @@
     - mesa-utils
     - i3 # our beloved and minimalistic window manager
     - colortest # For testing color on terminals
+    - dunst # notification daemon
 
       # Our beloved file manager
     - ranger
