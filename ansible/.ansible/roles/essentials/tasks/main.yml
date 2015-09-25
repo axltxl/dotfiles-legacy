@@ -8,7 +8,9 @@
 - name: Set up essential packages (APT)
   apt: pkg={{ item }} state=latest
   with_items:
+    - xorg
     - lightdm
+    - mesa-utils
     - i3
     - ranger
     - curl
@@ -21,4 +23,9 @@
     - colortest
     - curl
     - wget
+    - chromium
+
+- name: Purge undesired packages
+  apt: pkg={{ item }} state=absent
+  with_items:
     - mc
