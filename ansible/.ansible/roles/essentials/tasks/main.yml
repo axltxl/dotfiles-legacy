@@ -2,30 +2,47 @@
 # ---------------------------
 # Essential packages
 # ---------------------------
-# This role makes sure the minimum
+
+# Make sure the minimum
 # necessary packages are installed
 
-- name: Set up essential packages (APT)
+- name: Set up essential packages
   apt: pkg={{ item }} state=latest
   with_items:
+
+      # Absolute essentials
     - xorg
     - lightdm
     - mesa-utils
-    - i3
+    - i3 # our beloved and minimalistic window manager
+    - colortest # For testing color on terminals
+
+      # Our beloved file manager
     - ranger
-    - curl
+
+      # Utilities for monitoring processes
     - htop
-    - irssi
-    - links
-    - tcpdump
     - sysstat
+
+      # Utilities for network debugging
     - nethogs
-    - colortest
+    - tcpdump
+
+      # HTTP utilities
     - curl
     - wget
+
+      # Our beloved web browsers
+    - links
     - chromium
+
+      # Userland apps
+    - irssi
+
+# Make sure the minimum
+# necessary packages are installed
 
 - name: Purge undesired packages
   apt: pkg={{ item }} state=absent
   with_items:
-    - mc
+    - mc # midnight commander
