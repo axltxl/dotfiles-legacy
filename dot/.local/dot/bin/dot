@@ -50,7 +50,7 @@ dot_update() {
 #
 dot_stow() {
     for i in "$@"; do
-        dot_printf "Stowing $1"
+        dot_printf "Stowing $i"
         [ -d ${DOT_HOME}/$i ] && stow --verbose=1 -R -d $DOT_HOME -t $HOME $i
     done
 }
@@ -60,7 +60,7 @@ dot_stow() {
 #
 dot_unstow() {
     for i in "$@"; do
-        dot_printf "Unstowing $1"
+        dot_printf "Unstowing $i"
         [ -d ${DOT_HOME}/$i ] && stow --verbose=1 -D -d $DOT_HOME -t $HOME $i
     done
 }
