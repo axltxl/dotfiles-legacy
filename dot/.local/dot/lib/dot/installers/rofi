@@ -4,6 +4,7 @@
 ##################################
 
 autoload dot_printf_install
+autoload dot_printf
 
 rofi_version=${1:-0.15.8}
 rofi_basename=rofi-${rofi_version}
@@ -22,10 +23,10 @@ rofi_opts=(
 dot_printf_install "rofi dependencies"
 sudo apt-get install -y "${rofi_deps[@]}" || exit 1
 
-dot_printf_run "Getting rofi tarball"
+dot_printf "Getting rofi tarball"
 cd /tmp
 wget $rofi_url -O $rofi_tarball && \
-    tar xvf $rofi_tarball && || exit 1
+    tar xvf $rofi_tarball || exit 1
 
 #
 # Compile it
