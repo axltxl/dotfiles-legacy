@@ -13,8 +13,12 @@ autoload dot_printf_clean
 
 #
 # Essential variables
-#
-dot_installers_dir=${DOT_PATH}/lib/dot/installers
+dot_basedir=${DOT_PATH}/lib/dot
+dot_installers_dir=${dot_basedir}/install.d
+dot_prestow_dir=${dot_basedir}/pre-stow.d
+dot_poststow_dir=${dot_basedir}/post-stow.d
+dot_preunstow_dir=${dot_basedir}/pre-unstow.d
+dot_postunstow_dir=${dot_basedir}/post-unstow.d
 dot_ansible_playbook_dir=${HOME}/.ansible
 
 dot_zsh_update() {
@@ -50,8 +54,10 @@ dot_update() {
 #
 dot_stow() {
     for i in "$@"; do
-        dot_printf "Stowing $1"
+        dot_printf "Stowing $i"
+        [ -e ${dot_prestow_dir}/$i ] && . ${dot_prestow_dir}/$i # pre-stow invocation
         [ -d ${DOT_HOME}/$i ] && stow --verbose=1 -R -d $DOT_HOME -t $HOME $i
+        [ -e ${dot_poststow_dir}/$i ] && . ${dot_poststow_dir}/$i # post-stow invocation
     done
 }
 
@@ -60,8 +66,10 @@ dot_stow() {
 #
 dot_unstow() {
     for i in "$@"; do
-        dot_printf "Unstowing $1"
+        dot_printf "Unstowing $i"
+        [ -e ${dot_preunstow_dir}/$i ] && . ${dot_preunstow_dir}/$i # postunstow invocation
         [ -d ${DOT_HOME}/$i ] && stow --verbose=1 -D -d $DOT_HOME -t $HOME $i
+        [ -e ${dot_postunstow_dir}/$i ] && . ${dot_postunstow_dir}/$i # postunstow invocation
     done
 }
 

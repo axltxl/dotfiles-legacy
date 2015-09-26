@@ -1,0 +1,35 @@
+#!/usr/bin/env zsh
+##################################
+# Install vim + Vundle + plugins
+##################################
+
+autoload dot_printf_install
+autoload dot_printf
+
+rofi_version=${1:-0.15.8}
+rofi_basename=rofi-${rofi_version}
+rofi_tarball=${rofi_basename}.tar.gz
+rofi_url=https://github.com/DaveDavenport/rofi/releases/download/${rofi_version}/${rofi_tarball}
+rofi_deps=(
+    libxinerama-dev \
+    libxft-dev \
+    libpango1.0-dev \
+    libx11-dev
+)
+rofi_opts=(
+    --prefix=$DOT_PATH \
+)
+
+dot_printf_install "rofi dependencies"
+sudo apt-get install -y "${rofi_deps[@]}" || exit 1
+
+dot_printf "Getting rofi tarball"
+cd /tmp
+wget $rofi_url -O $rofi_tarball && \
+    tar xvf $rofi_tarball || exit 1
+
+#
+# Compile it
+#
+dot_printf_install "Compile & install rofi"
+cd $rofi_basename && ./configure ${rofi_opts} && make install

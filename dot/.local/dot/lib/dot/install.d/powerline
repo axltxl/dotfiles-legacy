@@ -1,0 +1,10 @@
+#!/usr/bin/env zsh
+##################################
+# Install powerline + setup
+##################################
+
+autoload dot_printf_install
+
+# Install powerline itself
+dot_printf_install powerline
+sudo pip install powerline-status || exit 1
