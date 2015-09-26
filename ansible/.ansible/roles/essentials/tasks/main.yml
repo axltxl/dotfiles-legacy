@@ -30,6 +30,7 @@
     - iftop
     - iptraf
     - netcat
+    - nmap
 
       # HTTP utilities
     - curl
