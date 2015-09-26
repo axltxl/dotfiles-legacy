@@ -1,0 +1,2 @@
+# Create vim base directory prior to stow
+mkdir -p ~/.vim

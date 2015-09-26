@@ -52,7 +52,6 @@ else
 fi
 
 # Compile and install vim
-mkdir ~/.vim
 cd $vim_src && make clean && make distclean && \
     ./configure "${vim_opts[@]}" && make -j $cc_cores install
 
