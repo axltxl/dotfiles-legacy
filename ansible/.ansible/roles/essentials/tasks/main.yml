@@ -6,7 +6,7 @@
 # Make sure the minimum
 # necessary packages are installed
 
-- name: Set up essential packages
+- name: Essential packages
   apt: pkg={{ item }} state=latest
   with_items:
 
@@ -17,14 +17,15 @@
     - colortest # For testing color on terminals
     - openssh-client
 
-      # Our beloved file manager
-    - ranger
-
-      # Utilities for monitoring processes
+- name: Utilities for monitoring processes
+  apt: pkg={{ item }} state=latest
+  with_items:
     - htop
     - sysstat
 
-      # Utilities for network debugging
+- name: Utilities for network debugging
+  apt: pkg={{ item }} state=latest
+  with_items:
     - nethogs
     - tcpdump
     - iftop
@@ -32,11 +33,16 @@
     - netcat
     - nmap
 
-      # HTTP utilities
+- name: HTTP utilities
+  apt: pkg={{ item }} state=latest
+  with_items:
     - curl
     - wget
     - httpie
 
+- name: User apps
+  apt: pkg={{ item }} state=latest
+  with_items:
       # Our beloved web browsers
     - links
     - chromium
@@ -47,6 +53,12 @@
     - zathura # PDF reader
     - lxappearance # For setting up GTK
     - gpicview # pictures viewer
+
+      # Our beloved file manager
+    - ranger
+
+      # Wallpaper setter
+    - nitrogen
 
 # Make sure the minimum
 # necessary packages are uninstalled
