@@ -146,8 +146,8 @@ bar {
         status_command i3status
         # molokai colors
         colors {
-            background #272822
-            focused_workspace #A6E22E #A6E22E #272822
+            background #101010
+            focused_workspace #A6E22E #A6E22E #101010
         }
 }
 
