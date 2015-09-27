@@ -6,19 +6,19 @@ rofi.opacity:                        100
 rofi.width:                          50
 rofi.lines:                          15
 rofi.columns:                        1
-rofi.font:                           mono 12
-rofi.fg:                             #002B36
-rofi.bg:                             #FDF6E3
-rofi.color-enabled:                  false
+rofi.font:                           Terminess Powerline 12
+rofi.fg:                             #ffffff
+rofi.bg:                             #272822
+rofi.color-enabled:                  true
 rofi.color-normal:                   #fdf6e3,#002b36,#eee8d5,#586e75,#eee8d5
 rofi.color-urgent:                   #fdf6e3,#dc322f,#eee8d5,#dc322f,#fdf6e3
 rofi.color-active:                   #fdf6e3,#268bd2,#eee8d5,#268bd2,#fdf6e3
 rofi.color-window:                   #fdf6e3,#002b36
-rofi.fg-active:                      #268BD2
-rofi.fg-urgent:                      #DC322F
-rofi.hlfg-active:                    #FDF6E3
+rofi.fg-active:                      #ffffff
+fofi.fg-urgent:                      #ffffff
+fofi.hlfg-active:                    #FDF6E3
 rofi.hlfg-urgent:                    #FDF6E3
-rofi.bg-active:                      #FDF6E3
+rofi.bg-active:                      #272822
 rofi.bg-urgent:                      #FDF6E3
 rofi.hlbg-active:                    #268BD2
 rofi.hlbg-urgent:                    #DC322F
