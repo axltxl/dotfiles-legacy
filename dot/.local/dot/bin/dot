@@ -123,7 +123,7 @@ dot_purge() {
     dot_printf_warn "-------------------------------------------------------"
     dot_printf_warn "This is really going to assf*ck your home directory ..."
     dot_printf_warn "It will unstow everything and remove any remaining"
-    dot_printf_warn "dot files inside your home directory"
+    dot_printf_warn "dot files inside your home directory and then reboot"
     dot_printf_warn "-------------------------------------------------------"
     dot_printf_warn "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
     dot_printf_warn "ARE YOU REALLY SURE ABOUT THIS? (y/N)> "
@@ -141,6 +141,10 @@ dot_purge() {
     # Purge every dotfile thereis in your home directory
     sudo rm $DOT_HOME
     sudo rm -rf ${HOME}/.[a-zA-Z]*
+
+    # Reboot system
+    dot_printf "Rebooting system ..."
+    sudo shutdown -r now
 }
 # The main thing
 case $1 in
