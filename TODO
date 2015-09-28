@@ -2,6 +2,7 @@
 * More explicit feedback on dot commands
 * Initial config for ranger
 * ALSA/pulseaudio integration
+* btsync introduction and stowing
 
 # Iteration 1:
 * Additional available fonts
