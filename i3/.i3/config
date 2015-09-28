@@ -154,3 +154,8 @@ bar {
 # Border style for new windows
 # A 3 px border
 new_window pixel 1
+
+######################
+# Startup programs
+######################
+exec --no-startup-id btsync --storage ~/.sync # BitTorrent Sync

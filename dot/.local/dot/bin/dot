@@ -20,6 +20,7 @@ dot_poststow_dir=${dot_basedir}/post-stow.d
 dot_preunstow_dir=${dot_basedir}/pre-unstow.d
 dot_postunstow_dir=${dot_basedir}/post-unstow.d
 dot_ansible_playbook_dir=${HOME}/.ansible
+dot_btsync_dir=${HOME}/.dotsync
 
 dot_zsh_update() {
     # Update environment after everything has been done
@@ -56,7 +57,12 @@ dot_stow() {
     for i in "$@"; do
         dot_printf "Stowing $i"
         [ -e ${dot_prestow_dir}/$i ] && . ${dot_prestow_dir}/$i # pre-stow invocation
+
+        # Try to find the package inside btsync directory
+        [ -d ${dot_btsync_dir}/$i ] && stow --verbose=1 -R -d $dot_btsync_dir -t $HOME $i
+        # Try to find the package inside dotfiles directory
         [ -d ${DOT_HOME}/$i ] && stow --verbose=1 -R -d $DOT_HOME -t $HOME $i
+
         [ -e ${dot_poststow_dir}/$i ] && . ${dot_poststow_dir}/$i # post-stow invocation
     done
 }
