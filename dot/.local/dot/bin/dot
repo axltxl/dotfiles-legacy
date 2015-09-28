@@ -56,14 +56,16 @@ dot_update() {
 dot_stow() {
     for i in "$@"; do
         dot_printf "Stowing $i"
-        [ -e ${dot_prestow_dir}/$i ] && . ${dot_prestow_dir}/$i # pre-stow invocation
+        # pre-stow invocation
+        [ -e ${dot_prestow_dir}/$i ] && . ${dot_prestow_dir}/$i
 
         # Try to find the package inside btsync directory
         [ -d ${dot_btsync_dir}/$i ] && stow --verbose=1 -R -d $dot_btsync_dir -t $HOME $i
         # Try to find the package inside dotfiles directory
         [ -d ${DOT_HOME}/$i ] && stow --verbose=1 -R -d $DOT_HOME -t $HOME $i
 
-        [ -e ${dot_poststow_dir}/$i ] && . ${dot_poststow_dir}/$i # post-stow invocation
+        # post-stow invocation
+        [ -e ${dot_poststow_dir}/$i ] && . ${dot_poststow_dir}/$i
     done
 }
 
@@ -73,9 +75,16 @@ dot_stow() {
 dot_unstow() {
     for i in "$@"; do
         dot_printf "Unstowing $i"
-        [ -e ${dot_preunstow_dir}/$i ] && . ${dot_preunstow_dir}/$i # postunstow invocation
+        # preunstow invocation
+        [ -e ${dot_preunstow_dir}/$i ] && . ${dot_preunstow_dir}/$i
+
+        # Try to find the package inside btsync directory
+        [ -d ${dot_btsync_dir}/$i ] && stow --verbose=1 -D -d $dot_btsync_dir -t $HOME $i
+        # Try to find the package inside dotfiles directory
         [ -d ${DOT_HOME}/$i ] && stow --verbose=1 -D -d $DOT_HOME -t $HOME $i
-        [ -e ${dot_postunstow_dir}/$i ] && . ${dot_postunstow_dir}/$i # postunstow invocation
+
+        # postunstow invocation
+        [ -e ${dot_postunstow_dir}/$i ] && . ${dot_postunstow_dir}/$i
     done
 }
 
