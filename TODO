@@ -1,13 +1,13 @@
 # Iteration 0:
 * More explicit feedback on dot commands
-* Molokai colors for i3wm
 * Initial config for ranger
-* ALSA integration
+* ALSA/pulseaudio integration
 
 # Iteration 1:
 * Additional available fonts
 * Refine GTK config
 * zathura initial configuration
+* Initial config for nitrogen
 
 
 # Iteration 2:
