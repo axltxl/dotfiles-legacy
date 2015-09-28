@@ -1,15 +1,19 @@
 # Iteration 0:
-* Initial config for i3wm
-* Initial config for i3status
 * More explicit feedback on dot commands
-* Molokai colors for rofi
 * Molokai colors for i3wm
 * Initial config for ranger
-* Initial config for GTK
+* ALSA integration
 
 # Iteration 1:
 * Additional available fonts
 * Refine GTK config
+* zathura initial configuration
+
 
 # Iteration 2:
-* No display manager, that means no lightdm and all involved without having it
+* lightdm greeter customization
+* Initial configuration for irssi
+* multimedia keys support in i3wm
+
+# Iteration 3:
+* Zen kernel introduction and initial config
