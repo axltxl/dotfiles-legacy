@@ -165,3 +165,8 @@ client.focused          #66d9ef #57b9cc #ffffff #66d9ef
 client.focused_inactive #101010 #272822 #aaaaaa #101010
 client.unfocused        #272822 #101010 #404040 #272822
 client.urgent           #6e1133 #f92672 #ffffff #6e1133
+
+######################
+# Startup programs
+######################
+exec --no-startup-id btsync --storage ~/.sync # BitTorrent Sync
