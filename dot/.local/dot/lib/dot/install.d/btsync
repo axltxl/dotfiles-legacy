@@ -1,0 +1,36 @@
+#!/usr/bin/env zsh
+##################################
+# Install btsync locally on $DOT_PATH
+##################################
+
+autoload dot_printf_install
+autoload dot_printf_run
+autoload dot_printf_clean
+
+#
+# Essential variables
+#
+btsync_tarball=BitTorrent-Sync_x64.tar.gz
+btsync_url=https://download-cdn.getsync.com/stable/linux-x64/${btsync_tarball}
+
+
+#
+# Get the actual git source tarball
+#
+dot_printf_run "Getting btsync tarball"
+cd /tmp
+wget $btsync_url -O $btsync_tarball && \
+    tar xf $btsync_tarball && \
+    rm -f $btsync_tarball || exit 1
+
+#
+# Install btsync
+#
+dot_printf_install "BitTorrent Sync ${btsync_version}"
+mv btsync $DOT_PATH/bin || exit 1
+
+#
+# Remove everything
+#
+dot_printf_clean everything
+cd /tmp && rm -rf btsync
