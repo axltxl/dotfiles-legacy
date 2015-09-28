@@ -152,5 +152,16 @@ bar {
 }
 
 # Border style for new windows
-# A 3 px border
 new_window pixel 1
+
+# Mouse does not dictate focus!
+focus_follows_mouse no
+
+#########################
+# Window colors (molokai)
+#########################
+# class                 border  backgr. text    indicator
+client.focused          #66d9ef #57b9cc #ffffff #66d9ef
+client.focused_inactive #101010 #272822 #aaaaaa #101010
+client.unfocused        #272822 #101010 #404040 #272822
+client.urgent           #6e1133 #f92672 #ffffff #6e1133
