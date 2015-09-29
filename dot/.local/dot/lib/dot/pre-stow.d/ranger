@@ -1,0 +1,2 @@
+# Make sure config directory is created first
+mkdir -p ~/.config/ranger
