@@ -16,6 +16,10 @@
     - i3 # our beloved and minimalistic window manager
     - colortest # For testing color on terminals
     - openssh-client
+      # Audio support
+    - pulseaudio
+    - pavucontrol
+    - alsa-utils
 
 - name: Utilities for monitoring processes
   apt: pkg={{ item }} state=latest
@@ -60,6 +64,9 @@
       # Wallpaper setter
     - nitrogen
 
+      # torrents are awesome
+    - transmission-gtk
+
 # Make sure the minimum
 # necessary packages are uninstalled
 
@@ -67,3 +74,8 @@
   apt: pkg={{ item }} state=absent
   with_items:
     - mc # midnight commander
+
+- name: GTK+ engines
+  apt: pkg={{ item }} state=latest
+  with_items:
+      - gtk2-engines-murrine
