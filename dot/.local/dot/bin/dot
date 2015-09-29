@@ -11,8 +11,9 @@ autoload dot_printf_warn
 autoload dot_printf_clean
 
 
-#
+#########################################
 # Essential variables
+#########################################
 dot_basedir=${DOT_PATH}/lib/dot
 dot_installers_dir=${dot_basedir}/install.d
 dot_prestow_dir=${dot_basedir}/pre-stow.d
@@ -44,10 +45,10 @@ dot_update() {
     unset d
 
     # deploy all changes in the ansible playbook
-    dot_printf "Deploying all changes in the ansible playbook"
     dot_deploy
 
-    dot_zsh_update # Update zsh environment
+    # Update zsh environment
+    dot_zsh_update
 }
 
 #
@@ -99,6 +100,7 @@ dot_refresh() {
 # Execute ansible playbook to deploy system-wide changes
 #
 dot_deploy() {
+    dot_printf "Deploying playbook changes ..."
     cd $dot_ansible_playbook_dir && \
         ansible-playbook site.yml -i inventory || exit 1
 }
@@ -109,6 +111,7 @@ dot_deploy() {
 dot_install() {
     if [ -x ${dot_installers_dir}/$1 ]; then
         # install the actual thing
+        dot_printf "Launching installer: $1"
         ${dot_installers_dir}/$1 ${@:3}
     fi
     if [ -d ${DOT_HOME}/$1 ]; then
@@ -128,19 +131,20 @@ dot_print_help() {
     echo "  dot reload|refresh - Reload zsh environment"
     echo "  dot update - Update git repo + reload everything"
     echo "  dot purge - Purge every dotfile there is inside your home directory"
+    echo
 }
 
 dot_purge() {
     #
     # warn the user first of all
     #
-    dot_printf_warn "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+    dot_printf_warn "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
     dot_printf_warn "-------------------------------------------------------"
     dot_printf_warn "This is really going to assf*ck your home directory ..."
     dot_printf_warn "It will unstow everything and remove any remaining"
     dot_printf_warn "dot files inside your home directory and then reboot"
     dot_printf_warn "-------------------------------------------------------"
-    dot_printf_warn "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+    dot_printf_warn "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
     dot_printf_warn "ARE YOU REALLY SURE ABOUT THIS? (y/N)> "
     read -sq ans
     [ $ans != 'y' ] && dot_printf "Aborting operation ..." &&  exit 0
@@ -154,6 +158,7 @@ dot_purge() {
     unset d
 
     # Purge every dotfile thereis in your home directory
+    dot_printf_warn "Purging all your dotfiles inside your home directory at $HOME"
     sudo rm $DOT_HOME
     sudo rm -rf ${HOME}/.[a-zA-Z]*
 
