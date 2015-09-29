@@ -71,15 +71,6 @@ fpath=($ZSH_HOME/lib $fpath) && export FPATH
 
 
 ######################################
-# Initial settings for X sessions
-######################################
-
-if [ "$DISPLAY" ]; then
-    # Set keyboard repeat rate and delay before it
-    xset r rate 200 50
-fi
-
-######################################
 # Start tmux on every shell login
 # source: https://wiki.archlinux.org/index.php/Tmux#Start_tmux_in_urxvt
 ######################################
