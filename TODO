@@ -1,13 +1,11 @@
 # Iteration 0:
 * More explicit feedback on dot commands
 * Initial config for ranger
-* ALSA/pulseaudio integration
 
 # Iteration 1:
 * Additional available fonts
 * Refine GTK config
 * zathura initial configuration
-* Initial config for nitrogen
 
 
 # Iteration 2:
