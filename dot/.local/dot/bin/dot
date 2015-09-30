@@ -51,42 +51,64 @@ dot_update() {
     dot_zsh_update
 }
 
-#
-# This will automatically stow directories inside $DOT_HOME
-#
-dot_stow() {
-    for i in "$@"; do
+_dot_stow() {
+    local stow_dir=$1
+    for i in "${@:2}"; do
         dot_printf "Stowing $i"
         # pre-stow invocation
         [ -e ${dot_prestow_dir}/$i ] && . ${dot_prestow_dir}/$i
 
-        # Try to find the package inside btsync directory
-        [ -d ${dot_btsync_dir}/$i ] && stow --verbose=1 -R -d $dot_btsync_dir -t $HOME $i
         # Try to find the package inside dotfiles directory
-        [ -d ${DOT_HOME}/$i ] && stow --verbose=1 -R -d $DOT_HOME -t $HOME $i
+        [ -d ${stow_dir}/$i ] && stow --verbose=1 -R -d $stow_dir -t $HOME $i
 
         # post-stow invocation
         [ -e ${dot_poststow_dir}/$i ] && . ${dot_poststow_dir}/$i
     done
 }
 
-#
-# This will automatically unstow directories inside $DOT_HOME
-#
-dot_unstow() {
-    for i in "$@"; do
+_dot_unstow() {
+    local stow_dir=$1
+    for i in "${@:2}"; do
         dot_printf "Unstowing $i"
         # preunstow invocation
         [ -e ${dot_preunstow_dir}/$i ] && . ${dot_preunstow_dir}/$i
 
-        # Try to find the package inside btsync directory
-        [ -d ${dot_btsync_dir}/$i ] && stow --verbose=1 -D -d $dot_btsync_dir -t $HOME $i
         # Try to find the package inside dotfiles directory
-        [ -d ${DOT_HOME}/$i ] && stow --verbose=1 -D -d $DOT_HOME -t $HOME $i
+        [ -d ${stow_dir}/$i ] && stow --verbose=1 -D -d $stow_dir -t $HOME $i
 
         # postunstow invocation
         [ -e ${dot_postunstow_dir}/$i ] && . ${dot_postunstow_dir}/$i
     done
+}
+
+
+#
+# This will automatically stow directories inside btsync main directory
+#
+dot_sync() {
+    _dot_stow $dot_btsync_dir "$@"
+}
+
+#
+# This will automatically stow directories inside btsync main directory
+#
+dot_desync() {
+    _dot_unstow $dot_btsync_dir "$@"
+}
+
+
+#
+# This will automatically unstow directories inside $DOT_HOME
+#
+dot_stow() {
+    _dot_stow $DOT_HOME "$@"
+}
+
+#
+# This will automatically unstow directories inside $DOT_HOME
+#
+dot_unstow() {
+    _dot_unstow $DOT_HOME "$@"
 }
 
 #
@@ -126,11 +148,13 @@ dot_install() {
 dot_print_help() {
     echo "Usage: dot <COMMAND> <ARGUMENTS>"
     echo
-    echo "  dot stow <package> - Stow package(s)"
-    echo "  dot unstow <package> - Unstow package(s)"
-    echo "  dot reload|refresh - Reload zsh environment"
-    echo "  dot update - Update git repo + reload everything"
-    echo "  dot purge - Purge every dotfile there is inside your home directory"
+    echo "  dot stow <package> - stow package(s)"
+    echo "  dot unstow <package> - unstow package(s)"
+    echo "  dot sync <package> - stow directory located inside $dot_btsync_dir"
+    echo "  dot desync <package> - unstow directory located inside $dot_btsync_dir"
+    echo "  dot reload|refresh - reload zsh environment"
+    echo "  dot update - update git repo + reload everything"
+    echo "  dot purge - purge every dotfile there is inside your home directory"
     echo
 }
 
@@ -185,6 +209,12 @@ case $1 in
         ;;
     update)
         dot_update ${@:2}
+        ;;
+    sync)
+        dot_sync ${@:2}
+        ;;
+    desync)
+        dot_desync ${@:2}
         ;;
     purge)
         dot_purge ${@:2}
