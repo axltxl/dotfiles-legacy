@@ -1,8 +1,7 @@
 # Iteration 1:
+* docker integration
 * Additional available fonts
 * Refine GTK config
-* zathura initial configuration
-
 
 # Iteration 2:
 * lightdm greeter customization
