@@ -1,0 +1,15 @@
+#!/usr/bin/env zsh
+#########################################
+# syncd: watch for changes in dotsync directory
+# and dot sync if necessary
+#########################################
+dot_btsync_dir=~/.dotsync
+
+# Any changes inside btsync directory will be stowed
+# into the home directory
+while inotifywait -r -e close_write $dot_btsync_dir &> /dev/null; do
+    for dir in $dot_btsync_dir/* ; do
+        dot sync $(basename $dir) &> /dev/null;
+    done
+    unset dir
+done

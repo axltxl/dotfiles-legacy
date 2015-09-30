@@ -176,3 +176,4 @@ client.urgent           #6e1133 #f92672 #ffffff #6e1133
 exec --no-startup-id btsync --storage ~/.sync # BitTorrent Sync
 exec --no-startup-id nitrogen --restore # set wallpapers
 exec pulseaudio --start # pulseaudio
+exec syncd # dotsync monitoring daemon

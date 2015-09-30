@@ -16,6 +16,7 @@
     - i3 # our beloved and minimalistic window manager
     - colortest # For testing color on terminals
     - openssh-client
+    - inotify-tools
       # Audio support
     - pulseaudio
     - pavucontrol
