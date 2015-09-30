@@ -8,7 +8,9 @@ inotify_events="create,delete,move,delete_self,move_self"
 
 # Any changes inside btsync directory will be stowed
 # into the home directory
-while inotifywait --syslog @.sync -r -e $inotify_events $dot_btsync_dir > /dev/null; do
+while inotifywait --syslog @.sync -r \
+    -e $inotify_events $dot_btsync_dir > /dev/null
+do
     for dir in $dot_btsync_dir/* ; do
         dot sync $(basename $dir) &> /dev/null;
     done
