@@ -58,6 +58,7 @@
     - zathura # PDF reader
     - lxappearance # For setting up GTK
     - gpicview # pictures viewer
+    - gimp # Image editor
     - cmus # my music player
     - smplayer # my video player
 
