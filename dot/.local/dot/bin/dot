@@ -165,7 +165,7 @@ dot_purge() {
     dot_printf_warn "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
     dot_printf_warn "-------------------------------------------------------"
     dot_printf_warn "This is really going to assf*ck your home directory ..."
-    dot_printf_warn "It will unstow everything and remove any remaining"
+    dot_printf_warn "It will unstow everything, remove any remaining"
     dot_printf_warn "dot files inside your home directory and then reboot"
     dot_printf_warn "-------------------------------------------------------"
     dot_printf_warn "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
@@ -178,6 +178,18 @@ dot_purge() {
     dot_printf "Unstowing all packages inside $DOT_HOME"
     for d in $DOT_HOME/*; do
         dot_unstow $( basename $d )
+    done
+    unset d
+
+    # kill both bsync and syncd before unstowing
+    dot_printf "kill both bsync and syncd before unstowing"
+    kill -ILL $(pidof btsync) &> /dev/null || true
+    kill -ILL $(ps -xo pid,cmd 2> /dev/null | grep syncd | grep sh | awk '{print $1}' | tr '\n' ' ') &> /dev/null || true
+
+    # unstow all directories inside DOT_HOME
+    dot_printf "Unstowing all packages inside $dot_btsync_dir"
+    for d in $dot_btsync_dir/*; do
+        dot_desync $( basename $d )
     done
     unset d
 
