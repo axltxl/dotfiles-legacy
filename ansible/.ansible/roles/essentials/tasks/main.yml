@@ -45,6 +45,11 @@
     - wget
     - httpie
 
+- name: golang
+  apt: pkg={{ item }} state=latest
+  with_items:
+      - golang
+
 - name: User apps
   apt: pkg={{ item }} state=latest
   with_items:
