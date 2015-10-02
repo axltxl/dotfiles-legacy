@@ -12,6 +12,7 @@
 
       # Absolute essentials
     - xorg
+    - xautolock
     - lightdm
     - i3 # our beloved and minimalistic window manager
     - colortest # For testing color on terminals
