@@ -124,6 +124,7 @@ dot_refresh() {
 dot_deploy() {
     dot_printf "Deploying playbook changes ..."
     cd $dot_ansible_playbook_dir && \
+        ansible-galaxy install --force -r requirements.yml && \
         ansible-playbook site.yml -i inventory || exit 1
 }
 
