@@ -2,7 +2,9 @@
 rclone_src_root=~
 rclone_dest=( \
     eBooks \
-    Documents
+    Documents \
+    Pictures \
+    Wallpapers
 )
 
 # The actual rclone invocation
