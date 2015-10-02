@@ -1,0 +1,4 @@
+---
+- src: https://github.com/deimosfr/ansible-dotdeb.git
+  version: v0.4
+  name: dotdeb

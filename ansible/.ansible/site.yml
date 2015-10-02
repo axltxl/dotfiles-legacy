@@ -1,7 +1,16 @@
 ---
+#########################################
+# ansible main playbook for this machine
+#########################################
+
+# dotdeb configuration
+dotdeb_repo_version: jessie
+dotdeb_extra_repo: False
+
 # Apply common configuration to host
 - hosts: 127.0.0.1
   sudo: yes
   roles:
+      - dotdeb
       - essentials
       - rclone
