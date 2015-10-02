@@ -1,0 +1,12 @@
+#!/bin/bash
+rclone_src_root=~
+rclone_dest=( \
+    eBooks \
+    Documents
+)
+
+# The actual rclone invocation
+for dest in "${rclone_dest[@]}" ; do
+    rclone copy "$rclone_src_root/$dest" "gdrive:$dest" --bwlimit=64 &> /dev/null
+done
+unset dest

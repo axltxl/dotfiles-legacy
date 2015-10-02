@@ -1,0 +1,23 @@
+---
+# ---------------------------
+# rclone configuration
+# ---------------------------
+
+# Make sure the minimum
+# necessary packages are installed
+
+- name: Set up cron script
+  copy:
+    src: gdrive-backup
+    dest: '/usr/bin/gdrive-backup'
+    mode: 0755
+
+- name: Set up cronjob
+  cron:
+    state: present
+    cron_file: rclone
+    name: Sync home directory with Google Drive for archiving
+    hour: '*/12'
+    minute: 0
+    user: axtlxl
+    job: '/usr/bin/gdrive-sync'
