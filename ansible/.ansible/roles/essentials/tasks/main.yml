@@ -50,6 +50,13 @@
   with_items:
       - golang
 
+- name: android tools
+  apt: pkg={{ item }} state=latest
+  with_items:
+      - android-tools-adb
+      - android-tools-fastboot
+      - android-tools-fsutils
+
 - name: User apps
   apt: pkg={{ item }} state=latest
   with_items:
