@@ -17,6 +17,7 @@
     - i3 # our beloved and minimalistic window manager
     - colortest # For testing color on terminals
     - openssh-client
+    - libnotify-bin
     - inotify-tools
       # Audio support
     - pulseaudio

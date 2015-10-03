@@ -37,7 +37,7 @@ bindsym $mod+c kill
 bindsym $mod+d exec --no-startup-id rofi -show run
 
 # dunst takes charge as the notification daemon
-exec --no-startup-id dunst -config ~/.i3/config
+exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
 
 # change focus
 bindsym $mod+h focus left
