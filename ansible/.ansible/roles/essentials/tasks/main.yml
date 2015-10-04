@@ -50,6 +50,12 @@
       - psutil
       - colour
 
+- name: system-wide fonts
+  apt: pkg={{ item }} state=latest
+  with_items:
+      - fonts-liberation
+      - fonts-droid
+
 - name: Utilities for network debugging
   apt: pkg={{ item }} state=latest
   with_items:
