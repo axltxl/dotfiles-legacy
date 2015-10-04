@@ -9,6 +9,6 @@ rclone_dest=( \
 
 # The actual rclone invocation
 for dest in "${rclone_dest[@]}" ; do
-    rclone copy "$rclone_src_root/$dest" "gdrive:$dest" --bwlimit=64 &> /dev/null
+    rclone copy "$rclone_src_root/$dest" "gdrive:$dest" --bwlimit=64
 done
 unset dest
