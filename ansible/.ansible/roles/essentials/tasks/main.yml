@@ -16,6 +16,7 @@
     - lightdm
     - i3 # our beloved and minimalistic window manager
     - colortest # For testing color on terminals
+    - scrot # screenshots
     - openssh-client
     - libnotify-bin
     - inotify-tools

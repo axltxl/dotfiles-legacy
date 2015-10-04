@@ -39,10 +39,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -145,6 +145,12 @@ new_window pixel 1
 
 # Mouse does not dictate focus!
 focus_follows_mouse no
+
+# screenshots
+set $scrot_path "$HOME/Pictures/screenshot-%Y%m%d%H%M%S.jpg"
+set $scrot_quality 90
+bindsym Print exec scrot -q $scrot_quality $scrot_path
+bindsym $mod+Print exec scrot -u -q $scrot_quality $scrot_path
 
 # Multimedia keys
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 -- +3%
