@@ -145,7 +145,7 @@ bindsym $mod+p exec $autolock
 # finds out, if available)
 bar {
         position top
-        status_command i3status
+        status_command /usr/bin/python3 ~/.i3/status.py
         # molokai colors
         colors {
             background #101010
