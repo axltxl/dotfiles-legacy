@@ -149,8 +149,10 @@ focus_follows_mouse no
 # screenshots
 set $scrot_path "$HOME/Pictures/screenshot-%Y%m%d%H%M%S.jpg"
 set $scrot_quality 90
-bindsym Print exec scrot -q $scrot_quality $scrot_path
-bindsym $mod+Print exec scrot -u -q $scrot_quality $scrot_path
+set $scrot_notify 'Screenshot saved'
+
+bindsym Print exec scrot -q $scrot_quality $scrot_path && notify-send --urgency=normal $scrot_notify
+bindsym $mod+Print exec scrot -u -q $scrot_quality $scrot_path && notify-send --urgency=normal $scrot_notify
 
 # Multimedia keys
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 -- +3%
