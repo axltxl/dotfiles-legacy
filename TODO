@@ -1,12 +1,9 @@
 # Iteration 1:
 * docker integration
-* Additional available fonts
-* Refine GTK config
 
 # Iteration 2:
 * lightdm greeter customization
 * Initial configuration for irssi
-* multimedia keys support in i3wm
 
 # Iteration 3:
 * Zen kernel introduction and initial config
