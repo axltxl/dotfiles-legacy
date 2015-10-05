@@ -1,0 +1,4 @@
+# Initial set of directories used by gdrive-backup
+# to upload directories to Google Drive.
+# Each entry is expressed in the form localdir@remotedir
+export RCLONE_PATH="$HOME/Documents@Documents:$HOME/Pictures@Pictures:$HOME/Wallpapers@Wallpapers:$HOME/eBooks@eBooks"

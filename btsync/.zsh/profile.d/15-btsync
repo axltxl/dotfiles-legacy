@@ -1,0 +1,4 @@
+#############################################
+# btsync root directory for automatic stowing
+#############################################
+export BTSYNC_HOME=${HOME}/.dotsync

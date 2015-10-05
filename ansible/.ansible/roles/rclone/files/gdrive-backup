@@ -1,14 +1,16 @@
 #!/usr/bin/env zsh
-rclone_src_root=~
-rclone_dest=( \
-    eBooks \
-    Documents \
-    Pictures \
-    Wallpapers
-)
+#############################
+# rclone backup to google drive
+#############################
 
 # The actual rclone invocation
-for dest in "${rclone_dest[@]}" ; do
-    rclone copy "$rclone_src_root/$dest" "gdrive:$dest" --bwlimit=64
+for rclone_entry in $(echo $RCLONE_PATH | tr ':' ' ')
+do
+    # For each entry, get source and destination directory
+    src=$(echo $rclone_entry | cut -d@ -f1)
+    dest=$(echo $rclone_entry | cut -d@ -f2)
+
+    # and then, do the thing
+    rclone copy $src "gdrive:$dest" --bwlimit=64
 done
-unset dest
+unset rclone_entry
