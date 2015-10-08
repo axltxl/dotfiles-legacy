@@ -25,6 +25,13 @@
     - pavucontrol
     - alsa-utils
 
+- name: General administration utilities
+  apt: pkg={{ item }} state=latest
+  with_items:
+      - dnsutils
+      - findutils
+      - locate
+
 - name: Utilities for monitoring processes
   apt: pkg={{ item }} state=latest
   with_items:
