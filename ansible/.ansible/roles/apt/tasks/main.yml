@@ -9,8 +9,5 @@
     state: present
     validate_certs: true
     update_cache: true
-    with_items:
-        - 'deb ftp://ftp.debian.org/debian jessie main contrib non-free'
-
-
-
+  with_items:
+    - 'deb ftp://ftp.debian.org/debian jessie main contrib non-free'
