@@ -12,6 +12,7 @@
       dotdeb_extra_repo: False
   sudo: yes
   roles:
+      - apt
       - dotdeb
       - essentials
       - rclone
