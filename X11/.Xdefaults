@@ -58,7 +58,8 @@ URxvt.keysym.F11: perl:fullscreen:switch
 !-------------------------------------------------------------------------------
 ! Molokai theme
 !-------------------------------------------------------------------------------
-URxvt*background: #101010
+URxvt.depth: 32
+URxvt*background: [92]#101010
 URxvt*foreground: #d0d0d0
 URxvt*color0: #101010
 URxvt*color1: #960050
