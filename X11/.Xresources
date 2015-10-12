@@ -2,7 +2,7 @@
 !! rofi settings
 !-------------------------------------------------------------------------------
 rofi.modi:                           window,run,ssh
-rofi.opacity:                        100
+rofi.opacity:                        92
 rofi.width:                          50
 rofi.lines:                          10
 rofi.columns:                        1

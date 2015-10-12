@@ -15,6 +15,7 @@
     - xautolock
     - lightdm
     - i3 # our beloved and minimalistic window manager
+    - compton # compositor
     - colortest # For testing color on terminals
     - scrot # screenshots
     - openssh-client
