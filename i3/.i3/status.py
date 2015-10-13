@@ -20,7 +20,7 @@ color_warn=molokai_orange
 # Tue 30 Jul 11:59:46 PM KW31
 #                          ^-- calendar week
 status.register("clock",
-    format="%a %-d %b %X KW%V",)
+    format="%a %-d %b %T",)
 
 # Shows the average load of the last minute and the last 5 minutes
 # (the default value for format is used)
