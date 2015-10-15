@@ -79,6 +79,7 @@
     - iptraf
     - netcat
     - nmap
+    - telnet
 
 - name: HTTP utilities
   apt: pkg={{ item }} state=latest
