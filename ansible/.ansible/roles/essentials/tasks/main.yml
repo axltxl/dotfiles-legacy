@@ -12,6 +12,9 @@
 
       # Absolute essentials
     - xorg
+    # ""arbitraty precision calculator language""
+    # I just use it for compiling linux
+    - bc
     - xautolock
     - lightdm
     - i3 # our beloved and minimalistic window manager
@@ -33,6 +36,7 @@
       - findutils
       - locate
       - unzip
+      - unrar
 
 - name: Utilities for monitoring processes
   apt: pkg={{ item }} state=latest
