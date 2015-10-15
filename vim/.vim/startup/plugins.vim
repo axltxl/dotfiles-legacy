@@ -87,3 +87,6 @@ endif
 " gitgutter
 """"""""""""""""""
 let g:gitgutter_eager = 0
+let g:gitgutter_highlight_lines = 1
+nmap <Leader>ha <Plug>GitGutterStageHunk
+nmap <Leader>hu <Plug>GitGutterRevertHunk
