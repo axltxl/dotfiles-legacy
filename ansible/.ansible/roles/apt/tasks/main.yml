@@ -7,7 +7,7 @@
   apt_repository:
     repo: '{{ item }}'
     state: present
-    validate_certs: true
-    update_cache: true
+    validate_certs: yes
+    update_cache: yes
   with_items:
-    - 'deb ftp://ftp.debian.org/debian jessie main contrib non-free'
+    - 'deb ftp://ftp.debian.org/debian {{ debian_release }} main contrib non-free'

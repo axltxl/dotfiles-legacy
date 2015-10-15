@@ -10,9 +10,12 @@
       # dotdeb configuration
       dotdeb_repo_version: jessie
       dotdeb_extra_repo: False
+      user_name: axltxl
+      debian_release: jessie
   sudo: yes
   roles:
       - apt
       - dotdeb
       - essentials
       - rclone
+      - docker
