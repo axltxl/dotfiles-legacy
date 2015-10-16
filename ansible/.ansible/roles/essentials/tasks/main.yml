@@ -10,7 +10,8 @@
   apt: pkg={{ item }} state=latest
   with_items:
 
-      # Absolute essentials
+    # Absolute essentials
+    - apt-transport-https
     - xorg
     # ""arbitraty precision calculator language""
     # I just use it for compiling linux
