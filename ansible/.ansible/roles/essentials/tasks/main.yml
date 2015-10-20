@@ -39,6 +39,12 @@
       - unzip
       - unrar
 
+- name: file systems utilities
+  apt: pkg={{ item }} state=latest
+  with_items:
+      - hfsprogs
+
+
 - name: Utilities for monitoring processes
   apt: pkg={{ item }} state=latest
   with_items:
