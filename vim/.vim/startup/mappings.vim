@@ -46,6 +46,10 @@ map <leader>j :wincmd j<CR>
 map <leader>k :wincmd k<CR>
 map <leader>l :wincmd l<CR>
 
+" Easy window splitting
+map <leader>v :vsplit<CR>
+map <leader>b :split<CR>
+
 " Reload file
 nnoremap <F5> :e!<CR>
 
