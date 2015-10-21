@@ -55,8 +55,8 @@ let g:ctrlp_show_hidden = 1 " Show hidden files
 let g:EasyMotion_smartcase = 1
 "
 " Line motions
-map <Leader>K <Plug>(easymotion-k)
-map <Leader>J <Plug>(easymotion-j)
+map kk <Plug>(easymotion-k)
+map jj <Plug>(easymotion-j)
 
 let g:EasyMotion_startofline = 0 " keep cursor column when JK motion"
 " Gif config
