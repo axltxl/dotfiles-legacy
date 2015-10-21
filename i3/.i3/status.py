@@ -28,6 +28,9 @@ status.register("load",
         color=color_good,
         critical_color=color_bad)
 
+status.register("cpu_usage",
+        format='{usage:02}%')
+
 # Show the memory usage
 status.register("mem",
         color=color_good,
