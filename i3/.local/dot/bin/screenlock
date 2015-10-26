@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+#################################
+# A somewhat fancy i3lock wrapper
+#################################
+
+# fork i3lock and suspend to RAM
+i3lock -e --color=101010 && echo mem | sudo tee /sys/power/state > /dev/null
+
+# Make sure keyboard-related settings are well set across screen locks
+xset r rate 200 50
+xmodmap ~/.Xmodmap
