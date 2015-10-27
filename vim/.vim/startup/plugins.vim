@@ -54,11 +54,10 @@ let g:ctrlp_show_hidden = 1 " Show hidden files
 " " Turn on case insensitive feature
 let g:EasyMotion_smartcase = 1
 "
-" Line motions
-map kk <Plug>(easymotion-k)
-map jj <Plug>(easymotion-j)
 
-let g:EasyMotion_startofline = 0 " keep cursor column when JK motion"
+" keep cursor column when JK motion
+let g:EasyMotion_startofline = 0
+
 " Gif config
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
