@@ -1,4 +1,5 @@
 " ============ Disable ESC key in visual and insert mode ============
+set laststatus=2
 vnoremap <esc> <NOP>
 inoremap <esc> <NOP>
 
@@ -12,6 +13,11 @@ inoremap <Down> <NOP>
 inoremap <Left> <NOP>
 inoremap <Right> <NOP>
 
+" ============ Disable arrow keys in both visual and insert mode ============
+nnoremap h <NOP>
+nnoremap j <NOP>
+nnoremap k <NOP>
+nnoremap l <NOP>
 
 " Reselect visual block after indent/outdent
 vnoremap < <gv
@@ -26,10 +32,6 @@ let mapleader = ";"
 
 " Shortcut to rapidly toggle `set list`
 map <leader>p :set list!<CR>
-
-" Swap line up/down
-nnoremap <leader>J ddjP
-nnoremap <leader>K ddkP
 
 " Quicksave
 nnoremap <leader>s :w<CR>
