@@ -43,6 +43,7 @@
   apt: pkg={{ item }} state=latest
   with_items:
       - hfsprogs
+      - exfat-utils
 
 
 - name: Utilities for monitoring processes
