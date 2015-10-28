@@ -39,7 +39,7 @@ URxvt.cursorUnderline:      false
 !-------------------------------------------------------------------------------
 URxvt.perl-ext-common:      default,matcher,clipboard,fullscreen
 URxvt.matcher.button:       1
-URxvt.urlLauncher:          google-chrome
+URxvt.urlLauncher:          chromium
 
 !-------------------------------------------------------------------------------
 !enable copy/paste using Ctrl+Shift+c/Ctrl+Shift+v
@@ -77,3 +77,9 @@ URxvt*color12: #5f5fee
 URxvt*color13: #bb88dd
 URxvt*color14: #4eb4fa
 URxvt*color15: #d0d0d0
+
+!-------------------------------------------------------------------------------
+! with this set to true, when an app sends a bell to the terminal,
+! awesome hilights the appropriate tag(s) ;)
+!-------------------------------------------------------------------------------
+URxvt*urgentOnBell: true
