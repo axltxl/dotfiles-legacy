@@ -19,3 +19,8 @@
       state: latest
   with_items:
       - syncthing
+
+- name: set up syncthing as a daemon
+  service:
+      name: syncthing@'{{ user_name }}'
+      state: started
