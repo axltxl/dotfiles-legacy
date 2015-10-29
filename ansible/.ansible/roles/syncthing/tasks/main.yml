@@ -1,0 +1,21 @@
+---
+# ---------------------------
+# syncthing configuration
+# ---------------------------
+
+- name: set up APT key
+  apt_key:
+      url: https://syncthing.net/release-key.txt
+
+- name: set up repository
+  apt_repository:
+      repo: 'deb http://apt.syncthing.net syncthing release'
+      state: present
+
+- name: install syncthing
+  apt:
+      update_cache: yes
+      name: '{{ item }}'
+      state: latest
+  with_items:
+      - syncthing
