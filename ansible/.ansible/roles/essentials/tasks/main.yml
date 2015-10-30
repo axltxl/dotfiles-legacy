@@ -125,6 +125,7 @@
     - cmus # my music player
     - smplayer # my video player
     - pepperflashplugin-nonfree # flash player
+    - keepass2 # password manager
 
       # Our beloved file manager
     - ranger
