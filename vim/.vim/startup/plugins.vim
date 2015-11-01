@@ -8,13 +8,13 @@ let g:airline_powerline_fonts = 1
 
 
 """"""""""""""""""
-" Settings for Tagbar
+" Tagbar
 """"""""""""""""""""
 nmap <Leader>q :TagbarToggle<CR>
 let g:tagbar_vertical = 20
 
 """""""""""""""""""
-" Autocompletion stuff
+" delimitMate configuration
 """""""""""""""""""
 "let delimitMate_expand_cr = 1
 
@@ -22,11 +22,6 @@ let g:tagbar_vertical = 20
 """"""""""""""""""
 " NERDtree
 """"""""""""""""""
-"autocmd vimenter * NERDTree
-"autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primar
 map <Leader>w :NERDTreeToggle<CR>
 
 
@@ -39,21 +34,9 @@ let g:ctrlp_show_hidden = 1 " Show hidden files
 """"""""""""""""""
 " easymotion
 """"""""""""""""""
-"let g:EasyMotion_do_mapping = 0 " Disable default mappings
-
-" Bi-directional find motion
-" " Jump to anywhere you want with minimal keystrokes, with just one key
-" binding.
-" " `s{char}{label}`
-" nmap s <Plug>(easymotion-s)
-" " or
-" " `s{char}{char}{label}`
-" " Need one more keystroke, but on average, it may be more comfortable.
-" nmap s <Plug>(easymotion-s2)
-"
-" " Turn on case insensitive feature
+" Turn on case insensitive feature
 let g:EasyMotion_smartcase = 1
-"
+
 
 " keep cursor column when JK motion
 let g:EasyMotion_startofline = 0
@@ -80,10 +63,23 @@ nmap <Leader>hu <Plug>GitGutterRevertHunk
 """"""""""""""""""
 " UltiSnips configuration
 """"""""""""""""""
-"" Trigger configuration.
+" Trigger configuration.
 let g:UltiSnipsExpandTrigger="<C-L>"
 
 """"""""""""""""""
 " YouCompleteMe configuration
 """"""""""""""""""
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+let g:ycm_semantic_triggers =  {
+    \   'c' : ['->', '.'],
+    \   'objc' : ['->', '.', 're!\[[_a-zA-Z]+\w*\s', 're!^\s*[^\W\d]\w*\s',
+    \             're!\[.*\]\s'],
+    \   'ocaml' : ['.', '#'],
+    \   'cpp,objcpp' : ['->', '.', '::'],
+    \   'perl' : ['->'],
+    \   'php' : ['->', '::'],
+    \   'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go' : ['.'],
+    \   'ruby' : ['.', '::'],
+    \   'lua' : ['.', ':'],
+    \   'erlang' : [':'],
+    \ }

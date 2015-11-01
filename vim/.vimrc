@@ -37,6 +37,9 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
+" golang
+Plugin 'fatih/vim-go'
+
 " Look and feel
 Plugin 'tomasr/molokai'
 
