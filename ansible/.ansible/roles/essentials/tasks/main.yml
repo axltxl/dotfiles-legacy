@@ -13,6 +13,8 @@
     # Absolute essentials
     - apt-transport-https
     - xorg
+    - cmake-curses-gui
+
     # ""arbitraty precision calculator language""
     # I just use it for compiling linux
     - bc

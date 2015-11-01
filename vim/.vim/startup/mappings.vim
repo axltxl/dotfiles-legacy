@@ -13,11 +13,8 @@ inoremap <Down> <NOP>
 inoremap <Left> <NOP>
 inoremap <Right> <NOP>
 
-" ============ Disable arrow keys in both visual and insert mode ============
-nnoremap h <NOP>
-nnoremap j <NOP>
-nnoremap k <NOP>
-nnoremap l <NOP>
+" ============ Disable backspace key in insert mode ============
+inoremap <BS> <NOP>
 
 " Reselect visual block after indent/outdent
 vnoremap < <gv

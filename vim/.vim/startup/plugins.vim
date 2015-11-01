@@ -70,21 +70,6 @@ map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
 
 """"""""""""""""""
-" Using vim-pyenv with jedi-vim
-""""""""""""""""""
-if jedi#init_python()
-    function! s:jedi_auto_force_py_version() abort
-        let major_version = pyenv#python#get_internal_major_version()
-        call jedi#force_py_version(major_version)
-    endfunction
-    augroup vim-pyenv-custom-augroup
-        autocmd! *
-        autocmd User vim-pyenv-activate-post   call s:jedi_auto_force_py_version()
-        autocmd User vim-pyenv-deactivate-post call s:jedi_auto_force_py_version()
-    augroup END
-endif
-
-""""""""""""""""""
 " gitgutter
 """"""""""""""""""
 let g:gitgutter_eager = 0
@@ -93,11 +78,12 @@ nmap <Leader>ha <Plug>GitGutterStageHunk
 nmap <Leader>hu <Plug>GitGutterRevertHunk
 
 """"""""""""""""""
-" delimitMate
+" UltiSnips configuration
 """"""""""""""""""
-imap <C-k> <Plug>delimitMateS-Tab
+"" Trigger configuration.
+let g:UltiSnipsExpandTrigger="<C-L>"
 
 """"""""""""""""""
-"vim hard mode
+" YouCompleteMe configuration
 """"""""""""""""""
-autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"

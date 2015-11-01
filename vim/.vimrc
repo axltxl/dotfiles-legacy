@@ -2,6 +2,9 @@
 source ~/.vim/startup/essentials.vim
 
 
+" https://github.com/VundleVim/Vundle.vim/issues/16
+filetype off                  " required
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -28,30 +31,28 @@ Plugin 'majutsushi/tagbar'
 Plugin 'Raimondi/delimitMate'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'suxpert/vimcaps' "Disable capslock when switching to NORMAL mode
-"Plugin 'wikitopian/hardmode'
+Plugin 'Valloric/YouCompleteMe'
 
 " Snippets
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
+Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
 " Look and feel
 Plugin 'tomasr/molokai'
-Plugin 'flazz/vim-colorschemes'
-
-" Python
-Plugin 'davidhalter/jedi-vim'
-Plugin 'lambdalisue/vim-pyenv'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+""""""""""""""""""""""
 " Load custom settings
-source ~/.vim/startup/mappings.vim
+""""""""""""""""""""""
+
+" Look and feel settings
 source ~/.vim/startup/colors.vim
+
+" custom keyboard mappings go in here
+source ~/.vim/startup/mappings.vim
 
 " Plugins configuration
 source ~/.vim/startup/plugins.vim
