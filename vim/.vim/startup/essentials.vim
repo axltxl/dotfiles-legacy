@@ -4,7 +4,6 @@
 scriptencoding utf-8
 set encoding=utf-8
 set nocompatible              " be iMproved, required
-filetype off                  " required
 
 
 """"""""""""""""""
@@ -19,7 +18,6 @@ set showcmd        " Show partial commands in the last line of the screen
 set hlsearch       " Highlight searches (use <C-L>
 set number         " Display line numbers on the left
 set relativenumber " Show line numbers relative to current line
-"set cursorline     " Highlight current line
 set nowrap         " No wordwrap, please!
 set colorcolumn=80 " Set up a line length marker
 set autoread       " Automatically read files modified outside of vim

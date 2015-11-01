@@ -39,19 +39,20 @@ Plugin 'honza/vim-snippets'
 
 " Look and feel
 Plugin 'tomasr/molokai'
-Plugin 'flazz/vim-colorschemes'
-
-" Python
-Plugin 'davidhalter/jedi-vim'
-Plugin 'lambdalisue/vim-pyenv'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+""""""""""""""""""""""
 " Load custom settings
-source ~/.vim/startup/mappings.vim
+""""""""""""""""""""""
+
+" Look and feel settings
 source ~/.vim/startup/colors.vim
+
+" custom keyboard mappings go in here
+source ~/.vim/startup/mappings.vim
 
 " Plugins configuration
 source ~/.vim/startup/plugins.vim
