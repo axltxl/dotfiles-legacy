@@ -1,0 +1,38 @@
+#!/usr/bin/env zsh
+##################################
+# Install golang locally on $DOT_PATH
+##################################
+
+autoload dot_printf_install
+autoload dot_printf_run
+autoload dot_printf_clean
+
+#
+# Essential variables
+#
+golang_version=${1:-1.5.1}
+golang_basename=go${golang_version}.linux-amd64
+golang_tarball=${golang_basename}.tar.gz
+golang_url=https://storage.googleapis.com/golang/${golang_tarball}
+
+
+#
+# Get the actual git source tarball
+#
+dot_printf_run "Getting golang tarball"
+cd /tmp
+wget $golang_url -O $golang_tarball && \
+    tar xf $golang_tarball && \
+    rm -f $golang_tarball || exit 1
+
+#
+# Install golang
+#
+dot_printf_install "go ${golang_version}"
+cd go && mv * $DOT_PATH/golang || exit 1
+
+#
+# Remove everything
+#
+dot_printf_clean everything
+cd /tmp && rm -rf go

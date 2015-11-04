@@ -1,0 +1,2 @@
+# Make sure base golang directory is present
+mkdir -p ~/.local/dot/golang
