@@ -29,10 +29,10 @@ wget $golang_url -O $golang_tarball && \
 # Install golang
 #
 dot_printf_install "go ${golang_version}"
-cd $golang_basename && mv * $DOT_PATH/golang || exit 1
+cd go && mv * $DOT_PATH/golang || exit 1
 
 #
 # Remove everything
 #
 dot_printf_clean everything
-cd /tmp && rm -rf $golang_basename
+cd /tmp && rm -rf go
