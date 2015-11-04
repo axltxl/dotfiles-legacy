@@ -1,3 +1,4 @@
 # Settings for golang
+export GOROOT=~/.local/dot/golang
 export GOPATH=~/Projects/golang
-export PATH=$GOPATH/bin:$PATH
+export PATH=$GOROOT/bin:$GOPATH/bin:$PATH

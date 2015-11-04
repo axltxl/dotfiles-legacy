@@ -100,11 +100,6 @@
     - wget
     - httpie
 
-- name: golang
-  apt: pkg={{ item }} state=latest
-  with_items:
-      - golang
-
 - name: android tools
   apt: pkg={{ item }} state=latest
   with_items:
