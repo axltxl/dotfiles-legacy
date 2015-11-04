@@ -83,6 +83,8 @@
 - name: Utilities for network debugging
   apt: pkg={{ item }} state=latest
   with_items:
+    - iputils-tracepath
+    - iputils-ping
     - nethogs
     - tcpdump
     - iftop
