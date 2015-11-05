@@ -13,12 +13,13 @@
     # Absolute essentials
     - apt-transport-https
     - xorg
-    - cmake-curses-gui
 
     # ""arbitraty precision calculator language""
     # I just use it for compiling linux
     - bc
     - xautolock
+    - xset
+    - xclip
     - lightdm
     - i3 # our beloved and minimalistic window manager
     - compton # compositor
@@ -111,6 +112,7 @@
   apt: pkg={{ item }} state=latest
   with_items:
       - mercurial
+      - cmake-curses-gui
 
 - name: User apps
   apt: pkg={{ item }} state=latest
