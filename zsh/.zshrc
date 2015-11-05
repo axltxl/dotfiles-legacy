@@ -56,6 +56,7 @@ plugins=( \
     vundle \
     rvm \
     vagrant \
+    golang \
     )
 
 # User configuration
