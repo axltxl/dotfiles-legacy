@@ -13,18 +13,14 @@ dotfiles_dir=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 # Absolute essentials
 ############################
 absolute_essentials=(
-    xutils \
     stow \
     python-pip \
     python-dev \
     zsh \
-    git \
     build-essential \
-    rxvt-unicode-256color \
     autoconf \
     automake \
     pkg-config \
-    xsel \
 )
 
 # Installation log
