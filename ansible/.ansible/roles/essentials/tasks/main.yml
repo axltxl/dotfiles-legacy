@@ -137,6 +137,7 @@
     - smplayer # my video player
     - pepperflashplugin-nonfree # flash player
     - keepass2 # password manager
+    - shutter # advanced screenshots
 
       # Our beloved file manager
     - ranger
