@@ -3,7 +3,7 @@
 # syncd: watch for changes in dotsync directory
 # and dot sync if necessary
 #########################################
-dot_btsync_dir=~/.dotsync
+dot_btsync_dir=$SYNC_HOME
 inotify_events="create,delete,move,delete_self,move_self"
 
 # Any changes inside btsync directory will be stowed
