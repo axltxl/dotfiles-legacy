@@ -14,5 +14,9 @@ do
     for dir in $dot_btsync_dir/* ; do
         dot sync $(basename $dir) &> /dev/null;
     done
+    # send the actual notification
+    if [[ ! -z "$DISPLAY" ]]; then
+        notify-send --urgency=low "dotsync" "All directories synced and stowed!"
+    fi
     unset dir
 done

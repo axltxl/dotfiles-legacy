@@ -10,7 +10,17 @@ do
     src=$(echo $rclone_entry | cut -d@ -f1)
     dest=$(echo $rclone_entry | cut -d@ -f2)
 
+    # send the actual notification
+    if [[ ! -z "$DISPLAY" ]]; then
+        notify-send --urgency=low "rclone" "Backing up: $src -> $dest"
+    fi
+
     # and then, do the thing
     rclone copy $src "gdrive:$dest" --bwlimit=64
+
+    # send the actual notification
+    if [[ ! -z "$DISPLAY" ]]; then
+        notify-send --urgency=normal "rclone" "Succesful backup: $src -> $dest"
+    fi
 done
 unset rclone_entry
