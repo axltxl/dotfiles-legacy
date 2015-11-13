@@ -12,11 +12,9 @@
 
     # Absolute essentials
     - apt-transport-https
-    - xorg
 
-    # ""arbitraty precision calculator language""
-    # I just use it for compiling linux
-    - bc
+    # X11
+    - xorg
     - xautolock
     - xutils
     - xclip
@@ -30,6 +28,7 @@
     - openssh-client
     - libnotify-bin
     - inotify-tools
+
       # Audio support
     - pulseaudio
     - pavucontrol
@@ -116,8 +115,15 @@
 - name: development tools
   apt: pkg={{ item }} state=latest
   with_items:
+      - build-essential
+      - bc
+      - automake
+      - autoconf
+      - pkg-config
       - mercurial
       - cmake-curses-gui
+      - gdb
+      - cgdb
 
 - name: User apps
   apt: pkg={{ item }} state=latest
