@@ -6,6 +6,5 @@
 # fork i3lock
 i3lock -e --color=101010
 
-# Make sure keyboard-related settings are well set across screen locks
-xset r rate 200 50
-xmodmap ~/.Xmodmap
+# Update keyboard settings
+xkb_update

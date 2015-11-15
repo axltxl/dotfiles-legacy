@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+#################################
+# Set keyboard settings on X11 session
+#################################
+
+# Set keyboard rates
+xset r rate 200 60
+
+# Set keyboard mappings
+xmodmap ~/.Xmodmap
+
