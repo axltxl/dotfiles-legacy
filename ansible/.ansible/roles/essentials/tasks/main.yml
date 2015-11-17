@@ -38,6 +38,7 @@
   apt: pkg={{ item }} state=latest
   with_items:
       - dnsutils
+      - whois
       - findutils
       - locate
       - unzip
