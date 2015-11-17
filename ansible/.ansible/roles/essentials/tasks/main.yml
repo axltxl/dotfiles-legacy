@@ -142,7 +142,6 @@
     - cmus # my music player
     - smplayer # my video player
     - pepperflashplugin-nonfree # flash player
-    - keepass2 # password manager
     - shutter # advanced screenshots
 
       # Our beloved file manager
@@ -162,6 +161,12 @@
   with_items:
     - mc # midnight commander
     - python-pip
+
+- name: keepass2
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - keepass2 # password manager
+    - mono-complete
 
 - name: GTK+ engines
   apt: pkg={{ item }} state=latest
