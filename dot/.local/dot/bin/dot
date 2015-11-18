@@ -204,38 +204,40 @@ dot_purge() {
     sudo shutdown -r now
 }
 # The main thing
-case $1 in
-    install)
-        dot_install ${@:2}
-        ;;
-    stow)
-        dot_stow ${@:2}
-        ;;
-    deploy)
-        dot_deploy
-        ;;
-    unstow)
-        dot_unstow ${@:2}
-        ;;
-    refresh|reload)
-        dot_refresh
-        ;;
-    update)
-        dot_update ${@:2}
-        ;;
-    sync)
-        dot_sync ${@:2}
-        ;;
-    desync)
-        dot_desync ${@:2}
-        ;;
-    purge)
-        dot_purge ${@:2}
-        ;;
-    *)
-        dot_print_help; exit 1
-        ;;
-esac
-
-dot_printf "Done!"
-exit 0
+if [[ $ZSH_EVAL_CONTEXT == 'toplevel' ]]; then
+    # I'm not being sourced!, so ...
+    case $1 in
+        install)
+            dot_install ${@:2}
+            ;;
+        stow)
+            dot_stow ${@:2}
+            ;;
+        deploy)
+            dot_deploy
+            ;;
+        unstow)
+            dot_unstow ${@:2}
+            ;;
+        refresh|reload)
+            dot_refresh
+            ;;
+        update)
+            dot_update ${@:2}
+            ;;
+        sync)
+            dot_sync ${@:2}
+            ;;
+        desync)
+            dot_desync ${@:2}
+            ;;
+        purge)
+            dot_purge ${@:2}
+            ;;
+        *)
+            dot_print_help; exit 1
+            ;;
+    esac
+    dot_printf "Done!"
+    exit 0
+fi
