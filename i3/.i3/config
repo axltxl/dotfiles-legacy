@@ -191,5 +191,5 @@ exec --no-startup-id nitrogen --restore
 # pulseaudio
 exec pulseaudio --start
 
-# dotsync monitoring daemon
-exec syncd
+# sync monitoring daemon
+exec fsync

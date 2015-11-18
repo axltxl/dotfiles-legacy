@@ -1,4 +1,5 @@
 #############################################
-# file sync root directory for automatic stowing
+# List of directories for automatic stowing
+# via fsync
 #############################################
-export SYNC_HOME=${HOME}/.dotsync
+export SYNC_DIRS=${HOME}/.dotsync

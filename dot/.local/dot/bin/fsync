@@ -1,0 +1,18 @@
+#!/usr/bin/env zsh
+###########################################################
+# fsync: spawn syncd's for each desired directory
+# Note: these directories need to be specified in SYNC_DIRS
+###########################################################
+
+# Allow job control on this one, please
+setopt monitor
+
+# spawn syncd processes for each directory in $SYNC_DIRS
+for dir in $(echo $SYNC_DIRS | tr ':' ' '); do
+    syncd $dir &
+done
+unset dir
+
+# Wait for child processes to finish
+wait
+exit 0
