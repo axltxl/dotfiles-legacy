@@ -26,6 +26,6 @@ do
     unset dir
     # send the actual notification
     if [[ ! -z "$DISPLAY" ]]; then
-        notify-send "syncd" "All directories synced and stowed!"
+        notify-send "syncd @ $sync_dir" "All directories synced and stowed!"
     fi
 done
