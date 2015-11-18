@@ -21,14 +21,6 @@ dot_poststow_dir=${dot_basedir}/post-stow.d
 dot_preunstow_dir=${dot_basedir}/pre-unstow.d
 dot_postunstow_dir=${dot_basedir}/post-unstow.d
 dot_ansible_playbook_dir=${HOME}/.ansible
-dot_btsync_dir=${HOME}/.dotsync
-
-dot_zsh_update() {
-    # Update environment after everything has been done
-    dot_printf "Updating zsh environment ..."
-    . ${HOME}/.zshenv
-    . ${HOME}/.zshrc
-}
 
 #
 # Update repository at DOT_HOME
@@ -46,9 +38,6 @@ dot_update() {
 
     # deploy all changes in the ansible playbook
     dot_deploy
-
-    # Update zsh environment
-    dot_zsh_update
 }
 
 _dot_stow() {
@@ -140,7 +129,6 @@ dot_install() {
     if [ -d ${DOT_HOME}/$1 ]; then
         dot_stow $1 || exit 1
     fi
-    dot_zsh_update # Update zsh environment
 }
 
 #
@@ -151,9 +139,6 @@ dot_print_help() {
     echo
     echo "  dot stow <package> - stow package(s)"
     echo "  dot unstow <package> - unstow package(s)"
-    echo "  dot sync <package> - stow directory located inside $dot_btsync_dir"
-    echo "  dot desync <package> - unstow directory located inside $dot_btsync_dir"
-    echo "  dot reload|refresh - reload zsh environment"
     echo "  dot update - update git repo + reload everything"
     echo "  dot purge - purge every dotfile there is inside your home directory"
     echo
@@ -219,17 +204,8 @@ if [[ $ZSH_EVAL_CONTEXT == 'toplevel' ]]; then
         unstow)
             dot_unstow ${@:2}
             ;;
-        refresh|reload)
-            dot_refresh
-            ;;
         update)
             dot_update ${@:2}
-            ;;
-        sync)
-            dot_sync ${@:2}
-            ;;
-        desync)
-            dot_desync ${@:2}
             ;;
         purge)
             dot_purge ${@:2}
