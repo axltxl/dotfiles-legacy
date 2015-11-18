@@ -1,22 +1,31 @@
 #!/usr/bin/env zsh
-#########################################
-# syncd: watch for changes in dotsync directory
+###################################################
+# syncd: watch for changes on a specified directory
 # and dot sync if necessary
-#########################################
-dot_btsync_dir=$SYNC_HOME
+###################################################
+
+# Source dot and use it as a library
+source $DOT_PATH/bin/dot
+
+# Enforce proper usage
+if [[ -z $1 ]]; then
+    echo "Usage: $0 <path_to_dir>"; exit 1
+fi
+
+sync_dir=$1 # the directory itself to be stowed
 inotify_events="create,delete,move,delete_self,move_self"
 
-# Any changes inside btsync directory will be stowed
+# Any changes inside sync directory will be stowed
 # into the home directory
-while inotifywait --syslog @.sync -r \
-    -e $inotify_events $dot_btsync_dir > /dev/null
+while inotifywait --syslog @.stfolder -r \
+    -e $inotify_events $sync_dir > /dev/null
 do
-    for dir in $dot_btsync_dir/* ; do
-        dot sync $(basename $dir) &> /dev/null;
+    for dir in $sync_dir/* ; do
+        _dot_stow $sync_dir $(basename $dir) &> /dev/null
     done
+    unset dir
     # send the actual notification
     if [[ ! -z "$DISPLAY" ]]; then
-        notify-send --urgency=low "dotsync" "All directories synced and stowed!"
+        notify-send "syncd" "All directories synced and stowed!"
     fi
-    unset dir
 done
