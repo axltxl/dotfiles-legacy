@@ -165,19 +165,19 @@ dot_purge() {
         unset f
     fi
 
-    # unstow all directories inside all specified SYNC_DIRS
-    for sync_dir in $(echo $SYNC_DIRS | tr ':' ' '); do
-        dot_printf "Unstowing all packages inside $sync_dir"
-        for d in $sync_dir/*; do
-            _dot_unstow $sync_dir $(basename $d)
+    # unstow all directories inside all specified STOW_DIRS
+    for stow_dir in $(echo $STOW_DIRS | tr ':' ' '); do
+        dot_printf "Unstowing all packages inside $stow_dir"
+        for d in $stow_dir/*; do
+            _dot_unstow $stow_dir $(basename $d)
         done
         unset d
-        # all SYNC_DIRS are ignored for purging
+        # all STOW_DIRS are ignored for purging
         # Reason: there could be dotfolders being treated and sync dirs
         # it wouldn't be nice to treat them as spare dotfolders/files
-        dot_ignore="$dot_ignore $sync_dir"
+        dot_ignore="$dot_ignore $stow_dir"
     done
-    unset sync_dir
+    unset stow_dir
 
     # Purge every dotfile thereis in your home directory
     dot_printf_warn "Purging all your dotfiles inside your home directory at $HOME"

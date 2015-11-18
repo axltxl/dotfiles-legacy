@@ -1,7 +1,8 @@
 #!/usr/bin/env zsh
 ###################################################
 # syncd: watch for changes on a specified directory
-# and dot sync if necessary
+# and stow/unstow directories inside each one of them
+# if necessary
 ###################################################
 
 # Source dot and use it as a library

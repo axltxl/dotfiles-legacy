@@ -1,17 +1,17 @@
 #!/usr/bin/env zsh
 ###########################################################
-# fsync: spawn syncd's for each desired directory
-# Note: these directories need to be specified in SYNC_DIRS
+# fsync: spawn syncd's for each desired symlink farm
+# Note: these directories need to be specified in STOW_DIRS
 ###########################################################
 
 # Allow job control on this one, please
 setopt monitor
 
-# spawn syncd processes for each directory in $SYNC_DIRS
-for dir in $(echo $SYNC_DIRS | tr ':' ' '); do
-    syncd $dir &
+# spawn syncd processes for each directory in $STOW_DIRS
+for stow_dir in $(echo $STOW_DIRS | tr ':' ' '); do
+    syncd $stow_dir &
 done
-unset dir
+unset stow_dir
 
 # Wait for child processes to finish
 wait

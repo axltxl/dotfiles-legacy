@@ -1,5 +1,9 @@
 #############################################
-# List of directories for automatic stowing
-# via fsync
+# Stow directories are directories to be
+# treated as symlink farms managed by stow
+# just as DOT_HOME with the only difference
+# that these are watched and automatically
+# managed by their own parent syncd process
+# (see syncd for more details)
 #############################################
-export SYNC_DIRS=${HOME}/.dotsync
+export STOW_DIRS="${HOME}/.dotsync"
