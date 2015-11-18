@@ -72,21 +72,6 @@ _dot_unstow() {
 
 
 #
-# This will automatically stow directories inside btsync main directory
-#
-dot_sync() {
-    _dot_stow $dot_btsync_dir "$@"
-}
-
-#
-# This will automatically stow directories inside btsync main directory
-#
-dot_desync() {
-    _dot_unstow $dot_btsync_dir "$@"
-}
-
-
-#
 # This will automatically unstow directories inside $DOT_HOME
 #
 dot_stow() {
@@ -98,13 +83,6 @@ dot_stow() {
 #
 dot_unstow() {
     _dot_unstow $DOT_HOME "$@"
-}
-
-#
-# Update zsh environment and everything within it
-#
-dot_refresh() {
-    dot_zsh_update # Update zsh environment
 }
 
 #
@@ -144,6 +122,8 @@ dot_print_help() {
     echo
 }
 
+
+
 dot_purge() {
     #
     # warn the user first of all
@@ -167,22 +147,53 @@ dot_purge() {
     done
     unset d
 
-    # kill both bsync and syncd before unstowing
-    dot_printf "kill both bsync and syncd before unstowing"
-    kill -ILL $(pidof btsync) &> /dev/null || true
-    kill -ILL $(ps -xo pid,cmd 2> /dev/null | grep syncd | grep sh | awk '{print $1}' | tr '\n' ' ') &> /dev/null || true
+    # kill both syncthing and fsync before unstowing
+    dot_printf "kill both syncthing and fsync before unstowing"
+    sudo systemctl stop syncthing@${USER}.service
+    kill -ILL $(ps -xo pid,cmd 2> /dev/null | grep fsync | grep sh | awk '{print $1}' | tr '\n' ' ') &> /dev/null || true
 
-    # unstow all directories inside DOT_HOME
-    dot_printf "Unstowing all packages inside $dot_btsync_dir"
-    for d in $dot_btsync_dir/*; do
-        dot_desync $( basename $d )
+    ########################################################
+    # dot_ignore includes all folders/files not to be purged
+    ########################################################
+    dot_ignore="${HOME}/.dotignore"
+    if [ -a ${HOME}/.dotignore ]; then
+        for f in $(cat ${HOME}/.dotignore | tr '\n' ' '); do
+            # all directories are considered to be relative
+            # to the $HOME directory
+            dot_ignore="$dot_ignore ${HOME}/${f}"
+        done
+        unset f
+    fi
+
+    # unstow all directories inside all specified SYNC_DIRS
+    for sync_dir in $(echo $SYNC_DIRS | tr ':' ' '); do
+        dot_printf "Unstowing all packages inside $sync_dir"
+        for d in $sync_dir/*; do
+            _dot_unstow $sync_dir $(basename $d)
+        done
+        unset d
+        # all SYNC_DIRS are ignored for purging
+        # Reason: there could be dotfolders being treated and sync dirs
+        # it wouldn't be nice to treat them as spare dotfolders/files
+        dot_ignore="$dot_ignore $sync_dir"
     done
-    unset d
+    unset sync_dir
 
     # Purge every dotfile thereis in your home directory
     dot_printf_warn "Purging all your dotfiles inside your home directory at $HOME"
     sudo rm $DOT_HOME
-    sudo rm -rf ${HOME}/.[a-zA-Z]*
+
+    # Perform the actual deletion of dotfiles/folders
+    # with the clear exception of those ignored
+    for rd in $HOME/.*; do
+        if test "${dot_ignore#*$rd}" != "$dot_ignore"; then
+            dot_printf_warn "$rd on ignore list, therefore not deleted"
+            continue
+        fi
+        dot_printf "Deleting $rd"
+        sudo rm -rf $rd # if not ignored, then purge it
+    done
+    unset rd
 
     # Reboot system
     dot_printf "Rebooting system ..."
