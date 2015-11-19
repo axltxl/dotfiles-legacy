@@ -176,10 +176,14 @@ dot_purge() {
     if [[ ! -z $stow_dirs ]]; then
         for stow_dir in $stow_dirs; do
             dot_printf "Unstowing all packages inside $stow_dir"
-            for d in $stow_dir/*; do
-                _dot_unstow $stow_dir $(basename $d)
-            done
-            unset d
+            stow_subdirs=$(echo $stow_dir/*)
+            if [[ ! -z $stow_subdirs ]]; then
+                for d in $stow_subdirs; do
+                    _dot_unstow $stow_dir $(basename $d)
+                done
+                unset d
+            fi
+            unset stow_subdirs
             # all STOW_DIRS are ignored for purging
             # Reason: there could be dotfolders being treated and sync dirs
             # it wouldn't be nice to treat them as spare dotfolders/files
