@@ -153,9 +153,9 @@ dot_purge() {
     unset d
 
     ################################################
-    # kill both syncthing and fsync before unstowing
+    # kill both syncthing and sman before unstowing
     ################################################
-    dot_printf "kill both syncthing and fsync before unstowing"
+    dot_printf "kill both syncthing and sman before unstowing"
     sudo systemctl stop syncthing@${USER}.service
     kill -ILL $(ps -xo pid,cmd 2> /dev/null | grep sman | grep sh | awk '{print $1}' | tr '\n' ' ') &> /dev/null || true
 
