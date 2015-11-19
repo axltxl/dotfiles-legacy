@@ -9,7 +9,7 @@ setopt monitor
 
 # spawn syncd processes for each directory in $STOW_DIRS
 for stow_dir in $(echo $STOW_DIRS | tr ':' ' '); do
-    syncd $stow_dir &
+    syncd $stow_dir | logger &
 done
 unset stow_dir
 
