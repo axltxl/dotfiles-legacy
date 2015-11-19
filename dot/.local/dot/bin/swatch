@@ -59,6 +59,6 @@ do
 
     # send the actual notification
     if [[ ! -z "$DISPLAY" ]]; then
-        notify-send "syncd @ $stow_dir" "All directories synced and stowed!"
+        notify-send "swatch @ $stow_dir" "All directories synced and stowed!"
     fi
 done
