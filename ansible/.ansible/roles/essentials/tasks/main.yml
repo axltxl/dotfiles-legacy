@@ -4,6 +4,14 @@
 # ---------------------------
 
 # Make sure the minimum
+# necessary packages are uninstalled
+
+- name: Purge undesired packages
+  apt: pkg={{ item }} state=absent
+  with_items:
+    - python-pip
+
+# Make sure the minimum
 # necessary packages are installed
 
 - name: Essential packages
@@ -155,14 +163,6 @@
       # torrents are awesome
     - transmission-gtk
 
-# Make sure the minimum
-# necessary packages are uninstalled
-
-- name: Purge undesired packages
-  apt: pkg={{ item }} state=absent
-  with_items:
-    - mc # midnight commander
-    - python-pip
 
 - name: keepass2
   apt: pkg={{ item }} state=latest
