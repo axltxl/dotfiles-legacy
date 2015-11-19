@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 ###########################################################
-# fsync: spawn swatches for each desired symlink farm
+# sman: swatch manager
+# Spawn swatches for each desired symlink farm
 # Note: these directories need to be specified in STOW_DIRS
 ###########################################################
 

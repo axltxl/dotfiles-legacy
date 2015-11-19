@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 ###################################################
-# syncd: watch for changes on a specified directory
+# swatch: stow watch
+# Watch for changes on a specified directory
 # and stow/unstow directories inside each one of them
 # if necessary
 ###################################################

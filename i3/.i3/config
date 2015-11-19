@@ -191,5 +191,5 @@ exec --no-startup-id nitrogen --restore
 # pulseaudio
 exec pulseaudio --start
 
-# sync monitoring daemon
-exec fsync
+# stow watch monitoring daemon
+exec sman
