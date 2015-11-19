@@ -124,10 +124,13 @@ dot_print_help() {
 
 
 
+#
+# Purge all symlinks and dangling files inside $HOME directory
+#
 dot_purge() {
-    #
+    ############################
     # warn the user first of all
-    #
+    ############################
     dot_printf_warn "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
     dot_printf_warn "-------------------------------------------------------"
     dot_printf_warn "This is really going to assf*ck your home directory ..."
@@ -140,14 +143,18 @@ dot_purge() {
     [ $ans != 'y' ] && dot_printf "Aborting operation ..." &&  exit 0
     unset answer
 
+    ########################################
     # unstow all directories inside DOT_HOME
+    ########################################
     dot_printf "Unstowing all packages inside $DOT_HOME"
     for d in $DOT_HOME/*; do
         dot_unstow $( basename $d )
     done
     unset d
 
+    ################################################
     # kill both syncthing and fsync before unstowing
+    ################################################
     dot_printf "kill both syncthing and fsync before unstowing"
     sudo systemctl stop syncthing@${USER}.service
     kill -ILL $(ps -xo pid,cmd 2> /dev/null | grep fsync | grep sh | awk '{print $1}' | tr '\n' ' ') &> /dev/null || true
@@ -165,7 +172,9 @@ dot_purge() {
         unset f
     fi
 
+    #######################################################
     # unstow all directories inside all specified STOW_DIRS
+    #######################################################
     for stow_dir in $(echo $STOW_DIRS | tr ':' ' '); do
         dot_printf "Unstowing all packages inside $stow_dir"
         for d in $stow_dir/*; do
@@ -183,8 +192,10 @@ dot_purge() {
     dot_printf_warn "Purging all your dotfiles inside your home directory at $HOME"
     sudo rm $DOT_HOME
 
+    #################################################
     # Perform the actual deletion of dotfiles/folders
     # with the clear exception of those ignored
+    #################################################
     for rd in $HOME/.*; do
         if test "${dot_ignore#*$rd}" != "$dot_ignore"; then
             dot_printf_warn "$rd on ignore list, therefore not deleted"
@@ -195,11 +206,16 @@ dot_purge() {
     done
     unset rd
 
+    ###############
     # Reboot system
+    ###############
     dot_printf "Rebooting system ..."
     sudo shutdown -r now
 }
+
+################
 # The main thing
+################
 if [[ $ZSH_EVAL_CONTEXT == 'toplevel' ]]; then
     # I'm not being sourced!, so ...
     case $1 in
