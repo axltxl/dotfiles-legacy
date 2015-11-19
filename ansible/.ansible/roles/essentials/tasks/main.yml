@@ -12,6 +12,7 @@
 
     # Absolute essentials
     - apt-transport-https
+    - symlinks
 
     # X11
     - xorg
