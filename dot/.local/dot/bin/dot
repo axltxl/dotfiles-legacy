@@ -141,7 +141,7 @@ dot_purge() {
     dot_printf_warn "ARE YOU REALLY SURE ABOUT THIS? (y/N)> "
     read -sq ans
     [ $ans != 'y' ] && dot_printf "Aborting operation ..." &&  exit 0
-    unset answer
+    unset ans
 
     ########################################
     # unstow all directories inside DOT_HOME
@@ -157,7 +157,7 @@ dot_purge() {
     ################################################
     dot_printf "kill both syncthing and fsync before unstowing"
     sudo systemctl stop syncthing@${USER}.service
-    kill -ILL $(ps -xo pid,cmd 2> /dev/null | grep fsync | grep sh | awk '{print $1}' | tr '\n' ' ') &> /dev/null || true
+    kill -ILL $(ps -xo pid,cmd 2> /dev/null | grep sman | grep sh | awk '{print $1}' | tr '\n' ' ') &> /dev/null || true
 
     ########################################################
     # dot_ignore includes all folders/files not to be purged
