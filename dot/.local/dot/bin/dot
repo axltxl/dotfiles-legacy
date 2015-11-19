@@ -135,7 +135,7 @@ dot_purge() {
     dot_printf_warn "-------------------------------------------------------"
     dot_printf_warn "This is really going to assf*ck your home directory ..."
     dot_printf_warn "It will unstow everything, remove any remaining"
-    dot_printf_warn "dot files inside your home directory and then reboot"
+    dot_printf_warn "dotfiles inside your home directory"
     dot_printf_warn "-------------------------------------------------------"
     dot_printf_warn "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
     dot_printf_warn "ARE YOU REALLY SURE ABOUT THIS? (y/N)> "
