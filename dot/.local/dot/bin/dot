@@ -136,6 +136,7 @@ dot_purge() {
     dot_printf_warn "This is really going to assf*ck your home directory ..."
     dot_printf_warn "It will unstow everything, remove any remaining"
     dot_printf_warn "dotfiles inside your home directory"
+    dot_printf_warn "NOTE: SET DRY_PURGE=1 IF YOU WANT TO SIMULATE THIS COMMMAND"
     dot_printf_warn "-------------------------------------------------------"
     dot_printf_warn "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
     dot_printf_warn "ARE YOU REALLY SURE ABOUT THIS? (y/N)> "
@@ -143,12 +144,23 @@ dot_purge() {
     [ $ans != 'y' ] && dot_printf "Aborting operation ..." &&  exit 0
     unset ans
 
+    #####################
+    # check for DRY_PURGE
+    #####################
+    if [[ ! -z "$DRY_PURGE" ]]; then
+        dot_printf_warn "Dry purge mode is ON"
+    fi
+
     ########################################
     # unstow all directories inside DOT_HOME
     ########################################
     dot_printf "Unstowing all packages inside $DOT_HOME"
     for d in $DOT_HOME/*; do
-        dot_unstow $( basename $d )
+        if [[ -z "$DRY_PURGE" ]]; then
+            dot_unstow $( basename $d )
+        else
+            dot_printf "DRY_PURGE: unstow ==> $(basename $d)"
+        fi
     done
     unset d
 
@@ -156,10 +168,10 @@ dot_purge() {
     # dot_ignore includes all folders/files not to be purged
     ########################################################
     dot_ignore="${HOME}/.dotignore"
-    if [ -a ${HOME}/.dotignore ]; then
+    if [[ -a ${HOME}/.dotignore ]]; then
         ignore_files=$(cat ${HOME}/.dotignore | tr '\n' ' ')
-        if [[ ! -z $ignore_files ]]; then
-            for f in $ignore_files; do
+        if [[ ! -z "$ignore_files" ]]; then
+            for f in $(echo $ignore_files); do
                 # all directories are considered to be relative
                 # to the $HOME directory
                 dot_ignore="$dot_ignore ${HOME}/${f}"
@@ -173,13 +185,17 @@ dot_purge() {
     # unstow all directories inside all specified STOW_DIRS
     #######################################################
     stow_dirs=$(echo $STOW_DIRS | tr ':' ' ')
-    if [[ ! -z $stow_dirs ]]; then
-        for stow_dir in $stow_dirs; do
-            dot_printf "Unstowing all packages inside $stow_dir"
+    if [[ ! -z "$stow_dirs" ]]; then
+        for stow_dir in $(echo $stow_dirs); do
+            dot_printf_warn "Unstowing all packages inside $stow_dir"
             stow_subdirs=$(echo $stow_dir/*)
-            if [[ ! -z $stow_subdirs ]]; then
-                for d in $stow_subdirs; do
-                    _dot_unstow $stow_dir $(basename $d)
+            if [[ ! -z "$stow_subdirs" ]]; then
+                for d in $(echo $stow_subdirs); do
+                    if [[ -z "$DRY_PURGE" ]]; then
+                        _dot_unstow $stow_dir $(basename $d)
+                    else
+                        dot_printf "DRY_PURGE: STOW_DIRS unstow ==> $(basename $d)"
+                    fi
                 done
                 unset d
             fi
@@ -193,23 +209,35 @@ dot_purge() {
     fi
     unset stow_dirs
 
+    # print list of files to be ignored
+    if [[ ! -z "$DRY_PURGE" ]]; then
+        dot_printf_warn "Ignore list is:"
+        for f in $(echo $dot_ignore); do
+            dot_printf "==> $f"
+        done
+    fi
+
     # Purge every dotfile thereis in your home directory
     dot_printf_warn "Purging all your dotfiles inside your home directory at $HOME"
-    sudo rm $DOT_HOME
+    if [[ -z "$DRY_PURGE" ]]; then
+        sudo rm $DOT_HOME
+    fi
 
     #################################################
     # Perform the actual deletion of dotfiles/folders
     # with the clear exception of those ignored
     #################################################
     dotfiles=$(echo $HOME/.*)
-    if [[ ! -z $dotfiles ]]; then
-        for rd in ; do
+    if [[ ! -z "$dotfiles" ]]; then
+        for rd in $(echo $dotfiles); do
             if test "${dot_ignore#*$rd}" != "$dot_ignore"; then
                 dot_printf_warn "$rd on dotignore list, therefore not deleted"
                 continue
             fi
             dot_printf "Deleting $rd"
-            sudo rm -rf $rd # if not ignored, then purge it
+            if [[ -z "$DRY_PURGE" ]]; then
+                sudo rm -rf $rd # if not ignored, then purge it
+            fi
         done
         unset rd
     fi
