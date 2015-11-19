@@ -169,6 +169,7 @@ dot_purge() {
     ########################################################
     dot_ignore="${HOME}/.dotignore"
     if [[ -a ${HOME}/.dotignore ]]; then
+        dot_printf_warn "~/.dotignore file found!, proceeding to read its entries ..."
         ignore_files=$(cat ${HOME}/.dotignore | tr '\n' ' ')
         if [[ ! -z "$ignore_files" ]]; then
             for f in $(echo $ignore_files); do
