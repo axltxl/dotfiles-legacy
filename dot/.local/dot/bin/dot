@@ -157,29 +157,37 @@ dot_purge() {
     ########################################################
     dot_ignore="${HOME}/.dotignore"
     if [ -a ${HOME}/.dotignore ]; then
-        for f in $(cat ${HOME}/.dotignore | tr '\n' ' '); do
-            # all directories are considered to be relative
-            # to the $HOME directory
-            dot_ignore="$dot_ignore ${HOME}/${f}"
-        done
-        unset f
+        ignore_files=$(cat ${HOME}/.dotignore | tr '\n' ' ')
+        if [[ ! -z $ignore_files ]]; then
+            for f in $ignore_files; do
+                # all directories are considered to be relative
+                # to the $HOME directory
+                dot_ignore="$dot_ignore ${HOME}/${f}"
+            done
+            unset f
+        fi
+        unset ignore_files
     fi
 
     #######################################################
     # unstow all directories inside all specified STOW_DIRS
     #######################################################
-    for stow_dir in $(echo $STOW_DIRS | tr ':' ' '); do
-        dot_printf "Unstowing all packages inside $stow_dir"
-        for d in $stow_dir/*; do
-            _dot_unstow $stow_dir $(basename $d)
+    stow_dirs=$(echo $STOW_DIRS | tr ':' ' ')
+    if [[ ! -z $stow_dirs ]]; then
+        for stow_dir in $stow_dirs; do
+            dot_printf "Unstowing all packages inside $stow_dir"
+            for d in $stow_dir/*; do
+                _dot_unstow $stow_dir $(basename $d)
+            done
+            unset d
+            # all STOW_DIRS are ignored for purging
+            # Reason: there could be dotfolders being treated and sync dirs
+            # it wouldn't be nice to treat them as spare dotfolders/files
+            dot_ignore="$dot_ignore $stow_dir"
         done
-        unset d
-        # all STOW_DIRS are ignored for purging
-        # Reason: there could be dotfolders being treated and sync dirs
-        # it wouldn't be nice to treat them as spare dotfolders/files
-        dot_ignore="$dot_ignore $stow_dir"
-    done
-    unset stow_dir
+        unset stow_dir
+    fi
+    unset stow_dirs
 
     # Purge every dotfile thereis in your home directory
     dot_printf_warn "Purging all your dotfiles inside your home directory at $HOME"
@@ -189,21 +197,29 @@ dot_purge() {
     # Perform the actual deletion of dotfiles/folders
     # with the clear exception of those ignored
     #################################################
-    for rd in $HOME/.*; do
-        if test "${dot_ignore#*$rd}" != "$dot_ignore"; then
-            dot_printf_warn "$rd on ignore list, therefore not deleted"
-            continue
-        fi
-        dot_printf "Deleting $rd"
-        sudo rm -rf $rd # if not ignored, then purge it
-    done
-    unset rd
+    dotfiles=$(echo $HOME/.*)
+    if [[ ! -z $dotfiles ]]; then
+        for rd in ; do
+            if test "${dot_ignore#*$rd}" != "$dot_ignore"; then
+                dot_printf_warn "$rd on dotignore list, therefore not deleted"
+                continue
+            fi
+            dot_printf "Deleting $rd"
+            sudo rm -rf $rd # if not ignored, then purge it
+        done
+        unset rd
+    fi
+    unset dotfiles
 
     ###############
-    # Reboot system
+    # Tell the user to reboot system
     ###############
-    dot_printf "Rebooting system ..."
-    sudo shutdown -r now
+    dot_printf_warn "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+    dot_printf_warn "-------------------------------------------------------"
+    dot_printf_warn "Your system has been purged from this dotfiles and"
+    dot_printf_warn "therefore ready for a clean install of your Debian OS"
+    dot_printf_warn "-------------------------------------------------------"
+    dot_printf_warn "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
 }
 
 ################
