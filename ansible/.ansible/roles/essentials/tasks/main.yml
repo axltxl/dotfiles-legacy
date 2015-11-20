@@ -56,6 +56,8 @@
 - name: file systems utilities
   apt: pkg={{ item }} state=latest
   with_items:
+      - parted
+      - gparted
       - hfsprogs
       - exfat-utils
 
