@@ -133,6 +133,7 @@
       - automake
       - autoconf
       - pkg-config
+      - libtool
       - mercurial
       - cmake-curses-gui
       - gdb
