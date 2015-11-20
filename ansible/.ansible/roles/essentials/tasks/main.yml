@@ -20,6 +20,7 @@
 
     # Absolute essentials
     - apt-transport-https
+    - stow
     - symlinks
 
     # X11
