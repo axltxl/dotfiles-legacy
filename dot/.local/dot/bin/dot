@@ -189,7 +189,7 @@ dot_purge() {
     if [[ ! -z "$stow_dirs" ]]; then
         for stow_dir in $(echo $stow_dirs); do
             dot_printf_warn "Unstowing all packages inside $stow_dir"
-            stow_subdirs=$(echo $stow_dir/*)
+            stow_subdirs=$(echo $stow_dir/*) &> /dev/null
             if [[ ! -z "$stow_subdirs" ]]; then
                 for d in $(echo $stow_subdirs); do
                     if [[ -z "$DRY_PURGE" ]]; then
