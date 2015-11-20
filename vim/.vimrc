@@ -1,55 +1,50 @@
-" Essentials go first
-source ~/.vim/startup/essentials.vim
-
-
-" https://github.com/VundleVim/Vundle.vim/issues/16
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
+""""""""""""""""""""""""""""""""""""
+" Vim/NeoVim main configuration file
+""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""
 " Plugins
 """""""""""""""""""""""""""
 
-" Must haves
-Plugin 'scrooloose/nerdtree'
-Plugin 'bling/vim-airline'
-Plugin 'tpope/vim-fugitive'
-Plugin 'kien/ctrlp.vim'
-"Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'majutsushi/tagbar'
-Plugin 'Raimondi/delimitMate'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'Valloric/YouCompleteMe'
+" vim-plug
+call plug#begin()
 
-" Snippets
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+
+" Must haves
+Plug 'scrooloose/nerdtree'
+Plug 'bling/vim-airline'
+Plug 'tpope/vim-fugitive'
+Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-repeat'
+Plug 'airblade/vim-gitgutter'
+Plug 'majutsushi/tagbar'
+Plug 'easymotion/vim-easymotion'
+Plug 'scrooloose/nerdcommenter'
+Plug 'editorconfig/editorconfig-vim'
+
+" Autocompletion
+Plug 'Raimondi/delimitMate'
+Plug 'tpope/vim-surround'
+Plug 'Valloric/YouCompleteMe', {'do': './install.py --gocode-completer --clang-completer'}
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 " golang
-Plugin 'fatih/vim-go'
+Plug 'fatih/vim-go', {'for': ['go']}
 
 " Look and feel
-Plugin 'tomasr/molokai'
+Plug 'tomasr/molokai'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+" Add plugins to &runtimepath
+call plug#end() " vim-plug
+
 
 """"""""""""""""""""""
 " Load custom settings
 """"""""""""""""""""""
+
+" Essentials go first
+source ~/.vim/startup/essentials.vim
 
 " Look and feel settings
 source ~/.vim/startup/colors.vim

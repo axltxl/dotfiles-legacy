@@ -1,2 +1,15 @@
 # Create vim base directory prior to stow
 mkdir -p ~/.vim
+
+##########################################################
+# For the sake of cross-compatibility between vim and nvim
+# a precise symlink must be made/maintained in order for the
+# two of them to have benefit from the same set of configuration
+# files
+##########################################################
+nvim_conf_dir=~/.config/nvim
+[[ -a $nvim_conf_dir ]] && rm -rf $nvim_conf_dir
+ln -sv ~/.vim $nvim_conf_dir
+[[ -a $nvim_conf_dir/init.vim ]] && rm -rf $nvim_conf_dir/init.vim
+ln -sv ~/.vimrc $nvim_conf_dir/init.vim
+

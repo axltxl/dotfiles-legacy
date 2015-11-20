@@ -53,7 +53,6 @@ plugins=( \
     pydev \
     tmux \
     themes \
-    vundle \
     rvm \
     vagrant \
     golang \

@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 ##################################
-# Install vim + Vundle + plugins
+# Install vim
 ##################################
 
 autoload dot_printf_install
@@ -31,10 +31,6 @@ else
     cc_cores=1
 fi
 
-# Vundle-related variables
-vundle_git=https://github.com/VundleVim/Vundle.vim.git
-vundle_src=~/.vim/bundle/Vundle.vim
-
 dot_printf_install "vim dependencies"
 
 # First of all, we need some dependencies
@@ -59,13 +55,3 @@ cd $vim_src && make clean && make distclean && \
 dot_printf_install "Symlink to ${vim_sudo_bin}"
 sudo ln -svf $(which vim) $vim_sudo_bin
 
-# Set up Vundle and install plugins
-dot_printf_install Vundle
-if [ ! -d $vundle_src ]; then
-    git clone $vundle_git $vundle_src
-else
-    git -C $vundle_src pull
-fi
-
-dot_printf_install "Vundle plugins"
-vim +PluginInstall +qall
