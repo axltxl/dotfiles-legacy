@@ -1,7 +1,10 @@
 " ============ Disable ESC key in visual and insert mode ============
 set laststatus=2
-vnoremap <esc> <NOP>
-inoremap <esc> <NOP>
+vnoremap <ESC> <NOP>
+inoremap <ESC> <NOP>
+
+" ============ Leave Ex mode, for good ============
+nnoremap Q <NOP>
 
 " ============ Disable arrow keys in both visual and insert mode ============
 nnoremap <Up> <NOP>
