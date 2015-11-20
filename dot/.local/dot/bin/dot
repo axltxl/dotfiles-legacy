@@ -228,7 +228,7 @@ dot_purge() {
     # Perform the actual deletion of dotfiles/folders
     # with the clear exception of those ignored
     #################################################
-    dotfiles=$(echo $HOME/.*)
+    dotfiles=$(echo $HOME/.*) &> /dev/null
     if [[ ! -z "$dotfiles" ]]; then
         for rd in $(echo $dotfiles); do
             if test "${dot_ignore#*$rd}" != "$dot_ignore"; then
