@@ -13,11 +13,6 @@ let g:airline_powerline_fonts = 1
 nmap <Leader>q :TagbarToggle<CR>
 let g:tagbar_vertical = 20
 
-"""""""""""""""""""
-" delimitMate configuration
-"""""""""""""""""""
-"let delimitMate_expand_cr = 1
-
 
 """"""""""""""""""
 " NERDtree
@@ -52,6 +47,7 @@ omap / <Plug>(easymotion-tn)
 map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
 
+
 """"""""""""""""""
 " gitgutter
 """"""""""""""""""
@@ -65,6 +61,7 @@ nmap <Leader>hu <Plug>GitGutterRevertHunk
 """"""""""""""""""
 " Trigger configuration.
 let g:UltiSnipsExpandTrigger="<C-L>"
+
 
 """"""""""""""""""
 " YouCompleteMe configuration

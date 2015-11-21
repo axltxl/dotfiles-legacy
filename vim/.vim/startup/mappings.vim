@@ -1,4 +1,6 @@
-" ============ Disable ESC key in visual and insert mode ============
+"""""""""""""""""""""""""""""""""""""""""""
+" Disable ESC key in visual and insert mode
+"""""""""""""""""""""""""""""""""""""""""""
 set laststatus=2
 vnoremap <ESC> <NOP>
 inoremap <ESC> <NOP>
@@ -6,7 +8,10 @@ inoremap <ESC> <NOP>
 " ============ Leave Ex mode, for good ============
 nnoremap Q <NOP>
 
-" ============ Disable arrow keys in both visual and insert mode ============
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+" Disable arrow keys in both visual and insert mode
+"""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <Up> <NOP>
 nnoremap <Down> <NOP>
 nnoremap <Left> <NOP>
@@ -16,19 +21,29 @@ inoremap <Down> <NOP>
 inoremap <Left> <NOP>
 inoremap <Right> <NOP>
 
-" ============ Disable backspace key in insert mode ============
+
+""""""""""""""""""""""""""""""""""""""
+" Disable backspace key in insert mode
+""""""""""""""""""""""""""""""""""""""
 inoremap <BS> <NOP>
 
+
+""""""""""""""""""""""""""""""""""""""""""""
 " Reselect visual block after indent/outdent
+""""""""""""""""""""""""""""""""""""""""""""
 vnoremap < <gv
 vnoremap > >gv
 
+
+""""""""""""""""
 " Map leader key
+""""""""""""""""
 let mapleader = ";"
 
-" ============================================================================
-" ============ From this point, you can use you leader keys ==================
-" ============================================================================
+
+""""""""""""""""""""""""""""""""""""""""""""""
+" From this point, you can use you leader keys
+""""""""""""""""""""""""""""""""""""""""""""""
 
 " Shortcut to rapidly toggle `set list`
 map <leader>p :set list!<CR>

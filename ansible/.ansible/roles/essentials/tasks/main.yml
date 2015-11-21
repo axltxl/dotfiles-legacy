@@ -92,6 +92,11 @@
       - psutil
       - colour
 
+- name: neovim python2 support
+  pip:
+      name: neovim
+      state: latest
+
 - name: system-wide fonts
   apt: pkg={{ item }} state=latest
   with_items:
@@ -132,6 +137,8 @@
       - bc
       - automake
       - autoconf
+      - libtool
+      - libtool-bin
       - pkg-config
       - libtool
       - mercurial
