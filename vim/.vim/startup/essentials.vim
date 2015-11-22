@@ -6,7 +6,9 @@
 " Absolute essentials
 """"""""""""""""""""
 scriptencoding utf-8
-set encoding=utf-8
+if !has('nvim')
+  set encoding=utf-8 " https://github.com/carlhuda/janus/issues/633
+endif
 set nocompatible              " be iMproved, required
 
 

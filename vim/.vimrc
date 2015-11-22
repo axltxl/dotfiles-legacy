@@ -22,6 +22,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdcommenter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'benekastah/neomake'
+Plug 'jimsei/winresizer'
 
 " Autocompletion
 Plug 'Raimondi/delimitMate'
