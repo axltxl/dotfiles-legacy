@@ -50,7 +50,7 @@ call plug#end() " vim-plug
 source ~/.vim/startup/essentials.vim
 
 " Look and feel settings
-source ~/.vim/startup/colors.vim
+source ~/.vim/startup/lookandfeel.vim
 
 " custom keyboard mappings go in here
 source ~/.vim/startup/mappings.vim

@@ -3,4 +3,4 @@
 """""""""""""""""""""""""""""""""""""""""""""""""
 
 " Automatically removing all trailing whitespace
-autocmd BufWritePre * :%s/\s\+$//e
+autocmd! BufWritePre * :%s/\s\+$//e
