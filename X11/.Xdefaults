@@ -51,32 +51,50 @@ URxvt.clipboard.copycmd:  xsel -ib
 URxvt.clipboard.pastecmd: xsel -ob
 
 !-------------------------------------------------------------------------------
-! Fullscreen suppport
-!-------------------------------------------------------------------------------
-URxvt.keysym.F11: perl:fullscreen:switch
-
-!-------------------------------------------------------------------------------
-! Molokai theme
+! 32-bit as color depth
 !-------------------------------------------------------------------------------
 URxvt.depth: 32
-URxvt*background: [92]#101010
-URxvt*foreground: #d0d0d0
-URxvt*color0: #101010
-URxvt*color1: #960050
-URxvt*color2: #66aa11
-URxvt*color3: #c47f2c
-URxvt*color4: #30309b
-URxvt*color5: #7e40a5
-URxvt*color6: #3579a8
-URxvt*color7: #9999aa
-URxvt*color8: #303030
-URxvt*color9: #ff0090
-URxvt*color10: #80ff00
-URxvt*color11: #ffba68
-URxvt*color12: #5f5fee
-URxvt*color13: #bb88dd
-URxvt*color14: #4eb4fa
-URxvt*color15: #d0d0d0
+
+!-------------------------------------------------------------------------------
+! Colorscheme: Wombat
+!-------------------------------------------------------------------------------
+
+*foreground: #f6f3e8
+*background: #242424
+
+!black
+*color0:     #000000
+*color8:     #252525
+
+!red
+*color1:     #e5786d
+*color9:     #eb887e
+
+!green
+*color2:     #95e454
+*color10:    #95f06d
+
+!brownyellow
+*color3:     #cae682
+*color11:    #daf682
+!blue
+!
+*color4:     #6aa6c2
+*color12:    #7ab6d2
+
+!magenta
+*color5:     #807caa
+*color13:    #827ab1
+
+!cyan
+*color6:     #8ac6f2
+*color14:    #a1cdcd
+
+!white
+*color7:     #ffffff
+*color15:    #dddddd
+
+
 
 !-------------------------------------------------------------------------------
 ! with this set to true, when an app sends a bell to the terminal,
