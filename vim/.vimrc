@@ -23,6 +23,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'benekastah/neomake'
 Plug 'jimsei/winresizer'
+Plug 'djoshea/vim-autoread'
 
 " Autocompletion
 Plug 'Raimondi/delimitMate'

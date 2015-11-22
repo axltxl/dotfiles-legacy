@@ -9,15 +9,14 @@ scriptencoding utf-8
 if !has('nvim')
   set encoding=utf-8 " https://github.com/carlhuda/janus/issues/633
 endif
-set nocompatible              " be iMproved, required
 
 
 """"""""""""
 " Essentials
 """"""""""""
+set nocompatible   " be iMproved, required
 set ttyfast        " Use a fast terminal connection
 set lazyredraw     " Lazyredraw attempts to solve Vim lag by reducing the amount of processing required.
-set autoread       " Automatically read files modified outside of vim
 
 """""""""""""""""""""""
 " Enable filetype plugins
