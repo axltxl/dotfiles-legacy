@@ -21,6 +21,7 @@ Plug 'majutsushi/tagbar'
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdcommenter'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'benekastah/neomake'
 
 " Autocompletion
 Plug 'Raimondi/delimitMate'

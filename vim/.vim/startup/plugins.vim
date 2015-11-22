@@ -80,3 +80,10 @@ let g:ycm_semantic_triggers =  {
     \   'lua' : ['.', ':'],
     \   'erlang' : [':'],
     \ }
+
+
+"""""""""
+" neomake
+"""""""""
+autocmd! BufWritePre * Neomake
+let g:neomake_open_list = 2
