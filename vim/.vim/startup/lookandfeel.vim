@@ -14,3 +14,7 @@ set list                                    " Whitespace is shown by default
 set listchars=tab:▸\ ,eol:¬,trail:·,space:· " Use the same symbols as TextMate for tabstops and EOLs
 set cursorline                              " Highlight current line
 set hlsearch                                " Highlight searches (use <C-L>
+
+if has('nvim')
+   let $NVIM_TUI_ENABLE_TRUE_COLOR=1        " Enable glorious true color
+ endif
