@@ -35,6 +35,8 @@ Plug 'fatih/vim-go', {'for': ['go']}
 
 " Look and feel
 Plug 'tomasr/molokai'
+Plug 'mkarmona/colorsbox'
+Plug 'atweiden/vim-colors-behelit'
 
 " Add plugins to &runtimepath
 call plug#end() " vim-plug
