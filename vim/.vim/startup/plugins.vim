@@ -91,3 +91,9 @@ let g:ycm_semantic_triggers =  {
 """""""""
 autocmd! BufWritePost * Neomake
 let g:neomake_open_list = 2
+
+
+""""""""""""
+" winresizer
+""""""""""""
+nnoremap <leader>e :WinResizerStartResize<CR>
