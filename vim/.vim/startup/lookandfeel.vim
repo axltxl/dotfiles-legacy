@@ -1,5 +1,5 @@
 """"""""""""""""""
-" Look and feel
+" Look and feel settings
 """""""""""""""""""
 set t_Co=256                                " Enable 256 colors
 set showcmd                                 " Show partial commands in the last line of the screen
@@ -17,4 +17,4 @@ set hlsearch                                " Highlight searches (use <C-L>
 
 if has('nvim')
    let $NVIM_TUI_ENABLE_TRUE_COLOR=1        " Enable glorious true color
- endif
+endif

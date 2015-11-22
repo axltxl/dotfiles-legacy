@@ -5,7 +5,9 @@ set laststatus=2
 vnoremap <ESC> <NOP>
 inoremap <ESC> <NOP>
 
-" ============ Leave Ex mode, for good ============
+"""""""""""""""""""""""""
+" Leave Ex mode, for good
+"""""""""""""""""""""""""
 nnoremap Q <NOP>
 
 
