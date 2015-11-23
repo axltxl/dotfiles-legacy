@@ -18,7 +18,7 @@ URxvt*saveLines:  0
 !-------------------------------------------------------------------------------
 ! Fonts
 !-------------------------------------------------------------------------------
-URxvt.font:       xft:Terminess Powerline
+URxvt.font: xft:Terminess Powerline:pixelsize=14:antialias=false:hinting=false
 !URxvt.letterSpace: -1
 
 !-------------------------------------------------------------------------------
