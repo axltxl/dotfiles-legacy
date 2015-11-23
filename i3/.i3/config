@@ -141,7 +141,8 @@ bar {
 }
 
 # Border style for new windows
-new_window pixel 1
+new_window pixel 0
+new_float  pixel 0
 
 # Mouse does not dictate focus!
 focus_follows_mouse no
