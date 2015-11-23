@@ -17,6 +17,7 @@ endif
 set nocompatible   " be iMproved, required
 set ttyfast        " Use a fast terminal connection
 set lazyredraw     " Lazyredraw attempts to solve Vim lag by reducing the amount of processing required.
+set autowriteall   " This is used to save the changes done in the files automatically while closing the files.
 
 """""""""""""""""""""""
 " Enable filetype plugins
