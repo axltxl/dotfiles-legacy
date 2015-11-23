@@ -94,8 +94,6 @@ URxvt.depth: 32
 *color7:     #ffffff
 *color15:    #dddddd
 
-
-
 !-------------------------------------------------------------------------------
 ! with this set to true, when an app sends a bell to the terminal,
 ! awesome hilights the appropriate tag(s) ;)
