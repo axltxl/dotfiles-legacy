@@ -2,6 +2,6 @@
 	name  = Alejandro Ricoveri
 	email = alejandroricoveri@gmail.com
 [core]
-	editor = vim 
+	editor = nvim
 [push]
 	default = simple
