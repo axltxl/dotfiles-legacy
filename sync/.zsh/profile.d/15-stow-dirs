@@ -3,7 +3,7 @@
 # treated as symlink farms managed by stow
 # just as DOT_HOME with the only difference
 # that these are watched and automatically
-# managed by their own parent syncd process
-# (see syncd for more details)
+# managed by their own parent swatch process
+# (see swatch for more details)
 #############################################
 export STOW_DIRS="${HOME}/.dotsync"
