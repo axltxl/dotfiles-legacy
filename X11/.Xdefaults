@@ -56,43 +56,43 @@ URxvt.clipboard.pastecmd: xsel -ob
 URxvt.depth: 32
 
 !-------------------------------------------------------------------------------
-! Colorscheme: Wombat
+! Colorscheme: Behelit
 !-------------------------------------------------------------------------------
+URxvt.background:    [95]#101010
+URxvt.foreground:    #60ff60
+URxvt.cursorColor:   #60ff60
 
-*foreground: #f6f3e8
-*background: [95]#101010
+! black
+URxvt.color0:        #1c1c1c
+URxvt.color8:        #4d4d4d
 
-!black
-*color0:     #000000
-*color8:     #252525
+! red
+URxvt.color1:        #d81860
+URxvt.color9:        #f00060
 
-!red
-*color1:     #e5786d
-*color9:     #eb887e
+! green
+URxvt.color2:        #60ff60
+URxvt.color10:       #70ff70
 
-!green
-*color2:     #95e454
-*color10:    #95f06d
+! yellow
+URxvt.color3:        #f9fd75
+URxvt.color11:       #f9fd80
 
-!brownyellow
-*color3:     #cae682
-*color11:    #daf682
-!blue
-!
-*color4:     #6aa6c2
-*color12:    #7ab6d2
+! blue
+URxvt.color4:        #5d97fa
+URxvt.color12:       #679dfa
 
-!magenta
-*color5:     #807caa
-*color13:    #827ab1
+! magenta
+URxvt.color5:        #a78edb
+URxvt.color13:       #ad97db
 
-!cyan
-*color6:     #8ac6f2
-*color14:    #a1cdcd
+! cyan
+URxvt.color6:        #4695c8
+URxvt.color14:       #5a9dc8
 
-!white
-*color7:     #ffffff
-*color15:    #dddddd
+! white
+URxvt.color7:        #f3ebe2
+URxvt.color15:       #eeeeee
 
 !-------------------------------------------------------------------------------
 ! with this set to true, when an app sends a bell to the terminal,

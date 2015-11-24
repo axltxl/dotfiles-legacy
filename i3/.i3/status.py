@@ -5,15 +5,19 @@ from i3pystatus import Status
 
 status = Status(standalone=True)
 
-#colors
-molokai_green="#a6e22e"
-molokai_fuchsia="#f92672"
-molokai_orange="#fd971f"
-molokai_cyan="#66d9ef"
+##############
+#color palette
+##############
 
-color_good=molokai_green
-color_bad=molokai_fuchsia
-color_warn=molokai_orange
+behelit_green  = "#60ff60"
+behelit_red    = "#f00060"
+behelit_yellow = "#f9fd80"
+behelit_cyan   = "#5a9dc8"
+
+color_good = behelit_green
+color_warn = behelit_yellow
+color_bad  = behelit_red
+color_cmus = behelit_cyan
 
 
 # Displays clock like this:
@@ -73,7 +77,7 @@ status.register("pulseaudio",
 # cmus awesome player
 status.register("cmus",
     format="{status} {artist} - {title}",
-    color=molokai_cyan)
+    color=color_cmus)
 
 
 status.run()
