@@ -11,9 +11,19 @@ i3_conf_dir=${i3_home}/conf.d
 # first of all, remove current config
 rm -f $i3_conf
 
+# generate the thing with base 16
+b16_gen() {
+    base16 -t i3/${1}.erb > $i3_conf_dir/${2}-${1}
+}
+
+# generate base colors
+b16_gen colors  10
+
 ########################################################
 # summarize all files inside conf.d into a single config
 ########################################################
 for conf_file in $i3_conf_dir/*; do
+    echo "# ==> $conf_file" >> $i3_conf
     cat $conf_file >> $i3_conf
+    echo >> $i3_conf
 done

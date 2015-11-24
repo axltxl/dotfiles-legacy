@@ -11,44 +11,9 @@ font xft:Terminess Powerline Regular 12
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-########################
-# Color palette: behelit
-########################
-set $behelit_yellow     #f9fd80
-set $behelit_black      #4d4d4d
-set $behelit_red        #f00060
-set $behelit_green      #70ff70
-set $behelit_background #101010
-set $behelit_blue       #679dfa
-set $behelit_magenta    #ad97db
-set $behelit_white      #eeeeee
-set $behelit_cyan       #5a9dc8
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-        position top
-        status_command /usr/bin/python3 ~/.i3/status.py
-        colors {
-            background $behelit_background
-            focused_workspace $behelit_yellow $behelit_yellow $behelit_background
-        }
-}
-
 # Border style for new windows
 new_window pixel 0
 new_float  pixel 0
 
 # Mouse does not dictate focus!
 focus_follows_mouse no
-
-
-#########################
-# Window colors (molokai)
-#########################
-# class                 border  backgr. text    indicator
-client.focused          #66d9ef #57b9cc #ffffff #66d9ef
-client.focused_inactive #101010 #272822 #aaaaaa #101010
-client.unfocused        #272822 #101010 #404040 #272822
-client.urgent           #6e1133 #f92672 #ffffff #6e1133
-
