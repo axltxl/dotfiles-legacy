@@ -9,4 +9,4 @@ xkb_update
 xsetroot -solid "#101010"
 
 # Finally, execute window manager
-exec i3
+exec i3-launch
