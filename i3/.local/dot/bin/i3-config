@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
-####################
-# i3 launcher script
-####################
+#####################
+# i3 config generator
+#####################
 
 # essential variables
 i3_home=${HOME}/.i3
@@ -17,6 +17,3 @@ rm -f $i3_conf
 for conf_file in $i3_conf_dir/*; do
     cat $conf_file >> $i3_conf
 done
-
-# Finally, replace this process with i3
-exec i3

@@ -1,6 +1,7 @@
 ######################
 # Startup programs
 ######################
+
 # compositing manager
 exec --no-startup-id compton
 
@@ -15,3 +16,6 @@ exec pulseaudio --start
 
 # stow watch monitoring daemon
 exec sman
+
+# dunst takes charge as the notification daemon
+exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
