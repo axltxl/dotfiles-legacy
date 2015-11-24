@@ -1,0 +1,36 @@
+!-------------------------------------------------------------------------------
+! Colorscheme Behelit
+! vim: ft=xdefaults
+!-------------------------------------------------------------------------------
+
+! black
+#define base00 #1c1c1c
+#define base08 #4d4d4d
+
+! red
+#define base01 #d81860
+#define base09 #f00060
+
+! green
+#define base02 #60ff60
+#define base0A #70ff70
+
+! yellow
+#define base03 #f9fd75
+#define base0B #f9fd80
+
+! blue
+#define base04 #5d97fa
+#define base0C #680dfa
+
+! magenta
+#define base05 #a78edb
+#define base0D #ad97db
+
+! cyan
+#define base06 #4695c8
+#define base0E #5a9dc8
+
+! white
+#define base07 #f3ebe2
+#define base0F #eeeeee

@@ -1,5 +1,6 @@
 !-------------------------------------------------------------------------------
 ! URxvt settings
+! vim: ft=xdefaults
 !-------------------------------------------------------------------------------
 
 !Essentials
@@ -16,7 +17,6 @@ URxvt.scrollBar:            false
 
 ! Cursor
 URxvt.cursorBlink:          true
-URxvt.cursorColor:          #fafb28
 URxvt.cursorUnderline:      false
 
 ! Perl extensions

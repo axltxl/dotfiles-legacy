@@ -1,5 +1,6 @@
 !-------------------------------------------------------------------------------
 ! rofi settings
+! vim: ft=xdefaults
 !-------------------------------------------------------------------------------
 
 rofi.modi:                           window,run,ssh
@@ -9,10 +10,10 @@ rofi.lines:                          10
 rofi.columns:                        1
 rofi.font:                           Terminess Powerline 12
 rofi.color-enabled:                  true
-rofi.color-normal:                   #101010,#ffffff,#101010,#f9fd80,#101010
-rofi.color-urgent:                   #101010,#ffffff,#101010,#f9fd80,#101010
-rofi.color-active:                   #101010,#ffffff,#101010,#f9fd80,#101010
-rofi.color-window:                   #101010,#272822
+rofi.color-normal:                   base00,base0F,base00,base0B,base00
+rofi.color-urgent:                   base00,base0F,base00,base0B,base00
+rofi.color-active:                   base00,base0F,base00,base0B,base00
+rofi.color-window:                   base00,base08
 rofi.bw:                             1
 rofi.location:                       0
 rofi.padding:                        5
