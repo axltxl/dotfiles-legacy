@@ -169,7 +169,7 @@ bindsym XF86AudioPlay exec --no-startup-id cmus-remote --pause
 bindsym XF86AudioStop exec --no-startup-id cmus-remote --stop
 bindsym XF86AudioPrev exec --no-startup-id cmus-remote --prev
 bindsym XF86AudioNext exec --no-startup-id cmus-remote --next
-# Sreen brightness controls
+# Screen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 2 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 2 # decrease screen brightness
 
@@ -182,20 +182,3 @@ client.focused_inactive #101010 #272822 #aaaaaa #101010
 client.unfocused        #272822 #101010 #404040 #272822
 client.urgent           #6e1133 #f92672 #ffffff #6e1133
 
-######################
-# Startup programs
-######################
-# compositing manager
-exec --no-startup-id compton
-
-# xautolock
-exec --no-startup-id xautolock -time 8 -locker $autolock
-
-# set wallpapers
-exec --no-startup-id nitrogen --restore
-
-# pulseaudio
-exec pulseaudio --start
-
-# stow watch monitoring daemon
-exec sman

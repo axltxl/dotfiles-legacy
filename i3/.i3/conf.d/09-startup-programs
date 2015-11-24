@@ -1,0 +1,17 @@
+######################
+# Startup programs
+######################
+# compositing manager
+exec --no-startup-id compton
+
+# xautolock
+exec --no-startup-id xautolock -time 8 -locker $autolock
+
+# set wallpapers
+exec --no-startup-id nitrogen --restore
+
+# pulseaudio
+exec pulseaudio --start
+
+# stow watch monitoring daemon
+exec sman
