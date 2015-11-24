@@ -1,9 +1,5 @@
-# Iteration 1:
-* docker integration
-
 # Iteration 2:
 * lightdm greeter customization
-* Initial configuration for irssi
 
 # Iteration 3:
 * Zen kernel introduction and initial config
