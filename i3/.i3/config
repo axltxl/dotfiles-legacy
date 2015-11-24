@@ -125,6 +125,19 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 bindsym $mod+p exec $autolock
 
+########################
+# Color palette: behelit
+########################
+set $behelit_yellow     #f9fd80
+set $behelit_black      #4d4d4d
+set $behelit_red        #f00060
+set $behelit_green      #70ff70
+set $behelit_background #101010
+set $behelit_blue       #679dfa
+set $behelit_magenta    #ad97db
+set $behelit_white      #eeeeee
+set $behelit_cyan       #5a9dc8
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
@@ -132,8 +145,8 @@ bar {
         status_command /usr/bin/python3 ~/.i3/status.py
         # molokai colors
         colors {
-            background #101010
-            focused_workspace #A6E22E #A6E22E #101010
+            background $behelit_background
+            focused_workspace $behelit_yellow $behelit_yellow $behelit_background
         }
 }
 
