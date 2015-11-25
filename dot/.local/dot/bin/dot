@@ -125,10 +125,10 @@ dot_install() {
 dot_print_help() {
     echo "Usage: dot <COMMAND> <ARGUMENTS>"
     echo
-    echo "  dot stow <package> - stow package(s)"
+    echo "  dot stow   <package> - stow package(s)"
     echo "  dot unstow <package> - unstow package(s)"
-    echo "  dot update - update git repo + reload everything"
-    echo "  dot purge - purge every dotfile there is inside your home directory"
+    echo "  dot update <package> - update specific configurations"
+    echo "  dot purge            - purge every dotfile there is inside your home directory"
     echo
 }
 
