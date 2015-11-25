@@ -194,7 +194,7 @@ if ARGV[0] != nil then
   end
 
   # Scheme file to be used
-  tmp_scheme = ENV['BASE16_SCHEME']
+  tmp_scheme = "#{ENV['BASE16_SCHEME']}.yml"
 
   if tmp_template or tmp_scheme then
     Theme.new.build(tmp_scheme, tmp_template)
