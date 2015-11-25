@@ -27,3 +27,6 @@ for conf_file in $i3_conf_dir/*; do
     cat $conf_file >> $i3_conf
     echo >> $i3_conf
 done
+
+# Generate colors python module for i3pystatus
+base16 -t i3/colors.py.erb > $i3_home/colors.py
