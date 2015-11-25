@@ -126,11 +126,12 @@ dot_install() {
 # Print help
 #
 dot_print_help() {
-    echo "Usage: dot <COMMAND> <ARGUMENTS>"
+    echo "Usage: dot <command> <arguments>"
     echo
     echo "  dot stow   <package> - stow package(s)"
     echo "  dot unstow <package> - unstow package(s)"
     echo "  dot update <package> - update specific configurations"
+    echo "  dot help   <command> - help information about a command"
     echo "  dot purge            - purge every dotfile there is inside your home directory"
     echo
 }
@@ -269,6 +270,7 @@ dot_purge() {
 }
 
 
+# dot help update
 _dot_help_update() {
     dot_printf "Usage: update <update_job>"
     dot_printf "Where <update_job> can be one of the following:"
