@@ -1,0 +1,13 @@
+# vim: ft=zsh
+#########################
+# Update X11 settings
+#########################
+
+# Update settings on keyboard
+dot_printf "Update xmodmap settings"
+xkb_update
+
+# Update .Xresources
+dot_printf "Update xresources"
+xrdb-config
+

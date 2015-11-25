@@ -1,0 +1,10 @@
+# vim: ft=zsh
+######################################
+# stow all directories inside DOT_HOME
+######################################
+
+dot_printf "Stowing all packages inside $DOT_HOME"
+for d in $DOT_HOME/*; do
+    dot_stow $( basename $d )
+done
+unset d

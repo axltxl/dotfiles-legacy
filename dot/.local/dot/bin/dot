@@ -20,24 +20,34 @@ dot_prestow_dir=${dot_basedir}/pre-stow.d
 dot_poststow_dir=${dot_basedir}/post-stow.d
 dot_preunstow_dir=${dot_basedir}/pre-unstow.d
 dot_postunstow_dir=${dot_basedir}/post-unstow.d
+dot_update_dir=${dot_basedir}/update.d
 dot_ansible_playbook_dir=${HOME}/.ansible
 
 #
-# Update repository at DOT_HOME
+# Update all the things!
 #
 dot_update() {
-    dot_printf "Updating dotfiles git repository ..."
-    git -C $DOT_HOME pull || true
+    if [[ -z $1 ]]; then
+        # With no arguments, this will execute all update jobs
+        # located inside dot_update_dir
+        for update_job in $dot_update_dir/*; do
+            if [ ! -h $update_job ]; then
+                dot_printf_warn "==> UPDATING: $(basename $update_job)"
+                . $update_job
+            fi
+        done
+        unset update_job
 
-    # stow all directories inside DOT_HOME
-    dot_printf "Stowing all packages inside $DOT_HOME"
-    for d in $DOT_HOME/*; do
-        dot_stow $( basename $d )
-    done
-    unset d
-
-    # deploy all changes in the ansible playbook
-    dot_deploy
+        # deploy all changes in the ansible playbook
+        dot_deploy
+    else
+        # Update a single thing
+        update_job=${dot_update_dir}/$1
+        if [[  -a $update_job  ]]; then
+            dot_printf_warn "==> UPDATING: $1"
+            . $update_job
+        fi
+    fi
 }
 
 _dot_stow() {

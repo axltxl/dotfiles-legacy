@@ -1,0 +1,7 @@
+# vim: ft=zsh
+############################
+# Update main git repository
+############################
+
+dot_printf "Updating dotfiles git repository ..."
+git -C $DOT_HOME pull || true
