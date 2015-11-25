@@ -2,22 +2,18 @@
 # i3pystatus configuration file.
 ################################
 from i3pystatus import Status
+import colors
 
+# Get status bar
 status = Status(standalone=True)
 
 ##############
 #color palette
 ##############
-
-behelit_green  = "#60ff60"
-behelit_red    = "#f00060"
-behelit_yellow = "#f9fd80"
-behelit_cyan   = "#5a9dc8"
-
-color_good = behelit_green
-color_warn = behelit_yellow
-color_bad  = behelit_red
-color_cmus = behelit_cyan
+color_good = colors.base02
+color_warn = colors.base03
+color_bad  = colors.base01
+color_cmus = colors.base06
 
 
 # Displays clock like this:
