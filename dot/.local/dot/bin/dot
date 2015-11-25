@@ -37,9 +37,6 @@ dot_update() {
             fi
         done
         unset update_job
-
-        # deploy all changes in the ansible playbook
-        dot_deploy
     else
         # Update a single thing
         update_job=${dot_update_dir}/$1
