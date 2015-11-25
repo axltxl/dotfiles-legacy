@@ -3,11 +3,13 @@
 # Update X11 settings
 #########################
 
-# Update settings on keyboard
-dot_printf "Update xmodmap settings"
-xkb_update
+_dot_update_exec() {
+    # Update settings on keyboard
+    dot_printf "Update xmodmap settings"
+    xkb_update
 
-# Update .Xresources
-dot_printf "Update xresources"
-xrdb-config
+    # Update .Xresources
+    dot_printf "Update xresources"
+    xrdb-config
+}
 

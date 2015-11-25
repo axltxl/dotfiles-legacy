@@ -34,6 +34,9 @@ dot_update() {
             if [ ! -h $update_job ]; then
                 dot_printf_warn "==> UPDATING: $(basename $update_job)"
                 . $update_job
+                _dot_update_exec
+                # make sure the callback function is removed afterwards
+                unset -f _dot_update_exec
             fi
         done
         unset update_job
@@ -43,6 +46,9 @@ dot_update() {
         if [[  -a $update_job  ]]; then
             dot_printf_warn "==> UPDATING: $1"
             . $update_job
+            _dot_update_exec
+            # make sure the callback function is removed afterwards
+            unset -f _dot_update_exec
         fi
     fi
 }

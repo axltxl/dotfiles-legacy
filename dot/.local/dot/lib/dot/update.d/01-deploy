@@ -3,5 +3,7 @@
 # Deploy ansible playbook changes
 #################################
 
-# deploy all changes in the ansible playbook
-dot_deploy
+_dot_update_exec() {
+    # deploy all changes in the ansible playbook
+    dot_deploy
+}

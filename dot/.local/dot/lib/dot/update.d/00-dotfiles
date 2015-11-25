@@ -3,5 +3,7 @@
 # Update main git repository
 ############################
 
-dot_printf "Updating dotfiles git repository ..."
-git -C $DOT_HOME pull || true
+_dot_update_exec() {
+    dot_printf "Updating dotfiles git repository ..."
+    git -C $DOT_HOME pull || true
+}

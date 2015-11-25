@@ -3,6 +3,8 @@
 # Update i3 configuration
 #########################
 
-# Make sure latest i3 config gets generated
-dot_printf_setup "i3 configuration file"
-i3-config
+_dot_update_exec() {
+    # Make sure latest i3 config gets generated
+    dot_printf_setup "i3 configuration file"
+    i3-config
+}
