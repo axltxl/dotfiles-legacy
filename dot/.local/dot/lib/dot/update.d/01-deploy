@@ -3,6 +3,10 @@
 # Deploy ansible playbook changes
 #################################
 
+_dot_update_help() {
+    echo "apply ansible playbooks configuration on this machine"
+}
+
 _dot_update_exec() {
     # deploy all changes in the ansible playbook
     dot_deploy

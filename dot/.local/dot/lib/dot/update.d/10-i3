@@ -3,6 +3,10 @@
 # Update i3 configuration
 #########################
 
+_dot_update_help() {
+    echo "regenerate i3wm configuration"
+}
+
 _dot_update_exec() {
     # Make sure latest i3 config gets generated
     dot_printf_setup "i3 configuration file"

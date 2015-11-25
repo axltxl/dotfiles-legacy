@@ -3,6 +3,10 @@
 # stow all directories inside DOT_HOME
 ######################################
 
+_dot_update_help() {
+    echo "stow all packages inside $DOT_HOME"
+}
+
 _dot_update_exec() {
     dot_printf "Stowing all packages inside $DOT_HOME"
     for d in $DOT_HOME/*; do

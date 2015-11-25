@@ -268,6 +268,35 @@ dot_purge() {
     dot_printf_warn "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
 }
 
+
+_dot_help_update() {
+    dot_printf "Usage: update <update_job>"
+    dot_printf "Where <update_job> can be one of the following:"
+    for update_job in $dot_update_dir/*; do
+        if [[  -h $update_job  ]]; then
+            . $update_job
+            dot_printf "    $(basename $update_job) - $(_dot_update_help)"
+            # make sure the callback function is removed afterwards
+            unset -f _dot_update_help
+        fi
+    done
+}
+
+#
+# Print command-specific help
+#
+dot_help() {
+    if [[ ! -z "$1" ]]; then
+        case $1 in
+            update )
+            _dot_help_update
+            ;;
+        esac
+    else
+        dot_print_help
+    fi
+}
+
 ################
 # The main thing
 ################
@@ -288,6 +317,9 @@ if [[ $ZSH_EVAL_CONTEXT == 'toplevel' ]]; then
             ;;
         update)
             dot_update ${@:2}
+            ;;
+        help)
+            dot_help ${@:2}
             ;;
         purge)
             dot_purge ${@:2}

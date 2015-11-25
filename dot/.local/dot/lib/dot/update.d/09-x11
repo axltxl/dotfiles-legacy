@@ -3,6 +3,10 @@
 # Update X11 settings
 #########################
 
+_dot_update_help() {
+    echo "apply xmodmap settings and update xresources configuration"
+}
+
 _dot_update_exec() {
     # Update settings on keyboard
     dot_printf "Update xmodmap settings"

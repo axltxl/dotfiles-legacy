@@ -3,6 +3,10 @@
 # Update main git repository
 ############################
 
+_dot_update_help() {
+    echo "update dotfiles main git repository"
+}
+
 _dot_update_exec() {
     dot_printf "Updating dotfiles git repository ..."
     git -C $DOT_HOME pull || true
