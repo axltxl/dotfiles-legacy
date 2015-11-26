@@ -42,9 +42,10 @@ dot_printf_install "termite"
 
 # Clone/pull the repo
 if [ ! -d $termite_src ]; then
-    git clone $termite_git $termite_src
+    git clone --recursive $termite_git $termite_src
 else
     git -C $termite_src pull
+    git submodule update
 fi
 
 # Compile and install termite
