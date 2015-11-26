@@ -14,6 +14,6 @@ _dot_update_exec() {
 
     # Update .Xresources
     dot_printf "Update xresources"
-    xrdb-config
+    config-xrdb
 }
 
