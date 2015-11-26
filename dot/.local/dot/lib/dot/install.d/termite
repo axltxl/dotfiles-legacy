@@ -1,0 +1,53 @@
+#!/usr/bin/env zsh
+##################################
+# Install termite
+##################################
+
+autoload dot_printf_install
+
+# The actual variables for termite compilation
+vte_git=https://github.com/thestinger/vte-ng
+vte_src=~/Projects/vte-ng
+vte_opts=(\
+    --prefix=$DOT_PATH \
+    )
+termite_git=https://github.com/thestinger/termite.git
+termite_src=~/Projects/termite
+termite_deps=( \
+    gtk-doc-tools \
+    libgtk2.0-dev \
+    )
+
+# Now, we do the thing
+dot_printf_install "termite dependencies"
+sudo apt-get build-dep -y libvte-2.91-dev
+sudo apt-get install -y ${termite_deps[@]}
+
+# Clone/pull the repo
+if [ ! -d $vte_src ]; then
+    git clone $vte_git $vte_src
+else
+    git -C $vte_src pull
+fi
+
+cd $vte_src
+[ ! -x configure ] && ./autogen.sh
+./configure "${vte_opts[@]}" && make clean  && make
+
+
+# Now, we do the thing
+dot_printf_install "termite"
+
+# Clone/pull the repo
+if [ ! -d $termite_src ]; then
+    git clone $termite_git $termite_src
+else
+    git -C $termite_src pull
+fi
+
+# Compile and install termite
+cd $termite_src
+
+#make clean || true
+make PREFIX="${DOT_PATH}" install
+
