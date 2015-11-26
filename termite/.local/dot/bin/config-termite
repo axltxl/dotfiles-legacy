@@ -1,0 +1,14 @@
+#!/usr/bin/env zsh
+###########################
+# termite colorscheme generator
+###########################
+
+# essential variables
+termite_conf_dir=${HOME}/.config/termite
+termite_conf=${termite_conf_dir}/config
+
+# first of all, remove current config
+rm -f $termite_conf
+
+# Generate colors python module for termitepystatus
+base16 -t termite/config.erb > $termite_conf
