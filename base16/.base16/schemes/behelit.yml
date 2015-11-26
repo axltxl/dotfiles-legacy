@@ -1,34 +1,18 @@
 scheme: "Behelit"
 author: "Alejandro Ricoveri <alejandroricoveri@gmail.com>"
-
-# black
 base00: "1c1c1c"
-base08: "4d4d4d"
-
-# red
-base01: "d81860"
-base09: "f00060"
-
-# green
-base02: "60ff60"
-base0A: "70ff70"
-
-# yellow
-base03: "f9fd75"
-base0B: "f9fd80"
-
-# blue
-base04: "5d97fa"
-base0C: "680dfa"
-
-# magenta
-base05: "a78edb"
-base0D: "ad97db"
-
-# cyan
-base06: "4695c8"
-base0E: "5a9dc8"
-
-# white
-base07: "f3ebe2"
-base0F: "eeeeee"
+base01: "1b1313"
+base02: "332b2a"
+base03: "635b58"
+base04: "938b86"
+base05: "c3bbb4"
+base06: "f3ebe2"
+base07: "eeeeee"
+base08: "f00060" # red
+base09: "d81860" # orange
+base0A: "f9fd75" # yellow
+base0B: "60ff60" # green
+base0C: "4695c8" # aqua
+base0D: "5d97fa" # blue
+base0E: "a78edb" # purple
+base0F: "4b4341" # brown
