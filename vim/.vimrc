@@ -6,6 +6,9 @@
 " Plugins
 """""""""""""""""""""""""""
 
+" Essentials go first
+source ~/.vim/startup/essentials.vim
+
 " vim-plug
 call plug#begin()
 
@@ -35,11 +38,6 @@ Plug 'honza/vim-snippets'
 " golang
 Plug 'fatih/vim-go', {'for': ['go']}
 
-" Look and feel
-Plug 'tomasr/molokai'
-Plug 'mkarmona/colorsbox'
-Plug 'atweiden/vim-colors-behelit'
-
 " Add plugins to &runtimepath
 call plug#end() " vim-plug
 
@@ -48,8 +46,8 @@ call plug#end() " vim-plug
 " Load custom settings
 """"""""""""""""""""""
 
-" Essentials go first
-source ~/.vim/startup/essentials.vim
+" Get color scheme
+source ~/.vim/colors/base16.vim
 
 " Look and feel settings
 source ~/.vim/startup/lookandfeel.vim

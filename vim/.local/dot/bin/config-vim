@@ -12,4 +12,4 @@ vim_conf=${vim_conf_dir}/base16.vim
 rm -f $vim_conf
 
 # Generate colors python module for vimpystatus
-base16 -t vim/vim.erb > $vim_conf
+base16 -t vim/colorscheme.erb > $vim_conf

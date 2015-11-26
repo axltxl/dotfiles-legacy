@@ -10,5 +10,6 @@ _dot_update_help() {
 _dot_update_exec() {
     # Make sure latest vim config gets generated
     dot_printf_setup "vim colorsheme"
+    config-base16-shell
     config-vim
 }

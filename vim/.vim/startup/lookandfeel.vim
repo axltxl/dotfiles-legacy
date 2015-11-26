@@ -1,11 +1,17 @@
 """"""""""""""""""
 " Look and feel settings
 """""""""""""""""""
-set t_Co=256                                " Enable 256 colors
+
+if has('nvim')
+   let $NVIM_TUI_ENABLE_TRUE_COLOR=1        " Enable glorious true color
+else
+    set t_Co=256                            " Enable 256 colors
+endif
+
 set showcmd                                 " Show partial commands in the last line of the screen
 syntax on                                   " Activate syntax highlightning
 set background=dark                         " Set the dark background
-colorscheme behelit                         " Color scheme
+colorscheme base16                          " Color scheme
 set colorcolumn=80                          " Set up a line length marker
 set relativenumber                          " Show line numbers relative to current line
 set number                                  " Display line numbers on the left
@@ -15,6 +21,3 @@ set listchars=tab:▸\ ,eol:¬,trail:·,space:· " Use the same symbols as TextM
 set cursorline                              " Highlight current line
 set hlsearch                                " Highlight searches (use <C-L>
 
-if has('nvim')
-   let $NVIM_TUI_ENABLE_TRUE_COLOR=1        " Enable glorious true color
-endif

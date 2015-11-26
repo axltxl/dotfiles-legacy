@@ -5,16 +5,6 @@
 %>" Base16 <%= @scheme %> (https://github.com/chriskempson/base16)
 " Scheme: <%= @author %>
 
-" This enables the coresponding base16-shell script to run so that
-" :colorscheme works in terminals supported by base16-shell scripts
-" User must set this variable in .vimrc
-"   let g:base16_shell_path=base16-builder/output/shell/
-if !has('gui_running')
-  if exists("g:base16_shell_path")
-    execute "silent !/bin/sh ".g:base16_shell_path."/base16-<%= slug(@scheme) %>.".&background.".sh"
-  endif
-endif
-
 " GUI color definitions
 let s:gui00 = "<%= @base["00"]["hex"] %>"
 let s:gui01 = "<%= @base["01"]["hex"] %>"
@@ -60,10 +50,30 @@ else
   let s:cterm0F = "14"
 endif
 
+" Terminal color definitions (24 bits)
+let g:terminal_color_0          = "#<%= @base["00"]["hex"] %>"
+let g:terminal_color_1          = "#<%= @base["0A"]["hex"] %>"
+let g:terminal_color_2          = "#<%= @base["0B"]["hex"] %>"
+let g:terminal_color_3          = "#<%= @base["08"]["hex"] %>"
+let g:terminal_color_4          = "#<%= @base["0C"]["hex"] %>"
+let g:terminal_color_5          = "#<%= @base["07"]["hex"] %>"
+let g:terminal_color_6          = "#<%= @base["0D"]["hex"] %>"
+let g:terminal_color_7          = "#<%= @base["07"]["hex"] %>"
+let g:terminal_color_8          = "#<%= @base["01"]["hex"] %>"
+let g:terminal_color_9          = "#<%= @base["09"]["hex"] %>"
+let g:terminal_color_10         = "#<%= @base["03"]["hex"] %>"
+let g:terminal_color_11         = "#<%= @base["02"]["hex"] %>"
+let g:terminal_color_12         = "#<%= @base["06"]["hex"] %>"
+let g:terminal_color_13         = "#<%= @base["04"]["hex"] %>"
+let g:terminal_color_14         = "#<%= @base["05"]["hex"] %>"
+let g:terminal_color_15         = "#<%= @base["0E"]["hex"] %>"
+let g:terminal_color_background = "#<%= @base["00"]["hex"] %>"
+let g:terminal_color_foreground = "#<%= @base["07"]["hex"] %>"
+
 " Theme setup
 hi clear
 syntax reset
-let g:colors_name = "base16-<%= @slug %>"
+let g:colors_name = "base16"
 
 " Highlighting function
 fun <sid>hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)
@@ -265,14 +275,14 @@ call <sid>hi("javaScriptBraces",  s:gui05, "", s:cterm05, "", "", "")
 call <sid>hi("javaScriptNumber",  s:gui09, "", s:cterm09, "", "", "")
 
 " Mail highlighting
-call <sid>hi("mailQuoted1",  s:gui0A, "", s:cterm0A, "", "")
-call <sid>hi("mailQuoted2",  s:gui0B, "", s:cterm0B, "", "")
-call <sid>hi("mailQuoted3",  s:gui0E, "", s:cterm0E, "", "")
-call <sid>hi("mailQuoted4",  s:gui0C, "", s:cterm0C, "", "")
-call <sid>hi("mailQuoted5",  s:gui0D, "", s:cterm0D, "", "")
-call <sid>hi("mailQuoted6",  s:gui0A, "", s:cterm0A, "", "")
-call <sid>hi("mailURL",      s:gui0D, "", s:cterm0D, "", "")
-call <sid>hi("mailEmail",    s:gui0D, "", s:cterm0D, "", "")
+call <sid>hi("mailQuoted1",  s:gui0A, "", s:cterm0A, "", "", "")
+call <sid>hi("mailQuoted2",  s:gui0B, "", s:cterm0B, "", "", "")
+call <sid>hi("mailQuoted3",  s:gui0E, "", s:cterm0E, "", "", "")
+call <sid>hi("mailQuoted4",  s:gui0C, "", s:cterm0C, "", "", "")
+call <sid>hi("mailQuoted5",  s:gui0D, "", s:cterm0D, "", "", "")
+call <sid>hi("mailQuoted6",  s:gui0A, "", s:cterm0A, "", "", "")
+call <sid>hi("mailURL",      s:gui0D, "", s:cterm0D, "", "", "")
+call <sid>hi("mailEmail",    s:gui0D, "", s:cterm0D, "", "", "")
 
 " Markdown highlighting
 call <sid>hi("markdownCode",              s:gui0B, "", s:cterm0B, "", "", "")
