@@ -1,5 +1,5 @@
-# Create vim base directory prior to stow
-mkdir -p ~/.vim
+# Create vim base directories prior to stow
+mkdir -p ~/.vim/colors
 
 ##########################################################
 # For the sake of cross-compatibility between vim and nvim
