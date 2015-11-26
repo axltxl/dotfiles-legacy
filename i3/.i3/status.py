@@ -10,10 +10,10 @@ status = Status(standalone=True)
 ##############
 #color palette
 ##############
-color_good = colors.base02
-color_warn = colors.base03
-color_bad  = colors.base01
-color_cmus = colors.base06
+color_good = colors.base0B
+color_warn = colors.base09
+color_bad  = colors.base08
+color_cmus = colors.base0C
 
 
 # Displays clock like this:
