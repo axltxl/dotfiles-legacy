@@ -1,2 +1,4 @@
+#########################################
 # Set default scheme to be used by base16
-export BASE16_SCHEME=behelit
+#########################################
+export BASE16_SCHEME=default
