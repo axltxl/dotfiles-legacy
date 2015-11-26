@@ -11,6 +11,7 @@ vte_src=~/Projects/vte-ng
 vte_opts=(\
     --prefix=$DOT_PATH \
     )
+
 termite_git=https://github.com/thestinger/termite.git
 termite_src=~/Projects/termite
 termite_deps=( \
@@ -33,7 +34,7 @@ fi
 
 cd $vte_src
 [ ! -x configure ] && ./autogen.sh
-./configure "${vte_opts[@]}" && make clean  && make
+./configure "${vte_opts[@]}" && make clean  && make && make install || exit 1
 
 
 # Now, we do the thing
@@ -50,5 +51,4 @@ fi
 cd $termite_src
 
 #make clean || true
-make PREFIX="${DOT_PATH}" install
-
+make PREFIX="${DOT_PATH}" install || exit 1
