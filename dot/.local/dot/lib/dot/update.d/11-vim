@@ -1,0 +1,14 @@
+# vim: ft=zsh
+##########################
+# Update vim configuration
+##########################
+
+_dot_update_help() {
+    echo "regenerate vim configuration"
+}
+
+_dot_update_exec() {
+    # Make sure latest vim config gets generated
+    dot_printf_setup "vim colorsheme"
+    config-vim
+}
