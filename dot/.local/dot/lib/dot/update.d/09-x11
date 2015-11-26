@@ -15,5 +15,8 @@ _dot_update_exec() {
     # Update .Xresources
     dot_printf "Update xresources"
     config-xrdb
+
+    # Make sure ~/.Xresources gets updated
+    xrdb ${HOME}/.Xresources
 }
 
