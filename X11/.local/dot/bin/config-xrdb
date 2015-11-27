@@ -10,6 +10,3 @@ xrdb_file_colors=${xrdb_dir}/colors
 # this is especially cool since switching from
 # a color scheme to another is a bliss
 base16 -t X11/colors.erb > $xrdb_file_colors
-
-# Make sure ~/.Xresources gets updated
-xrdb ${HOME}/.Xresources

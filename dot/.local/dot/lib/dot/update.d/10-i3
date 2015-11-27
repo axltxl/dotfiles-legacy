@@ -9,6 +9,12 @@ _dot_update_help() {
 
 _dot_update_exec() {
     # Make sure latest i3 config gets generated
-    dot_printf_setup "i3 configuration file"
+    dot_printf "regenerate i3 configuration file"
     config-i3
+
+    # Reload configuration
+    dot_printf "restarting i3"
+    if [[ ! -z "$DISPLAY" ]]; then
+        i3-msg restart > /dev/null
+    fi
 }

@@ -1,0 +1,14 @@
+# termite: ft=zsh
+##########################
+# Update termite configuration
+##########################
+
+_dot_update_help() {
+    echo "regenerate termite configuration"
+}
+
+_dot_update_exec() {
+    # Make sure latest termite config gets generated
+    dot_printf_setup "termite colorsheme"
+    config-termite
+}

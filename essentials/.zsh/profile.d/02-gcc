@@ -17,3 +17,6 @@ export LIBRARY_PATH=${DOT_PATH}/lib
 # Add this directory to the runtime library search path.
 # each time a binary is linked (rpath)
 export LD_RUN_PATH=${DOT_PATH}/lib
+
+# pkg-config search path
+export PKG_CONFIG_PATH=${DOT_PATH}/lib/pkgconfig
