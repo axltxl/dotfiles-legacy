@@ -18,6 +18,6 @@ fi
 # Export the whole thing
 export EDITOR PAGER VISUAL BROWSER
 
-# Settings for the terminal
-export TERM=xterm
+# Terminal settings
+export TERM=xterm-256color
 export TERMINFO=${DOT_PATH}/share/terminfo
