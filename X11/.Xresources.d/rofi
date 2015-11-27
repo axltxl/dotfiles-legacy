@@ -13,7 +13,7 @@ rofi.color-enabled:                  true
 rofi.color-normal:                   base00,base07,base01,base0A,base00
 rofi.color-urgent:                   base00,base07,base01,base08,base07
 rofi.color-active:                   base00,base07,base01,base09,base07
-rofi.color-window:                   base00,base00,base0F
+rofi.color-window:                   base00,base00,base01
 rofi.bw:                             1
 rofi.location:                       0
 rofi.padding:                        5
