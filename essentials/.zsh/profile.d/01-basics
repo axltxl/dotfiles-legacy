@@ -10,7 +10,7 @@ VISUAL=vim
 
 # Web browser
 if [ -n "$DISPLAY" ]; then
-    BROWSER=google-chrome
+    BROWSER=chromium
 else
     BROWSER=links
 fi
