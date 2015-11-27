@@ -1,1 +1,2 @@
-mkdir -p ~/.config
+# Make sure base directory is present
+mkdir -p ~/.config/dunst

@@ -1,0 +1,14 @@
+# vim: ft=zsh
+##########################
+# Update dunst configuration
+##########################
+
+_dot_update_help() {
+    echo "regenerate dunst configuration"
+}
+
+_dot_update_exec() {
+    # Make sure latest dunst config gets generated
+    dot_printf_setup "dunst colorsheme"
+    config-dunst
+}
