@@ -10,17 +10,17 @@ rofi.lines:                          10
 rofi.columns:                        1
 rofi.font:                           Terminess Powerline 12
 rofi.color-enabled:                  true
-rofi.color-normal:                   base00,base0F,base00,base0B,base00
-rofi.color-urgent:                   base00,base0F,base00,base0B,base00
-rofi.color-active:                   base00,base0F,base00,base0B,base00
-rofi.color-window:                   base00,base08
+rofi.color-normal:                   base00,base07,base01,base0A,base00
+rofi.color-urgent:                   base00,base07,base01,base08,base07
+rofi.color-active:                   base00,base07,base01,base09,base07
+rofi.color-window:                   base00,base00,base01
 rofi.bw:                             1
 rofi.location:                       0
 rofi.padding:                        5
 rofi.yoffset:                        0
 rofi.xoffset:                        0
 rofi.fixed-num-lines:                false
-rofi.terminal:                       rofi-sensible-terminal
+rofi.terminal:                       termite
 rofi.ssh-client:                     ssh
 rofi.ssh-command:                    {terminal} -e {ssh-client} {host}
 rofi.run-command:                    {cmd}
