@@ -3,6 +3,7 @@
 # Install tmux + plugins
 ##################################
 
+autoload dot_printf
 autoload dot_printf_install
 
 # The actual variables for tmux compilation
@@ -12,34 +13,42 @@ tmux_deps=(tmux)
 tmux_opts=(\
           --prefix=$DOT_PATH \
           )
+tmux_truecolor_diff=https://gist.githubusercontent.com/axltxl/61b43dacd61c0a2d929d/raw/a6137c9bb626f19453be6f67c3a2441f98667f3f/tmux-truecolor.diff
 
 # Vundle-related variables
 tpm_git=https://github.com/tmux-plugins/tpm
 tpm_src=~/.tmux/plugins/tpm
 
-dot_printf_install "tmux dependencies"
 
 # First of all, we need some dependencies
+dot_printf_install "tmux dependencies"
 sudo apt-get build-dep -y "${tmux_deps[@]}"
 
 # Now, we do the thing
 dot_printf_install "tmux"
 
 # Clone/pull the repo
+dot_printf "clone git repository"
 if [ ! -d $tmux_src ]; then
     git clone $tmux_git $tmux_src
 else
+    git -C $tmux_src reset HEAD --hard
+    git -C $tmux_src checkout master
     git -C $tmux_src pull
 fi
 
-# Compile and install tmux
-cd $tmux_src
-[ ! -x configure ] && ./autogen.sh
-./configure "${tmux_opts[@]}" && make clean  && make && make install
+# Download true color patch
+dot_printf "apply true color patch"
+cd $tmux_src &&  \
+wget -q -O - $tmux_truecolor_diff | git apply - || exit 1
 
-dot_printf_install "tmux plugin manager"
+# Compile and install tmux
+dot_printf "compile and install tmux"
+[ ! -x configure ] && ./autogen.sh
+./configure "${tmux_opts[@]}" && make clean  && make && make install || exit 1
 
 # Set up tpm
+dot_printf_install "tmux plugin manager"
 if [ ! -d $tpm_src ]; then
     git clone $tpm_git $tpm_src
 else
