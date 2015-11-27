@@ -10,13 +10,17 @@ _dot_update_help() {
 _dot_update_exec() {
     # Update settings on keyboard
     dot_printf "Update xmodmap settings"
-    xkb_update
+    if [[ ! -z "$DISPLAY" ]]; then
+        xkb_update
+    fi
 
     # Update .Xresources
     dot_printf "Update xresources"
     config-xrdb
 
     # Make sure ~/.Xresources gets updated
-    xrdb ${HOME}/.Xresources
+    if [[ ! -z "$DISPLAY" ]]; then
+        xrdb ${HOME}/.Xresources
+    fi
 }
 

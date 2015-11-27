@@ -14,5 +14,7 @@ _dot_update_exec() {
 
     # Reload configuration
     dot_printf "restarting i3"
-    i3-msg restart > /dev/null
+    if [[ ! -z "$DISPLAY" ]]; then
+        i3-msg restart > /dev/null
+    fi
 }
