@@ -7,9 +7,13 @@
 vim_home=${HOME}/.vim
 vim_conf_dir=${vim_home}/colors
 vim_conf=${vim_conf_dir}/base16.vim
+vim_airline_conf=${vim_conf_dir}/base16-airline.vim
 
 # first of all, remove current config
 rm -f $vim_conf
 
 # Generate colors python module for vimpystatus
 base16 -t vim/colorscheme.erb > $vim_conf
+
+# Generate colors python module for vimpystatus
+base16 -t vim/vim-airline.erb > $vim_airline_conf
