@@ -22,6 +22,7 @@
     - apt-transport-https
     - stow
     - symlinks
+    - socat
 
     # X11
     - xorg
