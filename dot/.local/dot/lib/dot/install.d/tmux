@@ -13,16 +13,15 @@ tmux_deps=(tmux)
 tmux_opts=(\
           --prefix=$DOT_PATH \
           )
-tmux_truecolor_url=https://gist.githubusercontent.com/zchee/9f6f2ca17acf49e04088/raw/0c9bf0d84e69cb49b5e59950dd6dde6ca265f9a1/tmux-truecolor.diff
-tmux_truecolor_diff=tmux-truecolor.diff
+tmux_truecolor_diff=https://gist.githubusercontent.com/zchee/9f6f2ca17acf49e04088/raw/0c9bf0d84e69cb49b5e59950dd6dde6ca265f9a1/tmux-truecolor.diff
 
 # Vundle-related variables
 tpm_git=https://github.com/tmux-plugins/tpm
 tpm_src=~/.tmux/plugins/tpm
 
-dot_printf_install "tmux dependencies"
 
 # First of all, we need some dependencies
+dot_printf_install "tmux dependencies"
 sudo apt-get build-dep -y "${tmux_deps[@]}"
 
 # Now, we do the thing
@@ -38,13 +37,12 @@ fi
 
 # Download true color patch
 dot_printf "apply true color patch"
-#cd $tmux_src && wget -O $tmux_truecolor_diff $tmux_truecolor_url && git apply $tmux_truecolor_diff || exit 1
+cd $tmux_src && wget -q -O - $tmux_truecolor_diff | git apply - || exit 1
 
 # Compile and install tmux
 dot_printf "compile and install tmux"
 [ ! -x configure ] && ./autogen.sh
 ./configure "${tmux_opts[@]}" && make clean  && make && make install || exit 1
-
 
 # Set up tpm
 dot_printf_install "tmux plugin manager"
