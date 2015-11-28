@@ -9,7 +9,7 @@
 - name: Set up cron script
   copy:
     src: dot-backup
-    dest: '/usr/bin/dot-backup
+    dest: '/usr/bin/dot-backup'
     mode: 0755
 
 - name: Set up cronjob
