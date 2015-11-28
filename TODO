@@ -31,7 +31,6 @@
   - stronger
   - must check for each in $@ whether it's a directory before doing anything
   - must show error if one of them is not a directory
-* dot-reload: alias for 'source ~/.zshenv; source ~/.zshrc'
 * major revision of everrrrry file: proper comments and indentation  on every single one of them
 * gdrive-backup;
   - rename it to dot-backup
