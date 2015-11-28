@@ -3,6 +3,7 @@
 # Install termite
 ##################################
 
+autoload dot_printf
 autoload dot_printf_install
 
 # libvte build variables
@@ -27,12 +28,15 @@ sudo apt-get build-dep -y libvte-2.91-dev
 sudo apt-get install -y ${termite_deps[@]}
 
 # Clone/pull the repo
+dot_printf "clone libvte-ng git repository"
 if [ ! -d $vte_src ]; then
     git clone $vte_git $vte_src
 else
     git -C $vte_src pull
-fi
+fi || exit 1
 
+# Compile libvte-ng
+dot_printf "compile and install libvte-ng"
 cd $vte_src
 [ ! -x configure ] && ./autogen.sh
 ./configure "${vte_opts[@]}" && make clean  && make && make install || exit 1
@@ -42,12 +46,14 @@ cd $vte_src
 dot_printf_install "termite"
 
 # Clone/pull the repo
+dot_printf "clone termite git repository"
 if [ ! -d $termite_src ]; then
     git clone --recursive $termite_git $termite_src
 else
     git -C $termite_src pull
     git submodule update
-fi
+fi || exit 1
 
 # Compile and install termite
+dot_printf "compile and install termite"
 cd $termite_src && make PREFIX="${DOT_PATH}" install || exit 1
