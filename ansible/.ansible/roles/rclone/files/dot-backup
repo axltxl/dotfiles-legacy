@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
-#############################
+###############################
 # rclone backup to google drive
-#############################
+###############################
 
 # The actual rclone invocation
 for rclone_entry in $(echo $RCLONE_PATH | tr ':' ' ')

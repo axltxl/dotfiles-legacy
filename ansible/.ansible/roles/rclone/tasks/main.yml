@@ -8,8 +8,8 @@
 
 - name: Set up cron script
   copy:
-    src: gdrive-backup
-    dest: '/usr/bin/gdrive-backup'
+    src: dot-backup
+    dest: '/usr/bin/dot-backup
     mode: 0755
 
 - name: Set up cronjob
@@ -20,4 +20,4 @@
     hour: '*/6'
     minute: 0
     user: '{{ user_name }}'
-    job: '/usr/bin/gdrive-backup 2>&1 | logger'
+    job: '/usr/bin/dot-backup 2>&1 | logger'
