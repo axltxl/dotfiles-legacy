@@ -1,0 +1,20 @@
+# vim: ft=zsh
+#####################################################
+# ~/.gtkrc-2.0 is rewritten as a file by lxappearance
+# overhauling any previously made/stowed symlink
+#####################################################
+gtkrc_sync_dir=~/.dotsync/gtk/
+gtkrc_home=~/.gtkrc-2.0
+
+# create stow package, if necessary
+[ ! -d $gtkrc_sync_dir ] && mkdir -p $gtkrc_sync_dir
+
+# should ~/.gtkrc-2.0 exist as a regular file
+# use this file to overwrite the one to be put
+# in ~/.dotsync. This situation would be triggered
+# by lxappearance when updating gtk settings
+[[ ! -h $gtkrc_home ]] && mv $gtkrc_home $gtkrc_sync_dir
+
+# clean up before leaving
+unset gtkrc_sync_dir
+unset gtkrc_home
