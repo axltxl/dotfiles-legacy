@@ -8,6 +8,7 @@
   - dot-env will prevent resetting these env vars:
     - DOT_HOME
     - DOT_PATH
+    - DOT_ENV_CFG
     - PATH
     - TERM
     - TERMINFO
