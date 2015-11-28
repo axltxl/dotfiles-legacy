@@ -8,6 +8,17 @@ _dot_update_help() {
 }
 
 _dot_update_exec() {
-    dot_printf "Updating dotfiles git repository ..."
+    dot_printf "checking for unsaved changes"
+    # stash any changes should they are present
+    git -C $DOT_HOME stash save && dot_printf_warn "Unsaved changes detected!, they are now stashed. Use 'git stash apply' to get them back"
+
+    dot_printf "checking out '${DOT_BRANCH}'"
+    # check out current DOT_BRANCH
+    git -C $DOT_HOME checkout $DOT_BRANCH || true
+
+    # make sure local DOT_BRANCH is following upstream
+    git -C $DOT_HOME branch --set-upstream-to=origin/${DOT_BRANCH} $DOT_BRANCH > /dev/null || true
+
+    dot_printf "pulling latest changes from upstream"
     git -C $DOT_HOME pull || true
 }

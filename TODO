@@ -17,11 +17,6 @@
     - PKG_CONFIG_PATH
 * ruby is now a systemwide essential (dot-deploy)
 * more comments and organization of installation scripts
-* Essential environment variable: DOT_BRANCH
-  - it will decide what git branch is going to be checked out at DOT_HOME when dot-updating
-  - default value is: develop, set at ~/.zsh/profile.d/10-dot
-* dot-update
-  - will git-stash changes on DOT_HOME before pulling
 * dot-help:
   - must be stronger, namely, to cover most use cases
   - must include deploy, stow, unstow and purge
