@@ -10,7 +10,7 @@ _dot_update_help() {
 _dot_update_exec() {
     dot_printf "checking for unsaved changes"
     # stash any changes should they are present
-    git -C $DOT_HOME stash save && dot_printf_warn "Unsaved changes detected!, they are now stashed. Use 'git stash apply' to get them back"
+    git -C $DOT_HOME stash save
 
     dot_printf "checking out '${DOT_BRANCH}'"
     # check out current DOT_BRANCH
