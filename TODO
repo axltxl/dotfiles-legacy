@@ -33,6 +33,13 @@
   - must show error if one of them is not a directory
 * dot-reload: alias for 'source ~/.zshenv; source ~/.zshrc'
 * major revision of everrrrry file: proper comments and indentation  on every single one of them
+* gdrive-backup;
+  - rename it to dot-backup
+  - use notify-send as feedback when performing the actual backup and when finished
+* sman/swatch:
+  - BUG: make sure those processes are killed when killing i3
+    approach: traps, SIG -> sman -> SIG -> swatches
+    SIGs are: TERM, HUP and INT
 
 # Iteration 4:
 # ------------
