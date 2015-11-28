@@ -126,13 +126,13 @@ dot_install() {
 # Print help
 #
 dot_print_help() {
-    echo "Usage: dot <command> <arguments>"
-    echo
-    echo "  dot stow   <package> - stow package(s)"
-    echo "  dot unstow <package> - unstow package(s)"
-    echo "  dot update <package> - update specific configurations"
-    echo "  dot help   <command> - help information about a command"
-    echo "  dot purge            - purge every dotfile there is inside your home directory"
+    dot_printf "Usage: dot <command> <arguments>"
+    dot_printf
+    dot_printf "  dot stow   <package> - stow package(s)"
+    dot_printf "  dot unstow <package> - unstow package(s)"
+    dot_printf "  dot update <package> - update specific configurations"
+    dot_printf "  dot help   <command> - help information about a command"
+    dot_printf "  dot purge            - purge every dotfile there is inside your home directory"
     echo
 }
 
