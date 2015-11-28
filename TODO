@@ -15,7 +15,6 @@
     - LIBRARY_PATH
     - LD_RUN_PATH
     - PKG_CONFIG_PATH
-* rename xkb_update to config-xmodmap
 * ruby is now a systemwide essential (dot-deploy)
 * more comments and organization of installation scripts
 * Essential environment variable: DOT_BRANCH

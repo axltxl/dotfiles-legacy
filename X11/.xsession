@@ -3,7 +3,7 @@
 ######################################
 
 # Update settings on keyboard
-xkb_update
+config-xmodmap
 
 # Fix overall background color
 xsetroot -solid "#101010"

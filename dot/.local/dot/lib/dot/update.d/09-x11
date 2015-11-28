@@ -11,7 +11,7 @@ _dot_update_exec() {
     # Update settings on keyboard
     dot_printf "Update xmodmap settings"
     if [[ ! -z "$DISPLAY" ]]; then
-        xkb_update
+        config-xmodmap
     fi
 
     # Update .Xresources
