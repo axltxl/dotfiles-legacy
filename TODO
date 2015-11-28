@@ -22,7 +22,6 @@
   - default value is: develop, set at ~/.zsh/profile.d/10-dot
 * dot-update
   - will git-stash changes on DOT_HOME before pulling
-  - update job for  oh-my-zsh: zsh
 * dot-help:
   - must be stronger, namely, to cover most use cases
   - must include deploy, stow, unstow and purge

@@ -1,0 +1,18 @@
+# vim: ft=zsh
+#############################
+# Update oh-my-zsh repository
+#############################
+
+_dot_update_help() {
+    echo "update oh-my-zsh"
+}
+
+_dot_update_exec() {
+    # Update oh-my-zsh repository
+    dot_printf "Updating oh-my-zsh git repository at $ZSH ..."
+    git -C $ZSH pull || true
+
+    # Warn the user about changes
+    dot_printf_warn "for the changes to take effect, you will need to run 'dot-reload' in your current shell"
+}
+

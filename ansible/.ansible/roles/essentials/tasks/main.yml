@@ -55,6 +55,11 @@
       - unzip
       - unrar
 
+- name: zsh
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - zsh
+
 - name: file systems utilities
   apt: pkg={{ item }} state=latest
   with_items:
