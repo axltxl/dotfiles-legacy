@@ -23,6 +23,11 @@ dot_postunstow_dir=${dot_basedir}/post-unstow.d
 dot_update_dir=${dot_basedir}/update.d
 dot_ansible_playbook_dir=${HOME}/.ansible
 
+# This is a record of the command line
+# mostly used by dotfiles update job
+_dot_cmd=$0 # cmd name
+_dot_args=$@ # arguments
+
 #
 # Update all the things!
 #
