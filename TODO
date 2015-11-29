@@ -1,21 +1,5 @@
 # Iteration 3:
 # ------------
-* ~/.dotenv: a YAML file read by a ruby script to set custom environment variables
-  - (https://gist.github.com/SteveBenner/588fff3e54636f3d8297)
-  - command name is: dot-env
-  - ~/.zsh/profile.d/99-dotenv -> DOT_ENV_CFG=~/.dotenv ->  ~/.local/dot/bin/dot-env
-  - ~/.dotenv must be ignored by dot-purge
-  - dot-env will prevent resetting these env vars:
-    - DOT_HOME
-    - DOT_PATH
-    - DOT_ENV_CFG
-    - PATH
-    - TERM
-    - TERMINFO
-    - CPATH
-    - LIBRARY_PATH
-    - LD_RUN_PATH
-    - PKG_CONFIG_PATH
 * ruby is now a systemwide essential (dot-deploy)
 * more comments and organization of installation scripts
 * dot-help:
