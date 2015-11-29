@@ -7,7 +7,6 @@
   apt_key:
       url: https://syncthing.net/release-key.txt
       state: present
-      validate_certs: no
 
 - name: set up repository
   apt_repository:

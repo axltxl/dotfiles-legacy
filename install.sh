@@ -9,6 +9,9 @@ dotfiles_dir=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 # Essential environment variables
 . $dotfiles_dir/zsh/.zshenv
 
+# version of ansible
+ansible_version=1.9.4
+
 ############################
 # Absolute essentials
 ############################
@@ -107,7 +110,7 @@ exit 1
 
 # Install essential packages
 ins_echo "Installing ansible"
-sudo pip install ansible==1.9.0.1 &>> $install_log || exit 1
+sudo pip install ansible==${ansible_version} &>> $install_log || exit 1
 stow -S -t $HOME -d $dotfiles_dir ansible &>> $install_log || exit 1
 
 # Install oh-my-zsh
