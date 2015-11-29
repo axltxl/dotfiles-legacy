@@ -35,17 +35,30 @@ $forbidden_envs = [
     'PKG_CONFIG_PATH'
 ]
 
-$conf_file = ENV['DOT_ENV_CFG'] # a YAML file is read at DOT_ENV_CFG
-$vars = nil # vars are contained in here
+# some utilities
+def print_warn(msg)
+    STDERR.puts "WARNING: #{msg}"
+end
+
+def print_err(msg)
+    STDERR.puts "ERROR: #{msg}"
+end
+
+# a YAML file is read at DOT_ENV_CFG
+$conf_file = ENV['DOT_ENV_CFG']
+
+# vars are contained in here
+$vars = nil
 
 # read the YAML file
 begin
     # Use of Pathname is optional, but I think it makes for particularly clean, efficient code
     $vars = YAML.load_file Pathname($conf_file).expand_path.realpath # use absolute path, follow symlinks
 rescue
-    STDERR.puts "Invalid or not existent configuration file: #{$conf_file}"
+    print_err "Invalid or not existent configuration file: #{$conf_file}"
     exit 1
 end
+
 
 if not $vars.nil? and not $vars.empty?
     $vars.each do |varname, value|
@@ -64,8 +77,12 @@ if not $vars.nil? and not $vars.empty?
             when nil then ''
             else nil
         end
-        puts val.nil? ? # check for values whose data type is unsupported
-            "WARNING: Bad value given for environment variable #{varname}: #{value}" :
-            "export #{varname}=#{val}" unless val.to_s.empty? # empty values are ignored
+
+        # check for values whose data type is unsupported
+        if val.nil?
+            print_warn "Bad value given for environment variable #{varname}: #{value}"
+        else
+            puts "export #{varname}=#{val}" unless val.to_s.empty? # empty values are ignored
+        end
     end
 end
