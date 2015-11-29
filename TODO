@@ -1,19 +1,18 @@
 # Iteration 3:
 # ------------
-* ruby is now a systemwide essential (dot-deploy)
-* more comments and organization of installation scripts
 * dot-help:
   - must be stronger, namely, to cover most use cases
   - must include deploy, stow, unstow and purge
 * dot-(un)stow:
-  - stronger
-  - must check for each in $@ whether it's a directory before doing anything
-  - must show error if one of them is not a directory
+    - more comments and organization of installation scripts
+    - stronger
+    - must check for each in $@ whether it's a directory before doing anything
+    - must show error if one of them is not a directory
 * major revision of everrrrry file: proper comments and indentation  on every single one of them
 * sman/swatch:
-  - BUG: make sure those processes are killed when killing i3
-    approach: traps, SIG -> sman -> SIG -> swatches
-    SIGs are: TERM, HUP and INT
+    - BUG:  make sure those processes are killed when killing i3
+            approach: traps, SIG -> sman -> SIG -> swatches
+            SIGs are: TERM, HUP and INT
 
 # Iteration 4:
 # ------------
