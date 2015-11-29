@@ -2,4 +2,4 @@
 # Fill the environment with custom variables
 # via dot-env
 ############################################
-$(dot-env 2> /dev/null)
+eval $(dot-env 2> /dev/null)
