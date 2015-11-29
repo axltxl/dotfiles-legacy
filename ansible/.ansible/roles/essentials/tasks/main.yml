@@ -60,6 +60,11 @@
   with_items:
     - zsh
 
+- name: ruby
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - ruby
+
 - name: file systems utilities
   apt: pkg={{ item }} state=latest
   with_items:
