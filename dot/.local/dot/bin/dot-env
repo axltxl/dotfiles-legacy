@@ -1,0 +1,71 @@
+#!/usr/bin/ruby
+##################################################################
+# dot-env: export environment variables via a YAML file
+# based on: https://gist.github.com/SteveBenner/588fff3e54636f3d8297
+##################################################################
+
+# This bit of code lets you define Environment variables in your shell via a YAML file.
+# It works by composing Bash commands from the parsed data, meant to be executed within
+# a Bash environment, which will export the variables just as in a regular Bash profile.
+# This is accomplished by executing this script via the Bash substitution syntax $(...)
+# which returns the output of evaluating whatever is inside the parenthesis, which in
+# the case of this script would be appropriate 'export' commands that are run by Bash.
+#
+# This version is designed to parse aliases organized under named groups in the YAML
+# file, so the first level of mappings are purely semantic, and are used to keep the
+# data organized and well-documented.
+#
+require 'yaml'
+require 'pathname'
+
+$stdout.sync = true
+
+# these are not allowed to be overwritten,
+# at least not by this script
+$forbidden_envs = [
+    'DOT_HOME',
+    'DOT_PATH',
+    'DOT_ENV_CFG',
+    'PATH',
+    'TERM',
+    'TERMINFO',
+    'CPATH',
+    'LIBRARY_PATH',
+    'LD_RUN_PATH',
+    'PKG_CONFIG_PATH'
+]
+
+$conf_file = ENV['DOT_ENV_CFG'] # a YAML file is read at DOT_ENV_CFG
+$vars = nil # vars are contained in here
+
+# read the YAML file
+begin
+    # Use of Pathname is optional, but I think it makes for particularly clean, efficient code
+    $vars = YAML.load_file Pathname($conf_file).expand_path.realpath # use absolute path, follow symlinks
+rescue
+    STDERR.puts "Invalid or not existent configuration file: #{$conf_file}"
+    exit 1
+end
+
+if not $vars.nil? and not $vars.empty?
+    $vars.each do |varname, value|
+        # check for reserved environment variables
+        if $forbidden_envs.include? varname
+            next
+        end
+
+        # check for each value a format them accordingly
+        val = case value
+            # Regular values are just aliased 'as-is'
+            when String, Integer then value
+            # Arrays are used to represent PATH-type variables, whose value is composed of multiple items
+            when Array then value.join(File::PATH_SEPARATOR)
+            # Changing nil values to an empty String allows empty keys in the data file to be tolerated
+            when nil then ''
+            else nil
+        end
+        puts val.nil? ? # check for values whose data type is unsupported
+            "WARNING: Bad value given for environment variable #{varname}: #{value}" :
+            "export #{varname}=#{val}" unless val.to_s.empty? # empty values are ignored
+    end
+end

@@ -186,7 +186,7 @@ dot_purge() {
     ########################################################
     # dot_ignore includes all folders/files not to be purged
     ########################################################
-    dot_ignore="${HOME}/.dotignore"
+    dot_ignore="${HOME}/.dotignore $DOT_ENV_CFG"
     if [[ -a ${HOME}/.dotignore ]]; then
         dot_printf_warn "~/.dotignore file found!, proceeding to read its entries ..."
         ignore_files=$(cat ${HOME}/.dotignore | tr '\n' ' ')

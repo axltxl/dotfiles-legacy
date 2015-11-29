@@ -14,6 +14,9 @@ export DOT_PATH=$HOME/.local/dot
 # to be pulled when dot-updating
 export DOT_BRANCH=develop
 
+#
+export DOT_ENV_CFG=${HOME}/.dotenv
+
 # PATH is set through a set of scripts
 if [ -d $ZSH_HOME ]; then
     for i in $ZSH_HOME/profile.d/*; do
