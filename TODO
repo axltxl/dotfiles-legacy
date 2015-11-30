@@ -13,6 +13,9 @@
     - BUG:  make sure those processes are killed when killing i3
             approach: traps, SIG -> sman -> SIG -> swatches
             SIGs are: TERM, HUP and INT
+* install.sh:
+  - reorganize code into functions
+  - check for sudo presence
 
 # Iteration 4:
 # ------------
