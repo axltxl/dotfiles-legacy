@@ -61,30 +61,38 @@ dot_update() {
 _dot_stow() {
     local stow_dir=$1
     for i in "${@:2}"; do
-        dot_printf "Stowing $i"
-        # pre-stow invocation
-        [ -e ${dot_prestow_dir}/$i ] && . ${dot_prestow_dir}/$i
+        if [ -d ${stow_dir}/$i ]; then
+            dot_printf "Stowing $i"
+            # pre-stow invocation
+            [ -e ${dot_prestow_dir}/$i ] && . ${dot_prestow_dir}/$i
 
-        # Try to find the package inside dotfiles directory
-        [ -d ${stow_dir}/$i ] && stow --verbose=1 -R -d $stow_dir -t $HOME $i
+            # Try to find the package inside dotfiles directory
+            stow --verbose=1 -R -d $stow_dir -t $HOME $i
 
-        # post-stow invocation
-        [ -e ${dot_poststow_dir}/$i ] && . ${dot_poststow_dir}/$i
+            # post-stow invocation
+            [ -e ${dot_poststow_dir}/$i ] && . ${dot_poststow_dir}/$i
+        else
+            dot_printf_err "$i: package is invalid or nonexistent"
+        fi
     done
 }
 
 _dot_unstow() {
     local stow_dir=$1
     for i in "${@:2}"; do
-        dot_printf "Unstowing $i"
-        # preunstow invocation
-        [ -e ${dot_preunstow_dir}/$i ] && . ${dot_preunstow_dir}/$i
+        if [ -d ${stow_dir}/$i ]; then
+            dot_printf "Unstowing $i"
+            # preunstow invocation
+            [ -e ${dot_preunstow_dir}/$i ] && . ${dot_preunstow_dir}/$i
 
-        # Try to find the package inside dotfiles directory
-        [ -d ${stow_dir}/$i ] && stow --verbose=1 -D -d $stow_dir -t $HOME $i
+            # Try to find the package inside dotfiles directory
+            stow --verbose=1 -D -d $stow_dir -t $HOME $i
 
-        # postunstow invocation
-        [ -e ${dot_postunstow_dir}/$i ] && . ${dot_postunstow_dir}/$i
+            # postunstow invocation
+            [ -e ${dot_postunstow_dir}/$i ] && . ${dot_postunstow_dir}/$i
+        else
+            dot_printf_err "$i: package is invalid or nonexistent"
+        fi
     done
 }
 
