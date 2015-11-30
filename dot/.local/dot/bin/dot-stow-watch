@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 ###################################################
-# swatch: stow watch
+# dot-stow-watch: stow watch
 # Watch for changes on a specified directory
 # and stow/unstow directories inside each one of them
 # if necessary
@@ -79,7 +79,7 @@ while true; do
 
         # send the actual notification
         if [[ ! -z "$DISPLAY" ]]; then
-            notify-send "swatch @ $stow_dir" "All directories synced and stowed!"
+            notify-send "dot-stow-watch @ $stow_dir" "All directories synced and stowed!"
         fi
     fi # $?
 done

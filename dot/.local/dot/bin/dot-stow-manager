@@ -1,28 +1,29 @@
 #!/usr/bin/env zsh
 ###########################################################
-# sman: swatch manager
-# Spawn swatches for each desired symlink farm
+# dot-stow-manager: dot-stow-watch manager
+# Spawn dot-stow-watches (instances of dot-stow-watch)
+# for each desired symlink farm
 # Note: these directories need to be specified in STOW_DIRS
 ###########################################################
 
 # Allow job control on this one, please
 setopt monitor
 
+# clean up all child processes created by
+# this one
 __clean_up() {
     for job in $(jobs -l | egrep -o "([0-9][0-9]+)"); do
-        echo "killing: $job"
         kill -TERM $job
     done
     unset job
-    killall inotifywait
 }
 
-#
+# register UNIX signals
 trap __clean_up SIGHUP SIGTERM SIGINT
 
-# spawn swatch processes for each directory in $STOW_DIRS
+# spawn dot-stow-watch processes for each directory in $STOW_DIRS
 for stow_dir in $(echo $STOW_DIRS | tr ':' ' '); do
-    swatch $stow_dir | logger &
+    dot-stow-watch $stow_dir | logger &
 done
 unset stow_dir
 
