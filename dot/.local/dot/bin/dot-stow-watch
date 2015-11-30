@@ -1,0 +1,86 @@
+#!/usr/bin/env zsh
+###################################################
+# dot-stow-watch: stow watch
+# Watch for changes on a specified directory
+# and stow/unstow directories inside each one of them
+# if necessary
+###################################################
+
+# Source dot and use it as a library
+. $DOT_PATH/bin/dot
+
+# Enforce proper usage
+if [[ -z "$1" ]]; then
+    echo "Usage: $0 <path_to_dir>"; exit 1
+fi
+
+stow_dir=$1 # the directory itself to be stowed
+stow_dir_scantime=2 # directory scan freqyency
+inotify_events="create,delete,move,delete_self,move_self"
+
+__log() {
+    echo "$stow_dir: $1"
+}
+
+# clean up all child
+# processes created by this one
+__clean_up() {
+    # #! is the pid of the last job
+    # spawned by this script
+    kill -TERM $!
+}
+
+# register UNIX signals
+trap __clean_up SIGHUP SIGTERM SIGINT
+
+# indicate the beggining of everything
+__log "initiating (pid=$$)"
+
+
+# This block will insist on probing its target directory
+# until it actually exists to proceed with its actual job.
+# This is done, so your symlink population plan does not get
+# jeopardized because of a not created directory previous to
+# the execution of this assistant
+while [[ ! -d $stow_dir ]]; do
+    __log "directory not found, trying again in $stow_dir_scantime second(s) ..."
+    sleep $stow_dir_scantime
+done
+
+# log the thing
+__log "found, proceeding to stow watch"
+
+while true; do
+    # Any changes inside sync directory will be stowed
+    # into the home directory
+    inotifywait --syslog @.stfolder -r -e $inotify_events $stow_dir > /dev/null &
+    wait # wait for the thing to finish
+
+    # Once finish, let's see its exit code.
+    # inotifywait return non-zero values when changes
+    # are detected
+    if [ ! -z "$?" ]; then
+        __log "changes detected!, stowing all directories ..."
+
+        # check whether there are no left directories
+        # to stow
+        if [[ -z $(ls $stow_dir) ]]; then
+            __log "directory is empty, stow cancelled!"
+            symlinks -d $HOME # delete all dangling symlinks left
+            continue
+        fi
+
+        # stow each dir in stow_dirs
+        for dir in $stow_dir/*; do
+            __log "stow $stow_dir => $(basename $dir)"
+            _dot_stow $stow_dir $(basename $dir) &> /dev/null
+        done
+        unset dir
+
+        # send the actual notification
+        if [[ ! -z "$DISPLAY" ]]; then
+            notify-send "dot-stow-watch @ $stow_dir" "All directories synced and stowed!"
+        fi
+    fi # $?
+done
+
