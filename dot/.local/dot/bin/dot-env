@@ -64,6 +64,7 @@ if not $vars.nil? and not $vars.empty?
     $vars.each do |varname, value|
         # check for reserved environment variables
         if $forbidden_envs.include? varname
+            print_warn "'#{varname}' shouldn't be overwritten, ignoring ..."
             next
         end
 
