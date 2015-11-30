@@ -1,0 +1,43 @@
+---
+######################################
+# vim: ft=yaml
+# Example .dotenv file used by dot-env
+# see dot/.local/dot/bin/dot-env
+######################################
+
+# git branch to be checked out
+# when dot-updating
+DOT_BRANCH: example
+
+# color scheme to be applied
+# when dot-updating
+BASE16_SCHEME: monokai
+
+# you can set whatever you want, well almost ...
+MY_CUSTOM_VAR: blablabla
+
+# The following are ignored by dot-env
+# when setting up environment variables
+# by the user:
+# - DOT_HOME,
+# - DOT_PATH,
+# - DOT_ENV_CFG,
+# - PATH,
+# - TERM,
+# - TERMINFO,
+# - CPATH,
+# - LIBRARY_PATH,
+# - LD_RUN_PATH,
+# - PKG_CONFIG_PATH
+
+# Folders pairs to be backed up
+# to Google Drive when dot-backup
+# gets executed
+# Note: YAML arrays are expanded using
+# the ':' separator. For example the following
+# would be expanded as follows:
+# export RCLONE_PATH=$PATH:/home/<user>/Wallpapers@Wallpapers:/home/<user>/eBooks@eBooks
+RCLONE_PATH:
+    - $RCLONE_PATH
+    - $HOME/Wallpapers@Wallpapers
+    - $HOME/eBooks@eBooks
