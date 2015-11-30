@@ -36,7 +36,7 @@ MY_CUSTOM_VAR: blablabla
 # Note: YAML arrays are expanded using
 # the ':' separator. For example the following
 # would be expanded as follows:
-# export RCLONE_PATH=$PATH:/home/<user>/Wallpapers@Wallpapers:/home/<user>/eBooks@eBooks
+# export RCLONE_PATH=$RCLONE_PATH:$HOME/Wallpapers@Wallpapers:$HOME/eBooks@eBooks
 RCLONE_PATH:
     - $RCLONE_PATH
     - $HOME/Wallpapers@Wallpapers
