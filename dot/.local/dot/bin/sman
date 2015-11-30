@@ -8,6 +8,18 @@
 # Allow job control on this one, please
 setopt monitor
 
+__clean_up() {
+    for job in $(jobs -l | egrep -o "([0-9][0-9]+)"); do
+        echo "killing: $job"
+        kill -TERM $job
+    done
+    unset job
+    killall inotifywait
+}
+
+#
+trap __clean_up SIGHUP SIGTERM SIGINT
+
 # spawn swatch processes for each directory in $STOW_DIRS
 for stow_dir in $(echo $STOW_DIRS | tr ':' ' '); do
     swatch $stow_dir | logger &
