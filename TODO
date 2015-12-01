@@ -8,10 +8,6 @@
     - stronger
     - dot-unstow: prevent 'essentials', 'zsh' and 'dot' from being unstowed
 * major revision of everrrrry file: proper comments and indentation  on every single one of them
-* sman/swatch:
-    - BUG:  make sure those processes are killed when killing i3
-            approach: traps, SIG -> sman -> SIG -> swatches
-            SIGs are: TERM, HUP and INT
 * install.sh:
   - reorganize code into functions
   - check for sudo presence
