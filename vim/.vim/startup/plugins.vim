@@ -89,7 +89,7 @@ let g:ycm_semantic_triggers =  {
 """""""""
 " neomake
 """""""""
-autocmd! BufWritePost * Neomake
+nmap <Leader>nn :Neomake<CR>
 let g:neomake_open_list = 2
 
 
