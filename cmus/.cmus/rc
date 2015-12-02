@@ -2,5 +2,8 @@
 # cmus configuration
 #######################
 
+# Default music folder
 cd ~/Music
-colorscheme zenburn
+
+# colorscheme to be used
+colorscheme axltxl
