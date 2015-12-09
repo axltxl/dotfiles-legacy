@@ -96,3 +96,8 @@ if which tmux >/dev/null 2>&1; then
         fi
     fi
 fi
+
+######################################
+# Start fzf on every shell login
+######################################
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

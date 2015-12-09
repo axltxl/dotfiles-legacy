@@ -1,0 +1,27 @@
+#!/usr/bin/env zsh
+##################################
+# Install fzf
+##################################
+set -e
+
+autoload dot_printf
+autoload dot_printf_install
+
+# The actual variables for fzf compilation
+fzf_git=https://github.com/junegunn/fzf.git
+fzf_src=~/.fzf
+
+# Now, we do the thing
+dot_printf_install "fzf"
+
+# Clone/pull the repo
+dot_printf "clone fzf git repository"
+if [ ! -d $fzf_src ]; then
+    git clone --depth 1 $fzf_git $fzf_src
+else
+    git -C $fzf_src pull
+fi
+
+# Compile and install fzf
+dot_printf "installing fzf"
+cd $fzf_src && ./install  --key-bindings --completion --no-update-rc

@@ -17,7 +17,6 @@ call plug#begin()
 Plug 'scrooloose/nerdtree'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
-Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-repeat'
 Plug 'airblade/vim-gitgutter'
 Plug 'majutsushi/tagbar'
@@ -27,6 +26,10 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'benekastah/neomake'
 Plug 'jimsei/winresizer'
 Plug 'djoshea/vim-autoread'
+
+" Fuzzy finder
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --key-bindings --completion --no-update-rc' }
+Plug 'junegunn/fzf.vim'
 
 " Autocompletion
 Plug 'Raimondi/delimitMate'
