@@ -108,7 +108,20 @@ let g:fzf_command_prefix = 'Fzf'
 " - window (nvim only)
 let g:fzf_layout = { 'down': '~33%' }
 
-" Key mappings
+""""""""""""""""""""""
+" Key mappings for fzf
+""""""""""""""""""""""
+
+" search through files
 nmap <Leader>ff :FzfFiles<CR>
 nmap <Leader>fg :FzfGitFiles<CR>
+nmap  <C-p> :FzfGitFiles<CR>
+
+" switch to buffers and windows
+nmap <Leader><Tab> :FzfBuffers<CR>
 nmap <Leader>fb :FzfBuffers<CR>
+nmap <Leader>fw :FzfWindows<CR>
+
+" search through command history
+nmap <Leader>fh :FzfHistory:<CR>
+nmap q: :FzfHistory:<CR>
