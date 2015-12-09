@@ -113,6 +113,12 @@
       name: neovim
       state: latest
 
+- name: neovim python3 support
+  pip:
+      name: neovim
+      state: latest
+      executable: pip3
+
 - name: system-wide fonts
   apt: pkg={{ item }} state=latest
   with_items:
@@ -149,6 +155,7 @@
 - name: development tools
   apt: pkg={{ item }} state=latest
   with_items:
+      - strace
       - build-essential
       - bc
       - automake
