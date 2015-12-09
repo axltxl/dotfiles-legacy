@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh
+###########################
+# Simple 256 reference test
+# Source: http://www.commandlinefu.com/commands/view/5879/show-numerical-values-for-each-of-the-256-colors-in-bash
+###########################
+
+for i in {0..255}; do
+    echo -e "\e[38;05;${i}m${i}";
+done | column -c 80 -s '  '; echo -e "\e[m"

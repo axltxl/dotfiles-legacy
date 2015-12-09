@@ -1,2 +1,13 @@
 # Make sure base directory is present
 mkdir -p ~/.cmus
+
+cmus_sync_dir=~/.dotsync/cmus/.cmus
+cmus_autosave=~/.cmus/autosave
+
+# cmus autosave is overwritten on each exit, so, to ensure
+# proper sync of this file, it needs to be moved to dotsync folder
+[[ ! -h $cmus_autosave ]] && mv $cmus_autosave $cmus_sync_dir
+
+# cleanup
+unset cmus_autosave
+unset cmus_sync_dir
