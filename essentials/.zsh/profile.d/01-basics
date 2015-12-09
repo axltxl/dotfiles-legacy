@@ -1,12 +1,11 @@
-#
+#################
 # The very basics
-#
+#################
 
-# Extremely basics
-EDITOR=vim
-VISUAL=vim
-PAGER=less
-VISUAL=vim
+export EDITOR=vim
+export VISUAL=vim
+export PAGER=less
+export VISUAL=vim
 
 # Web browser
 if [ -n "$DISPLAY" ]; then
@@ -14,10 +13,12 @@ if [ -n "$DISPLAY" ]; then
 else
     BROWSER=links
 fi
+export BROWSER
 
-# Export the whole thing
-export EDITOR PAGER VISUAL BROWSER
-
+###################
 # Terminal settings
-export TERM=xterm-256color
+###################
+if [[ -z "$TMUX" ]] ;then
+    export TERM=xterm-256color
+fi
 export TERMINFO=${DOT_PATH}/share/terminfo
