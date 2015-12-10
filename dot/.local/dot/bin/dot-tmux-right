@@ -1,0 +1,8 @@
+#!/usr/bin/env zsh
+set -e
+
+_tmux_hostname() {
+    echo "$(hostname)"
+}
+
+echo "$(_tmux_hostname)"
