@@ -46,7 +46,6 @@ plugins=( \
     vi-mode \
     git \
     dotools \
-    zsh_reload \
     python \
     pip \
     hist \
