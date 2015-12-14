@@ -1,0 +1,27 @@
+#!/usr/bin/env zsh
+set -e
+
+_tmux_apply_style() {
+    local st_msg=$1
+    local fg=$2
+    echo "#[fg=${fg}]${st_msg}"
+}
+
+_tmux_hostname() {
+    echo $(_tmux_apply_style "$(hostname -f)" 112)
+}
+
+_tmux_date() {
+    local _date=$(date +"%H:%M")
+    echo $(_tmux_apply_style "$_date" red)
+}
+
+_tmux_ip() {
+    local ip_addr=$(curl icanhazip.com 2> /dev/null)
+    echo $(_tmux_apply_style "$ip_addr" red)
+}
+
+status_msg="${status_msg}$(_tmux_hostname)@$(_tmux_ip)"
+status_msg="${status_msg} $(_tmux_date)"
+
+echo $status_msg
