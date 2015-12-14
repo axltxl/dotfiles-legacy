@@ -55,6 +55,11 @@
       - unzip
       - unrar
 
+- name: openvpn
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - openvpn
+
 - name: zsh
   apt: pkg={{ item }} state=latest
   with_items:
