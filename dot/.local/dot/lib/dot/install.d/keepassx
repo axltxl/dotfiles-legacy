@@ -1,0 +1,43 @@
+#!/usr/bin/env zsh
+##################################
+# Install keepassx
+##################################
+set -e
+
+autoload dot_printf
+autoload dot_printf_install
+
+# The actual variables for keepassx compilation
+keepassx_git=https://github.com/keepassx/keepassx.git
+keepassx_src=~/Projects/keepassx
+keepassx_version="2.0"
+keepassx_deps=(\
+     qtbase5-dev \
+     libqt5x11extras5-dev \
+     qttools5-dev qttools5-dev-tools \
+     libgcrypt20-dev \
+     zlib1g-dev \
+    )
+
+
+dot_printf_install "keepassx dependencies"
+sudo apt-get install -y $keepassx_deps
+
+# Now, we do the thing
+dot_printf_install "keepassx"
+
+# Clone/pull the repo
+dot_printf "clone keepassx git repository"
+if [ ! -d $keepassx_src ]; then
+    git clone -b $keepassx_version --depth 1 $keepassx_git $keepassx_src
+else
+    git -C $keepassx_src pull
+fi
+
+# Compile and install keepassx
+dot_printf "installing keepassx"
+cd $keepassx_src
+rm -rf build
+mkdir build && cd build
+cmake -DCMAKE_INSTALL_PREFIX=$DOT_PATH -DCMAKE_BUILD_TYPE=Release ..
+make && make install
