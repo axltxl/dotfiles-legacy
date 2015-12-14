@@ -103,11 +103,6 @@
       - psutil
       - colour
 
-- name: powerline
-  pip:
-    name: powerline-status
-    state: latest
-
 - name: neovim python2 support
   pip:
       name: neovim
