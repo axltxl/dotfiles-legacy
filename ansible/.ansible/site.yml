@@ -12,11 +12,79 @@
       dotdeb_extra_repo: False
       user_name: axltxl
       debian_release: jessie
+
+      #######################
+      # openssh configuration
+      #######################
+      # Protocol version
+      opensshd_Protocol: '2'
+
+      # What ports, IPs and protocols we listen for
+      opensshd_Port: 2222
+
+      # HostKeys for protocol version 2
+      opensshd_HostKey:
+        - '/etc/ssh/ssh_host_rsa_key'
+        - '/etc/ssh/ssh_host_dsa_key'
+
+      #Privilege Separation is turned on for security
+      opensshd_UsePrivilegeSeparation: 'yes'
+
+      # Lifetime and size of ephemeral version 1 server key
+      opensshd_KeyRegenerationInterval: '3600'
+
+      # Logging
+      opensshd_SyslogFacility: 'AUTH'
+      opensshd_LogLevel: 'INFO'
+
+      #
+      # Authentication
+      #
+      opensshd_LoginGraceTime: '120'
+      opensshd_PermitRootLogin: 'no'
+      opensshd_StrictModes: 'yes'
+      opensshd_PubkeyAuthentication: 'yes'
+
+      # Change to yes to enable challenge-response passwords (beware issues with
+      # some PAM modules and threads)
+      opensshd_ChallengeResponseAuthentication: 'no'
+
+      # Change to no to disable tunnelled clear text passwords
+      opensshd_PasswordAuthentication: 'no'
+
+      # Kerberos options
+      opensshd_KerberosAuthentication: 'no'
+      opensshd_AuthorizedKeysFile: .ssh/authorized_keys
+
+      # Don't read the user's ~/.rhosts and ~/.shosts files
+      opensshd_IgnoreRhosts: 'yes'
+
+      # Uncomment if you don't trust ~/.ssh/known_hosts for RhostsRSAAuthentication
+      opensshd_IgnoreUserKnownHosts: 'no'
+
+      opensshd_X11Forwarding: 'no'
+      opensshd_PrintMotd: 'no'
+      opensshd_PrintLastLog: 'yes'
+      opensshd_TCPKeepAlive: 'yes'
+      opensshd_UseDNS: "no"
+
+      # Set this to 'yes' to enable PAM authentication, account processing,
+      # and session processing. If this is enabled, PAM authentication will
+      # be allowed through the ChallengeResponseAuthentication and
+      # PasswordAuthentication.  Depending on your PAM configuration,
+      # PAM authentication via ChallengeResponseAuthentication may bypass
+      # the setting of "PermitRootLogin without-password".
+      # If you just want the PAM account and session checks to run without
+      # PAM authentication, then enable this but set PasswordAuthentication
+      # and ChallengeResponseAuthentication to 'no'.
+      opensshd_UsePAM: 'yes'
+
   sudo: yes
   roles:
       - apt
       - dotdeb
       - essentials
+      - openssh
       - rclone
       - syncthing
       - docker

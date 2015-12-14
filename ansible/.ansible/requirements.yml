@@ -2,3 +2,7 @@
 - src: https://github.com/deimosfr/ansible-dotdeb.git
   version: v0.4
   name: dotdeb
+- src: https://github.com/sivel/ansible-openssh.git
+  version: 0.1.4
+  name: openssh
+
