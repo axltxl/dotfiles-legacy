@@ -20,7 +20,7 @@
       opensshd_Protocol: '2'
 
       # What ports, IPs and protocols we listen for
-      opensshd_Port: 2222
+      opensshd_Port: 50222
 
       # HostKeys for protocol version 2
       opensshd_HostKey:
