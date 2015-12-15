@@ -12,11 +12,11 @@ keepassx_git=https://github.com/keepassx/keepassx.git
 keepassx_src=~/Projects/keepassx
 keepassx_version="2.0"
 keepassx_deps=(\
-     qtbase5-dev \
-     libqt5x11extras5-dev \
-     qttools5-dev qttools5-dev-tools \
-     libgcrypt20-dev \
-     zlib1g-dev \
+    libqt4-dev \
+    libgcrypt-dev \
+    libxtst-dev \
+    libgcrypt20-dev \
+    zlib1g-dev \
     )
 
 
