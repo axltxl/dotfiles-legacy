@@ -2,10 +2,9 @@
 # The very basics
 #################
 
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR=vi
+export VISUAL=vi
 export PAGER=less
-export VISUAL=vim
 
 # Web browser
 if [ -n "$DISPLAY" ]; then
