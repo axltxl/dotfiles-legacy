@@ -1,5 +1,5 @@
 ############################################
-# Fill the environment with custom variables
-# via dot-env
+# Fill the environment with
+# custom variables via dot-env
 ############################################
 eval $(dot-env 2> /dev/null)

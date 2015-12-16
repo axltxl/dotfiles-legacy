@@ -1,6 +1,6 @@
-#
+#######################################
 # Settings for building custom packages
-#
+#######################################
 
 # CPATH specifies a list of directories to be searched as if specified with -I,
 # but after any paths given with -I options on the command line.
