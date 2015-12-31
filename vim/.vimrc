@@ -15,7 +15,6 @@ call plug#begin()
 
 " Must haves
 Plug 'scrooloose/nerdtree'
-Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'airblade/vim-gitgutter'
@@ -24,8 +23,11 @@ Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdcommenter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'benekastah/neomake'
-Plug 'jimsei/winresizer'
 Plug 'djoshea/vim-autoread'
+
+" look and feel
+Plug 'bling/vim-airline'
+Plug 'jimsei/winresizer'
 
 " Fuzzy finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --key-bindings --completion --no-update-rc' }
