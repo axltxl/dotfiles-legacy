@@ -1,3 +1,4 @@
+# vim: ft=zsh
 #############################################
 # Stow directories are directories to be
 # treated as symlink farms managed by stow

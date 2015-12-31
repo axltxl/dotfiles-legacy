@@ -1,3 +1,4 @@
+# vim: ft=zsh
 ########################################################
 # Initial set of directories used by gdrive-backup
 # to upload directories to Google Drive.

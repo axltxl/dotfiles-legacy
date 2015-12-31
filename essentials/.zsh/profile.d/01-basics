@@ -1,7 +1,7 @@
+# vim: ft=zsh
 #################
 # The very basics
 #################
-
 export EDITOR=vi
 export VISUAL=vi
 export PAGER=less

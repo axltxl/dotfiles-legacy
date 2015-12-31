@@ -1,3 +1,4 @@
+# vim: ft=zsh
 ############################################
 # Fill the environment with
 # custom variables via dot-env

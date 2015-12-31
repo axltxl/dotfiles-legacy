@@ -1,3 +1,4 @@
+# vim: ft=zsh
 ##########################################
 # pyenv needs to be added to PATH in order
 # for all little pythons to be present
