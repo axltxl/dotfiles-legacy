@@ -96,7 +96,7 @@ let g:neomake_open_list = 2
 """"""""""""
 " winresizer
 """"""""""""
-nnoremap <leader>e :WinResizerStartResize<CR>
+nnoremap <leader>wr :WinResizerStartResize<CR>
 
 """""
 " fzf
@@ -108,14 +108,9 @@ let g:fzf_command_prefix = 'Fzf'
 " - window (nvim only)
 let g:fzf_layout = { 'down': '~33%' }
 
-""""""""""""""""""""""
-" Key mappings for fzf
-""""""""""""""""""""""
-
 " search through files
 nmap <Leader>ff :FzfFiles<CR>
 nmap <Leader>fg :FzfGitFiles<CR>
-nmap  <C-p> :FzfGitFiles<CR>
 
 " switch to buffers and windows
 nmap <Leader><Tab> :FzfBuffers<CR>
