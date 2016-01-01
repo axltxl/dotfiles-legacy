@@ -120,3 +120,8 @@ nmap <Leader>fw :FzfWindows<CR>
 " search through command history
 nmap <Leader>fh :FzfHistory:<CR>
 nmap q: :FzfHistory:<CR>
+
+"""""""""""""""""""
+" vim-indent-guides
+""""""""""""""""""
+let g:indent_guides_enable_on_vim_startup = 1

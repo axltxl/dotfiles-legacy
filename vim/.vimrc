@@ -26,6 +26,7 @@ Plug 'benekastah/neomake'
 Plug 'djoshea/vim-autoread'
 
 " look and feel
+Plug 'nathanaelkane/vim-indent-guides'
 Plug 'bling/vim-airline'
 Plug 'jimsei/winresizer'
 
