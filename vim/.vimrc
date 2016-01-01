@@ -24,6 +24,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'benekastah/neomake'
 Plug 'djoshea/vim-autoread'
+Plug 'airblade/vim-rooter'
 
 " look and feel
 Plug 'nathanaelkane/vim-indent-guides'
@@ -40,6 +41,9 @@ Plug 'tpope/vim-surround'
 Plug 'Valloric/YouCompleteMe', {'do': './install.py --gocode-completer --clang-completer'}
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+
+" Java
+Plug 'artur-shaik/vim-javacomplete2'
 
 " golang
 Plug 'fatih/vim-go', {'for': ['go']}

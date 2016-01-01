@@ -1,0 +1,21 @@
+# vim: ft=zsh
+################################
+# Settings for happy java coding
+################################
+if [[ ! -z "$JAVA_HOME" ]]; then
+
+    # These are essential
+    PATH="$JAVA_HOME/bin:$PATH"
+    export JDK_HOME=$JAVA_HOME
+    export JRE_HOME=$JAVA_HOME
+    export CLASSPATH=$JAVA_HOME/lib
+
+
+    # Add gradle to recipe
+    if [[ ! -z "$GRADLE_HOME" ]]; then
+        PATH="$GRADLE_HOME/bin:$PATH"
+    fi
+
+fi
+
+

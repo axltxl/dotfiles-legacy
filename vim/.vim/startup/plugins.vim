@@ -125,3 +125,20 @@ nmap q: :FzfHistory:<CR>
 " vim-indent-guides
 """"""""""""""""""
 let g:indent_guides_enable_on_vim_startup = 1
+
+""""""""""""
+" vim-rooter
+""""""""""""
+let g:rooter_disable_map = 1
+let g:rooter_patterns = [
+    \ '.git/',
+    \ '.hg/',
+    \ '.classpath',
+    \ 'build.gradle',
+    \]
+
+""""""
+" java
+""""""
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+
