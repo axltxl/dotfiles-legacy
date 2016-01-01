@@ -36,7 +36,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --key-bindings --comple
 Plug 'junegunn/fzf.vim'
 
 " Autocompletion
-Plug 'Raimondi/delimitMate'
+Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'Valloric/YouCompleteMe', {'do': './install.py --gocode-completer --clang-completer'}
 Plug 'SirVer/ultisnips'
