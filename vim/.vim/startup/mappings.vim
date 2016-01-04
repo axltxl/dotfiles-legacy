@@ -51,13 +51,13 @@ let mapleader = ";"
 map <leader>p :set list!<CR>
 
 " Quicksave
-nnoremap <leader>s :w<CR>
+nnoremap <leader>vs :w<CR>
 
 " Duplicate line
-nnoremap <leader>d yyp
+nnoremap <leader>yy yyp
 
 " Reload .vimrc at will
-nnoremap <leader>t :source ~/.vimrc<CR>
+nnoremap <leader>vr :source ~/.vimrc<CR>
 "
 " Easy splitted window navigation
 map <leader>h :wincmd h<CR>
@@ -66,8 +66,8 @@ map <leader>k :wincmd k<CR>
 map <leader>l :wincmd l<CR>
 
 " Easy window splitting
-map <leader>v :vsplit<CR>
-map <leader>b :split<CR>
+map <leader>wv :vsplit<CR>
+map <leader>wb :split<CR>
 
 " Reload file
 nnoremap <F5> :e!<CR>

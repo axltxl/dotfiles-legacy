@@ -7,4 +7,4 @@
 i3lock -e --color=101010
 
 # Update keyboard settings
-xkb_update
+config-xmodmap &

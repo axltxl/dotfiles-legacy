@@ -96,7 +96,7 @@ let g:neomake_open_list = 2
 """"""""""""
 " winresizer
 """"""""""""
-nnoremap <leader>e :WinResizerStartResize<CR>
+nnoremap <leader>wr :WinResizerStartResize<CR>
 
 """""
 " fzf
@@ -108,14 +108,9 @@ let g:fzf_command_prefix = 'Fzf'
 " - window (nvim only)
 let g:fzf_layout = { 'down': '~33%' }
 
-""""""""""""""""""""""
-" Key mappings for fzf
-""""""""""""""""""""""
-
 " search through files
 nmap <Leader>ff :FzfFiles<CR>
 nmap <Leader>fg :FzfGitFiles<CR>
-nmap  <C-p> :FzfGitFiles<CR>
 
 " switch to buffers and windows
 nmap <Leader><Tab> :FzfBuffers<CR>
@@ -125,3 +120,25 @@ nmap <Leader>fw :FzfWindows<CR>
 " search through command history
 nmap <Leader>fh :FzfHistory:<CR>
 nmap q: :FzfHistory:<CR>
+
+"""""""""""""""""""
+" vim-indent-guides
+""""""""""""""""""
+let g:indent_guides_enable_on_vim_startup = 1
+
+""""""""""""
+" vim-rooter
+""""""""""""
+let g:rooter_disable_map = 1
+let g:rooter_patterns = [
+    \ '.git/',
+    \ '.hg/',
+    \ '.classpath',
+    \ 'build.gradle',
+    \]
+
+""""""
+" java
+""""""
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+

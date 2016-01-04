@@ -15,7 +15,6 @@ call plug#begin()
 
 " Must haves
 Plug 'scrooloose/nerdtree'
-Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'airblade/vim-gitgutter'
@@ -24,19 +23,27 @@ Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdcommenter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'benekastah/neomake'
-Plug 'jimsei/winresizer'
 Plug 'djoshea/vim-autoread'
+Plug 'airblade/vim-rooter'
+
+" look and feel
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'bling/vim-airline'
+Plug 'jimsei/winresizer'
 
 " Fuzzy finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --key-bindings --completion --no-update-rc' }
 Plug 'junegunn/fzf.vim'
 
 " Autocompletion
-Plug 'Raimondi/delimitMate'
+Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'Valloric/YouCompleteMe', {'do': './install.py --gocode-completer --clang-completer'}
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+
+" Java
+Plug 'artur-shaik/vim-javacomplete2'
 
 " golang
 Plug 'fatih/vim-go', {'for': ['go']}

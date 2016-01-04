@@ -26,6 +26,7 @@ $forbidden_envs = [
     'DOT_HOME',
     'DOT_PATH',
     'DOT_ENV_CFG',
+    'DOT_ENV_OUT',
     'PATH',
     'TERM',
     'TERMINFO',
