@@ -38,3 +38,6 @@ make CMAKE_BUILD_TYPE=Release $nvim_cmake_flags && make install || exit 1
 dot_printf_install "Symlink to ${nvim_sudo_bin}"
 sudo ln -svf $(which nvim) $nvim_sudo_bin
 
+# nvim is the new vim
+sudo ln -svf $(which nvim) ${DOT_PATH}/bin/vim
+
