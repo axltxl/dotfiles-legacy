@@ -190,7 +190,7 @@
     - shutter # advanced screenshots
 
       # Our beloved file manager
-    - ranger
+    - pcmanfm
 
       # Wallpaper setter
     - nitrogen
