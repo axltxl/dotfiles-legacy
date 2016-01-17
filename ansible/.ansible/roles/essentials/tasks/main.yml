@@ -126,9 +126,15 @@
       - fonts-liberation
       - fonts-droid
 
-- name: Utilities for network debugging
+- name: networking tools
   apt: pkg={{ item }} state=latest
   with_items:
+    # network management
+    - wicd
+    - wicd-gtk
+    - wicd-curses
+
+    # network diagnostic tools
     - iputils-tracepath
     - iputils-ping
     - nethogs

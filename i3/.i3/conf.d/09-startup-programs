@@ -5,6 +5,9 @@
 # compositing manager
 exec --no-startup-id compton
 
+# wicd-gtk on the tray
+exec wicd-gtk --tray
+
 # xautolock
 exec --no-startup-id xautolock -time 8 -locker $autolock
 
@@ -19,3 +22,4 @@ exec dot-stow-manager
 
 # dunst takes charge as the notification daemon
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
+
