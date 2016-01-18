@@ -31,7 +31,6 @@
     - xclip
     - xbacklight
     - xsel
-    - rxvt-unicode-256color # my beloved terminal emulator
     - lightdm
     - i3 # our beloved and minimalistic window manager
     - compton # compositor
