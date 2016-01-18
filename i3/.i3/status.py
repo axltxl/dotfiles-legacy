@@ -70,6 +70,24 @@ status.register("pulseaudio",
     multi_colors=True,
     format="♪{volume}",)
 
+# show backlight brightness status
+backlight='acpi_video0'
+if os.path.exists('/sys/class/backlight/{}'.format(backlight)):
+    status.register("backlight",
+            backlight=backlight,
+            color=color_good)
+
+# show battery status
+status.register("battery",
+        full_color=color_good,
+        format="BATT: {percentage}% ({remaining})}",
+        alert=True,
+        alert_percentage=20,
+        critical_color=color_bad,
+        not_present_color=color_warn,
+        not_present_text="NOBATT",
+        charging_color=color_good)
+
 # cmus awesome player
 status.register("cmus",
     format="{status} {artist} - {title}",
