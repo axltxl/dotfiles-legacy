@@ -9,7 +9,7 @@ bindsym $mod+Return exec termite
 bindsym $mod+c kill
 
 # start rofi (a program launcher)
-bindsym $mod+d exec   --no-startup-id rofi -show run
+bindsym $mod+d exec --no-startup-id rofi -show run
 bindsym $mod+Tab exec --no-startup-id rofi -show window
 
 # change focus
@@ -18,11 +18,6 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
 
 # move focused window
 bindsym $mod+Shift+h move left
