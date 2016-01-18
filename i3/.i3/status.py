@@ -89,6 +89,7 @@ status.register("battery",
         charging_color=color_good)
 
 # cmus awesome player
+# TODO: replace with spotify
 status.register("cmus",
     format="{status} {artist} - {title}",
     color=color_cmus)
