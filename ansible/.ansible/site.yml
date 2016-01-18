@@ -86,5 +86,6 @@
       - essentials
       - openssh
       - rclone
+      - spotify
       - syncthing
       - docker

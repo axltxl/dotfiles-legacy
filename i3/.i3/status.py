@@ -2,6 +2,7 @@
 # i3pystatus configuration file.
 ################################
 from i3pystatus import Status
+import os
 import colors
 
 # Get status bar
@@ -88,11 +89,5 @@ status.register("battery",
         not_present_text="NOBATT",
         charging_color=color_good)
 
-# cmus awesome player
-# TODO: replace with spotify
-status.register("cmus",
-    format="{status} {artist} - {title}",
-    color=color_cmus)
-
-
+# run the thing!
 status.run()
