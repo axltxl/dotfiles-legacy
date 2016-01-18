@@ -29,6 +29,7 @@
     - xautolock
     - xutils
     - xclip
+    - xbacklight
     - xsel
     - rxvt-unicode-256color # my beloved terminal emulator
     - lightdm
