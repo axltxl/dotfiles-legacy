@@ -9,9 +9,6 @@
 #include ".Xresources.d/colors"
 #include ".Xresources.d/term-colors"
 
-! rxvt-unicode settings
-#include ".Xresources.d/urxvt"
-
 ! Xft settings
 #include ".Xresources.d/xft"
 
