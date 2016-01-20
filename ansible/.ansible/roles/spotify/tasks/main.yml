@@ -13,9 +13,6 @@
       repo: 'deb http://repository.spotify.com stable non-free'
       state: present
 
-- name: install dependencies
-  apt: pkg=libgcrypt11 state=present
-
 - name: install spotify
   apt:
       update_cache: yes
