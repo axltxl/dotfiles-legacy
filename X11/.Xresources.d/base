@@ -1,7 +1,8 @@
 !------------------------------------------------
 ! General variables used throughout configuration
+! vim: ft=xdefaults
 !------------------------------------------------
 
 #define font_base Droid Sans
-#define screen_dpi 113
+#define screen_dpi 96
 #define term termite
