@@ -6,7 +6,7 @@ set $mod Mod4
 set $autolock screenlock
 
 # Font for window titles.
-font xft:Terminess Powerline Regular 12
+font xft:Droid Sans 12
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

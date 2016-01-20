@@ -1,0 +1,7 @@
+!------------------------------------------------
+! General variables used throughout configuration
+!------------------------------------------------
+
+#define font_base Droid Sans
+#define screen_dpi 113
+#define term termite

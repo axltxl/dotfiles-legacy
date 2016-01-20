@@ -2,6 +2,9 @@
 ! Xresources main file
 !-------------------------------------------------------------------------------
 
+! General variables
+#include ".Xresources.d/base"
+
 ! General look and feel
 #include ".Xresources.d/colors"
 #include ".Xresources.d/term-colors"

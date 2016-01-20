@@ -8,7 +8,7 @@ rofi.opacity:                        92
 rofi.width:                          50
 rofi.lines:                          10
 rofi.columns:                        1
-rofi.font:                           Terminess Powerline 12
+rofi.font:                           font_base 12
 rofi.color-enabled:                  true
 rofi.color-normal:                   base00,base07,base01,base0A,base00
 rofi.color-urgent:                   base00,base07,base01,base08,base07
@@ -20,7 +20,7 @@ rofi.padding:                        5
 rofi.yoffset:                        0
 rofi.xoffset:                        0
 rofi.fixed-num-lines:                false
-rofi.terminal:                       termite
+rofi.terminal:                       term
 rofi.ssh-client:                     ssh
 rofi.ssh-command:                    {terminal} -e {ssh-client} {host}
 rofi.run-command:                    {cmd}
