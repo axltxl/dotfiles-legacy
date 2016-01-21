@@ -1,0 +1,5 @@
+# vim: ft=zsh
+########################################
+# Settings for X11
+########################################
+export DISPLAY_DPI=96 # Universal value for setting up dpi
