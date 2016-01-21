@@ -125,6 +125,7 @@
   with_items:
       - fonts-liberation
       - fonts-droid
+      - fonts-noto
 
 - name: networking tools
   apt: pkg={{ item }} state=latest
