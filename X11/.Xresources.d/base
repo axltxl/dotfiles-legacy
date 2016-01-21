@@ -3,6 +3,8 @@
 ! vim: ft=xdefaults
 !------------------------------------------------
 
-#define font_base Droid Sans
-#define screen_dpi 96
-#define term termite
+#define FONT_BASE Droid Sans
+#ifndef SCREEN_DPI
+    #define SCREEN_DPI 96
+#endif
+#define TERM termite
