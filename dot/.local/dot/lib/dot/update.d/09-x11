@@ -12,11 +12,6 @@ _dot_update_exec() {
         # Update settings on keyboard
         dot_printf "Update xmodmap settings"
         config-xmodmap
-    fi
-
-    # Update .Xresources
-    dot_printf "Update xresources"
-    config-xrdb
 
         # Update .Xresources
         dot_printf "Update xresources"
