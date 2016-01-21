@@ -9,4 +9,4 @@ Xft.rgba:      rgb
 Xft.autohint:  false
 Xft.hinting:   true
 Xft.hintstyle: hintslight
-Xft.lcdfilter: lcddefault
+Xft.lcdfilter: lcdlight
