@@ -1,9 +1,0 @@
-#######################
-# cmus configuration
-#######################
-
-# Default music folder
-cd ~/Music
-
-# colorscheme to be used
-colorscheme axltxl
