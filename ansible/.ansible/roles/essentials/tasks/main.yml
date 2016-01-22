@@ -198,6 +198,7 @@
 
       # Our beloved file manager
     - pcmanfm
+    - xarchiver
 
       # Wallpaper setter
     - nitrogen
