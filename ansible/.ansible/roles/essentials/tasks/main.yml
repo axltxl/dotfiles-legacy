@@ -43,6 +43,7 @@
       # Audio support
     - pulseaudio
     - pavucontrol
+    - sox # audio utilities
     - alsa-utils
 
 - name: General administration utilities
