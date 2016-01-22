@@ -61,6 +61,7 @@ dot_update() {
 _dot_stow() {
     local stow_dir=$1
     for i in "${@:2}"; do
+        dot_printf "Stowing $i from $stow_dir"
         if [ -d ${stow_dir}/$i ]; then
             dot_printf "Stowing $i"
             # pre-stow invocation
@@ -80,8 +81,8 @@ _dot_stow() {
 _dot_unstow() {
     local stow_dir=$1
     for i in "${@:2}"; do
+        dot_printf "Unstowing $i from $stow_dir"
         if [ -d ${stow_dir}/$i ]; then
-            dot_printf "Unstowing $i"
             # preunstow invocation
             [ -e ${dot_preunstow_dir}/$i ] && . ${dot_preunstow_dir}/$i
 
@@ -91,7 +92,7 @@ _dot_unstow() {
             # postunstow invocation
             [ -e ${dot_postunstow_dir}/$i ] && . ${dot_postunstow_dir}/$i
         else
-            dot_printf_err "$i: package is invalid or nonexistent"
+            dot_printf_warn "$i@$stow_dir: package is invalid or nonexistent"
         fi
     done
 }
@@ -101,6 +102,11 @@ _dot_unstow() {
 # This will automatically unstow directories inside $DOT_HOME
 #
 dot_stow() {
+    # First of all, try to stow from STOW_DIRS set by the user
+    for stow_dir in $(echo $STOW_DIRS | tr ':' ' '); do
+        _dot_stow $stow_dir "$@"
+    done
+    # Then apply the same thing on DOT_HOME
     _dot_stow $DOT_HOME "$@"
 }
 
@@ -108,6 +114,11 @@ dot_stow() {
 # This will automatically unstow directories inside $DOT_HOME
 #
 dot_unstow() {
+    # First of all, try to unstow from STOW_DIRS set by the user
+    for stow_dir in $(echo $STOW_DIRS | tr ':' ' '); do
+        _dot_unstow $stow_dir "$@"
+    done
+    # Then apply the same thing on DOT_HOME
     _dot_unstow $DOT_HOME "$@"
 }
 
