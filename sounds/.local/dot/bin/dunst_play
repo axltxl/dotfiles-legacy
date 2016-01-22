@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+set -e
+#####################################
+# Play a sound on dunst notifications
+#####################################
+
+play -q ${HOME}/.local/share/sounds/notification.wav
