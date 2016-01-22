@@ -63,7 +63,6 @@ _dot_stow() {
     for i in "${@:2}"; do
         dot_printf "Stowing $i from $stow_dir"
         if [ -d ${stow_dir}/$i ]; then
-            dot_printf "Stowing $i"
             # pre-stow invocation
             [ -e ${dot_prestow_dir}/$i ] && . ${dot_prestow_dir}/$i
 
@@ -73,7 +72,7 @@ _dot_stow() {
             # post-stow invocation
             [ -e ${dot_poststow_dir}/$i ] && . ${dot_poststow_dir}/$i
         else
-            dot_printf_err "$i: package is invalid or nonexistent"
+            dot_printf_warn "$i@$stow_dir: package is invalid or nonexistent"
         fi
     done
 }
