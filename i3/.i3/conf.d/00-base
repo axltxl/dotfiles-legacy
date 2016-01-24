@@ -4,7 +4,7 @@
 
 set $mod Mod4
 set $autolock screenlock
-set $font Noto Sans
+set $font FontAwesome
 set $font_size 12
 
 # Font for window titles.
