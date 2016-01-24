@@ -48,11 +48,11 @@ conflict_files=(
 # Utility functions used by this installation script
 ############################
 
-function ins_echo() {
+ins_echo() {
     echo "* $(tput bold)$@$(tput sgr0)"
 }
 
-function ins_splash() {
+ins_splash() {
     echo
     echo "***************************************************"
     echo "  _________     _______________________            ";
