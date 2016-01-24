@@ -97,7 +97,7 @@ mode "resize" {
         bindsym j resize shrink height 10 px or 10 ppt
         bindsym l resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
+        # back to normal: Enter
         bindsym Return mode "default"
 }
 
