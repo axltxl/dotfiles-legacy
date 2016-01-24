@@ -12,7 +12,7 @@ exec wicd-gtk --tray
 exec --no-startup-id xautolock -time 8 -locker $autolock
 
 # set wallpapers
-exec --no-startup-id nitrogen --restore
+exec_always --no-startup-id nitrogen --restore
 
 # pulseaudio
 exec pulseaudio --start
