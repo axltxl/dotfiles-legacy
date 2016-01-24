@@ -3,18 +3,28 @@
 # ~/.gtkrc-2.0 is rewritten as a file by lxappearance
 # overhauling any previously made/stowed symlink
 #####################################################
-gtkrc_sync_dir=~/.dotsync/gtk/
-gtkrc_home=~/.gtkrc-2.0
+# GTK configuration files and directories
+gtk_sync_dir=${HOME}/.dotsync/gtk/
+gtk2_gtkrc=${HOME}/.gtkrc-2.0
+gtk2_home=${HOME}/.config/gtk-2.0
+gtk3_home=${HOME}/.config/gtk-3.0
+
+# First of all, create base configuration
+# directories if necessary
+mkdir -p $gtk2_home
+mkdir -p $gtk3_home
 
 # create stow package, if necessary
-[ ! -d $gtkrc_sync_dir ] && mkdir -p $gtkrc_sync_dir
+[ ! -d $gtk_sync_dir ] && mkdir -p $gtk_sync_dir
 
 # should ~/.gtkrc-2.0 exist as a regular file
 # use this file to overwrite the one to be put
 # in ~/.dotsync. This situation would be triggered
 # by lxappearance when updating gtk settings
-[[ ! -h $gtkrc_home ]] && mv $gtkrc_home $gtkrc_sync_dir
+[[ ! -h $gtk2_gtkrc ]] && mv $gtk2_gtkrc $gtk_sync_dir
 
 # clean up before leaving
-unset gtkrc_sync_dir
-unset gtkrc_home
+unset gtk2_home
+unset gtk3_home
+unset gtk_sync_dir
+unset gtk2_gtkrc
