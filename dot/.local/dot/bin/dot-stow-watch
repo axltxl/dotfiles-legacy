@@ -16,6 +16,7 @@ fi
 
 stow_dir=$1 # the directory itself to be stowed
 stow_dir_scantime=2 # directory scan freqyency
+stow_logfile=${HOME}/.dotstow.log
 inotify_events="create,delete,move,delete_self,move_self"
 
 __log() {
@@ -53,7 +54,7 @@ __log "found, proceeding to stow watch"
 while true; do
     # Any changes inside sync directory will be stowed
     # into the home directory
-    inotifywait --syslog @.stfolder -r -e $inotify_events $stow_dir > /dev/null &
+    inotifywait --syslog @.stfolder -r -e $inotify_events $stow_dir >> $stow_logfile &
     wait # wait for the thing to finish
 
     # Once finish, let's see its exit code.
