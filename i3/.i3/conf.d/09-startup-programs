@@ -23,3 +23,5 @@ exec dot-stow-manager
 # dunst takes charge as the notification daemon
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
 
+# keynav
+exec --no-startup-id keynav

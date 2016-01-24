@@ -33,6 +33,7 @@
     - xsel
     - lightdm
     - i3 # our beloved and minimalistic window manager
+    - keynav # I definitely avoid using mouse at all costs
     - compton # compositor
     - colortest # For testing color on terminals
     - scrot # screenshots
