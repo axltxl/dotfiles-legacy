@@ -7,3 +7,16 @@ client.focused_inactive $base02 $base02 $base03 $base01
 client.unfocused        $base01 $base01 $base03 $base01
 client.urgent           $base02 $base08 $base07 $base08
 
+###################
+# Window properties
+###################
+
+# Border style for new windows
+new_window pixel 0
+new_float  pixel 2
+
+# Mouse does not dictate focus!
+focus_follows_mouse no
+
+# enable floating mode for all pcmanfm windows
+for_window [class="Pcmanfm"] floating enable

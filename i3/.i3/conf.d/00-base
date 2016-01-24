@@ -12,10 +12,3 @@ font xft:$font $font_size
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
-
-# Border style for new windows
-new_window pixel 0
-new_float  pixel 0
-
-# Mouse does not dictate focus!
-focus_follows_mouse no
