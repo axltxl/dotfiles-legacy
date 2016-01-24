@@ -59,6 +59,8 @@ let g:gitgutter_eager = 0
 let g:gitgutter_highlight_lines = 1
 nmap <Leader>ha <Plug>GitGutterStageHunk
 nmap <Leader>hu <Plug>GitGutterRevertHunk
+nmap <Leader>hp <Plug>GitGutterPreviousHunk
+nmap <Leader>hn <Plug>GitGutterNextHunk
 
 """"""""""""""""""
 " UltiSnips configuration
