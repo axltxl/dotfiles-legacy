@@ -20,3 +20,7 @@ focus_follows_mouse no
 
 # enable floating mode for all pcmanfm windows
 for_window [class="Pcmanfm"] floating enable
+
+# force application to its corresponding workspaces
+assign [class="Spotify"] $ws10
+assign [class="chromium-browser"] $ws2
