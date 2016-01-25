@@ -79,6 +79,9 @@
       # and ChallengeResponseAuthentication to 'no'.
       opensshd_UsePAM: 'yes'
 
+      # virtualenv for i3pystatus
+      i3_venv: '/home/{{ user_name }}/.i3/pystatus'
+
   sudo: yes
   roles:
       - apt

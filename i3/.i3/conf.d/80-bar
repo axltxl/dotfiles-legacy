@@ -6,8 +6,8 @@ bar {
     # position
     position top
 
-    # i3pystatus is awesomo!!
-    status_command /usr/bin/python3 ~/.i3/status.py
+    # i3pystatus is awesome!!
+    status_command $i3pystatus_py $i3pystatus_conf
 
     # The actual colors
     colors {

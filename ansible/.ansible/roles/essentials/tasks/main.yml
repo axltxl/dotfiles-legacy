@@ -105,11 +105,22 @@
       name: '{{ item }}'
       state: latest
       executable: pip3
+      virtualenv: '{{ i3_venv }}'
+      virtualenv_command: pyvenv
   with_items:
       - i3pystatus
       - netifaces
       - psutil
       - colour
+
+- name: setup i3pystatus virtualenv folder
+  file:
+    mode: 0755
+    recurse: yes
+    owner: '{{ user_name }}'
+    group: '{{ user_name }}'
+    state: directory
+    path: '{{ i3_venv }}'
 
 - name: neovim python2 support
   pip:

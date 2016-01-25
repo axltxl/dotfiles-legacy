@@ -2,10 +2,15 @@
 # i3wm base configuration settings
 ##################################
 
+# The very basics
 set $mod Mod4
 set $autolock screenlock
 set $font FontAwesome
 set $font_size 12
+
+# i3pystatus
+set $i3pystatus_py ~/.i3/pystatus/bin/python3
+set $i3pystatus_conf ~/.i3/status.py
 
 # workspaces
 set $ws1 " term"
