@@ -54,8 +54,8 @@ else:
 
 status.register("network",
     interface="eth0",
+    dynamic_color=False,
     format_up=net_fmt,
-    color_up=color_good,
     color_down=color_bad,
     start_color=color_good,
     end_color=color_bad)
