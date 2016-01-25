@@ -30,6 +30,7 @@
     - xutils
     - xclip
     - xbacklight
+    - arandr
     - xsel
     - lightdm
     - i3 # our beloved and minimalistic window manager

@@ -1,0 +1,14 @@
+#!/usr/bin/env zsh
+#####################
+# xrandr setup helper
+#####################
+set -e
+arandr_home_dir=${HOME}/.screenlayout
+
+if [[ -d $arandr_home_dir ]]; then
+    for arandr_script in ${arandr_home_dir}/*; do
+        $arandr_script
+    done
+fi
+
+

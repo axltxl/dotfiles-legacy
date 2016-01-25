@@ -2,6 +2,9 @@
 # Startup programs
 ######################
 
+# xrandr setup helper
+exec --no-startup-id dot-xrandr-setup
+
 # compositing manager
 exec --no-startup-id compton
 
