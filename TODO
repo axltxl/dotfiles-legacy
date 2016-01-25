@@ -3,6 +3,10 @@
 * dot-help:
   - must be stronger, namely, to cover most use cases
   - must include deploy, stow, unstow and purge
+* dot-tmux-right:
+  - comment properly
+* ansible:
+  - solidify essentials
 * dot-(un)stow:
     - more comments and organization of installation scripts
     - stronger
@@ -11,6 +15,9 @@
 * install.sh:
   - reorganize code into functions
   - check for sudo presence
+  - big feature, debian sid out-of-the-box
+* i3:
+  - i3 (separate highly modifiable things on their own config pieces)
 
 # Iteration 4:
 # ------------
