@@ -48,13 +48,14 @@ status.register("mem",
 # Note: the network module requires PyPI package netifaces
 net_iface = "eth0"
 if net_iface == "wlan0":
-    net_fmt=" {essid:.16} ({quality:>6}%) {kbs:>8}kB/s"
+    net_fmt=" {essid:.16} ({quality:>6}%) {kbs:>8} kB/s"
 else:
-    net_fmt="  {kbs:>6}kB/s"
+    net_fmt="  {kbs:^06} kB/s"
 
 status.register("network",
     interface="eth0",
     dynamic_color=False,
+    on_leftclick="wicd-gtk",
     format_up=net_fmt,
     color_down=color_bad,
     start_color=color_good,
@@ -65,7 +66,7 @@ status.register("network",
 # 42/128G [86G]
 status.register("disk",
     path="/home",
-    format=" {used:>7}/{total:>7} GiB",
+    format=" {used:^7}/{total:^7} [{avail:^7}] GiB",
     color=color_good,
     critical_color=color_bad)
 
