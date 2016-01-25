@@ -19,6 +19,7 @@
   with_items:
 
     # Absolute essentials
+    - software-properties-common
     - apt-transport-https
     - stow
     - symlinks
