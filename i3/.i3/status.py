@@ -25,16 +25,16 @@ status.register("clock",
 # Shows the average load of the last minute and the last 5 minutes
 # (the default value for format is used)
 status.register("load",
-        format=" {avg1:>3} {avg5:>3} {avg15:>3}",
+        format=" {avg1:>5} {avg5:>5} {avg15:>5}",
         color=color_good,
         critical_color=color_bad)
 
 status.register("cpu_usage",
-        format=' {usage:>02}%')
+        format=' {usage:>03}%')
 
 # Show the memory usage
 status.register("mem",
-        format=" {avail_mem:>6} MiB",
+        format=" {avail_mem:>8} MiB",
         color=color_good,
         warn_color=color_warn,
         alert_color=color_bad)
@@ -48,7 +48,7 @@ status.register("mem",
 # Note: the network module requires PyPI package netifaces
 net_iface = "eth0"
 if net_iface == "wlan0":
-    net_fmt=" {essid} ({quality:>3}%) {kbs:>6}kB/s"
+    net_fmt=" {essid:.16} ({quality:>6}%) {kbs:>8}kB/s"
 else:
     net_fmt="  {kbs:>6}kB/s"
 
@@ -65,7 +65,7 @@ status.register("network",
 # 42/128G [86G]
 status.register("disk",
     path="/home",
-    format=" {used:>3}/{total:>3}G",
+    format=" {used:>7}/{total:>7} GiB",
     color=color_good,
     critical_color=color_bad)
 
@@ -75,7 +75,7 @@ status.register("disk",
 status.register("pulseaudio",
     color_muted=color_warn,
     color_unmuted=color_good,
-    format="  {volume:>3}",
+    format="  {volume:>03}",
     format_muted="     ")
 
 
@@ -89,7 +89,7 @@ if os.path.exists('/sys/class/backlight/{}'.format(backlight)):
 # show battery status
 status.register("battery",
         full_color=color_good,
-        format="  {percentage:>3}% ({remaining})}",
+        format="  {percentage:>3}% ({remaining:>3}%)}",
         alert=True,
         alert_percentage=20,
         critical_color=color_bad,
