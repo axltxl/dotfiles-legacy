@@ -36,3 +36,8 @@ set $ws8  " 8"
 # this workspace should be used for messengers
 set $ws9  "  msgr"
 set $ws10 " music"
+
+# screenshot keys
+set $scrot_path "$HOME/Pictures/screenshot-%Y%m%d%H%M%S.jpg"
+set $scrot_quality 90
+set $scrot_notify 'Screenshot saved'
