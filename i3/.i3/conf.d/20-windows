@@ -24,5 +24,6 @@ for_window [class="Nitrogen"] floating enable
 
 # force application to its corresponding workspaces
 assign [class="Spotify"] $ws10
+assign [class="chromium-browser" instance="crx_clhhggbfdinjmjhajaheehoeibfljjno"] $ws9
 assign [class="chromium-browser"] $ws2
 assign [class="Termite"] $ws1

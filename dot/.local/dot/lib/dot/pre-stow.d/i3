@@ -1,0 +1,5 @@
+# vim: ft=zsh
+# Settings for i3
+
+# Make sure base directories are set beforehand
+mkdir -p ${HOME}/.i3/conf.d
