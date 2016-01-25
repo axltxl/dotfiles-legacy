@@ -4,19 +4,19 @@
 !-------------------------------------------------------------------------------
 
 rofi.modi:                           window,run,ssh
-rofi.opacity:                        92
-rofi.width:                          50
-rofi.lines:                          10
+rofi.opacity:                        85
+rofi.width:                          100
+rofi.lines:                          7
 rofi.columns:                        1
-rofi.font:                           FONT_BASE 12
+rofi.font:                           FONT_BASE 22
 rofi.color-enabled:                  true
-rofi.color-normal:                   base00,base07,base01,base0A,base00
-rofi.color-urgent:                   base00,base07,base01,base08,base07
-rofi.color-active:                   base00,base07,base01,base09,base07
+rofi.color-normal:                   base00,base07,base00,base0A,base00
+rofi.color-urgent:                   base00,base07,base00,base08,base07
+rofi.color-active:                   base00,base07,base00,base09,base07
 rofi.color-window:                   base00,base00,base01
 rofi.bw:                             1
 rofi.location:                       0
-rofi.padding:                        5
+rofi.padding:                        400
 rofi.yoffset:                        0
 rofi.xoffset:                        0
 rofi.fixed-num-lines:                false
@@ -35,7 +35,7 @@ rofi.eh:                             1
 rofi.auto-select:                    false
 rofi.parse-hosts:                    false
 rofi.combi-modi:                     window,run
-rofi.fuzzy:                          false
+rofi.fuzzy:                          true
 rofi.m:                              -1
 rofi.line-margin:                    2
 rofi.filter:
@@ -55,7 +55,7 @@ rofi.kb-remove-word-back:            Control+Alt+h
 rofi.kb-remove-word-forward:         Control+Alt+d
 rofi.kb-remove-char-forward:         Delete,Control+d
 rofi.kb-remove-char-back:            BackSpace,Control+h
-rofi.kb-accept-entry:                Control+j,Control+m,Return,KP_Enter
+rofi.kb-accept-entry:                Control+m,Return,KP_Enter
 rofi.kb-accept-custom:               Control+Return
 rofi.kb-accept-entry-continue:       Shift+Return
 rofi.kb-mode-next:                   Shift+Right,Control+Tab
@@ -64,15 +64,15 @@ rofi.kb-toggle-case-sensitivity:     grave,dead_grave
 rofi.kb-delete-entry:                Shift+Delete
 rofi.kb-row-left:                    Control+Page_Up
 rofi.kb-row-right:                   Control+Page_Down
-rofi.kb-row-up:                      Up,Control+p,Shift+Tab
-rofi.kb-row-down:                    Down,Control+n
+rofi.kb-row-up:                      Control+k
+rofi.kb-row-down:                    Control+j
 rofi.kb-row-tab:                     Tab
 rofi.kb-page-prev:                   Page_Up
 rofi.kb-page-next:                   Page_Down
 rofi.kb-row-first:                   Home,KP_Home
 rofi.kb-row-last:                    End,KP_End
 rofi.kb-row-select:                  Control+space
-rofi.kb-cancel:                      Escape
+rofi.kb-cancel:                      Control+bracketleft
 rofi.kb-custom-1:                    Alt+1
 rofi.kb-custom-2:                    Alt+2
 rofi.kb-custom-3:                    Alt+3
