@@ -197,6 +197,7 @@
     - smplayer # my video player
     - pepperflashplugin-nonfree # flash player
     - shutter # advanced screenshots
+    - gdebi # commodity for dealing with deb packages
 
       # Our beloved file manager
     - pcmanfm
