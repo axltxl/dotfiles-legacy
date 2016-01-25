@@ -3,7 +3,7 @@
 ! vim: ft=xdefaults
 !------------------------------------------------
 
-#define FONT_BASE Noto Sans
+#define FONT_BASE SFNS Display
 #ifndef SCREEN_DPI
     #define SCREEN_DPI 96
 #endif
