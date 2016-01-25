@@ -36,6 +36,9 @@ bindsym $mod+f fullscreen
 # switch to terminal, just like that
 bindsym $mod+t [class="Termite"] focus
 
+# Open www workspace on demand
+bindsym $mod+o workspace $ws2
+
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
