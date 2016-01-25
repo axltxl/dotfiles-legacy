@@ -11,29 +11,30 @@ status = Status(standalone=True)
 ##############
 #color palette
 ##############
-color_good = colors.base0B
+color_good = colors.base05
 color_warn = colors.base09
 color_bad  = colors.base08
-color_cmus = colors.base0C
 
 
 # Displays clock like this:
 # Tue 30 Jul 11:59:46 PM KW31
 #                          ^-- calendar week
 status.register("clock",
-    format="%a %-d %b %T",)
+    format="%a %-d %b %T ",)
 
 # Shows the average load of the last minute and the last 5 minutes
 # (the default value for format is used)
 status.register("load",
+        format=" {avg1:>3} {avg5:>3} {avg15:>3}",
         color=color_good,
         critical_color=color_bad)
 
 status.register("cpu_usage",
-        format='{usage:02}%')
+        format=' {usage:>02}%')
 
 # Show the memory usage
 status.register("mem",
+        format=" {avail_mem:>6} MiB",
         color=color_good,
         warn_color=color_warn,
         alert_color=color_bad)
@@ -45,9 +46,15 @@ status.register("mem",
 # (defaults of format_down and color_down)
 #
 # Note: the network module requires PyPI package netifaces
+net_iface = "eth0"
+if net_iface == "wlan0":
+    net_fmt=" {essid} ({quality:>3}%) {kbs:>6}kB/s"
+else:
+    net_fmt="  {kbs:>6}kB/s"
+
 status.register("network",
     interface="eth0",
-    format_up="{v4cidr}{kbs}kB/s",
+    format_up=net_fmt,
     color_up=color_good,
     color_down=color_bad,
     start_color=color_good,
@@ -58,7 +65,7 @@ status.register("network",
 # 42/128G [86G]
 status.register("disk",
     path="/home",
-    format="{used}/{total}G [{avail}G]",
+    format=" {used:>3}/{total:>3}G",
     color=color_good,
     critical_color=color_bad)
 
@@ -66,10 +73,11 @@ status.register("disk",
 #
 # Note: requires libpulseaudio from PyPI
 status.register("pulseaudio",
-    color_muted=color_good,
-    color_unmuted=color_bad,
-    multi_colors=True,
-    format="♪{volume}",)
+    color_muted=color_warn,
+    color_unmuted=color_good,
+    format="  {volume:>3}",
+    format_muted="     ")
+
 
 # show backlight brightness status
 backlight='acpi_video0'
@@ -81,12 +89,11 @@ if os.path.exists('/sys/class/backlight/{}'.format(backlight)):
 # show battery status
 status.register("battery",
         full_color=color_good,
-        format="BATT: {percentage}% ({remaining})}",
+        format="  {percentage:>3}% ({remaining})}",
         alert=True,
         alert_percentage=20,
         critical_color=color_bad,
-        not_present_color=color_warn,
-        not_present_text="NOBATT",
+        not_present_text="",
         charging_color=color_good)
 
 # run the thing!
