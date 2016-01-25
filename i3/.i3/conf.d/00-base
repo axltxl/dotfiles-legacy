@@ -22,7 +22,7 @@ set $ws6  " 6"
 set $ws7  " 7"
 set $ws8  " 8"
 #TODO: figure out how to put Telegram in here
-set $ws9  "  mess"
+set $ws9  "  msgr"
 set $ws10 " music"
 
 # Font for window titles.
