@@ -15,12 +15,12 @@ set $i3pystatus_conf ~/.i3/status.py
 # workspaces
 set $ws1 " term"
 set $ws2 " www"
-set $ws3  "3"
-set $ws4  "4"
-set $ws5  "5"
-set $ws6  "6"
-set $ws7  "7"
-set $ws8  "8"
+set $ws3  " 3"
+set $ws4  " 4"
+set $ws5  " 5"
+set $ws6  " 6"
+set $ws7  " 7"
+set $ws8  " 8"
 #TODO: figure out how to put Telegram in here
 set $ws9  "  mess"
 set $ws10 " music"
