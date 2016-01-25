@@ -3,7 +3,7 @@
 #################
 
 # start a terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec $term
 
 # kill focused window
 bindsym $mod+c kill
@@ -34,7 +34,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen
 
 # switch to terminal, just like that
-bindsym $mod+t [class="Termite"] focus
+bindsym $mod+t [class=$term_class] focus
 
 # Open www workspace on demand
 bindsym $mod+o workspace $ws2
@@ -57,7 +57,7 @@ bindsym $mod+a focus parent
 bindsym $mod+q focus child
 
 # open file manager
-bindsym $mod+g exec --no-startup-id xdg-open ~
+bindsym $mod+g exec --no-startup-id $fm ~
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1

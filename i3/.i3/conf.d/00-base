@@ -1,15 +1,27 @@
-##################################
-# i3wm base configuration settings
+###################################
+# i3wm base configuration variables
 ##################################
 
 # The very basics
-set $mod Mod4
+set $mod Mod1
 set $autolock screenlock
-set $font FontAwesome
-set $font_size 12
+set $font pango:DejaVu Sans Mono
+set $font_size 8
+
+# file manager
+set $fm pcmanfm
+set $fm_class Pcmanfm
+
+# www browser
+set $browser chromium
+set $browser-class "chromium-browser"
+
+# terminal of choice
+set $term i3-sensible-terminal
+set $term_class "UXTerm"
 
 # i3pystatus
-set $i3pystatus_py ~/.i3/pystatus/bin/python3
+set $i3pystatus_py   ~/.i3/pystatus/bin/python3
 set $i3pystatus_conf ~/.i3/status.py
 
 # workspaces
@@ -21,12 +33,6 @@ set $ws5  " 5"
 set $ws6  " 6"
 set $ws7  " 7"
 set $ws8  " 8"
-#TODO: figure out how to put Telegram in here
+# this workspace should be used for messengers
 set $ws9  "  msgr"
 set $ws10 " music"
-
-# Font for window titles.
-font xft:$font $font_size
-
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod

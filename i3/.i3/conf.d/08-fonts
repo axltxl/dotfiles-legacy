@@ -1,0 +1,6 @@
+####################
+# Font configuration
+####################
+
+# Font for window titles.
+font $font $font_size
