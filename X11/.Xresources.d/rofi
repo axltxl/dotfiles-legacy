@@ -10,10 +10,10 @@ rofi.lines:                          7
 rofi.columns:                        1
 rofi.font:                           FONT_BASE 22
 rofi.color-enabled:                  true
-rofi.color-normal:                   base00,base07,base00,base0A,base00
-rofi.color-urgent:                   base00,base07,base00,base08,base07
-rofi.color-active:                   base00,base07,base00,base09,base07
-rofi.color-window:                   base00,base00,base01
+rofi.color-normal:                   base00,base07,base00,base0D,base00
+rofi.color-urgent:                   base00,base07,base00,base08,base00
+rofi.color-active:                   base00,base07,base00,base0B,base00
+rofi.color-window:                   base00,base00,base02
 rofi.bw:                             1
 rofi.location:                       0
 rofi.padding:                        400
