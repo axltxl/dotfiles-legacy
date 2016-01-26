@@ -7,6 +7,8 @@
   - comment properly
 * ansible:
   - solidify essentials
+* dot-env:
+  - recur to all files inside ~/.dotenv.d instead of ~/.dotenv
 * dot-(un)stow:
     - more comments and organization of installation scripts
     - stronger
@@ -16,8 +18,6 @@
   - reorganize code into functions
   - check for sudo presence
   - big feature, debian sid out-of-the-box
-* i3:
-  - i3 (separate highly modifiable things on their own config pieces)
 
 # Iteration 4:
 # ------------
