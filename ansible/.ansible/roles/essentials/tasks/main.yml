@@ -121,6 +121,14 @@
       - colour
       - basiciw
 
+- name: setup i3 home directory
+  file:
+    path: '{{ i3_base }}'
+    owner: '{{ user_name }}'
+    group: '{{ user_name }}'
+    state: directory
+    recurse: yes
+
 - name: setup i3pystatus virtualenv folder
   file:
     mode: 0755
