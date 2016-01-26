@@ -19,6 +19,6 @@ new_float  pixel 2
 focus_follows_mouse no
 
 # force application to its corresponding workspaces
-assign [class=$mplayer_class] $ws10
-assign [class=$browser_class] $ws2
-assign [class=$term_class] $ws1
+assign [class=$mplayer_class] $ws_music
+assign [class=$browser_class] $ws_www
+assign [class=$term_class] $ws_term
