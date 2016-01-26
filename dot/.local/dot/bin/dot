@@ -312,12 +312,30 @@ _dot_help_update() {
     done
 }
 
+# dot help stow
+_dot_help_stow() {
+    dot_printf "Usage: stow <package> ..."
+    dot_printf "Stow a package from all stow directories in STOW_DIRS"
+}
+
+# dot help unstow
+_dot_help_unstow() {
+    dot_printf "Usage: unstow <package> ..."
+    dot_printf "Unstow a package from all stow directories in STOW_DIRS"
+}
+
 #
 # Print command-specific help
 #
 dot_help() {
     if [[ ! -z "$1" ]]; then
         case $1 in
+            unstow )
+            _dot_help_unstow
+            ;;
+            stow )
+            _dot_help_stow
+            ;;
             update )
             _dot_help_update
             ;;
