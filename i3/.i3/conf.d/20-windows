@@ -29,3 +29,6 @@ for_window [window_role="task_dialog"] floating enable
 
 # These must be in floating mode
 for_window [class="Gpicview"]          floating enable
+
+# move to term workspace at startup
+exec_always --no-startup-id i3-msg "workspace $ws_term"
