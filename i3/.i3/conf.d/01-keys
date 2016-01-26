@@ -128,3 +128,5 @@ bindsym XF86AudioPrev  exec playerctl previous
 bindsym XF86MonBrightnessUp exec xbacklight -inc 2 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 2 # decrease screen brightness
 
+# Jump to urgent window
+bindsym $mod+u [urgent=latest] focus
