@@ -1,8 +1,5 @@
 # Iteration 3:
 # ------------
-* dot-help:
-  - must be stronger, namely, to cover most use cases
-  - must include deploy, stow, unstow and purge
 * dot-env:
   - recur to all files inside ~/.dotenv.d instead of ~/.dotenv
 * dot-(un)stow:
