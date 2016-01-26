@@ -12,13 +12,25 @@ set $font_size 8
 # i3lock wrapper
 set $autolock screenlock
 
+# music player
+set $mplayer spotify
+set $mplayer_class Spotify
+
+# wallpaper manager
+set $wpman nitrogen
+set $wpman_class Nitrogen
+
+# sound manager
+set $sndman pavucontrol
+set $sndman_class Pavucontrol
+
 # file manager
 set $fm pcmanfm
 set $fm_class Pcmanfm
 
 # www browser
 set $browser chromium
-set $browser-class "chromium-browser"
+set $browser_class chromium-browser
 
 # terminal of choice
 set $term i3-sensible-terminal
