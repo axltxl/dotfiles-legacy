@@ -25,6 +25,7 @@ function plus() {
                 VOL_NEW=$((VOL_MAX))
         fi
         pactl set-sink-volume $SINK_NAME `printf "0x%X" $VOL_NEW`
+        get_volume
 }
 
 function minus() {
@@ -33,6 +34,7 @@ function minus() {
                 VOL_NEW=$((0x00000))
         fi
         pactl set-sink-volume $SINK_NAME `printf "0x%X" $VOL_NEW`
+        get_volume
 }
 
 function mute() {
@@ -41,6 +43,10 @@ function mute() {
         elif [ $MUTE_STATE = yes ]; then
                 pactl set-sink-mute $SINK_NAME 0
         fi
+}
+
+function get_volume(){
+        echo $((VOL_NOW * 100 / VOL_MAX))
 }
 
 function get() {
@@ -80,4 +86,8 @@ case "$1" in
         ;;
         get)
                 get
+        ;;
+        get-volume)
+                get_volume
+        ;;
 esac

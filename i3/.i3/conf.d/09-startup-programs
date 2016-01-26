@@ -28,3 +28,6 @@ exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
 
 # keynav
 exec --no-startup-id keynav
+
+# volnoti
+exec --no-startup-id volnoti -t $volnoti_timeout -a $volnoti_opacity -r $volnoti_radius

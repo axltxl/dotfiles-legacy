@@ -57,3 +57,8 @@ set $ws_music ""
 set $scrot_path "$HOME/Pictures/screenshot-%Y%m%d%H%M%S.jpg"
 set $scrot_quality 90
 set $scrot_notify 'Screenshot saved'
+
+# volnoti settings
+set $volnoti_timeout 1
+set $volnoti_opacity 0.20
+set $volnoti_radius 40
