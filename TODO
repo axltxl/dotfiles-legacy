@@ -7,6 +7,8 @@
     - stronger
     - dot-unstow: prevent 'essentials', 'zsh' and 'dot' from being unstowed
 * major revision of everrrrry file: proper comments and indentation  on every single one of them
+* zsh:
+  - if NO_TMUX is set, then do not invoke tmux at startup
 * install.sh:
   - reorganize code into functions
   - check for sudo presence
