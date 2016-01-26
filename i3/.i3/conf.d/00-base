@@ -34,7 +34,7 @@ set $browser_class chromium-browser
 
 # terminal of choice
 set $term i3-sensible-terminal
-set $term_class "UXTerm"
+set $term_class UXTerm
 
 # i3pystatus
 set $i3pystatus_py   ~/.i3/pystatus/bin/python3

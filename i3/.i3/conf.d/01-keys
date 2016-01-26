@@ -95,10 +95,10 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
-        bindsym h resize shrink width 48 px
-        bindsym k resize grow height 48 px
+        bindsym h resize shrink width  48 px
+        bindsym k resize grow height   48 px
         bindsym j resize shrink height 48 px
-        bindsym l resize grow width 48 px
+        bindsym l resize grow width    48 px
 
         # back to normal: Enter
         bindsym Return mode "default"
@@ -116,7 +116,7 @@ bindsym $mod+Print exec scrot -u -q $scrot_quality $scrot_path && notify-send --
 # Multimedia keys
 bindsym XF86AudioRaiseVolume exec --no-startup-id pavol plus # raise volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pavol minus # lower volume
-bindsym XF86AudioMute exec --no-startup-id pavol mute # mute sound
+bindsym XF86AudioMute        exec --no-startup-id pavol mute # mute sound
 
 # Media player controls
 bindsym XF86AudioPlay  exec playerctl play-pause
