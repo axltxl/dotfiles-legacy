@@ -301,6 +301,7 @@ dot_purge() {
 # dot help update
 _dot_help_update() {
     dot_printf "Usage: update <update_job>"
+    dot_printf "Apply arbitrary update jobs"
     dot_printf "Where <update_job> can be one of the following:"
     for update_job in $dot_update_dir/*; do
         if [[  -h $update_job  ]]; then
@@ -324,6 +325,22 @@ _dot_help_unstow() {
     dot_printf "Unstow a package from all stow directories in STOW_DIRS"
 }
 
+# dot help purge
+_dot_help_purge() {
+    dot_printf "Usage: dot purge"
+    dot_printf "Unstow all packages inside DOT_HOME and STOW_DIRS"
+    dot_printf "Remove any remaining dotfiles inside your home directory"
+    dot_printf "Stow directories (STOW_DIRS) and files specified in ~/.dotignore won't be deleted"
+    dot_printf "NOTE: if you wish to simulate this command set DRY_PURGE=1"
+    dot_printf "e.g. $ DRY_PURGE=1 dot purge"
+}
+
+# dot help deploy
+_dot_help_deploy() {
+    dot_printf "Usage: dot deploy"
+    dot_printf "Only apply ansible playbooks on this host"
+}
+
 #
 # Print command-specific help
 #
@@ -335,6 +352,12 @@ dot_help() {
             ;;
             stow )
             _dot_help_stow
+            ;;
+            purge )
+            _dot_help_purge
+            ;;
+            deploy )
+            _dot_help_deploy
             ;;
             update )
             _dot_help_update
