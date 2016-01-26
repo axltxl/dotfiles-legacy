@@ -37,7 +37,7 @@ bindsym $mod+f fullscreen
 bindsym $mod+t [class=$term_class] focus
 
 # Open www workspace on demand
-bindsym $mod+o workspace $ws2
+bindsym $mod+o workspace $ws_www
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
