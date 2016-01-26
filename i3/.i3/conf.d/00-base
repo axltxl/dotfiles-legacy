@@ -41,17 +41,17 @@ set $i3pystatus_py   ~/.i3/pystatus/bin/python3
 set $i3pystatus_conf ~/.i3/status.py
 
 # workspaces
-set $ws1 " term"
-set $ws2 " www"
-set $ws3  " 3"
-set $ws4  " 4"
-set $ws5  " 5"
-set $ws6  " 6"
-set $ws7  " 7"
-set $ws8  " 8"
+set $ws_term " term"
+set $ws_www  " www"
+set $ws3     " 3"
+set $ws4     " 4"
+set $ws5     " 5"
+set $ws6     " 6"
+set $ws7     " 7"
+set $ws8     " 8"
 # this workspace should be used for messengers
-set $ws9  "  msgr"
-set $ws10 " music"
+set $ws_msgr  "  msgr"
+set $ws_music " music"
 
 # screenshot keys
 set $scrot_path "$HOME/Pictures/screenshot-%Y%m%d%H%M%S.jpg"
