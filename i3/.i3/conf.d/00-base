@@ -62,4 +62,15 @@ set $scrot_notify 'Screenshot saved'
 # volnoti settings
 set $volnoti_timeout 1
 set $volnoti_opacity 0.20
-set $volnoti_radius 40
+set $volnoti_radius  40
+
+# audio controls
+set $audio_vol_up "exec --no-startup-id pavol plus;  exec --no-startup-id volnoti-pop plus"
+set $audio_vol_dn "exec --no-startup-id pavol minus; exec --no-startup-id volnoti-pop minus"
+set $audio_mute   "exec --no-startup-id pavol mute;  exec --no-startup-id volnoti-pop mute"
+
+# media player controls
+set $playerctl_play  "exec playerctl play-pause"
+set $playerctl_pause "exec playerctl pause"
+set $playerctl_next  "exec playerctl next"
+set $playerctl_prev  "exec playerctl previous"
