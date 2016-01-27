@@ -11,12 +11,12 @@ bar {
 
     # The actual colors
     colors {
-        separator          $base03
+        separator          $base00
         background         $base00
         statusline         $base05
-        focused_workspace  $base0D $base0D $base02
-        active_workspace   $base02 $base02 $base07
+        focused_workspace  $base00 $base00 $base0D
+        active_workspace   $base00 $base00 $base07
         inactive_workspace $base00 $base00 $base04
-        urgent_workspace   $base08 $base08 $base07
+        urgent_workspace   $base00 $base00 $base08
     }
 }
