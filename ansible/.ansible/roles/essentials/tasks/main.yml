@@ -33,7 +33,6 @@
     - arandr
     - xsel
     - lightdm
-    - i3 # our beloved and minimalistic window manager
     - keynav # I definitely avoid using mouse at all costs
     - compton # compositor
     - colortest # For testing color on terminals
@@ -106,6 +105,13 @@
   apt:
     state: installed
     pkg: libiw-dev
+
+# our beloved window manager
+- name: i3 window manager
+  apt:
+    pkg: i3
+    state: latest
+    default_release: '{{ debian_release }}-backports'
 
 - name: i3pystatus
   pip:
