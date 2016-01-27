@@ -17,10 +17,10 @@ bar {
         separator          $base00
         background         $base00
         statusline         $base05
-        focused_workspace  $base00 $base00 $base0D
-        active_workspace   $base00 $base00 $base07
+        focused_workspace  $base00 $base00 $base0C
+        active_workspace   $base00 $base00 $base0E
         inactive_workspace $base00 $base00 $base04
         urgent_workspace   $base00 $base00 $base08
-        binding_mode       $base08 $base08 $base00
+        binding_mode       $base0B $base0B $base00
     }
 }
