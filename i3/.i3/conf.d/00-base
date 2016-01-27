@@ -74,3 +74,9 @@ set $playerctl_play  "exec playerctl play-pause"
 set $playerctl_pause "exec playerctl pause"
 set $playerctl_next  "exec playerctl next"
 set $playerctl_prev  "exec playerctl previous"
+
+# bar settings
+set $bar_position top
+
+# tray settings
+set $tray_padding 4

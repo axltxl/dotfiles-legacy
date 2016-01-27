@@ -3,8 +3,11 @@
 ######################
 
 bar {
+    # tray settings
+    tray_padding $tray_padding
+
     # position
-    position top
+    position $bar_position
 
     # i3pystatus is awesome!!
     status_command $i3pystatus_py $i3pystatus_conf
