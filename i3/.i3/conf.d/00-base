@@ -4,6 +4,7 @@
 
 # One prefix to rule them all
 set $mod Mod1
+set $alt Mod1
 
 # Font-related variables
 set $font pango:DejaVu Sans Mono

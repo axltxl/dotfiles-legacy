@@ -19,10 +19,10 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # move focused window
-bindsym $mod+Mod1+h move left
-bindsym $mod+Mod1+j move down
-bindsym $mod+Mod1+k move up
-bindsym $mod+Mod1+l move right
+bindsym $mod+$alt+h move left
+bindsym $mod+$alt+j move down
+bindsym $mod+$alt+k move up
+bindsym $mod+$alt+l move right
 
 # split in horizontal orientation
 bindsym $mod+b split h
@@ -72,16 +72,16 @@ bindsym $mod+9 workspace $ws_msgr
 bindsym $mod+0 workspace $ws_music
 
 # move focused container to workspace
-bindsym $mod+Mod1+1 move container to workspace $ws_term
-bindsym $mod+Mod1+2 move container to workspace $ws_www
-bindsym $mod+Mod1+3 move container to workspace $ws3
-bindsym $mod+Mod1+4 move container to workspace $ws4
-bindsym $mod+Mod1+5 move container to workspace $ws5
-bindsym $mod+Mod1+6 move container to workspace $ws6
-bindsym $mod+Mod1+7 move container to workspace $ws7
-bindsym $mod+Mod1+8 move container to workspace $ws8
-bindsym $mod+Mod1+9 move container to workspace $ws_msgr
-bindsym $mod+Mod1+0 move container to workspace $ws_music
+bindsym $mod+$alt+1 move container to workspace $ws_term
+bindsym $mod+$alt+2 move container to workspace $ws_www
+bindsym $mod+$alt+3 move container to workspace $ws3
+bindsym $mod+$alt+4 move container to workspace $ws4
+bindsym $mod+$alt+5 move container to workspace $ws5
+bindsym $mod+$alt+6 move container to workspace $ws6
+bindsym $mod+$alt+7 move container to workspace $ws7
+bindsym $mod+$alt+8 move container to workspace $ws8
+bindsym $mod+$alt+9 move container to workspace $ws_msgr
+bindsym $mod+$alt+0 move container to workspace $ws_music
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
