@@ -65,9 +65,9 @@ set $volnoti_opacity 0.20
 set $volnoti_radius  40
 
 # audio controls
-set $audio_vol_up "exec --no-startup-id pavol plus;  exec --no-startup-id volnoti-pop plus"
-set $audio_vol_dn "exec --no-startup-id pavol minus; exec --no-startup-id volnoti-pop minus"
-set $audio_mute   "exec --no-startup-id pavol mute;  exec --no-startup-id volnoti-pop mute"
+set $audio_vol_up "exec --no-startup-id pavol plus;  exec --no-startup-id volnoti-pop plus; exec dot-snd-play blop"
+set $audio_vol_dn "exec --no-startup-id pavol minus; exec --no-startup-id volnoti-pop minus; exec dot-snd-play blop"
+set $audio_mute   "exec --no-startup-id pavol mute;  exec --no-startup-id volnoti-pop mute; exec dot-snd-play blop"
 
 # media player controls
 set $playerctl_play  "exec playerctl play-pause"

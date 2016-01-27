@@ -5,5 +5,5 @@ set -e
 #####################################
 
 if [[ "$(playerctl status)" != "Playing" ]]; then
-    play -q ${HOME}/.local/share/sounds/notification.ogg
+    dot-snd-play notification
 fi
