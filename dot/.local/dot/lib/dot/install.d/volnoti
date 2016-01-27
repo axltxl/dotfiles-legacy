@@ -25,6 +25,6 @@ fi
 # Compile and install volnoti
 dot_printf "compile and install volnoti"
 cd $volnoti_src
-[ ! -x configure ] && ./configure --prefix=$DOT_PATH
-make clean && make && make install
+[ ! -x configure ] && ./prepare.sh
+./configure --prefix=$DOT_PATH && make clean && make && make install
 
