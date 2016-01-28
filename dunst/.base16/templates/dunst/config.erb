@@ -41,15 +41,16 @@
         $base0D = @base["0D"]["hex"]
         $base0E = @base["0E"]["hex"]
         $base0F = @base["0F"]["hex"]
+        $font_icon = "FontAwesome"
 
         # https://developer.gnome.org/pango/stable/PangoMarkupFormat.html
         def set_fmt(icon: '',
                     icon_color: $base00,
                     separator: ''
                    )
-            "<span font='14' color='##{icon_color.upcase}'>#{icon}</span>"\
-            "  <b>%s  #{separator}</b> "\
-            "<span font_weight='light'>%b</span>"
+            "<span font='#{$font_icon} 14' color='##{icon_color.upcase}'>#{icon}</span>"\
+            "  <b>%s</b>  <span font='#{$font_icon} 14'>#{separator}</span>"\
+            "<span font_weight='light'>    %b</span>"
         end
     %>
     format = "<%= set_fmt() %>"
@@ -145,7 +146,7 @@
     separator_height = 0
 
     # Padding between text and separator.
-    padding = 4
+    padding = 6
 
     # Horizontal padding.
     horizontal_padding = 8
@@ -260,7 +261,7 @@
 # Spotify
 [fmt-spotify]
     appname = "Spotify"
-    format = "<%= set_fmt(icon: '', separator: '') %>"
+    format = "<%= set_fmt(icon: '', separator: '') %>"
     background = "#<%= $base0B %>"
     foreground = "#<%= $base00 %>"
 
