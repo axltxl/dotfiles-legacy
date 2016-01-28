@@ -80,7 +80,7 @@ while true; do
 
         # send the actual notification
         if [[ ! -z "$DISPLAY" ]]; then
-            notify-send --urgency=low "dot-stow-watch @ $stow_dir" "All directories synced and stowed!"
+            notify-send --urgency=low "$stow_dir" "All directories synced and stowed!"
         fi
     fi # $?
 done
