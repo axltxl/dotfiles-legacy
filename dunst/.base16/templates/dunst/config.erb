@@ -1,5 +1,5 @@
 [global]
-    font =  SFNS Display 14
+    font =  SFNS Display 12
 
     # Allow a small subset of html markup:
     #   <b>bold</b>
@@ -21,7 +21,7 @@
     #   %I  iconname (without its path)
     #   %p  progress value if set ([  0%] to [100%]) or nothing
     # Markup is allowed
-    format = "<b>%s</b>\n%b"
+    format = "  <b>%s</b> %b"
 
     # Sort messages by urgency.
     sort = yes
@@ -37,7 +37,7 @@
     # window allows bounces back and forth.
     # This option conflicts with "word_wrap".
     # Set to 0 to disable.
-    bounce_freq = 0
+    bounce_freq = 64
 
     # Show age of message if message is older than show_age_threshold
     # seconds.
@@ -46,10 +46,10 @@
 
     # Split notifications into multiple lines if they don't fit into
     # geometry.
-    word_wrap = yes
+    word_wrap = no
 
     # Ignore newlines '\n' in notifications.
-    ignore_newline = no
+    ignore_newline = yes
 
 
     # The geometry of the window:
@@ -64,16 +64,16 @@
     # the top and down respectevly.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "300x5-30+30"
+    geometry = "" # width = whole screen, height = auto, x = y = 0
 
     # Shrink window if it's smaller than the width.  Will be ignored if
     # width is 0.
-    shrink = no
+    shrink = yes
 
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing windowmanager is
     # present (e.g. xcompmgr, compiz, etc.).
-    transparency = 10
+    transparency = 0
 
     # Don't remove messages, if the user is idle (no mouse or keyboard input)
     # for longer than idle_threshold seconds.
@@ -111,10 +111,10 @@
     # Draw a line of "separatpr_height" pixel height between two
     # notifications.
     # Set to 0 to disable.
-    separator_height = 2
+    separator_height = 0
 
     # Padding between text and separator.
-    padding = 8
+    padding = 2
 
     # Horizontal padding.
     horizontal_padding = 8
@@ -139,7 +139,7 @@
     browser = /usr/bin/chromium
 
     # Align icons left/right/off
-    icon_position = right
+    icon_position = off
 
     # Paths to default icons.
     icon_folders = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
@@ -171,13 +171,13 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#<%= @base["02"]["hex"] %>"
+    background = "#<%= @base["00"]["hex"] %>"
     foreground = "#<%= @base["07"]["hex"] %>"
-    timeout = 5
+    timeout = 2
 
 [urgency_normal]
-    background = "#<%= @base["0E"]["hex"] %>"
-    foreground = "#<%= @base["07"]["hex"] %>"
+    background = "#<%= @base["0F"]["hex"] %>"
+    foreground = "#<%= @base["00"]["hex"] %>"
     timeout = 5
 
 [urgency_critical]
