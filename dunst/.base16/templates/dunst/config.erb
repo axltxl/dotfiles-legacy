@@ -1,5 +1,5 @@
 [global]
-    font =  SFNS Display 12
+    font = SFNS Display 12
 
     # Allow a small subset of html markup:
     #   <b>bold</b>
@@ -21,7 +21,38 @@
     #   %I  iconname (without its path)
     #   %p  progress value if set ([  0%] to [100%]) or nothing
     # Markup is allowed
-    format = "  <b>%s  </b> %b"
+    <%
+        ##################################
+        # all base16 colors nicely indexed
+        ##################################
+        $base00 = @base["00"]["hex"]
+        $base01 = @base["00"]["hex"]
+        $base02 = @base["02"]["hex"]
+        $base03 = @base["03"]["hex"]
+        $base04 = @base["04"]["hex"]
+        $base05 = @base["05"]["hex"]
+        $base06 = @base["06"]["hex"]
+        $base07 = @base["07"]["hex"]
+        $base08 = @base["08"]["hex"]
+        $base09 = @base["09"]["hex"]
+        $base0A = @base["0A"]["hex"]
+        $base0B = @base["0B"]["hex"]
+        $base0C = @base["0C"]["hex"]
+        $base0D = @base["0D"]["hex"]
+        $base0E = @base["0E"]["hex"]
+        $base0F = @base["0F"]["hex"]
+
+        # https://developer.gnome.org/pango/stable/PangoMarkupFormat.html
+        def set_fmt(icon: '',
+                    icon_color: $base00,
+                    separator: ''
+                   )
+            "<span font='14' color='##{icon_color.upcase}'>#{icon}</span>"\
+            "  <b>%s  #{separator}</b> "\
+            "<span font_weight='light'>%b</span>"
+        end
+    %>
+    format = "<%= set_fmt() %>"
 
     # Sort messages by urgency.
     sort = yes
@@ -73,7 +104,7 @@
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing windowmanager is
     # present (e.g. xcompmgr, compiz, etc.).
-    transparency = 0
+    transparency = 6
 
     # Don't remove messages, if the user is idle (no mouse or keyboard input)
     # for longer than idle_threshold seconds.
@@ -114,7 +145,7 @@
     separator_height = 0
 
     # Padding between text and separator.
-    padding = 2
+    padding = 4
 
     # Horizontal padding.
     horizontal_padding = 8
@@ -171,18 +202,18 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#<%= @base["00"]["hex"] %>"
-    foreground = "#<%= @base["07"]["hex"] %>"
+    background = "#<%= $base00 %>"
+    foreground = "#<%= $base07 %>"
     timeout = 2
 
 [urgency_normal]
-    background = "#<%= @base["0F"]["hex"] %>"
-    foreground = "#<%= @base["00"]["hex"] %>"
+    background = "#<%= $base0F %>"
+    foreground = "#<%= $base00 %>"
     timeout = 5
 
 [urgency_critical]
-    background = "#<%= @base["08"]["hex"] %>"
-    foreground = "#<%= @base["07"]["hex"] %>"
+    background = "#<%= $base08 %>"
+    foreground = "#<%= $base00 %>"
     timeout = 0
 
 # Every section that isn't one of the above is interpreted as a rules to
@@ -209,3 +240,43 @@
     msg_urgency = normal
     summary = "*"
     script = dunst-play
+
+[fmt-low]
+    msg_urgency = low
+    format = "<%= set_fmt(icon_color: $base0B) %>"
+
+[fmt-normal]
+    msg_urgency = normal
+    format = "<%= set_fmt(icon: '') %>"
+
+[fmt-critical]
+    msg_urgency = critical
+    format = "<%= set_fmt(icon: '') %>"
+
+####################################
+# Application-specific notifications
+####################################
+
+# Spotify
+[fmt-spotify]
+    appname = "Spotify"
+    format = "<%= set_fmt(icon: '', separator: '') %>"
+    background = "#<%= $base0B %>"
+    foreground = "#<%= $base00 %>"
+
+# wicd
+[fmt-wicd]
+    appname = "Wicd"
+    format = "<%= set_fmt(icon: '') %>"
+
+# dot-stow-watch sets icon to sync
+# since dunst is buggy when it comes
+# to do matching by category
+# still, this is weak
+[fmt-dot-stow-watch]
+    appname = notify-send
+    icon = sync
+    msg_urgency = low
+    format = "<%= set_fmt(icon: '', icon_color: $base0C) %>"
+    background = "#<%= $base01 %>"
+    foreground = "#<%= $base07 %>"
