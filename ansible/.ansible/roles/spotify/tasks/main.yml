@@ -10,7 +10,7 @@
 
 - name: set up repositories
   apt_repository:
-      repo: 'deb http://repository.spotify.com stable non-free'
+      repo: 'deb http://repository.spotify.com testing non-free'
       state: present
 
 - name: install spotify
@@ -18,3 +18,4 @@
       update_cache: yes
       name: spotify-client
       state: latest
+      default_release: testing
