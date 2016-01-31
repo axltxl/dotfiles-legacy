@@ -7,9 +7,20 @@
 i3_home=${HOME}/.i3
 i3_conf=${i3_home}/config
 i3_tpl_dir=${HOME}/.local/share/zenfig/templates/i3
+i3bar_colors_conf=${i3_home}/colors.py
 
 # first of all, remove current config
 rm -f $i3_conf
+rm -f $i3bar_colors_conf
+
+# Generate colors for i3pystatus
+zenfig $i3_tpl_dir/i3pystatus.j2 -o $i3bar_colors_conf
+
+# Since ~/.i3 is a physical directory rather than a
+# symlink, in order consistently load colors.py as a
+# module, it will need to be added to the source base
+# in order for status.py to see it
+ln -sf $i3bar_colors_conf ${DOT_HOME}/i3/.i3/colors.py
 
 # Generate config file from templates
 zenfig $i3_tpl_dir -o $i3_conf
