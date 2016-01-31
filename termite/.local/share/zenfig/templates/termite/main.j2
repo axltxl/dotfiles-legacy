@@ -1,0 +1,61 @@
+# vim: ft=jinja2 cms=#%s
+[options]
+scroll_on_output    = false
+scroll_on_keystroke = true
+audible_bell        = false
+mouse_autohide      = false
+allow_bold          = true
+dynamic_title       = true
+urgent_on_bell      = true
+clickable_url       = true
+font                = {{ font_term }} {{ font_term_size }}
+scrollback_lines    = 10000
+search_wrap         = true
+
+# "system", "on" or "off"
+cursor_blink = system
+
+# "block", "underline" or "ibeam"
+cursor_shape = block
+
+# set size hints for the window
+size_hints   = false
+
+# Hide links that are no longer valid in url select overlay mode
+filter_unmatched_urls = true
+
+# emit escape sequences for other keys modified by Control
+#modify_other_keys = false
+{%- set bg = color_hex_to_rgb(base00) %}
+
+[colors]
+cursor          = {{ color_normalize_hex(base05) }}
+foreground      = {{ color_normalize_hex(base05) }}
+foreground_bold = {{ color_normalize_hex(base05) }}
+background      = rgba({{ bg[0] }}, {{ bg[1] }}, {{ bg[2] }}, 0.9)
+
+# 16 color space
+color0  = {{ color_normalize_hex(base00) }}
+color1  = {{ color_normalize_hex(base08) }}
+color2  = {{ color_normalize_hex(base0B) }}
+color3  = {{ color_normalize_hex(base0A) }}
+color4  = {{ color_normalize_hex(base0D) }}
+color5  = {{ color_normalize_hex(base0E) }}
+color6  = {{ color_normalize_hex(base0C) }}
+color7  = {{ color_normalize_hex(base05) }}
+color8  = {{ color_normalize_hex(base03) }}
+color9  = {{ color_normalize_hex(base08) }}
+color10 = {{ color_normalize_hex(base0B) }}
+color11 = {{ color_normalize_hex(base0A) }}
+color12 = {{ color_normalize_hex(base0D) }}
+color13 = {{ color_normalize_hex(base0E) }}
+color14 = {{ color_normalize_hex(base0C) }}
+color15 = {{ color_normalize_hex(base07) }}
+
+# 256 color space
+color16 = {{ color_normalize_hex(base09) }}
+color17 = {{ color_normalize_hex(base0F) }}
+color18 = {{ color_normalize_hex(base01) }}
+color19 = {{ color_normalize_hex(base02) }}
+color20 = {{ color_normalize_hex(base04) }}
+color21 = {{ color_normalize_hex(base06) }}

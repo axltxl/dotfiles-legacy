@@ -1,0 +1,11 @@
+---
+###############
+# Font settings
+###############
+font_term: Roboto for Powerline
+font_term_size: 12
+font: SFNS Display
+font_size: 14
+font_dpi: 96
+font_antialiasing: true
+font_hinting: true
