@@ -4,25 +4,25 @@
  ##############################
  # vim: ft=jinja cms=#%s
  #}
+
+{# Include all templates #}
 {% include "base.j2" %}
-
 {% include "keys.j2" %}
-
 {% include "floatmod.j2" %}
-
 {% include "fonts.j2" %}
-
 {% include "startup_programs.j2" %}
-
 {% include "colors.j2" %}
-
 {% include "windows.j2" %}
-
 {% include "bar.j2" %}
 
+{#
+ ################################################
+ # Additionally, custom templates can be added
+ # to this recipe if listed within i3_custom_tpls
+ ################################################
+#}
 {% if i3_custom_tpls|length %}
     {%- for i3_tpl in i3_custom_tpls %}
         {%- include i3_tpl %}
-
     {%- endfor %}
 {% endif %}
