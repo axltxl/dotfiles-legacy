@@ -2,16 +2,16 @@
  ###################################
  # i3wm base configuration variables
  ##################################
- # vim ft=jinja
+ # vim: ft=jinja
  #}
 
 # One prefix to rule them all
 set $mod {{ i3_key_mod|default('Mod1') }}
 set $alt {{ i3_key_alt|default('Shift') }}
 
-# Font-related variables
+# Font-related variable
 set $font pango: {{ font|default('DejaVu Sans') }}
-set $font_size   {{ font_size|default(10) }}
+set $font_size   {{ (font_size-2)|default(10) }}
 
 # i3lock wrapper
 set $autolock screenlock
@@ -38,7 +38,7 @@ set $browser_class chromium-browser
 
 # terminal of choice
 set $term {{ term|default('i3-sensible-terminal') }}
-set $term_class {{ term_class|default('UXrvt') }}
+set $term_class {{ x11_winclass_term|default('UXrvt') }}
 
 # i3pystatus
 set $i3pystatus_py   ~/.i3/pystatus/bin/python3
