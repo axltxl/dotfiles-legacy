@@ -5,4 +5,4 @@
 
 # This is actually A TEMPORARY MEASURE
 # All variables should be in ~/.local/share/zenfig/vars
-export ZF_VAR_PATH=${HOME}/.base16/schemes/${BASE16_SCHEME}.yml
+export ZF_VAR_PATH=${HOME}/.base16/schemes/${BASE16_SCHEME}.yml:$ZF_VAR_PATH
