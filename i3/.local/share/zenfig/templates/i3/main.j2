@@ -1,0 +1,28 @@
+{#
+ ##############################
+ # Configuration file template for i3
+ ##############################
+ # vim: ft=jinja cms=#%s
+ #}
+{% include "base.j2" %}
+
+{% include "keys.j2" %}
+
+{% include "floatmod.j2" %}
+
+{% include "fonts.j2" %}
+
+{% include "startup_programs.j2" %}
+
+{% include "colors.j2" %}
+
+{% include "windows.j2" %}
+
+{% include "bar.j2" %}
+
+{% if i3_custom_tpls|length %}
+    {%- for i3_tpl in i3_custom_tpls %}
+        {%- include i3_tpl %}
+
+    {%- endfor %}
+{% endif %}

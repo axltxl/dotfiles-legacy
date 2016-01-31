@@ -3,3 +3,7 @@
 
 # Make sure base directories are set beforehand
 mkdir -p ${HOME}/.i3/conf.d
+
+# zenfig directories must be created
+mkdir -p ${HOME}/.local/share/zenfig/templates/i3
+mkdir -p ${HOME}/.local/share/zenfig/vars
