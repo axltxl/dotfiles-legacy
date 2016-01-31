@@ -4,13 +4,15 @@
 ##########################
 
 xrdb_dir=${HOME}/.Xresources.d
+xrdb_tpl_dir=${HOME}/.local/share/zenfig/templates/X11
+xrdb_tpl_file=${xrdb_tpl_dir}/colors.j2
 xrdb_file_colors=${xrdb_dir}/colors
 
 if [[ "$1" != "--no-template" ]]; then
     # color palette is generated from a template
     # this is especially cool since switching from
     # a color scheme to another is a bliss
-    base16 -t X11/colors.erb > $xrdb_file_colors
+    zenfig $xrdb_tpl_file --output-file $xrdb_file_colors
 fi
 
 # Update Xresources
