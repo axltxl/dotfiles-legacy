@@ -3,32 +3,13 @@
 # i3 config generator
 #####################
 
-# essential variables
+# Essential variables
 i3_home=${HOME}/.i3
 i3_conf=${i3_home}/config
-i3_conf_dir=${i3_home}/conf.d
 i3_tpl_dir=${HOME}/.local/share/zenfig/templates/i3
 
 # first of all, remove current config
-#rm -f $i3_conf
+rm -f $i3_conf
 
-# generate the thing with base 16
-#b16_gen() {
-    #base16 -t i3/${1}.erb > $i3_conf_dir/${2}-${1}
-#}
-
-# generate base colors
-#b16_gen colors  10
-
-#########################################################
-# summarize all files inside conf.d into a single config
-########################################################
-#for conf_file in $i3_conf_dir/*; do
-    #echo "# ==> $conf_file" >> $i3_conf
-    #cat $conf_file >> $i3_conf
-    #echo >> $i3_conf
-#done
-
-# Generate colors python module for i3pystatus
-#base16 -t i3/colors.py.erb > $i3_home/colors.py
-zenfig -v $i3_tpl_dir
+# Generate config file from templates
+zenfig $i3_tpl_dir -o $i3_conf
