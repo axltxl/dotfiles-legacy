@@ -1,9 +1,11 @@
 #!/usr/bin/env zsh
+set -e
 ###########################
 # termite colorscheme generator
 ###########################
 
 # essential variables
+termite_tpl_dir=${HOME}/.local/share/zenfig/templates/termite
 termite_conf_dir=${HOME}/.config/termite
 termite_conf=${termite_conf_dir}/config
 
@@ -11,4 +13,4 @@ termite_conf=${termite_conf_dir}/config
 rm -f $termite_conf
 
 # Generate colors python module for termitepystatus
-base16 -t termite/config.erb > $termite_conf
+zenfig $termite_tpl_dir > $termite_conf

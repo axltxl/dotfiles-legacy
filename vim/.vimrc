@@ -49,6 +49,9 @@ Plug 'tfnico/vim-gradle'
 " golang
 Plug 'fatih/vim-go', {'for': ['go']}
 
+" jinja2
+Plug 'mitsuhiko/vim-jinja'
+
 " Add plugins to &runtimepath
 call plug#end() " vim-plug
 

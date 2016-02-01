@@ -1,0 +1,8 @@
+---
+############################
+# i3wm settings
+############################
+
+# Basic key bindings
+i3_key_mod: Mod1
+i3_key_alt: Shift
