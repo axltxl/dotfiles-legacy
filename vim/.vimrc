@@ -25,6 +25,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'benekastah/neomake'
 Plug 'djoshea/vim-autoread'
 Plug 'airblade/vim-rooter'
+Plug 'terryma/vim-multiple-cursors'
 
 " look and feel
 Plug 'nathanaelkane/vim-indent-guides'
