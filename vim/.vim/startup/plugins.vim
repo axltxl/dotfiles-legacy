@@ -143,3 +143,5 @@ let g:rooter_patterns = [
 """"""
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 
+" Map start key separately from next key
+let g:multi_cursor_start_key='<Leader>vc'

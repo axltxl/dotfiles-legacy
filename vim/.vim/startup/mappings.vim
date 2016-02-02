@@ -5,6 +5,14 @@ set laststatus=2
 vnoremap <ESC> <NOP>
 inoremap <ESC> <NOP>
 
+"""""""""""""""""""""""""""""""""
+" ESC and Ctrl+C are not the same
+" Source:  http://unix.stackexchange.com/questions/40086/exiting-block-insert-mode-with-ctrl-c/42419#42419
+"""""""""""""""""""""""""""""""""
+vnoremap <C-c> <ESC>
+inoremap <C-c> <ESC>
+
+
 """""""""""""""""""""""""
 " Leave Ex mode, for good
 """""""""""""""""""""""""
