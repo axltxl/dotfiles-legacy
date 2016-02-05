@@ -61,9 +61,6 @@ map <leader>p :set list!<CR>
 " Quicksave
 nnoremap <leader>vs :w<CR>
 
-" Duplicate line
-nnoremap <leader>yy yyp
-
 " Reload .vimrc at will
 nnoremap <leader>vr :source ~/.vimrc<CR>
 "
