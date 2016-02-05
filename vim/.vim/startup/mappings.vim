@@ -78,5 +78,5 @@ map <leader>wv :vsplit<CR>
 map <leader>wb :split<CR>
 
 " Reload file
-nnoremap <F5> :e!<CR>
+nnoremap <leader>fr :e!<CR>
 
