@@ -5,7 +5,6 @@ set -e
 ###########################
 
 # essential variables
-termite_tpl_dir=${HOME}/.local/share/zenfig/templates/termite
 termite_conf_dir=${HOME}/.config/termite
 termite_conf=${termite_conf_dir}/config
 
@@ -13,4 +12,4 @@ termite_conf=${termite_conf_dir}/config
 rm -f $termite_conf
 
 # Generate colors python module for termitepystatus
-zenfig $termite_tpl_dir > $termite_conf
+zenfig -k termite > $termite_conf
