@@ -75,9 +75,9 @@ map <Leader>k :wincmd k<CR>
 map <Leader>l :wincmd l<CR>
 
 " Easy window splitting
-map <leader>wv :vsplit<CR>
-map <leader>wb :split<CR>
+map <Leader>wv :vsplit<CR>
+map <Leader>wb :split<CR>
 
 " Reload file
-nnoremap <leader>fr :e!<CR>
+nnoremap <Leader>fr :e!<CR>
 
