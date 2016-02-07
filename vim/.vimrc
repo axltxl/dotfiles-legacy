@@ -25,7 +25,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'benekastah/neomake'
 Plug 'djoshea/vim-autoread'
 Plug 'airblade/vim-rooter'
-Plug 'terryma/vim-multiple-cursors'
+Plug 'takac/vim-hardtime'
+Plug 'terryma/vim-expand-region'
 
 " look and feel
 Plug 'nathanaelkane/vim-indent-guides'
