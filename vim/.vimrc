@@ -26,7 +26,6 @@ Plug 'benekastah/neomake'
 Plug 'djoshea/vim-autoread'
 Plug 'airblade/vim-rooter'
 Plug 'takac/vim-hardtime'
-Plug 'terryma/vim-expand-region'
 
 " look and feel
 Plug 'nathanaelkane/vim-indent-guides'
