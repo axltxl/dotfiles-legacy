@@ -142,3 +142,11 @@ autocmd FileType java setlocal omnifunc=javacomplete#Complete
 
 " Map start key separately from next key
 let g:multi_cursor_start_key='<Leader>vc'
+
+
+""""""""""""""""
+" Hard time mode
+""""""""""""""""
+let g:hardtime_default_on = 1
+let g:hardtime_timeout    = 2000
+let g:hardtime_showmsg    = 1
