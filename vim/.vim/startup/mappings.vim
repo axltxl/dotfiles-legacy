@@ -55,20 +55,24 @@ let mapleader = "\<Space>"
 " From this point, you can use you leader keys
 """"""""""""""""""""""""""""""""""""""""""""""
 
+""""""""""""""""""""""
+" Vim-related mappings
+""""""""""""""""""""""
+
 " Shortcut to rapidly toggle `set list`
-map <leader>p :set list!<CR>
+map <Leader>vl :set list!<CR>
 
 " Quicksave
-nnoremap <leader>vs :w<CR>
+nnoremap <Leader>vs :w<CR>
 
 " Reload .vimrc at will
-nnoremap <leader>vr :source ~/.vimrc<CR>
+nnoremap <Leader>vr :source ~/.vimrc<CR>
 "
 " Easy splitted window navigation
-map <leader>h :wincmd h<CR>
-map <leader>j :wincmd j<CR>
-map <leader>k :wincmd k<CR>
-map <leader>l :wincmd l<CR>
+map <Leader>h :wincmd h<CR>
+map <Leader>j :wincmd j<CR>
+map <Leader>k :wincmd k<CR>
+map <Leader>l :wincmd l<CR>
 
 " Easy window splitting
 map <leader>wv :vsplit<CR>
