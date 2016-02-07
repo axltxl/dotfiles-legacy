@@ -48,7 +48,7 @@ vnoremap > >gv
 """"""""""""""""
 " Map leader key
 """"""""""""""""
-let mapleader = ";"
+let mapleader = "\<Space>"
 
 
 """"""""""""""""""""""""""""""""""""""""""""""
