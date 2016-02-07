@@ -50,10 +50,17 @@ map  N <Plug>(easymotion-prev)
 " gitgutter
 """"""""""""""""""
 let g:gitgutter_eager = 0
-nmap <Leader>ha <Plug>GitGutterStageHunk
-nmap <Leader>hu <Plug>GitGutterRevertHunk
-nmap <Leader>hp <Plug>GitGutterPreviousHunk
-nmap <Leader>hn <Plug>GitGutterNextHunk
+nmap <Leader>ga <Plug>GitGutterStageHunk
+nmap <Leader>gu <Plug>GitGutterRevertHunk
+nmap <Leader>gp <Plug>GitGutterPrevHunk
+nmap <Leader>gn <Plug>GitGutterNextHunk
+"
+" Custom fancy signs
+let g:gitgutter_sign_added = ""
+let g:gitgutter_sign_removed = ""
+let g:gitgutter_sign_modified = ""
+let g:gitgutter_sign_modified_removed = ""
+
 
 """"""""""""""""""
 " UltiSnips configuration
