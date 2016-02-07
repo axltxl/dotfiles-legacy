@@ -91,7 +91,8 @@ let g:neomake_open_list = 2
 """"""""""""
 " winresizer
 """"""""""""
-nnoremap <leader>wr :WinResizerStartResize<CR>
+let g:winresizer_start_key = '<Leader>wr'
+
 
 """""
 " fzf
