@@ -25,12 +25,6 @@ map <Leader>w :NERDTreeToggle<CR>
 
 
 """"""""""""""""""
-" CtrlP
-""""""""""""""""""
-let g:ctrlp_show_hidden = 1 " Show hidden files
-
-
-""""""""""""""""""
 " easymotion
 """"""""""""""""""
 " Turn on case insensitive feature
@@ -40,7 +34,7 @@ let g:EasyMotion_smartcase = 1
 " keep cursor column when JK motion
 let g:EasyMotion_startofline = 0
 
-" Gif config
+" Search mode for easymotion
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
 
@@ -122,10 +116,12 @@ nmap <Leader>fw :FzfWindows<CR>
 nmap <Leader>fh :FzfHistory:<CR>
 nmap q: :FzfHistory:<CR>
 
+
 """""""""""""""""""
 " vim-indent-guides
 """"""""""""""""""
 let g:indent_guides_enable_on_vim_startup = 1
+
 
 """"""""""""
 " vim-rooter
@@ -137,6 +133,7 @@ let g:rooter_patterns = [
     \ '.classpath',
     \ 'build.gradle',
     \]
+
 
 """"""
 " java
