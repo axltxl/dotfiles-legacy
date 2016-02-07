@@ -4,6 +4,7 @@
 set laststatus=2
 vnoremap <ESC> <NOP>
 inoremap <ESC> <NOP>
+cnoremap <ESC> <NOP>
 
 """""""""""""""""""""""""""""""""
 " ESC and Ctrl+C are not the same
@@ -11,6 +12,7 @@ inoremap <ESC> <NOP>
 """""""""""""""""""""""""""""""""
 vnoremap <C-c> <ESC>
 inoremap <C-c> <ESC>
+cnoremap <C-c> <ESC>
 
 
 """""""""""""""""""""""""
@@ -22,20 +24,27 @@ nnoremap Q <NOP>
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " Disable arrow keys in both visual and insert mode
 """""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <Up> <NOP>
-nnoremap <Down> <NOP>
-nnoremap <Left> <NOP>
+nnoremap <Up>    <NOP>
+nnoremap <Down>  <NOP>
+nnoremap <Left>  <NOP>
 nnoremap <Right> <NOP>
-inoremap <Up> <NOP>
-inoremap <Down> <NOP>
-inoremap <Left> <NOP>
+inoremap <Up>    <NOP>
+inoremap <Down>  <NOP>
+inoremap <Left>  <NOP>
 inoremap <Right> <NOP>
+cnoremap <Up>    <NOP>
+cnoremap <Down>  <NOP>
+cnoremap <Left>  <NOP>
+cnoremap <Right> <NOP>
 
 
 """"""""""""""""""""""""""""""""""""""
-" Disable backspace key in insert mode
+" Disable backspace key in all modes
 """"""""""""""""""""""""""""""""""""""
 inoremap <BS> <NOP>
+vnoremap <BS> <NOP>
+nnoremap <BS> <NOP>
+cnoremap <BS> <NOP>
 
 
 """"""""""""""""""""""""""""""""""""""""""""
