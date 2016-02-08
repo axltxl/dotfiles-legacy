@@ -21,7 +21,7 @@ let g:tagbar_vertical = 20
 """"""""""""""""""
 " NERDtree
 """"""""""""""""""
-map <Leader>w :NERDTreeToggle<CR>
+map <Leader>tt :NERDTreeToggle<CR>
 
 
 """"""""""""""""""
