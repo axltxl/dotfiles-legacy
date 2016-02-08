@@ -14,7 +14,7 @@ let g:airline_theme = 'dot'
 """"""""""""""""""
 " Tagbar
 """"""""""""""""""""
-nmap <Leader>q :TagbarToggle<CR>
+nmap <Leader>qq :TagbarToggle<CR>
 let g:tagbar_vertical = 20
 
 
