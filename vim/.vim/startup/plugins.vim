@@ -54,12 +54,20 @@ nmap <Leader>ga <Plug>GitGutterStageHunk
 nmap <Leader>gu <Plug>GitGutterRevertHunk
 nmap <Leader>gp <Plug>GitGutterPrevHunk
 nmap <Leader>gn <Plug>GitGutterNextHunk
-"
+
 " Custom fancy signs
 let g:gitgutter_sign_added = ""
 let g:gitgutter_sign_removed = ""
 let g:gitgutter_sign_modified = ""
 let g:gitgutter_sign_modified_removed = ""
+
+
+""""""""""
+" Fugitive
+""""""""""
+nmap <Leader>gc :Gcommit -m
+nmap <Leader>gs :Gstatus<CR>
+nmap <Leader>gp :Gpush<CR>
 
 
 """"""""""""""""""
@@ -147,9 +155,6 @@ let g:rooter_patterns = [
 " java
 """"""
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
-
-" Map start key separately from next key
-let g:multi_cursor_start_key='<Leader>vc'
 
 
 """"""""""""""""
