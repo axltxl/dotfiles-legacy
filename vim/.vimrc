@@ -77,6 +77,6 @@ source ~/.vim/startup/plugins.vim
 source ~/.vim/startup/autocmds.vim
 
 " custom settings go in here
-if filereadable("~/.vim/startup/custom.vim")
+if filereadable(glob("~/.vim/startup/custom.vim"))
     source ~/.vim/startup/custom.vim
 endif
