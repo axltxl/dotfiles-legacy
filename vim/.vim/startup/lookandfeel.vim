@@ -11,7 +11,7 @@ endif
 set showcmd                                 " Show partial commands in the last line of the screen
 syntax on                                   " Activate syntax highlightning
 set background=dark                         " Set the dark background
-colorscheme base16                          " Color scheme
+colorscheme molokai                         " Color scheme
 set colorcolumn=80                          " Set up a line length marker
 set relativenumber                          " Show line numbers relative to current line
 set number                                  " Display line numbers on the left

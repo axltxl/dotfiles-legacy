@@ -29,7 +29,9 @@ Plug 'takac/vim-hardtime'
 
 " look and feel
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'bling/vim-airline'
+Plug 'flazz/vim-colorschemes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'jimsei/winresizer'
 
 " Fuzzy finder
