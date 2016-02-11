@@ -28,10 +28,12 @@ nnoremap <Up>    <NOP>
 nnoremap <Down>  <NOP>
 nnoremap <Left>  <NOP>
 nnoremap <Right> <NOP>
+
 inoremap <Up>    <NOP>
 inoremap <Down>  <NOP>
 inoremap <Left>  <NOP>
 inoremap <Right> <NOP>
+
 cnoremap <Up>    <NOP>
 cnoremap <Down>  <NOP>
 cnoremap <Left>  <NOP>
