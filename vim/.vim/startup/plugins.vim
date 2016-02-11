@@ -158,9 +158,7 @@ let g:rooter_patterns = [
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 
 
-""""""""""""""""
-" Hard time mode
-""""""""""""""""
-let g:hardtime_default_on = 1
-let g:hardtime_timeout    = 2000
-let g:hardtime_showmsg    = 1
+""""""""""""""""""""""""""""""""""
+" Habit breaking, habit making ...
+""""""""""""""""""""""""""""""""""
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
