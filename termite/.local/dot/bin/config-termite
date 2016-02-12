@@ -12,4 +12,4 @@ termite_conf=${termite_conf_dir}/config
 rm -f $termite_conf
 
 # Generate configuration from zenfig
-zenfig -k termite > $termite_conf
+zenfig install axltxl/termite
