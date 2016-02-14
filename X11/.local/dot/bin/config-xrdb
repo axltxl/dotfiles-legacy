@@ -12,7 +12,7 @@ if [[ "$1" != "--no-template" ]]; then
     # color palette is generated from a template
     # this is especially cool since switching from
     # a color scheme to another is a bliss
-    zenfig $xrdb_tpl_file --output-file $xrdb_file_colors
+    zenfig install axltxl/rofi
 fi
 
 # Update Xresources
