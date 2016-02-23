@@ -6,7 +6,7 @@
 # Essential variables
 i3_home=${HOME}/.i3
 i3_conf=${i3_home}/config
-i3_tpl_dir=${HOME}/.local/share/zenfig/templates/i3
+i3_kit_ver=0.0.2
 i3bar_colors_conf=${i3_home}/colors.py
 
 # first of all, remove current config
@@ -14,7 +14,7 @@ rm -f $i3_conf
 rm -f $i3bar_colors_conf
 
 # Generate colors for i3pystatus
-zenfig install axltxl/i3
+zenfig install axltxl/i3==$i3_kit_ver
 
 # Since ~/.i3 is a physical directory rather than a
 # symlink, in order consistently load colors.py as a
