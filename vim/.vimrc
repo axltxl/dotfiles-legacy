@@ -64,9 +64,6 @@ call plug#end() " vim-plug
 " Load custom settings
 """"""""""""""""""""""
 
-" Get color scheme
-source ~/.vim/colors/base16.vim"
-
 " Look and feel settings
 source ~/.vim/startup/lookandfeel.vim
 
