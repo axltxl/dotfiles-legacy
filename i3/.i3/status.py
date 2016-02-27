@@ -90,7 +90,7 @@ if os.path.exists('/sys/class/backlight/{}'.format(backlight)):
 # show battery status
 status.register("battery",
         full_color=color_good,
-        format="  {percentage:>3}% ({remaining:>3}%)}",
+        format="  {percentage:>3.02f}%",
         alert=True,
         alert_percentage=20,
         critical_color=color_bad,
