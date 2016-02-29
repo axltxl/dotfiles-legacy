@@ -46,14 +46,16 @@ status.register("mem",
 # (defaults of format_down and color_down)
 #
 # Note: the network module requires PyPI package netifaces
-net_iface = "eth0"
+# TODO: temporary, net_iface should get its_value from either
+# zenfig or an environment variable
+net_iface = "wlan0"
 if net_iface == "wlan0":
     net_fmt=" {essid:.16} ({quality:>6}%) {kbs:>8} kB/s"
 else:
     net_fmt="  {kbs:^06} kB/s"
 
 status.register("network",
-    interface="eth0",
+    interface=net_iface,
     dynamic_color=False,
     on_leftclick="wicd-gtk",
     format_up=net_fmt,
