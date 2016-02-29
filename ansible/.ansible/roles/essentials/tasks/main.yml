@@ -67,6 +67,11 @@
   with_items:
     - zsh
 
+- name: ntp
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - ntp
+
 - name: ruby
   apt: pkg={{ item }} state=latest
   with_items:
@@ -80,7 +85,6 @@
       - hfsprogs
       - exfat-utils
       - dosfstools
-
 
 - name: Utilities for monitoring processes
   apt: pkg={{ item }} state=latest
@@ -240,13 +244,6 @@
 
       # torrents are awesome
     - transmission-gtk
-
-
-- name: keepass2
-  apt: pkg={{ item }} state=latest
-  with_items:
-    - keepass2 # password manager
-    - mono-complete
 
 - name: GTK+ engines
   apt: pkg={{ item }} state=latest
