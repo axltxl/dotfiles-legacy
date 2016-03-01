@@ -1,0 +1,47 @@
+---
+# ---------------------------
+# i3 window manager
+# ---------------------------
+
+- name: libiw (for i3pystatus)
+  apt:
+    state: installed
+    pkg: libiw-dev
+
+# our beloved window manager
+- name: i3 window manager
+  apt:
+    pkg: i3
+    state: latest
+    default_release: '{{ debian_release }}-backports'
+
+- name: i3pystatus
+  pip:
+      name: '{{ item }}'
+      state: latest
+      executable: pip3
+      virtualenv: '{{ i3_venv }}'
+      virtualenv_command: pyvenv
+  with_items:
+      - i3pystatus
+      - netifaces
+      - psutil
+      - colour
+      - basiciw
+
+- name: setup i3 home directory
+  file:
+    path: '{{ i3_base }}'
+    owner: '{{ user_name }}'
+    group: '{{ user_name }}'
+    state: directory
+    recurse: yes
+
+- name: setup i3pystatus virtualenv folder
+  file:
+    mode: 0755
+    recurse: yes
+    owner: '{{ user_name }}'
+    group: '{{ user_name }}'
+    state: directory
+    path: '{{ i3_venv }}'
