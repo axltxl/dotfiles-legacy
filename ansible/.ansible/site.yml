@@ -90,6 +90,7 @@
       - apt
       - dotdeb
       - essentials
+      - i3wm
       - openssh
       - rclone
       - spotify
