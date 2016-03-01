@@ -45,3 +45,17 @@
     group: '{{ user_name }}'
     state: directory
     path: '{{ i3_venv }}'
+
+- name: i3lock at suspend time (systemd service file)
+  template:
+    mode: 0644
+    group: root
+    owner: root
+    src: i3lock@.service
+    dest: /lib/systemd/system/i3lock@.service
+
+- name: i3lock at suspend time (systemd service enable)
+  service:
+    name: i3lock@{{ user_name }}.service
+    enabled: yes
+

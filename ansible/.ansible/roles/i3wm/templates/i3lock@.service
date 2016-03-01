@@ -10,7 +10,7 @@ User=%I
 Type=forking
 Environment=DISPLAY=:0
 ExecStartPre=
-ExecStart=screenlock
+ExecStart=/home/{{ user_name }}/.local/dot/bin/screenlock
 
 [Install]
 WantedBy=sleep.target
