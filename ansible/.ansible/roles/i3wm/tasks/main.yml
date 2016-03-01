@@ -59,3 +59,12 @@
     name: i3lock@{{ user_name }}.service
     enabled: yes
 
+- name: power management (systemd-logind)
+  copy:
+    mode: 0644
+    owner: root
+    group: root
+    src: logind.conf
+    dest: /etc/systemd/logind.conf
+  notify:
+    - restart systemd-logind
