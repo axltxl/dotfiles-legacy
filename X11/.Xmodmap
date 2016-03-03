@@ -15,7 +15,6 @@ keycode 37 =
 
 !-------------------------------------------------------------------------------
 ! Some laptops don't have a natural Super_R
-! The usual Control_R is larger on those therefore
 !-------------------------------------------------------------------------------
 keycode 105 = Super_R
 
@@ -30,3 +29,9 @@ add Control = Control_L
 !-------------------------------------------------------------------------------
 !keycode 117 = Caps_Lock
 !add Lock = Caps_Lock
+
+!-------------------------------------------------------------------------------
+! Menu key is AltGr
+! (there are laptops with Menu key between AltGr and Control_R)
+!-------------------------------------------------------------------------------
+keycode 135 = Meta_L
