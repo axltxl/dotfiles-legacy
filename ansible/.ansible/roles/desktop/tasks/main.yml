@@ -1,0 +1,83 @@
+---
+# ---------------------------
+# Desktop essentials
+# ---------------------------
+
+- name: Desktop essentials
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - xorg
+    - xautolock
+    - xutils
+    - xclip
+    - xbacklight
+    - arandr
+    - xsel
+    - lightdm
+    - keynav # I definitely avoid using mouse at all costs
+    - compton # compositor
+    - colortest # For testing color on terminals
+    - scrot # screenshots
+    - libnotify-bin
+    - inotify-tools
+
+- name: /etc/X11/xorg.conf.d
+  file:
+    state: directory
+    owner: root
+    group: root
+    recurse: yes
+    path: /etc/X11/xorg.conf.d
+
+- name: system-wide fonts
+  apt: pkg={{ item }} state=latest
+  with_items:
+      - fonts-liberation
+      - fonts-droid
+      - fonts-noto
+
+- name: User apps
+  apt: pkg={{ item }} state=latest
+  with_items:
+      # Our beloved web browsers
+    - links
+    - chromium
+
+      # Userland apps
+    - irssi # IRC client
+    - mesa-utils # utilities for GL
+    - zathura # PDF reader
+    - lxappearance # For setting up GTK
+    - gpicview # pictures viewer
+    - gimp # Image editor
+    - smplayer # my video player
+    - pepperflashplugin-nonfree # flash player
+    - shutter # advanced screenshots
+    - gdebi # commodity for dealing with deb packages
+
+      # Our beloved file manager
+    - pcmanfm
+    - xarchiver
+
+      # Wallpaper setter
+    - nitrogen
+
+      # torrents are awesome
+    - transmission-gtk
+
+- name: file systems utilities
+  apt: pkg={{ item }} state=latest
+  with_items:
+      - gparted
+
+- name: GTK+ engines
+  apt: pkg={{ item }} state=latest
+  with_items:
+      - gtk2-engines-murrine
+
+- name: networking tools
+  apt: pkg={{ item }} state=latest
+  with_items:
+    # network management
+    - wicd-gtk
+

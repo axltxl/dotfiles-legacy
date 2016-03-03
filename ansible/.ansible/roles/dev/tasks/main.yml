@@ -1,0 +1,32 @@
+---
+# ---------------------------
+# Development tools
+# ---------------------------
+
+- name: development tools
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - strace
+    - build-essential
+    - bc
+    - automake
+    - autoconf
+    - libtool
+    - libtool-bin
+    - pkg-config
+    - libtool
+    - mercurial
+    - gdb
+    - cgdb
+    - cmake-curses-gui
+
+- name: neovim python2 support
+  pip:
+      name: neovim
+      state: latest
+
+- name: neovim python3 support
+  pip:
+      name: neovim
+      state: latest
+      executable: pip3
