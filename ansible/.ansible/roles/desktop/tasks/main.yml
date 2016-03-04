@@ -66,6 +66,9 @@
       # torrents are awesome
     - transmission-gtk
 
+      # cd/dvd burner
+    - brasero
+
 - name: file systems utilities
   apt: pkg={{ item }} state=latest
   with_items:
