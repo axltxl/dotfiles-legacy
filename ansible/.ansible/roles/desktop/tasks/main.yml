@@ -20,6 +20,7 @@
     - scrot # screenshots
     - libnotify-bin
     - inotify-tools
+    - evtest  # For testing out touchpads
 
 - name: /etc/X11/xorg.conf.d
   file:
