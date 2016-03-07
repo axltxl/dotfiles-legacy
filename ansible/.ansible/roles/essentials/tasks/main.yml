@@ -39,6 +39,12 @@
       - whois
       - findutils
       - locate
+
+- name: Codecs
+  apt: pkg={{ item }} state=latest
+  with_items:
+      - tar
+      - zip
       - unzip
       - unrar
 
