@@ -6,3 +6,21 @@
 # Basic key bindings
 i3_key_mod: Mod1
 i3_key_alt: Shift
+
+# Startup programs
+i3_startup_exec:
+    - dot-xrandr-setup
+    - compton
+    - wicd-gtk --tray
+    - xautolock -time 8 -locker $autolock
+    - pulseaudio --start
+    - dot-stow-manager
+    - dunst --config ~/.config/dunst/dunstrc
+    - syndaemon -i 0.75
+    - volnoti -t 1 -a 0.20 -r 40
+    - keynav
+    - pcmanfm -d
+
+i3_startup_exec_always:
+    - nitrogen --restore
+
