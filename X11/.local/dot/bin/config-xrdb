@@ -4,14 +4,15 @@
 ##########################
 
 xrdb_dir=${HOME}/.Xresources.d
-xrdb_tpl_dir=${HOME}/.local/share/zenfig/templates/X11
-xrdb_tpl_file=${xrdb_tpl_dir}/colors.j2
-xrdb_file_colors=${xrdb_dir}/colors
 rofi_kit_ver=develop
+xft_kit_ver=develop
 
 if [[ "$1" != "--no-template" ]]; then
     # Get rofi settings
     zenfig install axltxl/rofi==$rofi_kit_ver
+
+    # xft settings
+    zenfig install axltxl/xft==$xft_kit_ver
 fi
 
 # Update Xresources
