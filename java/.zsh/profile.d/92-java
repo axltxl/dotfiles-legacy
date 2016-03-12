@@ -15,7 +15,4 @@ if [[ ! -z "$JAVA_HOME" ]]; then
     if [[ ! -z "$GRADLE_HOME" ]]; then
         PATH="$GRADLE_HOME/bin:$PATH"
     fi
-
 fi
-
-
