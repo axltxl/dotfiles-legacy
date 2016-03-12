@@ -3,17 +3,21 @@
 ################################
 from i3pystatus import Status
 import os
-import colors
+import zenfig
 
 # Get status bar
 status = Status(standalone=True)
 
-##############
-#color palette
-##############
-color_good = colors.base05
-color_warn = colors.base09
-color_bad  = colors.base08
+# Get variables from zenfig
+zenfig_vars = zenfig.get_user_vars()
+
+######################################################
+# color palette
+# TODO: replace formatting with exposed zenfig filters
+######################################################
+color_good = "#{}".format(zenfig_vars['color_base05'])
+color_warn = "#{}".format(zenfig_vars['color_base09'])
+color_bad  = "#{}".format(zenfig_vars['color_base08'])
 
 
 # Displays clock like this:
