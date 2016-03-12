@@ -127,3 +127,8 @@
       - android-tools-fastboot
       - android-tools-fsutils
 
+- name: printers and scanners
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - cups
+    - hplip # HP printers and scanners support
