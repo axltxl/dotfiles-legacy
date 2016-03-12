@@ -18,8 +18,5 @@ config-xrdb --no-template
 # Force dpi settings at low level
 xrandr --dpi $DISPLAY_DPI
 
-# Start all the things!
-dot-init-custom
-
 # Finally, execute window manager
 exec i3
