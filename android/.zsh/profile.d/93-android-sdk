@@ -1,0 +1,6 @@
+# vim: ft=zsh
+################################
+# Settings for Android SDK:
+################################
+
+[[ ! -z "$ANDROID_HOME" ]] && PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH
