@@ -8,10 +8,10 @@
 - hosts: 127.0.0.1
   vars:
       # dotdeb configuration
-      dotdeb_repo_version: jessie
+      dotdeb_repo_version: stretch
       dotdeb_extra_repo: False
       user_name: axltxl
-      debian_release: jessie
+      debian_release: stretch
 
       #######################
       # openssh configuration
