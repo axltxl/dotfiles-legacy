@@ -3,13 +3,6 @@
 # Essential packages
 # ---------------------------
 
-- name: debian backports
-  apt_repository:
-    repo: 'deb http://http.debian.net/debian {{ debian_release }}-backports main'
-    state: present
-    validate_certs: yes
-    update_cache: yes
-
 - name: non-free repos
   apt_repository:
     repo: '{{ item }}'
