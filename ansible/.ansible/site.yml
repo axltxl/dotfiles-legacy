@@ -87,7 +87,6 @@
 
   sudo: yes
   roles:
-      - apt
       - dotdeb
       - essentials
       - desktop
