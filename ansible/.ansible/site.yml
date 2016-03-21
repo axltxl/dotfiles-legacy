@@ -7,9 +7,6 @@
 # Apply common configuration to host
 - hosts: 127.0.0.1
   vars:
-      # dotdeb configuration
-      dotdeb_repo_version: stretch
-      dotdeb_extra_repo: False
       user_name: axltxl
       debian_release: stretch
 
@@ -87,7 +84,6 @@
 
   sudo: yes
   roles:
-      - dotdeb
       - essentials
       - desktop
       - synaptics
