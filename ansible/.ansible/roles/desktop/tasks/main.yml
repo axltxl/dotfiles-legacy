@@ -34,7 +34,6 @@
   apt: pkg={{ item }} state=latest
   with_items:
       - fonts-liberation
-      - fonts-droid
       - fonts-noto
 
 - name: User apps
