@@ -13,7 +13,6 @@
   apt:
     pkg: i3
     state: latest
-    default_release: '{{ debian_release }}-backports'
 
 - name: i3pystatus
   pip:
