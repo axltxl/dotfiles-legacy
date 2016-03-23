@@ -91,6 +91,6 @@
       - dev
       - openssh
       - rclone
-      #- spotify
+      - spotify
       - syncthing
       - docker
