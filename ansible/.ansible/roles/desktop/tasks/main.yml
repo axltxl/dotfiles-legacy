@@ -84,3 +84,9 @@
     # network management
     - wicd-gtk
 
+- name: bluetooth tools
+  apt: pkg={{ item }} state=latest
+  with_items:
+    # network management
+    - bluez
+    - blueman
