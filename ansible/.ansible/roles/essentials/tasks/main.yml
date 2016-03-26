@@ -132,3 +132,10 @@
   with_items:
     - cups
     - hplip # HP printers and scanners support
+
+- name: bluetooth support
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - bluez
+    - bluez-tools
+    - btscanner

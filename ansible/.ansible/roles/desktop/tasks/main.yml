@@ -88,5 +88,4 @@
   apt: pkg={{ item }} state=latest
   with_items:
     # network management
-    - bluez
     - blueman
