@@ -87,5 +87,9 @@
 - name: bluetooth tools
   apt: pkg={{ item }} state=latest
   with_items:
-    # network management
     - blueman
+
+- name: qt4 tools
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - qt4-qtconfig
