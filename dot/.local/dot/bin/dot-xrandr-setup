@@ -1,13 +1,18 @@
 #!/usr/bin/env zsh
 #####################
 # xrandr setup helper
+# This script will run a series
+# of shell scripts (or whatever)
+# found in ~/.screenlayout which
+# are supposed to customize screen
+# layout settings (such as display outputs)
 #####################
 set -e
-arandr_home_dir=${HOME}/.screenlayout
+xrandr_home_dir=${HOME}/.screenlayout
 
-if [[ -d $arandr_home_dir ]]; then
-    for arandr_script in ${arandr_home_dir}/*; do
-        $arandr_script
+if [[ -d $xrandr_home_dir ]]; then
+    for xrandr_script in ${xrandr_home_dir}/*; do
+        $xrandr_script
     done
 fi
 
