@@ -15,8 +15,9 @@ xsetroot -solid "#101010"
 # Update .Xresources
 config-xrdb --no-template
 
-# Force dpi settings at low level
-xrandr --dpi $DISPLAY_DPI
+# xrandr settings must be applied
+# before going into i3.
+dot-xrandr-setup
 
 # Finally, execute window manager
 exec i3
