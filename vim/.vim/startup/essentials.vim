@@ -44,6 +44,10 @@ set nobackup
 set nowritebackup
 set noswapfile
 
+"""""""""""""""""""""""""""""""""""""""""
+" Make sure the mouse does not interfere!
+"""""""""""""""""""""""""""""""""""""""""
+set mouse=""
 
 """""""""""""""""""""""""""
 " neovim-exclusive settings
