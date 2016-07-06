@@ -13,4 +13,4 @@ termite_tpl_ver=develop
 rm -f $termite_conf
 
 # Generate configuration from zenfig
-zenfig install axltxl/termite==$termite_tpl_ver
+zenfig install axltxl/zenfig-termite==$termite_tpl_ver

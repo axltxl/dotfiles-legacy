@@ -9,10 +9,10 @@ xft_kit_ver=develop
 
 if [[ "$1" != "--no-template" ]]; then
     # Get rofi settings
-    zenfig install axltxl/rofi==$rofi_kit_ver
+    zenfig install axltxl/zenfig-rofi==$rofi_kit_ver
 
     # xft settings
-    zenfig install axltxl/xft==$xft_kit_ver
+    zenfig install axltxl/zenfig-xft==$xft_kit_ver
 fi
 
 # Update Xresources

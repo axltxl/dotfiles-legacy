@@ -12,4 +12,4 @@ i3_kit_ver=develop
 rm -f $i3_conf
 
 # Generate colors for i3pystatus
-zenfig install axltxl/i3==$i3_kit_ver
+zenfig install axltxl/zenfig-i3==$i3_kit_ver
