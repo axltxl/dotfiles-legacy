@@ -12,6 +12,7 @@ nvim_deps=(vim-gtk)
 nvim_pkgs=(exuberant-ctags)
 nvim_sudo_bin=/usr/local/bin/nvim
 nvim_cmake_flags="CMAKE_EXTRA_FLAGS=-DCMAKE_INSTALL_PREFIX:PATH=$DOT_PATH"
+nvim_version="v0.1.4"
 
 # First of all, we need some dependencies
 dot_printf_install "nvim dependencies"
@@ -31,6 +32,7 @@ fi
 # Compile and install neovim
 cd $nvim_src
 rm -rf build
+git checkout $nvim_version
 make clean
 make CMAKE_BUILD_TYPE=Release $nvim_cmake_flags && make install || exit 1
 
