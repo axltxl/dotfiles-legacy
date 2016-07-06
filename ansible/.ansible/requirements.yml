@@ -1,5 +1,4 @@
 ---
-[]
 #- src: https://github.com/weareinteractive/ansible-ssh.git
   #version: master
   #name: openssh
