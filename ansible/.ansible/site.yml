@@ -44,7 +44,7 @@
       - synaptics
       - i3wm
       - dev
-      - openssh
+      #- openssh
       - rclone
       - spotify
       - syncthing
