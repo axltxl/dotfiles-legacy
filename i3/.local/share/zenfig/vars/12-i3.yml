@@ -10,8 +10,6 @@ i3_key_alt: Mod1
 # Startup programs
 i3_startup_exec:
     - dot-xrandr-setup
-    - compton
-    - wicd-gtk --tray
     - xautolock -time 8 -locker $autolock
     - pulseaudio --start
     - dot-stow-manager
