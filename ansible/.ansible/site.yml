@@ -10,26 +10,6 @@
       user_name: axltxl
       debian_release: stretch
 
-      #######################
-      # openssh configuration
-      #######################
-      # Protocol version
-      ssh_protocol: 2
-
-      # What ports, IPs and protocols we listen for
-      ssh_port:
-        - 50222
-
-      # Authentication
-      ssh_permit_root_login: 'no'
-      ssh_pubkey_authentication: 'yes'
-
-      # Change to no to disable tunnelled clear text passwords
-      ssh_password_authentication: 'no'
-
-      # start on boot? hell yes.
-      ssh_service_enabled: 'yes'
-
       ##################
       # i3 configuration
       ##################
