@@ -20,6 +20,7 @@ i3_startup_exec:
     - volnoti -t 1 -a 0.20 -r 40
     - keynav
     - pcmanfm -d
+    - dropbox start -i
 
 i3_startup_exec_always:
     - nitrogen --restore

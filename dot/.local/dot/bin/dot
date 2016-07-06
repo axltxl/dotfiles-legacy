@@ -67,7 +67,7 @@ _dot_stow() {
             [ -e ${dot_prestow_dir}/$i ] && . ${dot_prestow_dir}/$i
 
             # Try to find the package inside dotfiles directory
-            stow --verbose=1 -R -d $stow_dir -t $HOME $i
+            stow --verbose=1 -R -d $stow_dir -t $HOME $i --ignore=dropbox
 
             # post-stow invocation
             [ -e ${dot_poststow_dir}/$i ] && . ${dot_poststow_dir}/$i
@@ -86,7 +86,7 @@ _dot_unstow() {
             [ -e ${dot_preunstow_dir}/$i ] && . ${dot_preunstow_dir}/$i
 
             # Try to find the package inside dotfiles directory
-            stow --verbose=1 -D -d $stow_dir -t $HOME $i
+            stow --verbose=1 -D -d $stow_dir -t $HOME $i --ignore=dropbox
 
             # postunstow invocation
             [ -e ${dot_postunstow_dir}/$i ] && . ${dot_postunstow_dir}/$i
