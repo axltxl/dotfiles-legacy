@@ -1,5 +1,5 @@
 ---
 - src: https://github.com/weareinteractive/ansible-ssh.git
-  version: 1.2.0
+  version: master
   name: openssh
 
