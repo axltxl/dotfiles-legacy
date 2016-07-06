@@ -56,6 +56,9 @@ Plug 'fatih/vim-go', {'for': ['go']}
 " jinja2
 Plug 'mitsuhiko/vim-jinja'
 
+" Terraform
+Plug 'hashivim/vim-terraform'
+
 " Add plugins to &runtimepath
 call plug#end() " vim-plug
 
