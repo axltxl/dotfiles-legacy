@@ -14,7 +14,7 @@
       # openssh configuration
       #######################
       # Protocol version
-      ssh_protocol: '2'
+      ssh_protocol: 2
 
       # What ports, IPs and protocols we listen for
       ssh_port:
@@ -26,6 +26,9 @@
 
       # Change to no to disable tunnelled clear text passwords
       ssh_password_authentication: 'no'
+
+      # start on boot? hell yes.
+      ssh_service_enabled: 'yes'
 
       ##################
       # i3 configuration
