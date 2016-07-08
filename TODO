@@ -13,6 +13,9 @@
   - reorganize code into functions
   - check for sudo presence
   - big feature, debian sid out-of-the-box
+* migrate dunst to zenfig, at least something basic
+* Optimize zenfig-i3
+* For God's sake, do something about GTK icons on hdpi
 
 # Iteration 4:
 # ------------
