@@ -17,3 +17,4 @@
 * Optimize zenfig-i3
 * For God's sake, do something about GTK icons on hdpi
 * get rid of base16. Rename base16-* color test tools
+* Revamp tmux status bar
