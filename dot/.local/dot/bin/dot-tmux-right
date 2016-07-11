@@ -4,34 +4,20 @@
 ########################################
 set -e
 
-# wrapper whatever it's in with a nice
-# and rather fancy decoration for tmux
-_tmux_apply_style() {
-    local st_msg=$1
-    local fg=$2
-    echo "#[fg=${fg}]${st_msg}"
-}
-
 # output host name
 _tmux_hostname() {
-    echo $(_tmux_apply_style "$(hostname -f)" 112)
+    echo "$(hostname -f)"
 }
 
 # output date
 _tmux_date() {
-    local _date=$(date +"%H:%M")
-    echo $(_tmux_apply_style "$_date" red)
+    echo "$(date +"%H:%M")"
 }
 
 # get public ip from canihazip.com
 _tmux_ip() {
-    local ip_addr=$(curl icanhazip.com 2> /dev/null)
-    echo $(_tmux_apply_style "$ip_addr" red)
+    echo "$(curl icanhazip.com 2> /dev/null)"
 }
 
-# construct the final status message
-status_msg="${status_msg}$(_tmux_hostname)@$(_tmux_ip)"
-status_msg="${status_msg} $(_tmux_date)"
-
 # Output the whole thing
-echo $status_msg
+echo "$(_tmux_hostname)@$(_tmux_ip) $(_tmux_date)"
