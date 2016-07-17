@@ -46,10 +46,6 @@ Plug 'Valloric/YouCompleteMe', {'do': './install.py --gocode-completer --clang-c
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
-" Java
-Plug 'artur-shaik/vim-javacomplete2'
-Plug 'tfnico/vim-gradle'
-
 " golang
 Plug 'fatih/vim-go', {'for': ['go']}
 
