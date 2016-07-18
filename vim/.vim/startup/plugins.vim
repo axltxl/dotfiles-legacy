@@ -152,12 +152,6 @@ let g:rooter_patterns = [
     \]
 
 
-""""""
-" java
-""""""
-autocmd FileType java setlocal omnifunc=javacomplete#Complete
-
-
 """"""""""""""""""""""""""""""""""
 " Habit breaking, habit making ...
 """"""""""""""""""""""""""""""""""
