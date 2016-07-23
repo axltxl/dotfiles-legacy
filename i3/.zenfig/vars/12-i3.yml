@@ -17,8 +17,8 @@ i3_startup_exec:
     - syndaemon -i 0.75
     - volnoti -t 1 -a 0.20 -r 40
     - keynav
-    - pcmanfm -d
     - dropbox start -i
+    - pk-update-icon -d 10 -i 3600
 
 i3_startup_exec_always:
     - nitrogen --restore
