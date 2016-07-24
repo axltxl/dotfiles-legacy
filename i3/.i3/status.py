@@ -19,6 +19,13 @@ color_warn = "#{}".format(zenfig_vars['color_base09'])
 color_bad  = "#{}".format(zenfig_vars['color_base08'])
 
 
+# Display current weather
+status.register('weather',
+    colorize=True,
+    location_code='DAXX0009:1:DA', # Lovely CPH :)
+    units='metric'
+)
+
 # Displays clock like this:
 # Tue 30 Jul 11:59:46 PM KW31
 #                          ^-- calendar week
