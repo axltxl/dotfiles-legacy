@@ -84,7 +84,7 @@ status.register("disk",
 status.register("pulseaudio",
     color_muted=color_warn,
     color_unmuted=color_good,
-    format="  {volume:>03}",
+    format=" {volume:>3}%",
     format_muted="     ")
 
 # Show laptop backlight status
@@ -104,14 +104,12 @@ if os.path.exists('/sys/class/backlight/{}'.format(backlight)):
 # show battery status
 status.register("battery",
         full_color=color_good,
-        format="  {percentage:>3.02f}%",
+        format=" {percentage:>3.02f}%",
         alert=True,
         alert_percentage=20,
         critical_color=color_bad,
         not_present_text="",
         charging_color=color_good)
-
-
 
 # run the thing!
 status.run()
