@@ -22,6 +22,11 @@
     - inotify-tools
     - evtest  # For testing out touchpads
 
+    # Automatic updates caching and notifications
+    - apt-config-auto-update
+    - pk-update-icon
+    - gnome-packagekit
+
 - name: /etc/X11/xorg.conf.d
   file:
     state: directory
@@ -56,7 +61,7 @@
     - gdebi # commodity for dealing with deb packages
 
       # Our beloved file manager
-    - pcmanfm
+    - thunar
     - xarchiver
 
       # Wallpaper setter
