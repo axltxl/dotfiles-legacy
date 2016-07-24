@@ -19,6 +19,7 @@ i3_startup_exec:
     - keynav
     - dropbox start -i
     - pk-update-icon -d 10 -i 3600
+    - thunar --daemon
 
 i3_startup_exec_always:
     - nitrogen --restore

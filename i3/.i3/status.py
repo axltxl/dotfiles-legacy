@@ -80,6 +80,12 @@ status.register("pulseaudio",
     format="  {volume:>03}",
     format_muted="     ")
 
+# Show laptop backlight status
+status.register('backlight',
+        format=" {percentage}%",
+        interval=2,
+        backlight="intel_backlight")
+
 
 # show backlight brightness status
 backlight='acpi_video0'
