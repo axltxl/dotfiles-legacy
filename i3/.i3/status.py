@@ -13,7 +13,6 @@ zenfig_vars = zenfig.get_user_vars()
 
 ######################################################
 # color palette
-# TODO: replace formatting with exposed zenfig filters
 ######################################################
 color_good = "#{}".format(zenfig_vars['color_base05'])
 color_warn = "#{}".format(zenfig_vars['color_base09'])
@@ -23,22 +22,19 @@ color_bad  = "#{}".format(zenfig_vars['color_base08'])
 # Displays clock like this:
 # Tue 30 Jul 11:59:46 PM KW31
 #                          ^-- calendar week
-status.register("clock",
-    format=" %a %-d %b %T",)
+status.register("clock", format="%a %-d %b %T ")
+
+# Show current weather
+# status.register("weather", location_code="DAXX0009", units="metric", format="{current_temp} {temp_unit}")
 
 # Shows the average load of the last minute and the last 5 minutes
 # (the default value for format is used)
-status.register("load",
-        format=" {avg1:>5} {avg5:>5} {avg15:>5}",
-        color=color_good,
-        critical_color=color_bad)
-
-status.register("cpu_usage",
-        format=' {usage:>03}%')
+status.register("load", format=" {avg1:>5}", color=color_good, critical_color=color_bad)
 
 # Show the memory usage
 status.register("mem",
-        format=" {avail_mem:>8} MiB",
+        format=" {avail_mem:>4} GiB",
+        divisor=1073741824,
         color=color_good,
         warn_color=color_warn,
         alert_color=color_bad)
@@ -101,6 +97,8 @@ status.register("battery",
         critical_color=color_bad,
         not_present_text="",
         charging_color=color_good)
+
+
 
 # run the thing!
 status.run()
