@@ -10,16 +10,18 @@ i3_key_alt: Mod1
 # Startup programs
 i3_startup_exec:
     - dot-xrandr-setup
-    - xautolock -time 8 -locker $autolock
+    - xautolock -notify 60 -notifier 'notify-send --urgency=low xautolock "The screen is about to be locked"' -time 8 -detectsleep -corners --00 -cornerdelay 2 -cornersize 100  -locker $autolock
     - pulseaudio --start
     - dot-stow-manager
     - dunst --config ~/.config/dunst/dunstrc
     - syndaemon -i 0.75
-    - volnoti -t 1 -a 0.20 -r 40
     - keynav
     - dropbox start -i
     - pk-update-icon -d 10 -i 3600
     - thunar --daemon
+    - blueman-applet
+    - shutter --min_at_startup
+    - compton
 
 i3_startup_exec_always:
     - nitrogen --restore
