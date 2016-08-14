@@ -36,6 +36,7 @@ status.register("clock", format="%a %-d %b %T ")
 
 # Shows the average load of the last minute and the last 5 minutes
 # (the default value for format is used)
+status.register("cpu_freq", format="@ {avgg} GHz")
 status.register("load", format=" {avg1:>5}", color=color_good, critical_color=color_bad)
 
 # Show the memory usage
@@ -92,14 +93,6 @@ status.register('backlight',
         format=" {percentage}%",
         interval=2,
         backlight="intel_backlight")
-
-
-# show backlight brightness status
-backlight='acpi_video0'
-if os.path.exists('/sys/class/backlight/{}'.format(backlight)):
-    status.register("backlight",
-            backlight=backlight,
-            color=color_good)
 
 # show battery status
 status.register("battery",
