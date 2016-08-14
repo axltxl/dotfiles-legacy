@@ -140,3 +140,12 @@
     - bluez
     - bluez-tools
     - btscanner
+
+- name: power saving tools (for laptops)
+  apt:
+    pkg: '{{ item }}'
+    state: latest
+  with_items:
+    - laptop-mode-tools
+    - powerstat
+    - powertop
