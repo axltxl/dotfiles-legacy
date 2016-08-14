@@ -2,17 +2,14 @@
 # ------------
 * dot-(un)stow:
     - more comments and organization of installation scripts
-    - stronger
-    - dot-unstow: prevent 'essentials', 'zsh' and 'dot' from being unstowed
 * major revision of everrrrry file: proper comments and indentation  on every single one of them
-* zsh:
-  - if NO_TMUX is set, then do not invoke tmux at startup
 * install.sh:
   - reorganize code into functions
   - check for sudo presence
   - big feature, debian sid out-of-the-box
-* migrate dunst to zenfig, at least something basic
 * Optimize zenfig-i3
-* For God's sake, do something about GTK icons on hdpi
 * get rid of base16. Rename base16-* color test tools
-* get rid of volnoti
+* Introduce pa-applet as replacement of volnoti
+* Introduce brightd onto this
+* Make sure xorg is always using modesetting driver
+* Replace xbacklight with light
