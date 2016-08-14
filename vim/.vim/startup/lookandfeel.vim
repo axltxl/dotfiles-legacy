@@ -11,7 +11,7 @@ endif
 set showcmd                                 " Show partial commands in the last line of the screen
 syntax on                                   " Activate syntax highlightning
 set background=dark                         " Set the dark background
-colorscheme base16                          " Color scheme
+colorscheme Tomorrow-Night-Eighties         " Color scheme
 set colorcolumn=80                          " Set up a line length marker
 set number                                  " Display line numbers on the left
 set nowrap                                  " No wordwrap, please!
