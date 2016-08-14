@@ -79,8 +79,18 @@ _dot_stow() {
 
 _dot_unstow() {
     local stow_dir=$1
+    local invalid_stow_dir=0
     for i in "${@:2}"; do
         dot_printf "Unstowing $i from $stow_dir"
+
+        # Certain "essential" stow directories can't be unstowed, otherwise
+        # this whole thing would just be screwed up from that point, or at least
+        # not easy to recover from.
+        invalid_stow_dir=0
+        [[ "$i" == "dot" ]] && invalid_stow_dir=1
+        [[ "$i" == "essentials" ]] && invalid_stow_dir=1
+        [[ "$invalid_stow_dir" == 1 ]] && dot_printf_warn "$i is not allowed to be unstowed" && continue
+
         if [ -d ${stow_dir}/$i ]; then
             # preunstow invocation
             [ -e ${dot_preunstow_dir}/$i ] && . ${dot_preunstow_dir}/$i
