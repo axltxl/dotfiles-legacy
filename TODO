@@ -12,4 +12,3 @@
 * Introduce pa-applet as replacement of volnoti
 * Introduce brightd onto this
 * Make sure xorg is always using modesetting driver
-* Replace xbacklight with light
