@@ -1,11 +1,31 @@
 #!/usr/bin/env zsh
-#################################
+######################################
 # Set keyboard settings on X11 session
-#################################
+# Usage: config-xmodmap <layout_name>
+######################################
+set -e
 
 # Set keyboard rates
-xset r rate 200 60
+xset r rate 200 70
+
+# Basic variables
+xmodmap_dir=~/.Xmodmap.d # Base xmodmap files directory
+xmodmap_layout_dir=${xmodmap_dir}/layouts-available # Available xmodmap layouts are in here
+xmodmap_layout_name=${1:-dell_xps15_danish}
+xmodmap_layout_file="$xmodmap_layout_dir/$xmodmap_layout_name"
+
+if [[ ! -a "$xmodmap_layout_file" ]]; then
+    echo "No valid layout: $(basename $xmodmap_layout_file)"
+    exit 1
+fi
+
+# Specific keycode layout is set at this point as a symlink on ~/.Xmodmap.d
+notify-send 'xmodmap' "layout: $(basename $xmodmap_layout_file)"
+ln -sf $xmodmap_layout_file $xmodmap_dir/10-layout
 
 # Set keyboard mappings
-xmodmap ~/.Xmodmap
+# Long story short, xmodmap does its magic using all files in ~/.Xmodmap.d
+for layout_file in ~/.Xmodmap.d/*; do
+    [[ -f "$layout_file" ]] && xmodmap $layout_file
+done
 
