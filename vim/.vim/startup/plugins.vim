@@ -68,8 +68,6 @@ let g:gitgutter_sign_modified_removed = ""
 nmap <Leader>gc :Gcommit -m "
 nmap <Leader>gca :Gcommit -am "
 nmap <Leader>gs :Gstatus<CR>
-nmap <Leader>gp :Gpush<CR>
-
 
 """"""""""""""""""
 " UltiSnips configuration
