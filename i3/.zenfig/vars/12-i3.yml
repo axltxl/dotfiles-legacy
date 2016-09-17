@@ -26,3 +26,116 @@ i3_startup_exec:
 i3_startup_exec_always:
     - nitrogen --restore
 
+i3_bindkeys:
+    resize:
+        - ['h', 'resize shrink width 48px']
+        - ['k', 'resize grow height 48px']
+        - ['j', 'resize shrink height 48px']
+        - ['l', 'resize grow width 48px']
+        - ['Return', 'mode "default"']
+
+    default:
+        # execute terminal
+        - [ '$mod+Return', 'exec $term' ]
+
+        # close current window
+        - [ '$mod+c', 'kill' ]
+
+        # launch rofi
+        - [ '$mod+d exec', 'i3-dmenu-desktop --dmenu="rofi -dmenu"']
+
+        # switch among windows
+        - [ '$mod+Tab', 'exec rofi -show window']
+
+        # Change focus
+        - [ '$mod+h', 'focus left']
+        - [ '$mod+j', 'focus down']
+        - [ '$mod+k', 'focus up']
+        - [ '$mod+l', 'focus right']
+        - [ '$mod+a', 'focus parent']
+        - [ '$mod+q', 'focus child']
+
+        # Move focused window
+        - [ '$mod+$alt+h', 'move left']
+        - [ '$mod+$alt+j', 'move down']
+        - [ '$mod+$alt+k', 'move up']
+        - [ '$mod+$alt+l', 'move right']
+
+        # Split in horizontal orientation
+        - [ '$mod+b', 'split h']
+        - [ '$mod+v', 'split v']
+
+        # Set current window to full screen
+        - [ '$mod+f', 'fullscreen']
+
+        # Change container layout
+        - [ '$mod+s', 'layout stacking']
+        - [ '$mod+w', 'layout tabbed']
+        - [ '$mod+e', 'layout toggle split']
+        - [ '$mod+Shift+space', 'floating toggle']
+        - [ '$mod+space', 'focus mode_toggle']
+
+        # Open file manager
+        - [ '$mod+g', 'exec thunar ~']
+
+        # Switch to workspace
+        - [ '$mod+1', 'workspace $ws_term']
+        - [ '$mod+2', 'workspace $ws_www']
+        - [ '$mod+3', 'workspace $ws3']
+        - [ '$mod+4', 'workspace $ws4']
+        - [ '$mod+5', 'workspace $ws5']
+        - [ '$mod+6', 'workspace $ws6']
+        - [ '$mod+7', 'workspace $ws7']
+        - [ '$mod+8', 'workspace $ws8']
+        - [ '$mod+9', 'workspace $ws_msgr']
+        - [ '$mod+0', 'workspace $ws_music']
+
+        # Move container to a certain workspace
+        - [ '$mod+$alt+1', 'move container to workspace $ws_term']
+        - [ '$mod+$alt+2', 'move container to workspace $ws_www']
+        - [ '$mod+$alt+3', 'move container to workspace $ws3']
+        - [ '$mod+$alt+4', 'move container to workspace $ws4']
+        - [ '$mod+$alt+5', 'move container to workspace $ws5']
+        - [ '$mod+$alt+6', 'move container to workspace $ws6']
+        - [ '$mod+$alt+7', 'move container to workspace $ws7']
+        - [ '$mod+$alt+8', 'move container to workspace $ws8']
+        - [ '$mod+$alt+9', 'move container to workspace $ws_msgr']
+        - [ '$mod+$alt+0', 'move container to workspace $ws_music']
+
+        # Reload configuration
+        - [ '$mod+Shift+c', 'reload']
+        - [ '$mod+Shift+r', 'exec "dot update i3"']
+
+        # Resize mode
+        - [ '$mod+r', 'mode resize']
+
+        # Brightness controls
+        - [ 'XF86MonBrightnessUp',   'exec light -A 2' ]
+        - [ 'XF86MonBrightnessDown', 'exec light -U 2' ]
+        - [ '$mod+$alt+r',           'exec light -A 2' ] # lazy mode
+        - [ '$mod+$alt+q',           'exec light -U 2' ]
+
+        # Take screenshots
+        - [ 'Print', 'exec scrot -u -q 90 ~/Pictures/screenshot-%Y%m%d%H%M%S.jpg && notify-send --urgency=normal "Screenshot saved"']
+
+        # Audio controls
+        - [ 'XF86AudioRaiseVolume', 'exec pavol plus;  exec dot-snd-play blop' ]
+        - [ 'XF86AudioLowerVolume', 'exec pavol minus; exec dot-snd-play blop' ]
+        - [ 'XF86AudioMute',        'exec pavol mute; exec dot-snd-play blop' ]
+        - [ '$mod+$alt+e',          'exec pavol plus;  exec dot-snd-play blop' ] # lazy mode
+        - [ '$mod+$alt+d',          'exec pavol minus; exec dot-snd-play blop' ]
+
+        # Jump to urgent window
+        - [ '$mod+u', '[urgent=latest] focus' ]
+
+        # Media player controls
+        - [ 'XF86AudioPlay',  'exec playerctl play-pause' ]
+        - [ 'XF86AudioPause', 'exec playerctl pause' ]
+        - [ 'XF86AudioNext',  'exec playerctl next' ]
+        - [ 'XF86AudioPrev',  'exec playerctl previous' ]
+        - [ '$mod+$alt+s',  'exec playerctl play-pause' ]
+        - [ '$mod+$alt+f',  'exec playerctl next' ]
+        - [ '$mod+$alt+a',  'exec playerctl previous' ]
+
+        # Screen lock
+        - [ '$mod+p', 'exec screenlock' ]
