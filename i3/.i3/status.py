@@ -2,11 +2,15 @@
 # i3pystatus configuration file.
 ################################
 from i3pystatus import Status
+from i3pystatus.weather import weathercom
 import os
 import zenfig
 
 # Get status bar
-status = Status(standalone=True)
+status = Status(
+        standalone=True,
+        logfile='{}/.i3/i3pystatus.log'.format(os.getenv("HOME"))
+        )
 
 # Get variables from zenfig
 zenfig_vars = zenfig.get_user_vars()
@@ -22,17 +26,15 @@ color_bad  = "#{}".format(zenfig_vars['color_base08'])
 # Display current weather
 status.register('weather',
     colorize=True,
-    location_code='DAXX0009:1:DA', # Lovely CPH :)
-    units='metric'
+    hints={'markup': 'pango'},
+    backend=weathercom.Weathercom(
+        location_code='DAXX0009:1:DA', # Lovely CPH :)
+        units='metric'
+    ),
 )
 
-# Displays clock like this:
-# Tue 30 Jul 11:59:46 PM KW31
-#                          ^-- calendar week
+# Display date and time
 status.register("clock", format="%a %-d %b %T ")
-
-# Show current weather
-# status.register("weather", location_code="DAXX0009", units="metric", format="{current_temp} {temp_unit}")
 
 # Shows the average load of the last minute and the last 5 minutes
 # (the default value for format is used)
