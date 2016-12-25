@@ -13,7 +13,7 @@ config-xmodmap
 xsetroot -solid "#101010"
 
 # Update .Xresources
-config-xrdb --no-template
+config-xrdb
 
 # xrandr settings must be applied
 # before going into i3.
