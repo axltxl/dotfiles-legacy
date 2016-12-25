@@ -13,4 +13,4 @@ zenfig install $ZENFIG_PLUGIN_ROFI
 zenfig install $ZENFIG_PLUGIN_XFT
 
 # Update Xresources
-xrdb -merge -DSCREEN_DPI=${DISPLAY_DPI} ${HOME}/.Xresources
+xrdb -merge ${HOME}/.Xresources
