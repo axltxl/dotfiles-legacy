@@ -1,19 +1,16 @@
 #!/usr/bin/env zsh
+set -e
 ##########################
 # Xresources configuration
 ##########################
 
 xrdb_dir=${HOME}/.Xresources.d
-rofi_kit_ver=develop
-xft_kit_ver=develop
 
-if [[ "$1" != "--no-template" ]]; then
-    # Get rofi settings
-    zenfig install axltxl/zenfig-rofi==$rofi_kit_ver
+# Get rofi settings
+zenfig install $ZENFIG_PLUGIN_ROFI
 
-    # xft settings
-    zenfig install axltxl/zenfig-xft==$xft_kit_ver
-fi
+# xft settings
+zenfig install $ZENFIG_PLUGIN_XFT
 
 # Update Xresources
 xrdb -merge -DSCREEN_DPI=${DISPLAY_DPI} ${HOME}/.Xresources

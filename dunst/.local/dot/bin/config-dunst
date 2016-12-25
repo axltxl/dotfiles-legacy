@@ -1,4 +1,5 @@
 #!/usr/bin/env zsh
+set -e
 ###########################
 # dunst colorscheme generator
 ###########################
@@ -11,4 +12,4 @@ dunst_conf=${dunst_conf_dir}/dunstrc
 rm -f $dunst_conf
 
 # Generate colors python module for dunstpystatus
-base16 -t dunst/config.erb > $dunst_conf
+zenfig install $ZENFIG_PLUGIN_DUNST

@@ -7,10 +7,9 @@ set -e
 # essential variables
 termite_conf_dir=${HOME}/.config/termite
 termite_conf=${termite_conf_dir}/config
-termite_tpl_ver=develop
 
 # first of all, remove current config
 rm -f $termite_conf
 
 # Generate configuration from zenfig
-zenfig install axltxl/zenfig-termite==$termite_tpl_ver
+zenfig install $ZENFIG_PLUGIN_TERMITE
