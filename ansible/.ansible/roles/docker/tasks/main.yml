@@ -16,8 +16,7 @@
 - name: install docker
   apt:
       update_cache: yes
-      name: docker-engine
-      state: latest
+      name: docker-engine=1.11.2-0~stretch
 
 - name: set up non-root access
   user:
