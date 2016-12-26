@@ -6,6 +6,12 @@ from i3pystatus.weather import weathercom
 import os
 import zenfig
 
+# Hints that are applied to all i3pystatus modules
+hints = {
+    "markup": "pango",
+    "separator": True,
+}
+
 # Get status bar
 status = Status(
         standalone=True,
@@ -26,7 +32,7 @@ color_bad  = "#{}".format(zenfig_vars['color_base08'])
 # Display current weather
 status.register('weather',
     colorize=True,
-    hints={'markup': 'pango'},
+    hints=hints,
     backend=weathercom.Weathercom(
         location_code='DAXX0009:1:DA', # Lovely CPH :)
         units='metric'
@@ -34,17 +40,18 @@ status.register('weather',
 )
 
 # Display date and time
-status.register("clock", format="%a %-d %b %T ")
+status.register("clock", format="%d/%m/%Y %H:%M", hints=hints)
 
 # Shows the average load of the last minute and the last 5 minutes
 # (the default value for format is used)
-status.register("cpu_freq", format="@ {avgg} GHz")
-status.register("load", format=" {avg1:>5}", color=color_good, critical_color=color_bad)
+status.register("cpu_freq", format="{avgg} GHz")
+status.register("load", format=" {avg1:>5}", color=color_good, critical_color=color_bad, hints=hints)
 
 # Show the memory usage
 status.register("mem",
         format=" {avail_mem:>4} GiB",
         divisor=1073741824,
+        hints=hints,
         color=color_good,
         warn_color=color_warn,
         alert_color=color_bad)
@@ -59,27 +66,18 @@ status.register("mem",
 net_iface = zenfig_vars['net_iface']
 net_iface_wireless = zenfig_vars['net_iface_wireless']
 if net_iface_wireless:
-    net_fmt=" {essid:.16} ({quality:>6}%) {kbs:>8} kB/s"
+    net_fmt="  {quality:>3}%"
 else:
     net_fmt="  {kbs:^06} kB/s"
 
 status.register("network",
     interface=net_iface,
     dynamic_color=False,
-    on_leftclick="wicd-gtk",
     format_up=net_fmt,
+    hints=hints,
     color_down=color_bad,
     start_color=color_good,
     end_color=color_bad)
-
-# Shows disk usage of /
-# Format:
-# 42/128G [86G]
-status.register("disk",
-    path="/home",
-    format=" {used:^7}/{total:^7} [{avail:^7}] GiB",
-    color=color_good,
-    critical_color=color_bad)
 
 # Shows pulseaudio default sink volume
 #
@@ -87,14 +85,9 @@ status.register("disk",
 status.register("pulseaudio",
     color_muted=color_warn,
     color_unmuted=color_good,
+    hints=hints,
     format=" {volume:>3}%",
     format_muted="     ")
-
-# Show laptop backlight status
-status.register('backlight',
-        format=" {percentage}%",
-        interval=2,
-        backlight="intel_backlight")
 
 # show battery status
 status.register("battery",
@@ -102,6 +95,7 @@ status.register("battery",
         format=" {percentage:>3.02f}%",
         alert=True,
         alert_percentage=20,
+        hints=hints,
         critical_color=color_bad,
         not_present_text="",
         charging_color=color_good)
