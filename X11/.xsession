@@ -20,4 +20,4 @@ config-xrdb
 dot-xrandr-setup
 
 # Finally, execute window manager
-exec i3
+exec i3 -V >> ~/i3log-$(date +'%F-%k-%M-%S') 2>&1
