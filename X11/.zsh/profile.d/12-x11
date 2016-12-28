@@ -7,8 +7,3 @@
 # XDG settings
 ##############
 export XDG_CONFIG_HOME=${HOME}/.config
-
-##################
-# General settings
-##################
-export DISPLAY_DPI=96 # Universal value for setting up dpi
