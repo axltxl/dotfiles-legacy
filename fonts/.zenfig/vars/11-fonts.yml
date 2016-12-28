@@ -1,11 +1,10 @@
 ---
 ###############
 # Font settings
+# vim: ft=yaml
 ###############
-font_term: Roboto Mono for Powerline
-font_term_size: 12
-font: SFNS Display
-font_size: 14
+font: Roboto Light
+font_size: 10
 font_dpi: 96
 font_antialiasing: true
 font_hinting: true

@@ -26,6 +26,10 @@ i3_startup_exec:
 i3_startup_exec_always:
     - nitrogen --restore
 
+# i3bar settings
+i3_bar_separator_symbol: ' // '
+i3_bar_font_size: '{{ (@font_size|int * 2/3)|int }}'
+
 i3_bindkeys:
     resize:
         - ['h', 'resize shrink width 48px']
