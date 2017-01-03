@@ -3,10 +3,9 @@
 # dunst settings
 # vim: ft=yaml
 ################
-dunst_font_size: 24
 dunst_width: 1536
 dunst_height: 0
-dunst_yoffset: -1
+dunst_yoffset: 0
 dunst_xoffset: 1152
 dunst_alignment: center
 dunst_padding: 16
