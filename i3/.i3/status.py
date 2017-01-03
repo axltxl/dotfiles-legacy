@@ -75,6 +75,7 @@ status.register("network",
     dynamic_color=False,
     format_up=net_fmt,
     hints=hints,
+    color_up=color_good,
     color_down=color_bad,
     start_color=color_good,
     end_color=color_bad)
