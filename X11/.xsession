@@ -1,5 +1,6 @@
 ######################################
 # Initial settings for X sessions
+# vim: ft=sh
 ######################################
 
 # Make sure all environment variables are up to date
@@ -20,4 +21,4 @@ config-xrdb
 dot-xrandr-setup
 
 # Finally, execute window manager
-exec i3 -V >> ~/i3log-$(date +'%F-%k-%M-%S') 2>&1
+exec $I3WM_BIN -V >> $I3WM_LOG_FILE 2>&1
