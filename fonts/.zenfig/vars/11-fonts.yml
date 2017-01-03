@@ -3,8 +3,8 @@
 # Font settings
 # vim: ft=yaml
 ###############
-font: Roboto Light
-font_size: 10
+font: Ubuntu Regular
+font_size: 8
 font_dpi: 96
 font_antialiasing: true
 font_hinting: true
