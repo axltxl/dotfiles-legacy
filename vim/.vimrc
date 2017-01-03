@@ -30,7 +30,7 @@ Plug 'wikitopian/hardmode'
 
 " look and feel
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'flazz/vim-colorschemes'
+Plug 'jacoborus/tender.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'jimsei/winresizer'
