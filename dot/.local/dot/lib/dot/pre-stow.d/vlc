@@ -1,2 +1,0 @@
-# Create vlc base directory prior to stow
-mkdir -p ~/.config/vlc

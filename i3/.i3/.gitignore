@@ -1,5 +1,0 @@
-# ignore i3 config file
-config
-
-# virtualenv for i3pystatus
-pystatus

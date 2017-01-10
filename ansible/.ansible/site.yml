@@ -8,26 +8,11 @@
 - hosts: 127.0.0.1
   vars:
       user_name: axltxl
-      debian_release: stretch
-
-      ##################
-      # i3 configuration
-      ##################
-
-      # i3 home directory
-      i3_base: '/home/{{ user_name }}/.i3'
-
-      # virtualenv for i3pystatus
-      i3_venv: '{{ i3_base }}/pystatus'
-
   sudo: yes
   roles:
       - essentials
       - desktop
-      - synaptics
-      - i3wm
       - dev
       - rclone
       - spotify
       - syncthing
-      - docker

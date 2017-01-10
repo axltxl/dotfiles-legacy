@@ -1,7 +1,0 @@
-# vim ft=zsh
-###################################################
-# delete any previously set configuration directory
-###################################################
-wicd_home=${HOME}/.wicd
-[[ ! -h $wicd_home ]] && rm -rf $wicd_home
-unset wicd_home

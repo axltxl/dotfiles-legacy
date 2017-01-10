@@ -4,8 +4,5 @@
 ##############################
 
 # zenfig plugins that are used by these dotfiles are determined by these env vars
-export ZENFIG_PLUGIN_I3='axltxl/zenfig-i3==develop'
 export ZENFIG_PLUGIN_TERMITE='axltxl/zenfig-termite==develop'
-export ZENFIG_PLUGIN_DUNST='axltxl/zenfig-dunst==develop'
-export ZENFIG_PLUGIN_ROFI='axltxl/zenfig-rofi==develop'
 export ZENFIG_PLUGIN_XFT='axltxl/zenfig-xft==develop'

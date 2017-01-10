@@ -1,6 +1,0 @@
----
-##############################
-# i3pystatus-specific settings
-##############################
-net_iface: 'wlp2s0'
-net_iface_wireless: true #this must be temporary!!!!

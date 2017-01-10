@@ -1,8 +1,0 @@
----
-- name: Install synaptic driver options on X11
-  copy:
-    src: 50-synaptics.conf
-    dest: /etc/X11/xorg.conf.d/50-synaptics.conf
-    owner: root
-    group: root
-    mode: 0644

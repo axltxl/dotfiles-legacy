@@ -4,34 +4,15 @@
 # ---------------------------
 
 # Make sure the minimum
-# necessary packages are uninstalled
-
-- name: Purge undesired packages
-  apt: pkg={{ item }} state=absent
-  with_items:
-    - python-pip
-
-# Make sure the minimum
 # necessary packages are installed
 
 - name: Absolute essentials
   apt: pkg={{ item }} state=latest
   with_items:
-    - apt-transport-https
-    - software-properties-common  # apt-add-repository
     - stow
     - symlinks
     - socat
     - openssh-client
-
-- name: Sound support
-  apt: pkg={{ item }} state=latest
-  with_items:
-      # Audio support
-    - pulseaudio
-    - pavucontrol
-    - sox # audio utilities
-    - alsa-utils
 
 - name: General administration utilities
   apt: pkg={{ item }} state=latest
@@ -99,11 +80,6 @@
 - name: networking tools
   apt: pkg={{ item }} state=latest
   with_items:
-    # network management
-    - wicd
-    - wicd-curses
-
-    # network diagnostic tools
     - iputils-tracepath
     - iputils-ping
     - nethogs
@@ -127,26 +103,3 @@
       - android-tools-adb
       - android-tools-fastboot
       - android-tools-fsutils
-
-- name: printers and scanners
-  apt: pkg={{ item }} state=latest
-  with_items:
-    - cups
-    - hplip # HP printers and scanners support
-
-- name: bluetooth support
-  apt: pkg={{ item }} state=latest
-  with_items:
-    - bluez
-    - bluez-tools
-    - btscanner
-
-- name: power saving tools (for laptops)
-  apt:
-    pkg: '{{ item }}'
-    state: latest
-  with_items:
-    - laptop-mode-tools
-    - powerstat
-    - powertop
-    - brightd
