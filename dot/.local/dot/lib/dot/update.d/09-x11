@@ -4,7 +4,7 @@
 #########################
 
 _dot_update_help() {
-    echo "apply xmodmap settings and update xresources configuration"
+    echo "update xresources configuration"
 }
 
 _dot_update_exec() {
