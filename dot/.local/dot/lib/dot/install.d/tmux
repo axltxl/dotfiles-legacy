@@ -31,7 +31,7 @@ if [ ! -d $tmux_src ]; then
     git clone $tmux_git $tmux_src -b $tmux_version
 else
     git -C $tmux_src reset HEAD --hard # deapply any patches
-    git checkout $tmux_version # go back to current version tag, just to make sure
+    git -C $tmux_src checkout $tmux_version # go back to current version tag, just to make sure
 fi
 
 # Compile and install tmux
