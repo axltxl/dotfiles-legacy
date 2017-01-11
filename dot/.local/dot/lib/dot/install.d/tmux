@@ -7,16 +7,13 @@ autoload dot_printf
 autoload dot_printf_install
 
 # The actual variables for tmux compilation
-tmux_version=${1:-2.1}
+tmux_version=${1:-2.2}
 tmux_git=https://github.com/tmux/tmux.git
 tmux_src=~/Projects/tmux
 tmux_deps=(tmux)
 tmux_opts=(\
           --prefix=$DOT_PATH \
           )
-tmux_truecolor_diff=https://gist.githubusercontent.com/zchee/9f6f2ca17acf49e04088/raw/0c9bf0d84e69cb49b5e59950dd6dde6ca265f9a1/tmux-truecolor.diff
-
-# Vundle-related variables
 tpm_git=https://github.com/tmux-plugins/tpm
 tpm_src=~/.tmux/plugins/tpm
 
@@ -36,11 +33,6 @@ else
     git -C $tmux_src reset HEAD --hard # deapply any patches
     git checkout $tmux_version # go back to current version tag, just to make sure
 fi
-
-# Download true color patch
-dot_printf "apply true color patch"
-cd $tmux_src &&  \
-wget -q -O - $tmux_truecolor_diff | git apply --3way - || exit 1
 
 # Compile and install tmux
 dot_printf "compile and install tmux"
