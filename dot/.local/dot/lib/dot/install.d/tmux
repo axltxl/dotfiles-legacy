@@ -36,6 +36,7 @@ fi
 
 # Compile and install tmux
 dot_printf "compile and install tmux"
+cd $tmux_src
 [ ! -x configure ] && ./autogen.sh
 ./configure "${tmux_opts[@]}" && make clean  && make && make install || exit 1
 
