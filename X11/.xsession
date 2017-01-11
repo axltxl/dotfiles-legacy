@@ -7,8 +7,5 @@
 rm -f $DOT_ENV_OUT
 dot-reload &> /dev/null
 
-# Update settings on keyboard
-config-xmodmap
-
 # Update .Xresources
 config-xrdb

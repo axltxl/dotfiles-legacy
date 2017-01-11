@@ -9,10 +9,6 @@ _dot_update_help() {
 
 _dot_update_exec() {
     if [[ ! -z "$DISPLAY" ]]; then
-        # Update settings on keyboard
-        dot_printf "Update xmodmap settings"
-        config-xmodmap
-
         # Update .Xresources
         dot_printf "Update xresources"
         config-xrdb
