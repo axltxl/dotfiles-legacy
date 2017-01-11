@@ -1,9 +1,0 @@
-#!/usr/bin/env zsh
-#####################################
-# Play a sound
-#####################################
-sounds_home=${HOME}/.local/share/sounds
-sound_file=${sounds_home}/${1}.ogg
-
-# play the damn thing!
-play -q $sound_file

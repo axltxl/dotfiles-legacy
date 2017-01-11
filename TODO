@@ -5,10 +5,3 @@
 * major revision of everrrrry file: proper comments and indentation  on every single one of them
 * install.sh:
   - reorganize code into functions
-  - check for sudo presence
-  - big feature, debian sid out-of-the-box
-* Optimize zenfig-i3
-* get rid of base16. Rename base16-* color test tools
-* Introduce pa-applet as replacement of volnoti
-* Introduce brightd onto this
-* Make sure xorg is always using modesetting driver

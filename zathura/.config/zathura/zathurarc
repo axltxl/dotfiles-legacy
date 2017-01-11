@@ -1,9 +1,0 @@
-#######################
-# Zathura configuration
-#######################
-
-# Always fit to window width
-set adjust_window width
-
-# Set default font
-set font "Terminess Powerline"

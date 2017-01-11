@@ -1,5 +1,0 @@
-# vim: ft=zsh
-#########################################
-# Set default scheme to be used by base16
-#########################################
-export BASE16_SCHEME=default

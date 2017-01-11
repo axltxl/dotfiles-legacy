@@ -26,6 +26,7 @@ absolute_essentials=(
     autoconf \
     automake \
     pkg-config \
+    libssl-dev \
 )
 
 # Installation log

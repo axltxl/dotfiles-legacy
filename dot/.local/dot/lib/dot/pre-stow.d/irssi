@@ -1,2 +1,0 @@
-# Make sure base directory is present
-mkdir -p ~/.irssi
