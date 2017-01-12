@@ -28,7 +28,7 @@
 
 # elementary-tweaks package
 # ---------------------------
-- name: add repository
+- name: elementary-tweaks ppa repository
   apt_repository:
       repo: 'ppa:philip.scott/elementary-tweaks'
       state: present
