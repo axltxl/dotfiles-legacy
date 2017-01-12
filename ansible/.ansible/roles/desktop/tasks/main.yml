@@ -11,6 +11,7 @@
     - xsel
     - keynav # I definitely avoid using mouse at all costs
     - colortest # For testing color on terminals
+    - dconf-tools
 
 - name: User apps
   apt: pkg={{ item }} state=latest
