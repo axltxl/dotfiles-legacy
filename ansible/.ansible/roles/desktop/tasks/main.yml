@@ -24,3 +24,16 @@
   apt: pkg={{ item }} state=latest
   with_items:
       - gparted
+
+# elementary-tweaks package
+# ---------------------------
+- name: add repository
+  apt_repository:
+      repo: 'ppa:philip.scott/elementary-tweaks'
+      state: present
+
+- name: elementary tweaks
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - elementary-tweaks
+
