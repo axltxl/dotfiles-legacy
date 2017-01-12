@@ -13,6 +13,7 @@
     - symlinks
     - socat
     - openssh-client
+    - software-properties-common
 
 - name: General administration utilities
   apt: pkg={{ item }} state=latest
