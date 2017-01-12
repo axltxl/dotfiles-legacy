@@ -1,9 +1,3 @@
 !-------------------------------------------------------------------------------
 ! Xresources main file
 !-------------------------------------------------------------------------------
-
-! Xft settings
-#include ".Xresources.d/xft"
-
-! rofi settings
-#include ".Xresources.d/rofi"
