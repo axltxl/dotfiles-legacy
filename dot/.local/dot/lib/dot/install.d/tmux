@@ -21,6 +21,7 @@ tpm_src=~/.tmux/plugins/tpm
 # First of all, we need some dependencies
 dot_printf_install "tmux dependencies"
 sudo apt-get build-dep -y "${tmux_deps[@]}"
+sudo apt-get install -y libevent-dev libncurses5-dev
 
 # Now, we do the thing
 dot_printf_install "tmux"
