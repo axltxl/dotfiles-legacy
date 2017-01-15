@@ -75,6 +75,7 @@ values."
      ruby
      python
      php
+     terraform
 
      ; -----
      ; Tools
