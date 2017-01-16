@@ -1,7 +1,3 @@
-# Iteration 3:
+# ElementaryOS changes
 # ------------
-* dot-(un)stow:
-    - more comments and organization of installation scripts
-* major revision of everrrrry file: proper comments and indentation  on every single one of them
-* install.sh:
-  - reorganize code into functions
+
