@@ -140,4 +140,3 @@ ins_echo "Your dotfiles environment has been properly set up."
 ins_echo "You will need to re-login for the changes to be applied."
 ins_echo "Once done, you can proceed to change your environment using"
 ins_echo "the *dot* command, execute dot without arguments for details."
-
