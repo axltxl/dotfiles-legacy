@@ -14,46 +14,21 @@ call plug#begin()
 
 
 " Must haves
-Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'airblade/vim-gitgutter'
-Plug 'majutsushi/tagbar'
-Plug 'easymotion/vim-easymotion'
-Plug 'scrooloose/nerdcommenter'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'benekastah/neomake'
-Plug 'djoshea/vim-autoread'
 Plug 'airblade/vim-rooter'
-Plug 'wikitopian/hardmode'
 
 " look and feel
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'jacoborus/tender.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'jimsei/winresizer'
-
-" Fuzzy finder
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --key-bindings --completion --no-update-rc' }
-Plug 'junegunn/fzf.vim'
 
 " Autocompletion
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
-Plug 'Valloric/YouCompleteMe', {'do': './install.py --gocode-completer --clang-completer'}
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-
-" golang
-Plug 'fatih/vim-go', {'for': ['go']}
-
-" jinja2
-Plug 'mitsuhiko/vim-jinja'
-
-" Terraform
-Plug 'hashivim/vim-terraform'
 
 " Add plugins to &runtimepath
 call plug#end() " vim-plug

@@ -70,25 +70,21 @@ let mapleader = "\<Space>"
 " Vim-related mappings
 """"""""""""""""""""""
 
-" Shortcut to rapidly toggle `set list`
-map <Leader>vl :set list!<CR>
-
-" Quicksave
-nnoremap <Leader>vs :w<CR>
-
 " Reload .vimrc at will
 nnoremap <Leader>vr :source ~/.vimrc<CR>
 "
 " Easy splitted window navigation
-map <Leader>h :wincmd h<CR>
-map <Leader>j :wincmd j<CR>
-map <Leader>k :wincmd k<CR>
-map <Leader>l :wincmd l<CR>
+map <Leader>wh :wincmd h<CR>
+map <Leader>wj :wincmd j<CR>
+map <Leader>wk :wincmd k<CR>
+map <Leader>wk :wincmd l<CR>
 
 " Easy window splitting
 map <Leader>wv :vsplit<CR>
-map <Leader>wb :split<CR>
+map <Leader>ws :split<CR>
 
 " Reload file
 nnoremap <Leader>fr :e!<CR>
 
+" Quicksave
+nnoremap <Leader>fs :w<CR>
