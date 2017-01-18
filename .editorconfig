@@ -13,6 +13,9 @@ tab_width = 2
 [**.yml]
 indent_size = 2
 
+[spacemacs/.spacemacs]
+indent_size = 2
+
 [.gitconfig]
 indent_style = tab
 
