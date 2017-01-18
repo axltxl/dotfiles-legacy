@@ -7,4 +7,4 @@
 # managed by their own parent swatch process
 # (see swatch for more details)
 #############################################
-export STOW_DIRS="${HOME}/.dotsync"
+export STOW_DIRS="$DOT_HOME:${HOME}/.dotsync"
