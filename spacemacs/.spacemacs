@@ -337,7 +337,12 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   ;; This one's for editorconfig
   (editorconfig-mode 1)
-)
 
+  ;; My custom key bindings
+  ;; ----------------------
+
+  ;; I use C-h to remove chars backward in my vim, normally
+  (define-key evil-insert-state-map "\C-h" 'evil-delete-backward-char)
+)
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
