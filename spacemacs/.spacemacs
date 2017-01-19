@@ -59,7 +59,6 @@ values."
      ; Look-and-feel
      ; -------------
      themes-megapack
-     vim-powerline
 
      ;; ------------------------
      ;; Language-specific layers
