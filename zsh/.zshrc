@@ -55,7 +55,6 @@ plugins=( \
     rvm \
     vagrant \
     golang \
-    cmus \
     )
 
 # User configuration
