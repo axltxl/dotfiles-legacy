@@ -1,0 +1,5 @@
+#!/bin/bash
+#######################
+# dconf database update
+#######################
+cat ~/.config/dconf/user.d/* | dconf load /
