@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tags>
+<tags>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 6o stamp floor.kpp" md5="mTLnPH4OHZA7BH86iLyeEw==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 6a stamp painting touch.kpp" md5="cPA+jawblr9jrbUBEu/tDQ==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/4is6433.kpp" md5="a/8N1o0ErWBvnTWJ0eoiLg==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Pencil_2B.kpp" md5="h0Obq3EhJfNzl54qcp4L+A==">
+  <tag blacklisted="false">sketch</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 6h stamp sparkles.kpp" md5="3fr8bIeEdscpU6u+nwKfeg==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Eraser_circle.kpp" md5="AebX4dlY1cnZw4ZrwRfuJg==">
+  <tag blacklisted="false">demo</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 6q bokeh.kpp" md5="0U/WbESB/G9Fi2gGxxlXgg==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/5.Guides_ depth.kpp" md5="U6MODa9vSjzkmc8iFFd/Ow==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 3c brush textured wet.kpp" md5="mWMiumsIGzTeis7vdYiNmA==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 2c flat - soft.kpp" md5="0MAeA/E+AR+wxxlABrd/FA==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Smudge_soft.kpp" md5="ZGyOAEZd+QNmT0m3QYlYYw=="/>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 6f stamp herbal stylised.kpp" md5="JnSDfe8xol/TBZZ160S+lg==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Fill_block.kpp" md5="WYPAI9HnZM+31iDIIX4Eiw=="/>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Bristles_hairy.kpp" md5="LYHcKGV344ZuzRsD8eWttw==">
+  <tag blacklisted="false">demo</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Block_basic.kpp" md5="NNR2MgWZNXTbDnTbX8hsRg==">
+  <tag blacklisted="false">demo</tag>
+  <tag blacklisted="false">axltxl</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/3.Blocks_ gradient.kpp" md5="rgU29FkN8glKxm9QKRtpvg==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/1Re4939.kpp" md5="NpZGTEJ45zdLdP4I19omfw==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Ink_circle_10.kpp" md5="9lf5ssxI9l19S8REaWTy/A==">
+  <tag blacklisted="false">ink</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Basic_mix_soft.kpp" md5="kraUtRXtAPFN42XT9iL1Ow==">
+  <tag blacklisted="false">demo</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Smudge_rake_2.kpp" md5="Di7CAhmne/DZO6/yc3uXgA=="/>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 6n stamp leaves.kpp" md5="Q8yfU7Vsq16beofhgk3MAw==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Splat_wet_cells.kpp" md5="AwjsNqVC2oJjMgXtmwankQ=="/>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/2.Bristles_ smooth2.kpp" md5="hjaFugl/cni8YuKVKAjzVg==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/5.Guides_ vertical lines.kpp" md5="DrMhQfb1xLkxH7xWER+kUQ==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/1UR4939.kpp" md5="4K/LTFIlUhCQgRxQ+4rC3w==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 1e annotation pen.kpp" md5="bnKT1skGd8KuDBAuFv0IQw==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/1.Basic_ sketch.kpp" md5="qP9nvhNbaZK7pB8xgcmxjg==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 2a paint sketch.kpp" md5="8cWW+7L27BzbV38B7kF7gg==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Pixelart_square.kpp" md5="b5t26gMflJu4OxvyDzccRQ=="/>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 5d reptilian texture.kpp" md5="N+WqtSbjUf0rC83MuhtlaA==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/2.Bristles_ hairy.kpp" md5="wAZf9XYDO44vzGEx4LJ9Yg==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 2f basic flow.kpp" md5="OjhRhWKciHjKDR80yCdgkQ==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/5.Guides_ horizontal lines.kpp" md5="DqDtGjdyBoio5oUKACQkTA==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Ink_gpen_25.kpp" md5="2t9QkmKNCs6snwTNZAX57w=="/>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Fill_circle.kpp" md5="gBFPik0q6QPItP+LgNMJlw==">
+  <tag blacklisted="false">paint</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 3e blending.kpp" md5="PTmgxh7eHbmxOAibQCyryw==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Splat_mix_cells.kpp" md5="I4aD9y63gSwMNVcPTBszvg=="/>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/4.Environment_ splatter1.kpp" md5="vDGXtBJCYjiD4jUPKhED9g==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/1eL4939.kpp" md5="Bw40SP0F1cWiz8sSO4JVLQ==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 4c adjust lighten.kpp" md5="bMa4FswGTyeJ/zWYuP8Azw==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Bristles_wet.kpp" md5="H1JI5+4OsugW1tTMiJBPUg=="/>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 2d flat old.kpp" md5="oP2BepJjuthKDu6YPW0+ZQ==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/FX_color_HSY.kpp" md5="ysxBoj1a1QYE9cRNf7PyHA=="/>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/1.Basic_ round-hard 2.kpp" md5="d7bPRJUEIv0XGjoiQ0LPIA==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 6c stamp splat.kpp" md5="eQLhriNILFfPNNYLsbekQg==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Airbrush_eraser.kpp" md5="KJQuTH6N7Qp4Ezs9LFvAHw==">
+  <tag blacklisted="false">Wet</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Bristles_mix.kpp" md5="FbO1eQ7M4qEpbUB3I0YGtQ=="/>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/3.Blocks_ hairy.kpp" md5="qj/ouRDTjCoU9jP9quX88w==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Smudge_textured.kpp" md5="fEHvZO4AdFGJojO1fIIMgw==">
+  <tag blacklisted="false">paint</tag>
+  <tag blacklisted="false">demo</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 5c screentones.kpp" md5="IC+9fxGORRRDFu2ySuxhrA==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 6p stamp texture big.kpp" md5="YfnQ6Uqls5QsrsdEvQEYlw==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 6n stamp floor particles.kpp" md5="4QgxwvmAxwL0mWLHzCKRyg==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Block_tilt.kpp" md5="xpdTagkfb76nPiIFms9L5A=="/>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 2a deform.kpp" md5="NpXufFIqhIIbbIFD5tzlIQ==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 1d pencil.kpp" md5="Geh2qJBjhwTTVqbkhpT21g==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 4d adjust multiply.kpp" md5="LR1yYns1PHghryU37AAIFw==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 3c blend and paint.kpp" md5="6uiHSIfZVei6HEGKvjYd9w==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Sparkle_wet.kpp" md5="0z90oFiQvfdSx/mL5xLm/A=="/>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/FX_blur_light.kpp" md5="SSSiIrr959jpNXBouMmnYA=="/>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 4e adjust overlay.kpp" md5="oIGkDF34fIv+AvvxIvUhpw==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Basic_wet.kpp" md5="bhiruEnfPq9QtfH70mNBFQ==">
+  <tag blacklisted="false">demo</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Basic_wet_soft.kpp" md5="dfYwrb91jZXJQrVUR4nUxA==">
+  <tag blacklisted="false">demo</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Layout_block.kpp" md5="NJLSuh5hldaTIyR7k2qUFQ=="/>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/2.Bristles_ smooth1.kpp" md5="gdtfUmY7Bl9i3EY7y/J+uw==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/2VQ3677.kpp" md5="ta9hk5x6sjUh3A/ygN3MIA==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 3f smear.kpp" md5="FZL06XtkQFKIaMsjlzEzhg==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 6d stamp drop.kpp" md5="HxTMnYzFRXqSeX1vigv3Eg==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/2.Bristles_ sharp.kpp" md5="PUQCAUFCcHbDEAk6gDn1mQ==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 5b pixel fixmap.kpp" md5="xnjJqDrifEW7SldTAXfElw==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 4f adjust dodge.kpp" md5="j6hgxjBbzXXgBm8gu5A1Xw==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Block_fuzzy.kpp" md5="gWod5rQTdcinE5Buykcl/Q=="/>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 1e digital smooth inking.kpp" md5="KwUGYOfoN71qVdQk/X57TA==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Ink_tilt_20.kpp" md5="LvkeIrEisX/FjkyCk+/TIA=="/>
+ <resource identifier="~/.local/share/krita/paintoppresets/Basic_tip_highlights.kpp" md5="HZA1P+npJZ/YQvIV7LWpWg==">
+  <tag blacklisted="false">axltxl</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/5.Guides_ vanishing point.kpp" md5="V363JZVOE+jlxfCQY1N9EA==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Airbrush_pressure.kpp" md5="7h9MhuZUN3rQy4zxYkP86w==">
+  <tag blacklisted="false">axltxl</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/2zP6437.kpp" md5="E59S6V68/kBxOZarZdjPUQ==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/1di4939.kpp" md5="C1SoQVKFRhutTTuLgpzgaQ==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 1e rigger.kpp" md5="6VEAGrXfvJ0XH0TZuT8pKw==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 6g stamp herbs.kpp" md5="WSZyRhrXUvTCAAjfOng5JQ==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 6l stamp starfield.kpp" md5="Syrzmmmapkb3cQ0o5nG4Fw==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Smudge_block_tilt.kpp" md5="PNgWP5sRU0WGeGtZrKdLgw=="/>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 6k stamp wood.kpp" md5="n74bbuSbGp1x78sA4BqcUQ==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Airbrush_linear.kpp" md5="HUzu0bsoUnh1B3jeqZXPNQ==">
+  <tag blacklisted="false">paint</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Basic_mix.kpp" md5="+MKlutfRsrv3Vz45EVHzug==">
+  <tag blacklisted="false">demo</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Eraser_hard.kpp" md5="WYb3P2m6yAPzCP6UcZ9OFg==">
+  <tag blacklisted="false">ink</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Ink_circle_05.kpp" md5="+ZlhtFsdwSw35utTbn3d+g=="/>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Pencil_HB.kpp" md5="NVbSBuXDdC3e4qIXZBa2Lw==">
+  <tag blacklisted="false">sketch</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Basic_tip_gaussian.kpp" md5="KO3fC5sSIawmyoprNj4Gjw=="/>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/3.Blocks_ canvas1.kpp" md5="6U/oET3Ed+P5mIqXJTV/iw==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Block_wet_tilt.kpp" md5="i0lhTxtr5SfVGfHdNOzG9A=="/>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/2ql6437.kpp" md5="Rv/Tz0Pu4K3UwXCc2wAt0g==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 5a clone.kpp" md5="S9f66Po7YNOknd+8cccPnQ==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/3.Blocks_ stripes.kpp" md5="mO9ov/RqWxMbBfUfPbdxnQ==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/1.Basic_ ink2.kpp" md5="aj4HKlg/Dh8jrr0WghlxMA==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/FX_glow_add.kpp" md5="aJ6B32YjYVRB4nuqJ9jQ/Q=="/>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Basic_circle.kpp" md5="KdtxZbwqJaYI0QvrQ/cHag==">
+  <tag blacklisted="false">paint</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 1c pencil sketch.kpp" md5="LrYU0/phYv5yxmD/kgjolw==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+  <tag blacklisted="false">axltxl</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/3.Blocks_ canvas2.kpp" md5="hRHbpfwdEN1h5exTQJ3Bzw==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Layout_circle_soft.kpp" md5="m50TBtJ7JyEd9zehB3njPA=="/>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/FX_overlay.kpp" md5="ed8osKzPztdJ8mYVnNGswA=="/>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/4.Environment_ paint2.kpp" md5="PXchVWiVXHEsQnbAZq+Pvg==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/2gU6437.kpp" md5="iiVZnPwyN7eRwL1WMFYsvg==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/2.Bristles_ rough2_a.kpp" md5="k+VUAZbBcZCZc8kXazs/fQ==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Sparkle_wet_soft.kpp" md5="iatG6w0IUd7sn2Q2Q9sOLg=="/>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 2e big brush flat.kpp" md5="q/PW+epvGvFJNo+8d+9hCA==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Screentones_eraser.kpp" md5="CD1BPA8rTaJDd+MM0xF5QA=="/>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/1tp4939.kpp" md5="ta+sbbHqQ4hFmDOIcqVEFg==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 2d expressive thin.kpp" md5="S5A+0KARF5AvzaWzBmTGdw==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 2e digital sketch rounded.kpp" md5="ZJ9G7hB7wybuY8X+VWM0tA==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Block_bristles.kpp" md5="badnTeJroPQ0kGYk5Xc39g=="/>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Smudge_rake.kpp" md5="6kLCBYsggIZCxWFNkjG6hw=="/>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Eraser_soft.kpp" md5="RT+G7vQx4U8luUHsisZkzw==">
+  <tag blacklisted="false">sketch</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/FX_explode.kpp" md5="FAv9bj1807aygPrCVHmtOQ=="/>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 6m stamp chain.kpp" md5="H1QdIhwNVtOvM5d8ubVGvA==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 4b adjust color.kpp" md5="sfyZVLN2OS5dihM0g0yPJA==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/1Ev4939.kpp" md5="4gqVXvuMbgdfh0Otbw+fEg==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Basic_tip_soft.kpp" md5="Sf+LwjQCa/bLxaomd1xP1A=="/>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/3.Blocks_ rake.kpp" md5="4oaYL6EEk8PFXZGhScOWrw==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 1a1 eraser line-art.kpp" md5="LgRGG4JmxDYvT96gQiReFA==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/4.Environment_ rough1.kpp" md5="NyG6PHsh1fD1a5A+CAxs1A==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Ink_ballpen.kpp" md5="4RDtwTYaFd7G4oW+M7XabQ=="/>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/1.Basic_ flat-diagonal .kpp" md5="IPWEsIybjeEd2uLLKKvR1g==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="~/.local/share/krita/paintoppresets/Airbrush_pressure_coloringj21968.kpp" md5="tdb/A1YGe3rDmz1MP13tNQ==">
+  <tag blacklisted="false">axltxl</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 2c glazing brush.kpp" md5="wYqqy6oUxvYyfsY4j9qWew==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/3.Blocks_ texture1.kpp" md5="ZlZWwyDNZFjemrB3JDzejw==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/3.Blocks_ texture2.kpp" md5="7IFg/URSTJnABMhzD3FhTw==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 3b paint brush.kpp" md5="yO+AjqHs3kIOBDXZXFlHfQ==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 3d watercolor.kpp" md5="FCQcPgSPzBOw+a9iO7JBSA==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 1f draw brush.kpp" md5="VfGMzcmKev0Vj/1Pwnpqdg==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/3.Blocks_ smooth.kpp" md5="7OR5Flr8BpbF2Ug24y+Q5w==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/4.Environment_ paint1.kpp" md5="0WYkeuC/HpFTOw4KrYVf5g==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 1a eraser thin.kpp" md5="Oi4X9QNKNDDhWAWg5bEsGA==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+  <tag blacklisted="false">axltxl</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 5b pixel.kpp" md5="R/A9Vp/jWWsxyykbUFu0lA==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/2.Bristles_ rough1_a.kpp" md5="txqbjj0XZDjubBIbWVwfWw==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 2e digital sketch.kpp" md5="qO7HxmXcRgQm8r0F6mJFJg==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 6b stamp noise.kpp" md5="20NPqaOQGv8RzSiwGoUVtg==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 1e inking gpen.kpp" md5="UEzm0+FFAukHdI17wVzDZQ==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 2e fill brush.kpp" md5="S6DiKo2rlMDsz099sBHCIA==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 2c flat.kpp" md5="oWl2wX3ZNaKieFkbe8mvbg==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/2.Bristles_ smooth3.kpp" md5="4NbyCg5GA2hQvv8YAjyVug==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/2.Bristles_ multistroke-texture.kpp" md5="4MPhNclsmFnKMHl6gyRVfQ==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 4a airbrush.kpp" md5="dTzWvB1timV2refuVYD9dw==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/FX_splat_starfield.kpp" md5="sygFcfGfV9WYWA8WPoLc5g=="/>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 3a alchemy.kpp" md5="s5lC6diGexHyGjjZ/XuLcw==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/3.Blocks_ texture3.kpp" md5="z7UfGk3VR8z15XOu3+vjvQ==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/2Uw6437.kpp" md5="xG7k89EhJfXHH3kKpo2t/g==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/2.Bristles_ rake-random.kpp" md5="2bMjI/zHsVxjVfiAxxRF0Q==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/1gB4939.kpp" md5="9HS5LVA/g/09YCEaTUIrYQ==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 2e big brush.kpp" md5="l6M9NIkLMB+hWkgbDb/iJw==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/3.Blocks_ basic.kpp" md5="8XqA+hRQRUyHG5lP2k7Bkw==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Ink_brush_25.kpp" md5="Xebx+7bK0mL3q9vPGjfXaA==">
+  <tag blacklisted="false">ink</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 2c hair.kpp" md5="67pSMwMoFLE4PFerHlmF2g==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 2b used old brush.kpp" md5="YlOEsaF6465cE2XskaqlPw==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/4.Environment_ splatter3.kpp" md5="cMssyTsj3/CAh4nnKUZ28A==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/4ly6433.kpp" md5="9C5nfa2IS570+RBluTDt0w==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/2.Bristles_ canvas-brush.kpp" md5="WZDnZeaNzh2HRihI8Cxlgw==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/1Hf4939.kpp" md5="xkda0z1pDg65K5gi7EAB3A==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 5e paper textured.kpp" md5="4AWQXbeXFpBZmKGYPqLfqQ==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/1Lr4939.kpp" md5="/NJ3dW41Rw9yusrw+RQdSQ==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/ink_precision_03.kpp" md5="ApPzjbkS3/AZKQvquwpv6g=="/>
+ <resource identifier="~/.local/share/krita/paintoppresets/Basic_circle_valuesB26798.kpp" md5="L5KcU2BY8YBhsgCn8ozqmA==">
+  <tag blacklisted="false">axltxl</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 1b eraser large.kpp" md5="jatt0kYkJujclKttOPQesA==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+  <tag blacklisted="false">axltxl</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/1Hw4939.kpp" md5="z+vcGdJjy9aQSKlaxmN1ag==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/4.Environment_ rough2.kpp" md5="KFw9BrWL8eo2gQgc5GcfYA==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Block_mix_tilt.kpp" md5="tYkdoZ8DyA3EZbqkuBTRyQ=="/>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/2.Bristles_ multistroke2.kpp" md5="bO9wSw7O4p++LkFHYddr3Q==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 3f bristtle smear.kpp" md5="DgdFuU+Al/UG8fEXsT526w==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/2Bh6437.kpp" md5="GA/iHToiexd63mtAvKrIZg==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/3.Blocks_ bristle.kpp" md5="x2ID9FcTnlkTyAUnDlK9Ag==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Pixelart_round.kpp" md5="iaDn9ulCsXtHnajUgQUgVg=="/>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Ink_tilt_10.kpp" md5="Za6SphefASdbCP3+jH6jfA=="/>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/1iL4939.kpp" md5="fXqKxFu/2/QwH4ldPb7feg==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 2c flat - 100.kpp" md5="PJI0VYbxevUMvBIKu+vp9g==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 6e stylised vegetal.kpp" md5="zMZbboSq1nmNt5LdlGmL+Q==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Basic_tip_default.kpp" md5="QHxqwLMo6m73dsbXha4t1Q==">
+  <tag blacklisted="false">demo</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/2up6437.kpp" md5="l/fnYiOhA5tbFXOh45eFOg==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/3Qm2795.kpp" md5="8SXu+FjsGQuPyz8K+C0NSg==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Pixelart_dither.kpp" md5="n+th0zkrdVzmcadMRFBxGg=="/>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/Ink_gpen_10.kpp" md5="eq70dIWrKGFNRz58q4hOpw==">
+  <tag blacklisted="false">demo</tag>
+ </resource>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/5.Guides_ grid.kpp" md5="KxrOypI+SgGmqsLe1cbc4w==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="/tmp/.mount_fDjKCC/usr/share/krita/paintoppresets/pixel1.kpp" md5="FkqN6rZL8WCXBy1go/lLXA=="/>
+ <resource identifier="bundle://~/Downloads/concept&amp;illustration.bundle:paintoppresets/4VD6433.kpp" md5="b2znepMJhqPBoiryiTDmQw==">
+  <tag blacklisted="false">concept&amp;illustration</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 6i stamp crackles.kpp" md5="uB8xUhTtUFsfvobNPQ04Nw==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="~/.local/share/krita/paintoppresets/Bristles_hairy_painta21968.kpp" md5="tdznCwPOchlRZ35jmOpA2g==">
+  <tag blacklisted="false">axltxl</tag>
+ </resource>
+ <resource identifier="bundle://~/.local/share/krita/bundles/deevad-v8-2.bundle:paintoppresets/deevad 2b roller.kpp" md5="Zo8vSznijIOELQ6gmjvAzg==">
+  <tag blacklisted="false">deevad-v8-2</tag>
+  <tag blacklisted="false">deevad</tag>
+ </resource>
+ <resource identifier="dummy">
+  <tag blacklisted="false">Wet</tag>
+ </resource>
+ <resource identifier="dummy">
+  <tag blacklisted="false">PixelArt</tag>
+ </resource>
+ <resource identifier="dummy">
+  <tag blacklisted="false">demo</tag>
+ </resource>
+ <resource identifier="dummy">
+  <tag blacklisted="false">Erasers</tag>
+ </resource>
+ <resource identifier="dummy">
+  <tag blacklisted="false">FX</tag>
+ </resource>
+ <resource identifier="dummy">
+  <tag blacklisted="false">Mix</tag>
+ </resource>
+ <resource identifier="dummy">
+  <tag blacklisted="false">deevad-v8-2</tag>
+ </resource>
+ <resource identifier="dummy">
+  <tag blacklisted="false">Ink</tag>
+ </resource>
+ <resource identifier="dummy">
+  <tag blacklisted="false">Smudge</tag>
+ </resource>
+ <resource identifier="dummy">
+  <tag blacklisted="false">paint</tag>
+ </resource>
+ <resource identifier="dummy">
+  <tag blacklisted="false">Circle</tag>
+ </resource>
+ <resource identifier="dummy">
+  <tag blacklisted="false">Block</tag>
+ </resource>
+ <resource identifier="dummy">
+  <tag blacklisted="false">axltxl</tag>
+ </resource>
+ <resource identifier="dummy">
+  <tag blacklisted="false">sketch</tag>
+ </resource>
+ <resource identifier="dummy">
+  <tag blacklisted="false">ink</tag>
+ </resource>
+</tags>
