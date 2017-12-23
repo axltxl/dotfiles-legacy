@@ -132,21 +132,6 @@ dot_unstow() {
 }
 
 #
-# Execute ansible playbook to deploy system-wide changes
-#
-dot_deploy() {
-    dot_printf "Deploying playbook changes ..."
-
-    # apply ansible playbook
-    cd $dot_ansible_playbook_dir && \
-        ansible-galaxy install --force -r requirements.yml && \
-        ansible-playbook site.yml -i inventory || exit 1
-
-    # purge any ansible-generated files
-    rm -f ~/site.retry
-}
-
-#
 # Stow/install packages inside DOT_HOME
 #
 dot_install() {
@@ -345,12 +330,6 @@ _dot_help_purge() {
     dot_printf "e.g. $ DRY_PURGE=1 dot purge"
 }
 
-# dot help deploy
-_dot_help_deploy() {
-    dot_printf "Usage: dot deploy"
-    dot_printf "Only apply ansible playbooks on this host"
-}
-
 #
 # Print command-specific help
 #
@@ -365,9 +344,6 @@ dot_help() {
             ;;
             purge )
             _dot_help_purge
-            ;;
-            deploy )
-            _dot_help_deploy
             ;;
             update )
             _dot_help_update
@@ -389,9 +365,6 @@ if [[ $ZSH_EVAL_CONTEXT == 'toplevel' ]]; then
             ;;
         stow)
             dot_stow ${@:2}
-            ;;
-        deploy)
-            dot_deploy
             ;;
         unstow)
             dot_unstow ${@:2}
