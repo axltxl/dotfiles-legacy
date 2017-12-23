@@ -1,8 +1,0 @@
-# vim: ft=zsh
-##############################
-# Zenfig environment variables
-##############################
-
-# zenfig plugins that are used by these dotfiles are determined by these env vars
-export ZENFIG_PLUGIN_TERMITE='axltxl/zenfig-termite==develop'
-export ZENFIG_PLUGIN_XFT='axltxl/zenfig-xft==develop'
