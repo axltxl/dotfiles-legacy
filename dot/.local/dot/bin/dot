@@ -155,143 +155,8 @@ dot_print_help() {
     dot_printf "  dot unstow <package> - unstow package(s)"
     dot_printf "  dot update <package> - update specific configurations"
     dot_printf "  dot help   <command> - help information about a command"
-    dot_printf "  dot purge            - purge every dotfile there is inside your home directory"
     echo
 }
-
-
-
-#
-# Purge all symlinks and dangling files inside $HOME directory
-#
-dot_purge() {
-    ############################
-    # warn the user first of all
-    ############################
-    dot_printf_warn "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-    dot_printf_warn "-------------------------------------------------------"
-    dot_printf_warn "This is really going to assf*ck your home directory ..."
-    dot_printf_warn "It will unstow everything, remove any remaining"
-    dot_printf_warn "dotfiles inside your home directory"
-    dot_printf_warn "NOTE: SET DRY_PURGE=1 IF YOU WANT TO SIMULATE THIS COMMMAND"
-    dot_printf_warn "-------------------------------------------------------"
-    dot_printf_warn "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-    dot_printf_warn "ARE YOU REALLY SURE ABOUT THIS? (y/N)> "
-    read -sq ans
-    [ $ans != 'y' ] && dot_printf "Aborting operation ..." &&  exit 0
-    unset ans
-
-    #####################
-    # check for DRY_PURGE
-    #####################
-    if [[ ! -z "$DRY_PURGE" ]]; then
-        dot_printf_warn "Dry purge mode is ON"
-    fi
-
-    ########################################
-    # unstow all directories inside DOT_HOME
-    ########################################
-    dot_printf "Unstowing all packages inside $DOT_HOME"
-    for d in $DOT_HOME/*; do
-        if [[ -z "$DRY_PURGE" ]]; then
-            dot_unstow $( basename $d )
-        else
-            dot_printf "DRY_PURGE: unstow ==> $(basename $d)"
-        fi
-    done
-    unset d
-
-    ########################################################
-    # dot_ignore includes all folders/files not to be purged
-    ########################################################
-    dot_ignore="${HOME}/.dotignore $DOT_ENV_CFG"
-    if [[ -a ${HOME}/.dotignore ]]; then
-        dot_printf_warn "~/.dotignore file found!, proceeding to read its entries ..."
-        ignore_files=$(cat ${HOME}/.dotignore | tr '\n' ' ')
-        if [[ ! -z "$ignore_files" ]]; then
-            for f in $(echo $ignore_files); do
-                # all directories are considered to be relative
-                # to the $HOME directory
-                dot_ignore="$dot_ignore ${HOME}/${f}"
-            done
-            unset f
-        fi
-        unset ignore_files
-    fi
-
-    #######################################################
-    # unstow all directories inside all specified STOW_DIRS
-    #######################################################
-    stow_dirs=$(echo $STOW_DIRS | tr ':' ' ')
-    if [[ ! -z "$stow_dirs" ]]; then
-        for stow_dir in $(echo $stow_dirs); do
-            dot_printf_warn "Unstowing all packages inside $stow_dir"
-            stow_subdirs=$(echo $stow_dir/*) &> /dev/null
-            if [[ ! -z "$stow_subdirs" ]]; then
-                for d in $(echo $stow_subdirs); do
-                    if [[ -z "$DRY_PURGE" ]]; then
-                        _dot_unstow $stow_dir $(basename $d)
-                    else
-                        dot_printf "DRY_PURGE: STOW_DIRS unstow ==> $(basename $d)"
-                    fi
-                done
-                unset d
-            fi
-            unset stow_subdirs
-            # all STOW_DIRS are ignored for purging
-            # Reason: there could be dotfolders being treated and sync dirs
-            # it wouldn't be nice to treat them as spare dotfolders/files
-            dot_ignore="$dot_ignore $stow_dir"
-        done
-        unset stow_dir
-    fi
-    unset stow_dirs
-
-    # print list of files to be ignored
-    if [[ ! -z "$DRY_PURGE" ]]; then
-        dot_printf_warn "Ignore list is:"
-        for f in $(echo $dot_ignore); do
-            dot_printf "==> $f"
-        done
-    fi
-
-    # Purge every dotfile thereis in your home directory
-    dot_printf_warn "Purging all your dotfiles inside your home directory at $HOME"
-    if [[ -z "$DRY_PURGE" ]]; then
-        sudo rm $DOT_HOME
-    fi
-
-    #################################################
-    # Perform the actual deletion of dotfiles/folders
-    # with the clear exception of those ignored
-    #################################################
-    dotfiles=$(echo $HOME/.*) &> /dev/null
-    if [[ ! -z "$dotfiles" ]]; then
-        for rd in $(echo $dotfiles); do
-            if test "${dot_ignore#*$rd}" != "$dot_ignore"; then
-                dot_printf_warn "$rd on dotignore list, therefore not deleted"
-                continue
-            fi
-            dot_printf "Deleting $rd"
-            if [[ -z "$DRY_PURGE" ]]; then
-                sudo rm -rf $rd # if not ignored, then purge it
-            fi
-        done
-        unset rd
-    fi
-    unset dotfiles
-
-    ###############
-    # Tell the user to reboot system
-    ###############
-    dot_printf_warn "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-    dot_printf_warn "-------------------------------------------------------"
-    dot_printf_warn "Your system has been purged from this dotfiles and"
-    dot_printf_warn "therefore ready for a clean install of your Debian OS"
-    dot_printf_warn "-------------------------------------------------------"
-    dot_printf_warn "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-}
-
 
 # dot help update
 _dot_help_update() {
@@ -320,16 +185,6 @@ _dot_help_unstow() {
     dot_printf "Unstow a package from all stow directories in STOW_DIRS"
 }
 
-# dot help purge
-_dot_help_purge() {
-    dot_printf "Usage: dot purge"
-    dot_printf "Unstow all packages inside DOT_HOME and STOW_DIRS"
-    dot_printf "Remove any remaining dotfiles inside your home directory"
-    dot_printf "Stow directories (STOW_DIRS) and files specified in ~/.dotignore won't be deleted"
-    dot_printf "NOTE: if you wish to simulate this command set DRY_PURGE=1"
-    dot_printf "e.g. $ DRY_PURGE=1 dot purge"
-}
-
 #
 # Print command-specific help
 #
@@ -341,9 +196,6 @@ dot_help() {
             ;;
             stow )
             _dot_help_stow
-            ;;
-            purge )
-            _dot_help_purge
             ;;
             update )
             _dot_help_update
@@ -374,9 +226,6 @@ if [[ $ZSH_EVAL_CONTEXT == 'toplevel' ]]; then
             ;;
         help)
             dot_help ${@:2}
-            ;;
-        purge)
-            dot_purge ${@:2}
             ;;
         *)
             dot_print_help; exit 1
