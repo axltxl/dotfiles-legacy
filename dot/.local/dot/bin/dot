@@ -20,7 +20,6 @@ dot_poststow_dir=${dot_basedir}/post-stow.d
 dot_preunstow_dir=${dot_basedir}/pre-unstow.d
 dot_postunstow_dir=${dot_basedir}/post-unstow.d
 dot_update_dir=${dot_basedir}/update.d
-dot_ansible_playbook_dir=${HOME}/.ansible
 
 # This is a record of the command line
 # mostly used by dotfiles update job
