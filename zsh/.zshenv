@@ -14,6 +14,9 @@ export DOT_PATH=$HOME/.local/dot
 # to be pulled when dot-updating
 export DOT_BRANCH=develop
 
+# OS detection goes in here
+export DOT_OS=`uname -s`
+
 # These are used by dot-env
 export DOT_ENV_OUT=${HOME}/.dotenv.out
 export DOT_ENV_CFG=${HOME}/.dotenv
