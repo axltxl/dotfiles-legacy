@@ -1,0 +1,2 @@
+** TODO Introduce org-agenda into spacemacs
+** TODO Simplify install script

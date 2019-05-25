@@ -13,3 +13,6 @@ Session.vim
 
 # python cache
 __pycache__
+
+# TODO file
+TODOs.org

@@ -1,4 +1,4 @@
-#!/usr/bin/ruby
+#!/usr/bin/env ruby
 ##################################################################
 # dot-env: export environment variables via a YAML file
 # based on: https://gist.github.com/SteveBenner/588fff3e54636f3d8297

@@ -20,4 +20,4 @@ _tmux_ip() {
 }
 
 # Output the whole thing
-echo "$(_tmux_hostname)@$(_tmux_ip) $(_tmux_date)"
+echo "$(_tmux_hostname)@$(_tmux_ip) #[fg=colour15,bold]$(_tmux_date)"

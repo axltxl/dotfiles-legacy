@@ -6,8 +6,8 @@
 alias dot-reload="echo 'Reloading zsh environment ...'; . ~/.zshenv; . ~/.zshrc"
 
 # dot-env-edit
-alias dot-env-edit="rm -f $DOT_ENV_OUT; $EDITOR $DOT_ENV_CFG; dot-reload"
-alias dot-env-reload="rm -f $DOT_ENV_OUT; dot-reload"
+alias dot-env-edit="$EDITOR $DOT_ENV_CFG && dot-reload"
+alias dot-env-reload="dot-env > $DOT_ENV_OUT; dot-reload"
 
 # commodity aliases
 alias dee=dot-env-edit
