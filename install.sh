@@ -53,10 +53,6 @@ rm -f $install_log
 ins_echo "Creating initial DOT_PATH at $DOT_PATH"
 mkdir -p $DOT_PATH/{lib,bin,libexec,include,share} || true
 
-# Basic home layout
-ins_echo "Creating basic home directory layout"
-mkdir -p $HOME/{Projects,Documents,Music,Videos} || true
-
 # Set up formal $DOT_HOME to be used
 # by scripts
 ins_echo "Set up dotfiles root directory at $DOT_HOME"
@@ -64,7 +60,7 @@ ln -svf $dotfiles_dir $DOT_HOME
 
 # Install oh-my-zsh
 ins_echo "Installing on-my-zsh"
-rm -rf $ZSH; git clone https://github.com/robbyrussell/oh-my-zsh.git $ZSH 
+rm -rf $ZSH; git clone https://github.com/robbyrussell/oh-my-zsh.git $ZSH
 
 # Set up essentials
 ins_echo "Setting up essentials"

@@ -1,0 +1,5 @@
+* %(format-time-string org-journal-time-format) %^{Title} %^G
+  %?
+  :PROPERTIES:
+  :Type: entry
+  :END:

@@ -1,0 +1,5 @@
+* %(format-time-string org-journal-time-format) [%^{Verb}] %^{Object} %^G:action:
+  %?
+  :PROPERTIES:
+  :Type: action
+  :END:

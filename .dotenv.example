@@ -1,6 +1,5 @@
----
+# -*- mode: yaml -*-
 ######################################
-# vim: ft=yaml
 # Example .dotenv file used by dot-env
 # see dot/.local/dot/bin/dot-env
 ######################################

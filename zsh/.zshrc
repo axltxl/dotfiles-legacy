@@ -81,19 +81,24 @@ fpath=($ZSH_HOME/lib $fpath) && export FPATH
 
 #
 # checks tmux is installed before trying to launch it.
+# NOTE: it won't run if invoked under emacs
 #
-if which tmux >/dev/null 2>&1; then
-    #
-    # Attach to existing deattached session or start a new session
-    #
-    if [[ -z "$TMUX" ]] ;then
-        ID="`tmux ls | grep -vm1 attached | cut -d: -f1`" # get the id of a deattached session
-        if [[ -z "$ID" ]] ;then # if not available create a new one
-            tmux new-session
-        else
-            tmux attach-session -t "$ID" # if available attach to it
+if [[ -z "$INSIDE_EMACS" ]]; then
+
+    if which tmux >/dev/null 2>&1; then
+        #
+        # Attach to existing deattached session or start a new session
+        #
+        if [[ -z "$TMUX" ]] ;then
+            ID="`tmux ls | grep -vm1 attached | cut -d: -f1`" # get the id of a deattached session
+            if [[ -z "$ID" ]] ;then # if not available create a new one
+                tmux new-session
+            else
+                tmux attach-session -t "$ID" # if available attach to it
+            fi
         fi
     fi
+
 fi
 
 ######################################
