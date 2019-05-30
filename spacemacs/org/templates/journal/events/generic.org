@@ -1,0 +1,5 @@
+* %(format-time-string org-journal-time-format) [%^{EventName}] %^{Title} %^G:event:
+  %?
+  :PROPERTIES:
+  :Type: event
+  :END:

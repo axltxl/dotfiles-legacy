@@ -1,7 +1,7 @@
 # dotfiles
 My dotfiles
 
-##Copyright and Licensing
+## Copyright and Licensing
 Copyright (c) 2015 Alejandro Ricoveri
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
