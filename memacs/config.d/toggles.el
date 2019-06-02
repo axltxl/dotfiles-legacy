@@ -2,4 +2,4 @@
 ;; -----------
 
 ;; Toggle whitespace in current buffer
-(axltxl/bind-key "tw" 'whitespace-mode)
+(axltxl/define-key "tw" 'whitespace-mode)

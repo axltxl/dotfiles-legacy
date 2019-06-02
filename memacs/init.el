@@ -11,10 +11,11 @@
 
 ;; Main config file location
 (defconst axltxl/emacs-config-file (concat user-emacs-directory "init.el"))
+(defconst axltxl/emacs-layer-dir   (concat user-emacs-directory "config.d/"))
 
 (defun axltxl/config-load (name)
   "Load configuration module"
-  (load-file (concat user-emacs-directory "config.d/" name ".el")))
+  (load-file (concat axltxl/emacs-layer-dir name ".el")))
 
 (defun axltxl/config-restart ()
   "Command to reload main configuration"
@@ -25,6 +26,14 @@
   "Edit configuration file"
   (interactive)
   (find-file axltxl/emacs-config-file))
+
+(defun axltxl/layer-edit ()
+  "Edit layer file"
+  (interactive)
+  (let '(layer-file (concat axltxl/emacs-layer-dir (read-string "Layer name: ") ".el"))
+    (if (file-exists-p layer-file)
+      (find-file layer-file)
+      (message "Layer '%s' does not exist!"))))
 
 ;; Packages, packages, packages!
 ;; -----------------------------
@@ -78,8 +87,8 @@
     ;; Config for vanilla packages
      "dired"
 
-    ;; The actual packages that make it awesome
-     "auto-complete"
+    ;; Text editing must haves
+     "text-editing"
 
     ;; Look and feel
      "look-and-feel"
@@ -94,8 +103,13 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+    '(custom-safe-themes
+         (quote
+             ("cd736a63aa586be066d5a1f0e51179239fe70e16a9f18991f6f5d99732cabb32" default)))
  '(initial-frame-alist (quote ((fullscreen . maximized))))
- '(package-selected-packages (quote (editorconfig helm-config evil))))
+    '(package-selected-packages
+         (quote
+             (doom-modeline autopair editorconfig helm-config evil))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
