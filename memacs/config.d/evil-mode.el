@@ -6,4 +6,3 @@
   (evil-mode 1)
   ;; More configuration goes here
   )
-

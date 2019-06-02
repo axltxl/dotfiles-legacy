@@ -2,14 +2,12 @@
 ;; -----------------
 
 ;; Window splitting
-(axltxl/bind-key "wv" 'split-window-right)
-(axltxl/bind-key "ws" 'split-window-below)
+(axltxl/bind-key "wv" 'split-window-right ; Window splitting
+                 "ws" 'split-window-below
+                 "wd" 'delete-window ; kill window
 
-;; Delete window
-(axltxl/bind-key "wd" 'delete-window)
-
-;; Navigation
-(axltxl/bind-key "wk" 'evil-window-up)
-(axltxl/bind-key "wj" 'evil-window-down)
-(axltxl/bind-key "wh" 'evil-window-left)
-(axltxl/bind-key "wl" 'evil-window-right)
+                 ;; Navigation
+                 "wk" 'windmove-up
+                 "wj" 'windmove-down
+                 "wh" 'windmove-left
+                 "wl" 'windmove-right)

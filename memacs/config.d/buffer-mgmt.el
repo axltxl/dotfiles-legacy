@@ -1,12 +1,19 @@
 ;; Buffer management
 ;; -----------------
 
-;; File management
-(axltxl/bind-key "fs" 'save-buffer)
+(axltxl/bind-key
+                 ;; File management
+                 "ff" 'helm-find-files
+                 "fs" 'save-buffer
 
-;; Reload emacs configuration
-(axltxl/bind-key "fer" #'(lambda () (load-file "~/.emacs.d/init.el")))
+		 ;; Reload main configuration
+		 "fer" 'axltxl/config-restart
 
-;; Buffer management
-(axltxl/bind-key "bb" 'helm-buffers-list)
-(axltxl/bind-key "bd" 'kill-buffer)
+		 ;; Edit main configuration
+		 "fed" 'axltxl/config-edit
+
+		 ;; Buffer management
+		 "bp" 'previous-buffer
+		 "bn" 'next-buffer
+		 "bb" 'helm-buffers-list
+		 "bd" 'kill-buffer)

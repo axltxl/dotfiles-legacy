@@ -6,6 +6,26 @@
 ;; STATE: experimental
 ;; -----------------------------
 
+;; Essentials
+;; ----------
+
+;; Main config file location
+(defconst axltxl/emacs-config-file (concat user-emacs-directory "init.el"))
+
+(defun axltxl/config-load (name)
+  "Load configuration module"
+  (load-file (concat user-emacs-directory "config.d/" name ".el")))
+
+(defun axltxl/config-restart ()
+  "Command to reload main configuration"
+  (interactive)
+  (load-file axltxl/emacs-config-file))
+
+(defun axltxl/config-edit ()
+  "Edit configuration file"
+  (interactive)
+  (find-file axltxl/emacs-config-file))
+
 ;; Packages, packages, packages!
 ;; -----------------------------
 ;; Source: http://aaronbedra.com/emacs.d/#user-info
@@ -16,11 +36,8 @@
 (add-to-list 'package-archives
   '("melpa" . "https://melpa.org/packages/") t)
 
-;; Define my packages :)
-;; TODO fill that list with some packages!
-(defvar axltxl/packages '(
-			   use-package
-			   ) "Default packages")
+;; Define my bootstrap packages :)
+(defvar axltxl/packages '(use-package) "Default packages")
 
 ;; Install default packages
 ;; ------------------------
@@ -39,38 +56,46 @@
     (when (not (package-installed-p pkg))
       (package-install pkg))))
 
-;; Take it from here and load config files
-;; ---------------------------------------
-(defun axltxl/load-config (name)
-  (load-file (concat user-emacs-directory "config.d/" name ".el")))
-
 ;; This is only needed once, near the top of the file
 (eval-when-compile
-        (require 'use-package))
-(setq use-package-always-ensure t)
+        (require 'use-package)
+(setq use-package-always-ensure t))
 
-;; The very basics
-(axltxl/load-config "which-key")
-(axltxl/load-config "evil-mode")
-(axltxl/load-config "evil-leader")
+(setq axltxl/config-layers
+  '(
+    ;; The very basics
+    "essentials"
+    "which-key"
+    "evil-mode"
+    "evil-leader"
+    "toggles" ;; UI toggle switches
 
-;; Basic workflow
-(axltxl/load-config "helm")
-(axltxl/load-config "window-mgmt")
-(axltxl/load-config "buffer-mgmt")
+    ;; Basic workflow
+    "helm"
+    "window-mgmt"
+    "buffer-mgmt"
 
-;; The actual packages that make it awesome
-(axltxl/load-config "auto-complete")
+    ;; Config for vanilla packages
+     "dired"
 
-;; Look and feel
-(axltxl/load-config "look-and-feel")
+    ;; The actual packages that make it awesome
+     "auto-complete"
+
+    ;; Look and feel
+     "look-and-feel"
+    ))
+
+;; Take it from here and load config files
+;; ---------------------------------------
+(dolist (layer axltxl/config-layers) (axltxl/config-load layer))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (evil))))
+ '(initial-frame-alist (quote ((fullscreen . maximized))))
+ '(package-selected-packages (quote (editorconfig helm-config evil))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
