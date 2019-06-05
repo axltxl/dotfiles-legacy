@@ -1,5 +1,6 @@
+;;;;;;;;;;;;;;;;;;;;;;;
 ;; Buffer management
-;; -----------------
+;;;;;;;;;;;;;;;;;;;;;;;
 
 (axltxl/define-key
   ;; File management
@@ -19,4 +20,6 @@
   "bp" 'previous-buffer
   "bn" 'next-buffer
   "bb" 'helm-buffers-list
-  "bd" 'evil-delete-buffer)
+  "bd" 'evil-delete-buffer
+  "bN" 'evil-buffer-new
+  "br" 'revert-buffer)

@@ -1,4 +1,11 @@
 *.dat
+*.eld
 *~
 autosave-list
 elpa
+backups
+.cache
+recentf
+transient
+bookmarks
+\#*

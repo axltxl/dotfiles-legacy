@@ -1,13 +1,16 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Look-And-Feel settings
-;; ----------------------
+;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Set the real shit
 (use-package doom-themes
     :config
-    (load-theme 'doom-one t))
+    (load-theme 'doom-dracula t))
 
 ;; Set font
-(add-to-list 'default-frame-alist '(font . "Source Code Pro for Powerline-12"))
+;; see: https://www.gnu.org/software/emacs/manual/html_node/emacs/Fonts.html
+(add-to-list 'default-frame-alist
+  '(font . "-ADBE-Source Code Pro for Powerline-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1"))
 
 ;; Set the real modeline now :)
 

@@ -13,7 +13,7 @@ tab_width = 2
 [**.yml]
 indent_size = 2
 
-[spacemacs/.spacemacs.d/**.el]
+[**.el]
 indent_size = 2
 
 [.gitconfig]
