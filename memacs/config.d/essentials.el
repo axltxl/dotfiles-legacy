@@ -1,5 +1,6 @@
+;;;;;;;;;;;;;;;;;;
 ;; Essentials
-;; ----------------------
+;;;;;;;;;;;;;;;;;;
 
 ;; All GUI elements shall be removed!
 (menu-bar-mode -1)

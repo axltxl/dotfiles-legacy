@@ -1,5 +1,6 @@
+;;;;;;;;;;;;;;;;;;;;;;;
 ;; Window management
-;; -----------------
+;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package winner
     :ensure nil
@@ -15,6 +16,8 @@
   "wm" 'maximize-window
   "wu" 'winner-undo
   "wr" 'winner-redo
+  "wf" 'new-frame
+  "wo" 'other-frame
 
   ;; Navigation
   "wk" 'windmove-up
