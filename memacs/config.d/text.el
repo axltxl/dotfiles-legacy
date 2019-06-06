@@ -13,7 +13,10 @@
   (editorconfig-mode 1))
 
 ;; Show line numbers
-(global-display-line-numbers-mode)
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+
+;; Toggle display line numbers
+(axltxl/define-key "tl" 'display-line-numbers-mode)
 
 ;; No tabs
 (setq tab-width 2)
