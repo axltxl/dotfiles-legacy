@@ -97,6 +97,9 @@
     "git"
     "neotree"
 
+    ;; Support for different file types
+     "yaml"
+
     ;; Our lovely home screen
     "splash"
     ))
@@ -116,7 +119,7 @@
  '(initial-frame-alist (quote ((fullscreen . maximized))))
   '(package-selected-packages
      (quote
-       (nlinum org-bullets dashboard neotree org-agenda org-capture org-projectile org-journal org-mode avy highlight-indent-guides magit helm-projectile projectile evil-nerd-commenter git-gutter evil-surround evil-unimpaired doom-modeline autopair editorconfig helm-config evil))))
+       (yaml-mode nlinum org-bullets dashboard neotree org-agenda org-capture org-projectile org-journal org-mode avy highlight-indent-guides magit helm-projectile projectile evil-nerd-commenter git-gutter evil-surround evil-unimpaired doom-modeline autopair editorconfig helm-config evil))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
