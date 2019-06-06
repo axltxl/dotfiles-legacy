@@ -81,3 +81,12 @@
 ;; Text scaling
 (axltxl/define-key "/" 'text-scale-increase)
 (axltxl/define-key "." 'text-scale-decrease)
+
+;; Quite useful to know where a buffer ends
+(setq-default indicate-empty-lines t)
+
+;; Remove trailing whitespace upon saving
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; Always write a newline at the end of a file
+(setq require-final-newline t)
