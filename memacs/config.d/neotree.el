@@ -3,7 +3,7 @@
 ;;;;;;;;;;;;;;;;;;
 
 (use-package neotree
-  ;; Prefixed Key Bindings
+  ;; Configuration
   :config
   (evil-set-initial-state 'neotree-mode 'normal)
   (evil-define-key 'normal neotree-mode-map
@@ -20,11 +20,8 @@
     (kbd "q")   'neotree-hide
     (kbd "l")   'neotree-enter)
 
-  ;; Configuration
-  :config
+  ;; all-the-icons support
   (setq neo-theme (if (display-graphic-p) 'icons 'arrow)))
 
 ;; Prefixed key bindings
 (axltxl/define-key "ft" 'neotree-toggle)
-
-
