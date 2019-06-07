@@ -68,12 +68,12 @@
   ;; Set auto-save interval
   (setq real-auto-save-interval 10))
 
-;; comment things a la nerd commenter
-;; FIXME doesn't work when trying to comment a single line ';;'
-;; (use-package evil-nerd-commenter
-;;   :config
-;;   (evilnc-default-hotkeys t t))
-;; (axltxl/define-key ";" 'evilnc-comment-operator)
+;;comment things a la nerd commenter
+(use-package evil-nerd-commenter
+  :after evil
+  :config
+  (evilnc-default-hotkeys t t))
+(axltxl/define-key ";" 'evilnc-comment-operator)
 
 ;; emacs + easymotion = avy
 (use-package avy)
