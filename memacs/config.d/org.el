@@ -117,7 +117,7 @@
 
       ("g" "task/action/github" entry
         (file ,(concat axltxl/org-todos-dir "tasks.org"))
-        (file ,(concat org-tpl-journal-dir "actions/github.org"))))))
+        (file ,(concat org-tpl-journal-private-dir "events/github.org"))))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; org-capture + org-journal
