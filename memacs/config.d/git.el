@@ -11,7 +11,7 @@
 (use-package magit)
 
 ;; These bindings work pretty well TBH
-(use-package evil-magit)
+(use-package evil-magit :after (evil magit))
 
 ;; Key bindings for magit
 (axltxl/define-key "gs" 'magit-status)

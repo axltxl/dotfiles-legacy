@@ -1,6 +1,7 @@
 ;; HELM
 ;; -----
 (use-package helm
+  :demand t
   :config
 
   ;; Load initial config
@@ -36,6 +37,6 @@
 
 ;; helm-projectile
 ;;;;;;;;;;;;;;;;;;
-(use-package helm-projectile)
+(use-package helm-projectile :after (helm projectile))
 (axltxl/define-key "pp" 'helm-projectile-switch-project)
 (axltxl/define-key "pf" 'helm-projectile-find-file)

@@ -39,12 +39,14 @@
 
 ;; unimpaired.vim in emacs! :)
 (use-package evil-unimpaired
+  :after evil
   :load-path "local"
   :config
   (evil-unimpaired-mode))
 
 ;; vim-surround in emacs :)
 (use-package evil-surround
+  :after evil
   :config
   (global-evil-surround-mode 1))
 

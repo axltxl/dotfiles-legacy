@@ -3,6 +3,8 @@
 ;;;;;;;;;;;;;;;;;;
 
 (use-package neotree
+  :after evil
+
   ;; Configuration
   :config
   (evil-set-initial-state 'neotree-mode 'normal)

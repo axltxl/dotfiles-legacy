@@ -24,6 +24,7 @@
 ;; The awesome emacs dashboard
 ;; https://github.com/emacs-dashboard/emacs-dashboard
 (use-package dashboard
+  :demand t
   :config
   ;; Set the title
   (setq dashboard-banner-logo-title

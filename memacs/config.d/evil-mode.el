@@ -4,14 +4,15 @@
 
 ;; Let the EVIL begin! :)
 (use-package evil
-  :config
-  (evil-mode 1))
+  :demand t
+  :config (evil-mode 1))
 
 ;; evil leader key setup via general.el
 ;; -----------------------
 ;; Define leader key
 (defconst axltxl/leader-key "SPC")
 (use-package general
+  :after evil
   :config
   (general-create-definer axltxl/general-leader-def :prefix axltxl/leader-key))
 

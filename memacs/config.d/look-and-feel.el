@@ -4,6 +4,7 @@
 
 ;; Set the real shit
 (use-package doom-themes
+    :demand t
     :config
     (load-theme 'doom-dracula t))
 
@@ -18,6 +19,8 @@
 ;; doom-modeline specific config
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package doom-modeline
+  :demand t
+  :after doom-themes
   :config
 
   ;; How tall the mode-line should be. It's only respected in GUI.

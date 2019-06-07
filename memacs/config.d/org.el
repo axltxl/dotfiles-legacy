@@ -23,6 +23,7 @@
 ;; Org Mode
 ;;;;;;;;;;;
 (use-package org
+  :demand t
   :config
 
   ;; todo lists keywords
@@ -32,6 +33,7 @@
 ;; utf-8 fancy org bullets
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package org-bullets
+  :after org
   :init
   ;; Custom bullets
   (setq org-bullets-bullet-list '("■" "◆" "▲" "▶"))
@@ -43,6 +45,7 @@
 ;; org-journal
 ;;;;;;;;;;;;;;
 (use-package org-journal
+  :after org
   :init
   (setq
     org-journal-dir axltxl/org-journal-dir
@@ -134,6 +137,7 @@
 ;;;;;;;;;;;;;;;;;
 
 (use-package org-projectile
+  :after (org projectile)
   :config
   ;; All project TODOs in one single file
   (setq org-projectile-projects-file (concat axltxl/org-home "projects.org"))
