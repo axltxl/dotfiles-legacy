@@ -15,9 +15,6 @@
 ;; Show line numbers
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
-;; Toggle display line numbers
-(axltxl/define-key "tl" 'display-line-numbers-mode)
-
 ;; No tabs
 (setq tab-width 2)
 (setq indent-tabs-mode nil)
