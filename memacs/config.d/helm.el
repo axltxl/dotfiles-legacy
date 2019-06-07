@@ -16,7 +16,6 @@
 
   ;; Key bindings for this layer
   ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
   :bind (
     ;; helm-map (the general local keymap)
     :map helm-map
