@@ -14,13 +14,17 @@
 (use-package general
   :after evil
   :config
-  (general-create-definer axltxl/general-leader-def :prefix axltxl/leader-key))
+    ;; FIXME comment this
+    (general-evil-setup t)
+
+    ;; FIXME: comment this
+    (general-create-definer axltxl/general-leader-def :prefix axltxl/leader-key))
 
 ;; Prefix definition
 ;; TODO document me if it comes to that
 (defun axltxl/define-key (key ecmd &rest keydefs)
   (axltxl/general-leader-def
     :keymaps 'override
-    :states '(normal visual emacs)
+    :states '(normal visual motion emacs)
     key ecmd)
   (if keydefs (apply 'axltxl/define-key keydefs)))
