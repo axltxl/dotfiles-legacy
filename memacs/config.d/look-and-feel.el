@@ -2,22 +2,48 @@
 ;; Look-And-Feel settings
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; Set font
+;; see: https://www.gnu.org/software/emacs/manual/html_node/emacs/Fonts.html
+(add-to-list 'default-frame-alist
+  '(font . "Inconsolata LGC-11:width=normal:weight=demibold"))
+
+;; Theme settings
+;;;;;;;;;;;;;;;;;
+
+;; Light theme
+(defconst axltxl/theme-light 'doom-solarized-light)
+
+;; Dark theme (default)
+(defconst axltxl/theme-dark  'doom-dracula)
+(defconst axltxl/theme-default axltxl/theme-dark)
+
+;; This will keep the current set theme from changing
+;; across configuration reloads via axltxl/config-restart
+;; command
+(if (not (boundp 'axltxl/theme-current))
+  (setq axltxl/theme-current axltxl/theme-default))
+
+(defun axltxl/toggle-theme ()
+  "Toggle current theme"
+  (interactive)
+  (if (eq axltxl/theme-current axltxl/theme-dark)
+    (setq axltxl/theme-current axltxl/theme-light)
+    (setq axltxl/theme-current axltxl/theme-dark))
+  (load-theme axltxl/theme-current))
+
+;; Key binding for axltxl/toggle-theme
+(axltxl/define-key "tt" 'axltxl/toggle-theme)
+
 ;; Set the real shit
 (use-package doom-themes
     :demand t
     :config
-    (load-theme 'doom-dracula t))
-
-;; Set font
-;; see: https://www.gnu.org/software/emacs/manual/html_node/emacs/Fonts.html
-(add-to-list 'default-frame-alist
-  '(font . "-ADBE-Source Code Pro for Powerline-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1"))
+    (load-theme axltxl/theme-current t))
 
 ;; Set the real modeline now :)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; doom-modeline specific config
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package doom-modeline
   :demand t
   :after doom-themes
