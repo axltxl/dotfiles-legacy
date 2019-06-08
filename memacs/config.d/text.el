@@ -36,14 +36,14 @@
 
 ;; unimpaired.vim in emacs! :)
 (use-package evil-unimpaired
-  :after evil
+  :after general
   :load-path "local"
   :config
   (evil-unimpaired-mode))
 
 ;; vim-surround in emacs :)
 (use-package evil-surround
-  :after evil
+  :after general
   :config
   (global-evil-surround-mode 1))
 
@@ -67,7 +67,7 @@
 
 ;;comment things a la nerd commenter
 (use-package evil-nerd-commenter
-  :after evil
+  :after general
   :config
   (evilnc-default-hotkeys t t))
 (axltxl/define-key ";" 'evilnc-comment-operator)

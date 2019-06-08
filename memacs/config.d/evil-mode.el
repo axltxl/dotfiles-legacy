@@ -12,6 +12,7 @@
 ;; Define leader key
 (defconst axltxl/leader-key "SPC")
 (use-package general
+  :demand t
   :after evil
   :config
     ;; FIXME comment this

@@ -24,6 +24,7 @@
 ;; The awesome emacs dashboard
 ;; https://github.com/emacs-dashboard/emacs-dashboard
 (use-package dashboard
+  :after general ; this one has key bindings
   :demand t
   :config
   ;; Set the title

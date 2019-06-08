@@ -62,6 +62,7 @@
 ;; org-agenda
 ;;;;;;;;;;;;;
 (use-package org-agenda
+  :after org
   :ensure nil ; This is vanilla org-mode
 
   ;; Prefixed Key Bindings
@@ -80,6 +81,7 @@
 ;; org-capture
 ;;;;;;;;;;;;;;
 (use-package org-capture
+  :after org
   :ensure nil
   :config
     ;; Automatically align all tags before finalizing capture

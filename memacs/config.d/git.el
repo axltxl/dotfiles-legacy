@@ -8,10 +8,10 @@
 
 ;; magit
 ;;;;;;;;
-(use-package magit)
+(use-package magit :after general)
 
 ;; These bindings work pretty well TBH
-(use-package evil-magit :after (evil magit))
+(use-package evil-magit :after magit)
 
 ;; Key bindings for magit
 (axltxl/define-key "gs" 'magit-status)

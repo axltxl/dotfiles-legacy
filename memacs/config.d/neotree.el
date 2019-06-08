@@ -2,25 +2,27 @@
 ;; neotree
 ;;;;;;;;;;;;;;;;;;
 
-(use-package neotree
-  :after evil
+(use-package neotree :after general
+
+  ;; Key bindings for this one
+  :general
+  ( :states '(motion normal)
+    :keymaps 'neotree-mode-map
+    "ov"  'neotree-enter-vertical-split
+    "os"  'neotree-enter-horizontal-split
+    "RET" 'neotree-enter
+    "c"   'neotree-create-node
+    "r"   'neotree-rename-node
+    "d"   'neotree-delete-node
+    "h"   'neotree-select-up-node
+    "gr"  'neotree-refresh
+    "C"   'neotree-change-root
+    "H"   'neotree-hidden-file-toggle
+    "q"   'neotree-hide
+    "l"   'neotree-enter)
 
   ;; Configuration
   :config
-  (evil-set-initial-state 'neotree-mode 'normal)
-  (evil-define-key 'normal neotree-mode-map
-    (kbd "RET") 'neotree-enter-
-    (kbd "ov")  'neotree-enter-vertical-split
-    (kbd "os")  'neotree-enter-horizontal-split
-    (kbd "c")   'neotree-create-node
-    (kbd "r")   'neotree-rename-node
-    (kbd "d")   'neotree-delete-node
-    (kbd "h")   'neotree-select-up-node
-    (kbd "g")   'neotree-refresh
-    (kbd "C")   'neotree-change-root
-    (kbd "H")   'neotree-hidden-file-toggle
-    (kbd "q")   'neotree-hide
-    (kbd "l")   'neotree-enter)
 
   ;; all-the-icons support
   (setq neo-theme (if (display-graphic-p) 'icons 'arrow)))
