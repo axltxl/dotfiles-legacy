@@ -89,6 +89,7 @@
     evil
 
     ;; Basic workflow
+    emacs
     window
     buffer
 

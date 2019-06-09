@@ -29,7 +29,7 @@
   :states '(normal visual motion emacs)
   "p"  '(nil :which-key "project")
   "f"  '(nil :which-key "file")
-  "fe" '(nil :which-key "emacs-conf")
+  "e"  '(nil :which-key "emacs")
   "b"  '(nil :which-key "buffer")
   "w"  '(nil :which-key "window")
   "g"  '(nil :which-key "git")
