@@ -5,7 +5,7 @@
 ;; All GUI elements shall be removed!
 (menu-bar-mode -1)
 (tool-bar-mode -1)
-(toggle-scroll-bar -1)
+(scroll-bar-mode -1)
 
 ;; Start frame in fullscreen mode
 (custom-set-variables
