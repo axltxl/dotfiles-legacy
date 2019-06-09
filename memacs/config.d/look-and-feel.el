@@ -29,7 +29,7 @@
   (if (eq axltxl/theme-current axltxl/theme-dark)
     (setq axltxl/theme-current axltxl/theme-light)
     (setq axltxl/theme-current axltxl/theme-dark))
-  (load-theme axltxl/theme-current))
+  (load-theme axltxl/theme-current t))
 
 ;; Key binding for axltxl/toggle-theme
 (axltxl/define-key "tt" 'axltxl/toggle-theme)
