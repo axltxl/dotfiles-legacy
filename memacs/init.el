@@ -14,27 +14,31 @@
 ;; ----------
 
 ;; Main constants
-(defconst axltxl/emacs-config-file (concat user-emacs-directory "init.el"))
-(defconst axltxl/emacs-layer-dir   (concat user-emacs-directory "config.d/"))
+(defconst axltxl/emacs-init-file  (concat user-emacs-directory "init.el"))
+(defconst axltxl/emacs-config-dir (concat user-emacs-directory "config.d/"))
+
+(defun axltxl/config-get-file (name)
+  "Get path to configuration module"
+  (concat axltxl/emacs-config-dir (format "%s" name) ".el"))
 
 (defun axltxl/config-load (name)
   "Load configuration module"
-  (load-file (concat axltxl/emacs-layer-dir name ".el")))
+  (load-file (axltxl/config-get-file name)))
 
 (defun axltxl/config-restart ()
   "Command to reload main configuration"
   (interactive)
-  (load-file axltxl/emacs-config-file))
+  (load-file axltxl/emacs-init-file))
+
+(defun axltxl/init-edit ()
+  "Edit init.el configuration file"
+  (interactive)
+  (find-file axltxl/emacs-init-file))
 
 (defun axltxl/config-edit ()
-  "Edit configuration file"
+  "Edit configuration module file"
   (interactive)
-  (find-file axltxl/emacs-config-file))
-
-(defun axltxl/layer-edit ()
-  "Edit layer file"
-  (interactive)
-  (let '(layer-file (concat axltxl/emacs-layer-dir (read-string "Layer name: ") ".el"))
+  (let '(layer-file (concat axltxl/emacs-config-dir (read-string "Layer name: ") ".el"))
     (if (file-exists-p layer-file)
       (find-file layer-file)
       (message "Layer '%s' does not exist!" layer-file))))
@@ -52,7 +56,7 @@
 ;; Define my bootstrap packages :)
 (defvar axltxl/packages '(use-package) "Default packages")
 
-;; Install default packages
+;; Install default package
 ;; ------------------------
 ;; When Emacs boots, check to make sure all of the packages
 ;; defined in abedra/packages are installed. If not, have ELPA take care of it.
@@ -75,43 +79,43 @@
   (setq use-package-always-ensure t)
   (setq use-package-verbose t))
 
-(setq axltxl/config-layers
+(setq axltxl/config-modules
   '(
     ;; The very basics
-    "essentials"
-    "which-key"
+    essentials
+    which-key
 
     ;; The evil section
-    "evil-mode"
+    evil-mode
 
     ;; Basic workflow
-    "window-mgmt"
-    "buffer-mgmt"
+    window-mgmt
+    buffer-mgmt
 
     ;; Text editing must haves
-    "text"
-    "toggles" ; UI toggle switches
+    text
+    toggles ; UI toggle switches
 
     ;; Look and feel
-    "look-and-feel"
+    look-and-feel
 
     ;; My toolbox
-    "org"
-    "projectile"
-    "ivy"
-    "git"
-    "neotree"
+    org
+    projectile
+    ivy
+    git
+    neotree
 
     ;; Support for different file types
-    "yaml"
+    yaml
 
     ;; Our lovely home screen
-    "splash"
+    splash
     ))
 
 ;; Take it from here and load config files
 ;; ---------------------------------------
-(dolist (layer axltxl/config-layers) (axltxl/config-load layer))
+(dolist (cfg axltxl/config-modules) (axltxl/config-load cfg))
 
 ;; Load custom-set-variables file
 (load custom-file 'noerror)
