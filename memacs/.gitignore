@@ -1,6 +1,7 @@
 *.dat
 *.eld
 *~
+custom.el
 autosave-list
 elpa
 backups
