@@ -37,7 +37,7 @@
   (let '(layer-file (concat axltxl/emacs-layer-dir (read-string "Layer name: ") ".el"))
     (if (file-exists-p layer-file)
       (find-file layer-file)
-      (message "Layer '%s' does not exist!"))))
+      (message "Layer '%s' does not exist!" layer-file))))
 
 ;; Packages, packages, packages!
 ;; -----------------------------
