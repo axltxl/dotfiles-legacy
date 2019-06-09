@@ -86,11 +86,11 @@
     which-key
 
     ;; The evil section
-    evil-mode
+    evil
 
     ;; Basic workflow
-    window-mgmt
-    buffer-mgmt
+    window
+    buffer
 
     ;; Text editing must haves
     text
