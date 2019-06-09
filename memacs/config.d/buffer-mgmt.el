@@ -4,7 +4,7 @@
 
 (axltxl/define-key
   ;; File management
-  "ff" 'helm-find-files
+  "ff" 'find-file
   "fs" 'save-buffer
 
   ;; Reload main configuration
@@ -19,7 +19,7 @@
   ;; Buffer management
   "bp" 'previous-buffer
   "bn" 'next-buffer
-  "bb" 'helm-buffers-list
+  "bb" 'switch-to-buffer
   "bd" 'evil-delete-buffer
   "bN" 'evil-buffer-new
   "br" 'revert-buffer)
