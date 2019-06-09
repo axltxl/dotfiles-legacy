@@ -38,10 +38,10 @@
 (defun axltxl/config-edit ()
   "Edit configuration module file"
   (interactive)
-  (let '(layer-file (concat axltxl/emacs-config-dir (read-string "Layer name: ") ".el"))
-    (if (file-exists-p layer-file)
-      (find-file layer-file)
-      (message "Layer '%s' does not exist!" layer-file))))
+  (let '(config-file (concat axltxl/emacs-config-dir (read-string "Configuration module name: ") ".el"))
+    (if (file-exists-p config-file)
+      (find-file config-file)
+      (message "Configuration module '%s' does not exist!" config-file))))
 
 ;; Packages, packages, packages!
 ;; -----------------------------
