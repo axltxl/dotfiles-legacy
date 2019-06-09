@@ -16,8 +16,8 @@
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
 ;; No tabs
-(setq tab-width 2)
-(setq indent-tabs-mode nil)
+(setq-default tab-width 2)
+(setq-default indent-tabs-mode nil)
 
 ;; This makes sure that brace structures (), [], {}, etc.
 ;; are closed as soon as the opening character is typed.
@@ -70,6 +70,7 @@
   :after general
   :config
   (evilnc-default-hotkeys t t))
+
 (axltxl/define-key ";" 'evilnc-comment-operator)
 
 ;; emacs + easymotion = avy
@@ -88,4 +89,4 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; Always write a newline at the end of a file
-(setq require-final-newline t)
+(setq-default require-final-newline t)
