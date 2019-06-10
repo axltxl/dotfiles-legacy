@@ -90,3 +90,18 @@
 
 ;; Always write a newline at the end of a file
 (setq-default require-final-newline t)
+
+;; no mouse !!!
+;; https://github.com/purcell/disable-mouse
+(use-package disable-mouse
+  :after (evil general)
+  :config
+  ;; Disable mouse globally
+  (global-disable-mouse-mode)
+
+  ;; This is for evil mode bindings
+  (mapc #'disable-mouse-in-keymap
+    (list evil-motion-state-map
+          evil-normal-state-map
+          evil-visual-state-map
+          evil-insert-state-map)))
