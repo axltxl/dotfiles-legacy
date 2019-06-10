@@ -2,6 +2,7 @@
 *.eld
 *~
 custom.el
+dotemacs.el
 autosave-list
 elpa
 backups

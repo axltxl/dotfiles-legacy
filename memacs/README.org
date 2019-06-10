@@ -1,0 +1,975 @@
+#+TITLE: DotEmacs
+#+AUTHOR: A. J. Ricoveri (me@axltxl.xyz)
+
+*Copyright (c) 2019 Alejandro Ricoveri*
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+* The very basics
+** /which-key/
+    #+BEGIN_SRC emacs-lisp
+    (use-package which-key
+    :demand t
+    :config
+    (which-key-mode)
+    (setq which-key-idle-delay 0.25))
+    #+END_SRC
+
+** The =Evil= Section
+*** Let the EVIL begin! :)
+    #+BEGIN_SRC emacs-lisp
+    (use-package evil
+    :demand t
+    :config (evil-mode 1))
+    #+END_SRC
+
+*** Leader key setup via general.el
+**** Leader Key
+    #+BEGIN_SRC emacs-lisp
+    (defconst axltxl/leader-key "SPC")
+    (use-package general
+        :demand t
+        :after (evil which-key)
+        :config
+        (general-evil-setup t)
+        (general-create-definer axltxl/general-leader-def :prefix axltxl/leader-key))
+    #+END_SRC
+
+**** All prefixed key combinations are relabeled on which-key via /general.el/
+    #+BEGIN_SRC emacs-lisp
+    (general-define-key
+    :prefix axltxl/leader-key
+    :keymaps 'override
+    :states '(normal visual motion emacs)
+    "p"  '(nil :which-key "project")
+    "f"  '(nil :which-key "file")
+    "e"  '(nil :which-key "emacs")
+    "b"  '(nil :which-key "buffer")
+    "w"  '(nil :which-key "window")
+    "g"  '(nil :which-key "git")
+    "j"  '(nil :which-key "jump")
+    "t"  '(nil :which-key "toggle")
+    "o"  '(nil :which-key "org")
+    "oa" '(nil :which-key "org-agenda")
+    "oc" '(nil :which-key "org-capture"))
+    #+END_SRC
+
+**** Prefix definition
+    #+BEGIN_SRC emacs-lisp
+    (defun axltxl/define-key (key ecmd &rest keydefs)
+    (axltxl/general-leader-def
+        :keymaps 'override
+        :states '(normal visual motion emacs)
+        key ecmd)
+    (if keydefs (apply 'axltxl/define-key keydefs)))
+    #+END_SRC
+
+** Configuration Workflow
+*** Main constants
+    #+BEGIN_SRC emacs-lisp
+    (defconst axltxl/emacs-init-file (concat user-emacs-directory "init.el"))
+    (defconst axltxl/emacs-org-file  (concat user-emacs-directory "README.org"))
+    #+END_SRC
+
+*** Reload main configuration
+    #+BEGIN_SRC emacs-lisp
+    (defun axltxl/config-restart ()
+        (interactive)
+        (load-file axltxl/emacs-init-file))
+    #+END_SRC
+
+    #+BEGIN_SRC emacs-lisp
+    (axltxl/define-key "er" 'axltxl/config-restart)
+    #+END_SRC
+
+*** Edit /init.el/
+    #+BEGIN_SRC emacs-lisp
+    (defun axltxl/init-edit ()
+        (interactive)
+        (find-file axltxl/emacs-init-file))
+    #+END_SRC
+
+    #+BEGIN_SRC emacs-lisp
+    (axltxl/define-key "ed" 'axltxl/init-edit)
+    #+END_SRC
+
+*** Edit this very file
+    #+BEGIN_SRC emacs-lisp
+    (defun axltxl/org-edit ()
+        (interactive)
+        (find-file axltxl/emacs-org-file))
+    #+END_SRC
+
+    #+BEGIN_SRC emacs-lisp
+    (axltxl/define-key "eo" 'axltxl/org-edit)
+    #+END_SRC
+
+** Text Editing
+*** /auto-complete/
+    #+BEGIN_SRC emacs-lisp
+    (use-package auto-complete :config (ac-config-default))
+    #+END_SRC
+
+*** /editorconfig/
+    #+BEGIN_SRC emacs-lisp
+    (use-package editorconfig :config (editorconfig-mode 1))
+    #+END_SRC
+
+*** Automatically revert buffers
+    Automatically update a buffer if a file changes on disk
+
+    #+BEGIN_SRC emacs-lisp
+    (global-auto-revert-mode 1)
+    #+END_SRC
+
+*** Show line numbers
+    #+BEGIN_SRC emacs-lisp
+    (add-hook 'prog-mode-hook 'display-line-numbers-mode)
+    #+END_SRC
+
+*** No tabs
+    #+BEGIN_SRC emacs-lisp
+    (setq-default tab-width 2)
+    (setq-default indent-tabs-mode nil)
+    #+END_SRC
+
+*** /autopair/
+    This makes sure that brace structures (), [], {}, etc.
+    are closed as soon as the opening character is typed.
+
+    #+BEGIN_SRC emacs-lisp
+    (use-package autopair :config (autopair-global-mode))
+    #+END_SRC
+
+*** No blinking cursor
+    #+BEGIN_SRC emacs-lisp
+    (blink-cursor-mode 0)
+    #+END_SRC
+
+*** No wordwrap,
+    No nothing, me no likey
+
+    #+BEGIN_SRC emacs-lisp
+    (setq-default truncate-lines 1)
+    #+END_SRC
+
+*** Turn on highlight matching brackets when cursor is on one
+    #+BEGIN_SRC emacs-lisp
+    (show-paren-mode 1)
+    #+END_SRC
+
+*** /evil-unimpaired/
+    unimpaired.vim in emacs! :)
+
+    #+BEGIN_SRC emacs-lisp
+    (use-package evil-unimpaired
+    :after general
+    :load-path "local"
+    :config
+    (evil-unimpaired-mode))
+    #+END_SRC
+
+*** /evil-surround/
+    vim-surround in emacs :)
+
+    #+BEGIN_SRC emacs-lisp
+    (use-package evil-surround
+    :after general
+    :config
+    (global-evil-surround-mode 1))
+    #+END_SRC
+
+*** Highlight indentation
+    #+BEGIN_SRC emacs-lisp
+    (use-package highlight-indent-guides
+    :config
+    (add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
+    (setq highlight-indent-guides-method 'fill))
+    #+END_SRC
+
+*** Backup files management
+    All backups go to a single dedicated directory
+
+    #+BEGIN_SRC emacs-lisp
+    (setq backup-directory-alist
+    `(("." . ,(concat user-emacs-directory "backups"))))
+    #+END_SRC
+
+*** /real-auto-save/
+    #+BEGIN_SRC emacs-lisp
+    (use-package real-auto-save
+    :config
+    (add-hook 'prog-mode-hook 'real-auto-save-mode)
+    (add-hook 'org-mode-hook 'real-auto-save-mode)
+    (setq real-auto-save-interval 10))
+    #+END_SRC
+
+*** /evil-nerd-commenter/
+    Comment all the things a la nerd commenter
+
+    #+BEGIN_SRC emacs-lisp
+    (use-package evil-nerd-commenter
+    :after general
+    :config
+    (evilnc-default-hotkeys t t))
+    #+END_SRC
+
+    /<axltxl/leader-key> ;;/ does the magic
+    #+BEGIN_SRC emacs-lisp
+    (axltxl/define-key ";" 'evilnc-comment-operator)
+    #+END_SRC
+
+*** /avy/
+    emacs + /easymotion/ = avy
+
+    #+BEGIN_SRC emacs-lisp
+    (use-package avy)
+    (axltxl/define-key "jw" 'avy-goto-word-1)
+    (axltxl/define-key "jl" 'avy-goto-line)
+    #+END_SRC
+
+*** Text scaling
+    Increase/decrease font size
+
+    #+BEGIN_SRC emacs-lisp
+    (axltxl/define-key "/" 'text-scale-increase)
+    (axltxl/define-key "." 'text-scale-decrease)
+    #+END_SRC
+
+*** Quite useful to know where a buffer ends
+    #+BEGIN_SRC emacs-lisp
+    (setq-default indicate-empty-lines t)
+    #+END_SRC
+
+*** Remove trailing whitespace upon saving a buffer
+    #+BEGIN_SRC emacs-lisp
+    (add-hook 'before-save-hook 'delete-trailing-whitespace)
+    #+END_SRC
+
+*** Always write a newline at the end of a file
+    #+BEGIN_SRC emacs-lisp
+    (setq-default require-final-newline t)
+    #+END_SRC
+
+*** NO MOUSE via /disable-mouse/
+    Yep, that's right!. /No mouse/ means /no mouse/ at all ...
+    [[disable-mouse][https://github.com/purcell/disable-mouse]]
+
+    #+BEGIN_SRC emacs-lisp
+    (use-package disable-mouse
+    :after (evil general)
+    :config
+    (global-disable-mouse-mode)
+    (mapc #'disable-mouse-in-keymap
+    (list evil-motion-state-map
+            evil-normal-state-map
+            evil-visual-state-map
+            evil-insert-state-map)))
+    #+END_SRC
+
+** /custom-set-variables/
+*** /custom-set-variables/ is set on another file
+    #+BEGIN_SRC emacs-lisp
+    (setq custom-file (concat user-emacs-directory "custom.el"))
+    #+END_SRC
+
+*** Load /custom-set-variables/ file
+    #+BEGIN_SRC emacs-lisp
+    (load custom-file 'noerror)
+    #+END_SRC
+* User Interface
+** Window Management
+*** Windows
+**** Enable /winner-mode/
+   #+BEGIN_SRC emacs-lisp
+    (use-package winner :ensure nil :config (winner-mode))
+    #+END_SRC
+
+**** Manipulation
+***** Split windows
+    #+BEGIN_SRC emacs-lisp
+    (axltxl/define-key "wv" 'split-window-right)
+    (axltxl/define-key "ws" 'split-window-below)
+    #+END_SRC
+***** Delete window
+    #+BEGIN_SRC emacs-lisp
+    (axltxl/define-key "wd" 'delete-window)
+    #+END_SRC
+***** Balance windows
+    #+BEGIN_SRC emacs-lisp
+    (axltxl/define-key "w=" 'balance-windows)
+    #+END_SRC
+***** Maximize window
+    #+BEGIN_SRC emacs-lisp
+    (axltxl/define-key "wm" 'maximize-window)
+    #+END_SRC
+***** Use /winner/ to undo/redo window manipulation
+    #+BEGIN_SRC emacs-lisp
+    (axltxl/define-key "wu" 'winner-undo)
+    (axltxl/define-key "wr" 'winner-redo)
+    #+END_SRC
+
+**** Navigation
+    #+BEGIN_SRC emacs-lisp
+    (axltxl/define-key "wk" 'windmove-up)
+    (axltxl/define-key "wj" 'windmove-down)
+    (axltxl/define-key "wh" 'windmove-left)
+    (axltxl/define-key "wl" 'windmove-right)
+    #+END_SRC
+*** Frames
+**** Create new frame
+    #+BEGIN_SRC emacs-lisp
+    (axltxl/define-key "wf" 'new-frame)
+    #+END_SRC
+
+**** Jump to frame
+    #+BEGIN_SRC emacs-lisp
+    (axltxl/define-key "wo" 'other-frame)
+    #+END_SRC
+
+** Buffer Management
+*** Files
+**** Find a file
+    #+BEGIN_SRC emacs-lisp
+    (axltxl/define-key "ff" 'find-file)
+    #+END_SRC
+
+**** Save buffer to a file
+    #+BEGIN_SRC emacs-lisp
+    (axltxl/define-key "fs" 'save-buffer)
+    #+END_SRC
+
+*** Buffers
+**** History
+    #+BEGIN_SRC emacs-lisp
+    (axltxl/define-key "bp" 'previous-buffer)
+    (axltxl/define-key "bn" 'next-buffer)
+    #+END_SRC
+
+**** Switching
+***** Switch to buffer
+    #+BEGIN_SRC emacs-lisp
+    (axltxl/define-key "bb" 'switch-to-buffer)
+    #+END_SRC
+
+***** Switch to *messages*
+    #+BEGIN_SRC emacs-lisp
+    (axltxl/define-key "bm" (lambda () (interactive)(switch-to-buffer "*Messages*")))
+    #+END_SRC
+
+***** Switch to *scratch*
+    #+BEGIN_SRC emacs-lisp
+    (axltxl/define-key "bs" (lambda () (interactive)(switch-to-buffer "*scratch*")))
+    #+END_SRC
+
+**** Lifecycle
+***** Delete buffer
+    #+BEGIN_SRC emacs-lisp
+    (axltxl/define-key "bd" 'evil-delete-buffer)
+    #+END_SRC
+
+***** Create buffer
+    #+BEGIN_SRC emacs-lisp
+    (axltxl/define-key "bN" 'evil-buffer-new)
+    #+END_SRC
+
+***** Revert buffer
+    #+BEGIN_SRC emacs-lisp
+    (axltxl/define-key "br" 'revert-buffer)
+    #+END_SRC
+
+** Toggles
+*** Whitespace
+   Toggle whitespace in current buffer
+
+   #+BEGIN_SRC emacs-lisp
+   (axltxl/define-key "tw" 'whitespace-mode)
+   #+END_SRC
+
+*** Display line numbers
+   Toggle display line numbers
+
+   #+BEGIN_SRC emacs-lisp
+   (axltxl/define-key "tl" 'display-line-numbers-mode)
+   #+END_SRC
+
+** GUI
+*** All GUI elements shall be removed!
+   #+BEGIN_SRC emacs-lisp
+   (menu-bar-mode -1)
+   (tool-bar-mode -1)
+   (scroll-bar-mode -1)
+   #+END_SRC
+
+*** Start frame in fullscreen mode
+   #+BEGIN_SRC emacs-lisp
+   (custom-set-variables
+   '(initial-frame-alist (quote ((fullscreen . maximized)))))
+   #+END_SRC
+
+*** Turn off ringing bells completely!
+   #+BEGIN_SRC emacs-lisp
+   (setq ring-bell-function 'ignore)
+   #+END_SRC
+
+** Font settings
+   See: https://www.gnu.org/software/emacs/manual/html_node/emacs/Fonts.html
+
+   #+BEGIN_SRC emacs-lisp
+   (add-to-list 'default-frame-alist
+   '(font . "Inconsolata LGC-11:width=normal:weight=demibold"))
+   #+END_SRC
+
+** Theme settings
+*** Light theme
+   #+BEGIN_SRC emacs-lisp
+   (defconst axltxl/theme-light 'doom-solarized-light)
+   #+END_SRC
+
+*** Dark theme (default)
+   #+BEGIN_SRC emacs-lisp
+   (defconst axltxl/theme-dark  'doom-dracula)
+   (defconst axltxl/theme-default axltxl/theme-dark)
+   #+END_SRC
+
+*** Persistent theme through configuration reload
+   This will keep the current set theme from changing
+   across configuration reloads via /axltxl/config-restart/
+   command
+
+   #+BEGIN_SRC emacs-lisp
+   (if (not (boundp 'axltxl/theme-current))
+   (setq axltxl/theme-current axltxl/theme-default))
+   #+END_SRC
+
+*** Toggle current theme
+
+   #+BEGIN_SRC emacs-lisp
+   (defun axltxl/toggle-theme ()
+       (interactive)
+       (if (eq axltxl/theme-current axltxl/theme-dark)
+           (setq axltxl/theme-current axltxl/theme-light)
+           (setq axltxl/theme-current axltxl/theme-dark))
+           (load-theme axltxl/theme-current t))
+
+   ;; Key binding for axltxl/toggle-theme
+   (axltxl/define-key "tt" 'axltxl/toggle-theme)
+   #+END_SRC
+
+*** /doom-themes/
+   What can I say?. They look so nice! :).
+
+   #+BEGIN_SRC emacs-lisp
+   (use-package doom-themes
+       :demand t
+       :config
+       (load-theme axltxl/theme-current t))
+   #+END_SRC
+
+*** /doom-modeline/
+   Set the real modeline now :)
+
+   #+BEGIN_SRC emacs-lisp
+   ;; doom-modeline specific config
+   (use-package doom-modeline
+   :demand t
+   :after doom-themes
+   :config
+
+   ;; How tall the mode-line should be. It's only respected in GUI.
+   ;; If the actual char height is larger, it respects the actual height.
+   (setq doom-modeline-height 32)
+
+   ;; How wide the mode-line bar should be. It's only respected in GUI.
+   (setq doom-modeline-bar-width 3)
+
+   ;; Determines the style used by `doom-modeline-buffer-file-name'.
+   ;;
+   ;; Given ~/Projects/FOSS/emacs/lisp/comint.el
+   ;;   truncate-upto-project => ~/P/F/emacs/lisp/comint.el
+   ;;   truncate-from-project => ~/Projects/FOSS/emacs/l/comint.el
+   ;;   truncate-with-project => emacs/l/comint.el
+   ;;   truncate-except-project => ~/P/F/emacs/l/comint.el
+   ;;   truncate-upto-root => ~/P/F/e/lisp/comint.el
+   ;;   truncate-all => ~/P/F/e/l/comint.el
+   ;;   relative-from-project => emacs/lisp/comint.el
+   ;;   relative-to-project => lisp/comint.el
+   ;;   file-name => comint.el
+   ;;   buffer-name => comint.el<2> (uniquify buffer name)
+   ;;
+   ;; If you are expereicing the laggy issue, especially while editing remote files
+   ;; with tramp, please try `file-name' style.
+   ;; Please refer to https://github.com/bbatsov/projectile/issues/657.
+   (setq doom-modeline-buffer-file-name-style 'truncate-except-project)
+
+   ;; Whether display icons in mode-line or not.
+   (setq doom-modeline-icon t)
+
+   ;; Whether display the icon for major mode. It respects `doom-modeline-icon'.
+   (setq doom-modeline-major-mode-icon t)
+
+   ;; Whether display color icons for `major-mode'. It respects
+   ;; `doom-modeline-icon' and `all-the-icons-color-icons'.
+   (setq doom-modeline-major-mode-color-icon t)
+
+   ;; Whether display icons for buffer states. It respects `doom-modeline-icon'.
+   (setq doom-modeline-buffer-state-icon t)
+
+   ;; Whether display buffer modification icon. It respects `doom-modeline-icon'
+   ;; and `doom-modeline-buffer-state-icon'.
+   (setq doom-modeline-buffer-modification-icon t)
+
+   ;; Whether display minor modes in mode-line or not.
+   (setq doom-modeline-minor-modes nil)
+
+   ;; If non-nil, a word count will be added to the selection-info modeline segment.
+   (setq doom-modeline-enable-word-count nil)
+
+   ;; Whether display buffer encoding.
+   (setq doom-modeline-buffer-encoding t)
+
+   ;; Whether display indentation information.
+   (setq doom-modeline-indent-info nil)
+
+   ;; If non-nil, only display one number for checker information if applicable.
+   (setq doom-modeline-checker-simple-format nil)
+
+   ;; The maximum displayed length of the branch name of version control.
+   (setq doom-modeline-vcs-max-length 12)
+
+   ;; Whether display perspective name or not. Non-nil to display in mode-line.
+   (setq doom-modeline-persp-name t)
+
+   ;; Whether display `lsp' state or not. Non-nil to display in mode-line.
+   (setq doom-modeline-lsp t)
+
+   ;; Whether display github notifications or not. Requires `ghub` package.
+   (setq doom-modeline-github nil)
+
+   ;; The interval of checking github.
+   (setq doom-modeline-github-interval (* 30 60))
+
+   ;; Whether display environment version or not
+   (setq doom-modeline-env-version t)
+   ;; Or for individual languages
+   (setq doom-modeline-env-enable-python t)
+   (setq doom-modeline-env-enable-ruby t)
+   (setq doom-modeline-env-enable-perl t)
+   (setq doom-modeline-env-enable-go t)
+   (setq doom-modeline-env-enable-elixir t)
+   (setq doom-modeline-env-enable-rust t)
+
+   ;; Change the executables to use for the language version string
+   (setq doom-modeline-env-python-executable "python")
+   (setq doom-modeline-env-ruby-executable "ruby")
+   (setq doom-modeline-env-perl-executable "perl")
+   (setq doom-modeline-env-go-executable "go")
+   (setq doom-modeline-env-elixir-executable "iex")
+   (setq doom-modeline-env-rust-executable "rustc")
+
+   ;; Whether display mu4e notifications or not. Requires `mu4e-alert' package.
+   (setq doom-modeline-mu4e nil)
+
+   ;; Whether display irc notifications or not. Requires `circe' package.
+   (setq doom-modeline-irc nil)
+
+   ;; Function to stylize the irc buffer names.
+   (setq doom-modeline-irc-stylize 'identity)
+
+   ;; Let the awesomeness begin :)
+   (doom-modeline-mode 1))
+   #+END_SRC
+
+** /emacs-dashboard/
+**** Seed random number generator
+    This is necessary for the functions that come afterwards.
+
+    #+BEGIN_SRC emacs-lisp
+    (random t) ; seed random number
+    #+END_SRC
+
+**** Select a random image
+
+    #+BEGIN_SRC emacs-lisp
+    (setq axltxl/emacs-splash-dir (concat user-emacs-directory "splash"))
+    (setq axltxl/splash-image
+    (format "%s/splash%s.png" axltxl/emacs-splash-dir
+        (random (- (length (directory-files axltxl/emacs-splash-dir nil "\.png$")) 1))))
+    #+END_SRC
+
+**** Select a random title
+
+    #+BEGIN_SRC emacs-lisp
+    (setq axltxl/emacs-dashboard-titles
+    [ "You rock today!"
+        "\"Royale with cheese\" - Pulp Fiction, 1994."
+        "\"Only dead fish go with the flow\" - Andy Hunt. Pragmatic Thinking and Learning."])
+    #+END_SRC
+
+**** /emacs-dashboard/
+    The awesome emacs dashboard
+    [[[[https://github.com/emacs-dashboard/emacs-dashboard]]]]
+
+    #+BEGIN_SRC emacs-lisp
+    (use-package dashboard
+    :after general ; this one has key bindings
+    :demand t
+    :config
+    ;; Set the title
+    (setq dashboard-banner-logo-title
+        (aref axltxl/emacs-dashboard-titles
+        (random (- (length axltxl/emacs-dashboard-titles) 1))))
+
+    ;; Set the banner images
+    (setq dashboard-startup-banner axltxl/splash-image)
+
+    ;; Content is not centered by default.
+    (setq dashboard-center-content t)
+
+    ;; Set up agenda items from org-mode
+    (add-to-list 'dashboard-items '(agenda) t)
+    (setq show-week-agenda-p t)
+
+    ;; Widgets
+    (setq dashboard-set-file-icons t)
+    (setq dashboard-items '((recents  . 5)
+                            (projects . 5)
+                            (agenda . 5)))
+
+    ;; show info about the packages loaded and the init time
+    (setq dashboard-set-init-info t)
+
+    ;; No footer
+    (setq dashboard-set-footer nil)
+
+    ;; Start it up
+    (dashboard-setup-startup-hook))
+    #+END_SRC
+
+** /ivy/
+    #+BEGIN_SRC emacs-lisp
+    (use-package counsel
+    :demand t
+    :after (general projectile)
+
+    ;; Configuration
+    :config
+    (setq ivy-use-virtual-buffers t)
+    (setq ivy-count-format "(%d/%d) ")
+    (setq ivy-height 10)
+
+    ;; integration with projectile
+    (setq projectile-completion-system 'ivy)
+
+    ;; start it up
+    (ivy-mode 1)
+
+    ;; Key bindings for this layer
+    ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    :general
+    (:keymaps 'ivy-mode-map
+        "M-j" 'ivy-next-line
+        "M-k" 'ivy-previous-line
+        "M-l" 'ivy-alt-done
+        "M-h" 'ivy-backward-delete-char))
+    #+END_SRC
+
+**** M-x (thanks to /counsel/)
+    #+BEGIN_SRC emacs-lisp
+    (axltxl/define-key "SPC" 'counsel-M-x)
+    #+END_SRC
+
+** /neotree/
+    #+BEGIN_SRC emacs-lisp
+    (use-package neotree :after (general projectile)
+
+    ;; Key bindings for this one
+    :general
+    ( :states '(motion normal)
+        :keymaps 'neotree-mode-map
+        "ov"  'neotree-enter-vertical-split
+        "os"  'neotree-enter-horizontal-split
+        "RET" 'neotree-enter
+        "c"   'neotree-create-node
+        "r"   'neotree-rename-node
+        "d"   'neotree-delete-node
+        "h"   'neotree-select-up-node
+        "gr"  'neotree-refresh
+        "C"   'neotree-change-root
+        "H"   'neotree-hidden-file-toggle
+        "q"   'neotree-hide
+        "l"   'neotree-enter)
+
+    ;; Configuration
+    :config
+
+    ;; all-the-icons support
+    (setq neo-theme (if (display-graphic-p) 'icons 'arrow)))
+    #+END_SRC
+
+**** Key Bindings
+***** Toggle /neotree/
+    #+BEGIN_SRC emacs-lisp
+    (axltxl/define-key "ft" 'neotree-toggle)
+    #+END_SRC
+
+***** Open /neotree/ at project location set by /projectile/
+    Source: [[[[https://www.emacswiki.org/emacs/NeoTree]]]]
+    Similar to /find-file-in-project/, NeoTree can be opened (toggled) at /projectile/
+    project root as follows:
+
+    #+BEGIN_SRC emacs-lisp
+    (defun neotree/project-dir ()
+    "Open NeoTree using the git root."
+    (interactive)
+    (let ((project-dir (projectile-project-root))
+            (file-name (buffer-file-name)))
+        (neotree-toggle)
+        (if project-dir
+        (if (neo-global--window-exists-p)
+            (progn
+            (neotree-dir project-dir)
+            (neotree-find file-name)))
+        (message "Could not find git project root."))))
+    #+END_SRC
+
+    #+BEGIN_SRC emacs-lisp
+    (axltxl/define-key "pt" 'neotree/project-dir)
+    #+END_SRC
+* Org Mode (or how do I organize my life)
+** Directory locations
+   #+BEGIN_SRC emacs-lisp
+   (defconst axltxl/org-home "~/org/")
+   (defconst axltxl/org-journal-dir (concat axltxl/org-home "journal/"))
+
+   ;; org-capture templates directory
+   (defconst org-tpl-dir (concat axltxl/org-home "templates/"))
+   (defconst org-tpl-private-dir (concat org-tpl-dir "private/"))
+
+   ;; org-capture TODO templates locations
+   (defconst org-tpl-tasks-dir (concat org-tpl-dir "tasks/"))
+   (defconst org-tpl-tasks-private-dir (concat org-tpl-private-dir "tasks/"))
+
+   ;; org-capture templates locations for org-journal
+   (defconst org-tpl-journal-dir (concat org-tpl-dir "journal/"))
+   (defconst org-tpl-journal-private-dir (concat org-tpl-private-dir "journal/"))
+   #+END_SRC
+
+** /org-mode/
+   #+BEGIN_SRC emacs-lisp
+   (use-package org
+   :demand t
+   :config
+
+   ;; todo lists keywords
+   (setq org-todo-keywords
+       '((sequence "TODO" "|" "DONE" "CANCELLED"))))
+   #+END_SRC
+
+** /org-bullets/
+   UTF-8 fancy bullets for /org-mode/
+
+   #+BEGIN_SRC emacs-lisp
+   (use-package org-bullets
+   :after org
+   :init
+   ;; Custom bullets
+   (setq org-bullets-bullet-list '("■" "◆" "▲" "▶"))
+
+   :config
+   ;; Turn on org-mode
+   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+   #+END_SRC
+
+** /org-journal/
+   #+BEGIN_SRC emacs-lisp
+   (use-package org-journal
+   :after org
+   :init
+   (setq
+       org-journal-dir axltxl/org-journal-dir
+       org-journal-file-format "%Y%m%d.org"
+       org-journal-date-prefix "#+TITLE: "
+       org-journal-date-format "%Y-%m-%d"
+       org-journal-time-prefix "* "
+       org-journal-time-format "%H:%M:%S => "
+   ))
+
+   ;; Prefixed Key Bindings for org-agenda
+   (axltxl/define-key "oja" 'org-journal-new-entry)
+   #+END_SRC
+
+** /org-agenda/
+   #+BEGIN_SRC emacs-lisp
+   (use-package org-agenda
+   :after org
+   :ensure nil ; This is vanilla org-mode
+
+   ;; Prefixed Key Bindings
+   :bind (
+       :map org-agenda-mode-map
+       ("j" . org-agenda-next-line)
+       ("k" . org-agenda-previous-line))
+
+   :config
+   ;; Initial agenda files
+   (setq org-agenda-files `(,(concat axltxl/org-home "tasks.org"))))
+
+   ;; Prefixed Key Bindings for org-agenda
+   (axltxl/define-key "oaa" 'org-agenda)
+   #+END_SRC
+
+** /org-capture/
+   #+BEGIN_SRC emacs-lisp
+   (use-package org-capture
+   :after org
+   :ensure nil
+   :config
+       ;; Automatically align all tags before finalizing capture
+       ;; https://www.reddit.com/r/emacs/comments/93990v/automatically_add_tag_to_capture_in_org_mode/
+       (add-hook 'org-capture-before-finalize-hook #'org-align-all-tags)
+
+       ;; org-capture templates
+       ;; https://orgmode.org/manual/Capture-templates.html#Capture-templates
+       (setq org-capture-templates
+       ;; Journal entries
+       `(
+       ("j" "journal/entry" entry
+           (function org-journal-find-location)
+           (file ,(concat org-tpl-journal-dir "generic.org")))
+
+       ("a" "journal/action" entry
+           (function org-journal-find-location)
+           (file ,(concat org-tpl-journal-dir "actions/generic.org")))
+
+       ("e" "journal/event" entry
+           (function org-journal-find-location)
+           (file ,(concat org-tpl-journal-dir "events/generic.org")))
+
+       ("t" "task" entry
+           (file ,(concat axltxl/org-home "tasks.org"))
+           (file ,(concat org-tpl-tasks-dir "generic.org")))
+
+       ("G" "journal/entry/github" entry
+           (function org-journal-find-location)
+           (file ,(concat org-tpl-journal-private-dir "events/github.org")))
+
+       ("A" "task/action" entry
+           (file ,(concat axltxl/org-home "tasks.org"))
+           (file ,(concat org-tpl-tasks-dir "actions/generic.org")))
+
+       ("g" "task/action/github" entry
+           (file ,(concat axltxl/org-home "tasks.org"))
+           (file ,(concat org-tpl-journal-private-dir "events/github.org"))))))
+   #+END_SRC
+
+   #+BEGIN_SRC emacs-lisp
+   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+   ;; org-capture + org-journal
+   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+   (defun org-journal-find-location ()
+   ;; Open today's journal, but specify a non-nil prefix argument in order to
+   ;; inhibit inserting the heading; org-capture will insert the heading.
+   (org-journal-new-entry t)
+   ;; Position point on the journal's top-level heading so that org-capture
+   ;; will add the new entry as a child entry.
+   (goto-char (point-min)))
+
+   ;;;; Prefixed Key Bindings for org-capture
+   (axltxl/define-key "oc" 'org-capture)
+   #+END_SRC
+
+** /org-projectile/
+    #+BEGIN_SRC emacs-lisp
+    (use-package org-projectile
+        :after (org org-agenda projectile)
+        :config
+        ;; All project TODOs in one single file
+        (setq org-projectile-projects-file (concat axltxl/org-home "projects.org"))
+
+        ;; org-projectile + org-agenda
+        (setq org-agenda-files (append org-agenda-files (org-projectile-todo-files)))
+
+        ;; org-projectile + org-capture
+        (push (org-projectile-project-todo-entry) org-capture-templates))
+
+        ;; go to TODOs file for project
+        (defun org-projectile/goto-todos ()
+        (interactive)
+        (org-projectile-goto-location-for-project (projectile-project-name)))
+
+    ;; Key bindings for org-projectile
+    (axltxl/define-key "po" 'org-projectile/goto-todos)
+    #+END_SRC
+
+* Project management
+** /projectile/
+    #+BEGIN_SRC emacs-lisp
+    (use-package projectile
+    :demand t
+    :config (projectile-mode +1))
+    #+END_SRC
+
+*** Key Bindings
+**** Switch to project
+    #+BEGIN_SRC emacs-lisp
+    (axltxl/define-key "pp" 'projectile-switch-project)
+    #+END_SRC
+
+**** Find file in project
+    #+BEGIN_SRC emacs-lisp
+    (axltxl/define-key "pf" 'projectile-find-file)
+    #+END_SRC
+** git
+*** /git-gutter/
+    #+BEGIN_SRC emacs-lisp
+    (use-package git-gutter :config (global-git-gutter-mode t))
+    #+END_SRC
+
+*** /magit/
+    #+BEGIN_SRC emacs-lisp
+    (use-package magit :after general)
+    #+END_SRC
+
+**** Key bindings
+    Gotta be honest. /evil-magit/ does a wonderful job for that
+
+    #+BEGIN_SRC emacs-lisp
+    (use-package evil-magit :after magit)
+    #+END_SRC
+
+    This one will trigger /magit-status/
+    #+BEGIN_SRC emacs-lisp
+    (axltxl/define-key "gs" 'magit-status)
+    #+END_SRC
+** File types Support
+*** YAML (/yaml-mode/)
+    #+BEGIN_SRC emacs-lisp
+    (use-package yaml-mode
+    :config
+    (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
+    (add-to-list 'auto-mode-alist '("\\.yaml\\'" . yaml-mode))
+
+    ;; Unlike python-mode, this mode follows the Emacs convention of not
+    ;; binding the ENTER key to `newline-and-indent'.  To get this
+    ;; behavior, add the key definition to `yaml-mode-hook':
+    (add-hook 'yaml-mode-hook
+        '(lambda ()
+        (define-key yaml-mode-map "\C-m" 'newline-and-indent))))
+    #+END_SRC
