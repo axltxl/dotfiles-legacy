@@ -28,3 +28,6 @@ if [ -d $ZSH_HOME ]; then
     done
     unset i
 fi
+
+# Load ~/.xprofile if any
+[[ -f $HOME/.xprofile ]] && . $HOME/.xprofile
