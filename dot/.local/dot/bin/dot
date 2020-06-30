@@ -150,9 +150,6 @@ dot_help() {
             stow )
             _dot_help_stow
             ;;
-            update )
-            _dot_help_update
-            ;;
         esac
     else
         dot_print_help
@@ -170,9 +167,6 @@ if [[ $ZSH_EVAL_CONTEXT == 'toplevel' ]]; then
             ;;
         unstow)
             dot_unstow ${@:2}
-            ;;
-        update)
-            dot_update ${@:2}
             ;;
         help)
             dot_help ${@:2}
