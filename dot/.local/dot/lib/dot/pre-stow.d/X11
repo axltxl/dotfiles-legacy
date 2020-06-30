@@ -1,5 +1,0 @@
-# vim: ft=zsh
-# Settings for X11
-
-# Make sure base directories are set beforehand
-mkdir -p ${HOME}/.Xresources.d

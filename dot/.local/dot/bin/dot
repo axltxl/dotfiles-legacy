@@ -19,42 +19,11 @@ dot_prestow_dir=${dot_basedir}/pre-stow.d
 dot_poststow_dir=${dot_basedir}/post-stow.d
 dot_preunstow_dir=${dot_basedir}/pre-unstow.d
 dot_postunstow_dir=${dot_basedir}/post-unstow.d
-dot_update_dir=${dot_basedir}/update.d
 
 # This is a record of the command line
 # mostly used by dotfiles update job
 _dot_cmd=$0 # cmd name
 _dot_args=$@ # arguments
-
-#
-# Update all the things!
-#
-dot_update() {
-    if [[ -z $1 ]]; then
-        # With no arguments, this will execute all update jobs
-        # located inside dot_update_dir
-        for update_job in $dot_update_dir/*; do
-            if [ ! -h $update_job ]; then
-                dot_printf_warn "==> UPDATING: $(basename $update_job)"
-                . $update_job
-                _dot_update_exec
-                # make sure the callback function is removed afterwards
-                unset -f _dot_update_exec
-            fi
-        done
-        unset update_job
-    else
-        # Update a single thing
-        update_job=${dot_update_dir}/$1
-        if [[  -a $update_job  ]]; then
-            dot_printf_warn "==> UPDATING: $1"
-            . $update_job
-            _dot_update_exec
-            # make sure the callback function is removed afterwards
-            unset -f _dot_update_exec
-        fi
-    fi
-}
 
 _dot_stow() {
     local stow_dir=$1

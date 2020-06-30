@@ -1,2 +1,0 @@
-# Make sure root sync directory is created
-mkdir -p ~/.dotsync
