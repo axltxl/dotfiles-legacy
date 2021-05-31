@@ -2,8 +2,7 @@
 #####################
 # Settings for golang
 #####################
-export GOROOT=~/.local/dot/golang
 export GOPATH=~/Projects/golang
 
 # so golang-made programs can be seen
-export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
+export PATH=$GOPATH/bin:$PATH
