@@ -3,5 +3,7 @@
 # Fill the environment with
 # custom variables via dot-env
 ############################################
-dot-env > $DOT_ENV_OUT 2> /dev/null
-[ -f $DOT_ENV_OUT ] && . $DOT_ENV_OUT
+if [[ ! -f "$DOT_ENV_OUT" ]]; then
+    dot-env > $DOT_ENV_OUT 2> /dev/null
+fi
+. $DOT_ENV_OUT

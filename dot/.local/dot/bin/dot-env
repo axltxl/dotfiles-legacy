@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# FIXME: replace me with something done in rust
 ##################################################################
 # dot-env: export environment variables via a YAML file
 # based on: https://gist.github.com/SteveBenner/588fff3e54636f3d8297

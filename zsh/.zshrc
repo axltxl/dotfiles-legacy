@@ -1,8 +1,12 @@
+# Uncomment if you want to profile startup time
+# zmodload zsh/zprof
+#
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
+
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -20,7 +24,7 @@ export UPDATE_ZSH_DAYS=14
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -47,17 +51,17 @@ ZSH_DISABLE_COMPFIX=true
 # Add wisely, as too many plugins slow down shell startup.
 plugins=( \
     vi-mode \
-    git \
+    # git \
     dotools \
-    python \
-    pip \
+    # python \
+    # pip \
     hist \
-    pydev \
-    tmux \
+    # pydev \
+    # tmux \
     themes \
-    rvm \
-    vagrant \
-    golang \
+    # rvm \
+    # vagrant \
+    # golang \
     )
 
 # User configuration
@@ -84,14 +88,10 @@ fpath=($ZSH_HOME/lib $fpath) && export FPATH
 
 #
 # checks tmux is installed before trying to launch it.
-# NOTE: it won't run if invoked under emacs
-#
-if [[ -z "$INSIDE_EMACS" ]]; then
-
+# NOTE: it won't run if invoked under vscode
+if [[ "$TERM_PROGRAM" != "vscode" ]]; then
     if which tmux >/dev/null 2>&1; then
-        #
         # Attach to existing deattached session or start a new session
-        #
         if [[ -z "$TMUX" ]] ;then
             ID="`tmux ls | grep -vm1 attached | cut -d: -f1`" # get the id of a deattached session
             if [[ -z "$ID" ]] ;then # if not available create a new one
@@ -101,10 +101,12 @@ if [[ -z "$INSIDE_EMACS" ]]; then
             fi
         fi
     fi
-
 fi
 
 ######################################
 # Start fzf on every shell login
 ######################################
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Uncomment if you want to profile startup time
+# zprof
